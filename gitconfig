@@ -1,6 +1,44 @@
 [user]
-	name  = Karel Minarik
-	email = karmi@karmi.cz
+	name = Zachary StarkJones
+	email = zachary.starkjones@fynanz.com
+
+[github]
+	user = NewAlexandria
+
+[alias]
+  co = checkout
+  ci = commit
+  rb = rebase
+  diff = diff --color
+
+  logc = log --graph --full-history --all --color --pretty=tformat:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s%x20%x1b[33m(%an)%x1b[0m"
+  ls   = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+  ll   = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  lnc  = log --pretty=format:"%h\\ %s\\ [%cn]"
+  ld   = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+  lds  = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+  le   = log --oneline --decorate
+  fl   = log -u
+
+  grep = grep -Ii
+  la = "!git config -l | grep alias | cut -c 7-"
+
+  lasttag = describe --tags --abbrev=0
+  lt = describe --tags --abbrev=0
+
+
+	switch = !legit switch \"$@\"
+	branches = !legit branches
+	sprout = !legit sprout \"$@\"
+	unpublish = !legit unpublish \"$@\"
+	harvest = !legit harvest \"$@\"
+	sync = !legit sync \"$@\"
+	publish = !legit publish \"$@\"
+	graft = !legit graft \"$@\"
+
+[core]
+	excludesfile = /Users/ZacharyStarkJones/.gitignore_global
+  pager = less -FXRS
 
 [color]
   ui = always
@@ -9,31 +47,13 @@
   branch = auto
   interactive = auto
 
-[rerere]
-	enabled = 1
-
-[core]
-  excludesfile = /Users/karmi/.gitignore
-  pager = less -FXRS
-
-[merge]
-  stat = true
-
-[diff]
-  mnemonicprefix = 1
-
-[status]
-  showUntrackedFiles = all
-
 [push]
   default = tracking
 
-[alias]
-  s  = status --short --branch
-  co = commit --verbose
-  ca = commit --all --verbose
-  l  = log --pretty=format:'%Cred%h%Creset | %Cgreen%s%Creset [%ar by %an]'
-  b  = branch
-  backup   = push --mirror backup
-  upstream = log --oneline master..origin/master
-  pending  = log --oneline origin/master..master
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+
+[mergetool "opendiff"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
