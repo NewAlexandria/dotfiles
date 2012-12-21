@@ -44,7 +44,8 @@ alias grb='git rb'
 alias  ga='git add'
 alias  gd='git diff --color'
 alias  gs='git status'
-alias  gl='git log'
+alias  gl='git log --graph --full-history --all --color --pretty=tformat:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s%x20%x1b[33m(%an)%x1b[0m"$'
+alias gll='git log --graph'
 
 alias gdf='git diff dev --name-only'
 alias gcwtc="git commit -m \"`curl http://whatthecommit.com 2>/dev/null | grep '<p>' | sed 's/<p>//'`\""

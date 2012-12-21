@@ -32,10 +32,9 @@ namespace :dotfiles do
         link_file(file)
       end
     end
-    print "Reload ~/.profile? [yn] "
+    print "Reload ~/.bash_profile? [yn] "
     if $stdin.gets.chomp == 'y'
-      system ". $HOME/.profile"
-      system "exec $SHELL"
+      system "source ~/.bash_profile"
     end
   end
 end
