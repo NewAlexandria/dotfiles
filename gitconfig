@@ -50,6 +50,9 @@
 [push]
   default = tracking
 
+[branch "master"]
+  rebase = true
+
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
