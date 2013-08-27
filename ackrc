@@ -1,1 +1,6 @@
 --ignore-dir=public/assets
+--ignore-dir=public/stylesheets
+--ignore-dir=log
+--ignore-dir=tmp
+
+--ignore-file=is:tags
