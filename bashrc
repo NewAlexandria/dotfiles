@@ -35,3 +35,9 @@ colors() {
   echo
 }
 
+ # parallel bash commands
+ # http://www.rankfocus.com/use-cpu-cores-linux-commands/
+
+functions pgrep {
+  cat $1 | parallel --block 10M --pipe grep $2
+}
