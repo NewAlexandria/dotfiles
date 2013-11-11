@@ -1,4 +1,4 @@
-. $HOME/.profile
+#. $HOME/.profile
 
 # Open man pages in Preview
 pman() {
@@ -38,6 +38,22 @@ colors() {
  # parallel bash commands
  # http://www.rankfocus.com/use-cpu-cores-linux-commands/
 
-functions pgrep {
+ function pgrep() {
   cat $1 | parallel --block 10M --pipe grep $2
 }
+
+function mvis() {
+  mvim --servername $1 --remote-silent ${*:2}
+}
+
+function ratio() {
+  a=$(identify -format "w=%w;h=%h" $1)
+  eval $a
+
+  if [ "$w" -ge "$h" ]; then
+      echo 'landscape'
+  else
+      echo 'portrait'
+  fi
+}
+
