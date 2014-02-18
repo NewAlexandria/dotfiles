@@ -1,6 +1,13 @@
+--color-lineno=green
+--color-filename=white
+--color
+--follow
+
 --ignore-dir=public/assets
 --ignore-dir=public/stylesheets
 --ignore-dir=log
 --ignore-dir=tmp
+--ignore-dir=public/javascripts/yui2
 
 --ignore-file=is:tags
+--ignore-file=match:/.*min.js/

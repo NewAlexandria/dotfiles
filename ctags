@@ -22,6 +22,7 @@
 --exclude=*.sql
 --exclude=*.schema
 --exclude=Session.vim
+--exclude=Library/*
 
 --links=no
 

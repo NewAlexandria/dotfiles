@@ -46,6 +46,8 @@ function mvis() {
   mvim --servername $1 --remote-silent ${*:2}
 }
 
+alias gem_remove_all='for i in `gem list --no-versions`; do gem uninstall -aIx $i; done'
+
 function ratio() {
   a=$(identify -format "w=%w;h=%h" $1)
   eval $a
