@@ -4,7 +4,7 @@
 
 # Common bin paths
 # ----------------
-export PATH="$HOME/bin:/usr/local/bin:/usr/local/sbin:/opt/local/lib/ruby/gems/1.8/gems/bin/:$PATH"
+export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:/opt/swt/bin:/bb/blaw/tools/bin:$PATH"
 
 # Custom prompt
 # -------------
@@ -26,27 +26,68 @@ PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 # --------
 unset MAILCHECK
 
+GIT_EDITOR="vim -u NONE"; export GIT_EDITOR
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
+export CC=gcc-4.2
+
 # Custom aliases
 # --------------
-alias q='exit'
 alias ll='ls -lah'
-alias rd='rm -rdf'
 
-# Git aliases
-# -----------
-alias s="git s"
-alias l="git l"
-alias b="git branch"
-alias giff="git diff"
+## Apps
 
-alias pick="git cherry-pick"
-alias m="git checkout master"
-alias d="git checkout deploy"
-alias f="git checkout fixes"
+alias les='less -FRSXQ'
+alias be='bundle exec'
+alias rspec='wtitle "rspec: blaw"; rspec'
+# alias rspec='rspec -f d -c'
+alias ack='ack --color-lineno=green --color-filename=white --color --follow'
+alias dif='colordiff'
+# Add color and default options to grep
+alias grep='GREP_OPTIONS="--color=auto --ignore-case --line-number --context=0 --exclude=*.log" GREP_COLOR="1;37;41" LANG=C grep'
+alias xtermb='xterm -bg black -fg green -cr purple +cm +dc -geometry 80x20+100+50 &'
+
+## Git
+alias  gc='git commit'
+alias gco='git co'
+alias gci='git ci'
+alias grb='git rb'
+alias  ga='git add'
+alias  gs='git status'
+alias  gl='git log --graph --full-history --all --color --pretty=tformat:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s%x20%x1b[33m(%
+an)%x1b[0m"$'
+alias gll='git log --graph'
+
+alias  gd='git diff --color'
+alias gdf='git diff dev --name-only'
+# alias gde="vim $(git diff --name-status --diff-filter=U | cut -f2 | tr '\n' ' ')"
+# alias gse="vim $(git status --porcelain | cut -f2 -s -d 'M' | tr '\n' ' ' )"
+
+# alias gcwtc="git commit -m \"`curl http://whatthecommit.com 2>/dev/null | grep '<p>' | sed 's/<p>//'`\""
+# alias wtc="echo \"merge-wtc: `curl http://whatthecommit.com 2>/dev/null | grep '<p>' | sed 's/<p>//'`\""
+
+# SVN
+alias svnd='svn diff | vimdiff'
+alias svns='svn status'
+
+
 
 # Add color and default options to grep
 # -------------------------------------
 alias grep='GREP_OPTIONS="--color=auto --ignore-case --line-number --context=0 --exclude=*.log" GREP_COLOR="1;37;41" LANG=C grep'
+
+# Functions
+function wtitle() { echo -ne "\033]0;$1\007"; }
+function _ssh_completion() {
+  perl -ne 'print "$1 " if /^Host (.+)$/' ~/.ssh/config
+}
+
+# Completions
+complete -W "$(_ssh_completion)" ssh
+complete -W "$(_ssh_completion)" scp
+
+
+
 
 # Tricks
 # ------
