@@ -1,61 +1,34 @@
-#. $HOME/.profile
 
-# Open man pages in Preview
-pman() {
-  man -t "${1}" | open -f -a /Applications/Preview.app/
-}
+# Aliases
+## FileSystem
+alias ll='ls -alGh'
+alias les='less -FRSXQ'
+alias be='bundle exec'
+alias ag='ag --color  --color-path=37  --color-line-number=32'
+#alias rspec='wtitle "rspec"; rspec'
+alias rspec='rspec -f d -c'
+alias bes='bundle exec rspec -f d -c'
+alias dif='colordiff'
+alias grep='GREP_OPTIONS="--color=auto --ignore-case --line-number --context=0 --exclude=*.log" GREP_COLOR="1;37;41" LANG=C grep'
+alias ack='ack --color-lineno=green --color-filename=white --color --follow'
 
-#!/bin/bash
-#
-#   This file echoes a bunch of color codes to the 
-#   terminal to demonstrate what's available.  Each 
-#   line is the color code of one forground color,
-#   out of 17 (default + 16 escapes), followed by a 
-#   test use of that color on all nine background 
-#   colors (default + 8 escapes).
-#
-#   Source: http://www.faqs.org/docs/Linux-HOWTO/Bash-Prompt-HOWTO.html
+## Apps
+alias bb='bbedit --clean --view-top'
 
-colors() {
-  T='gYw'   # The test text
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gd='git diff'
+alias gl='git log'
 
-  echo -e "\n                 40m     41m     42m     43m\
-       44m     45m     46m     47m";
+alias  gl='git log --graph --full-history --all --color --pretty=tformat:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s%x20%x1b[33m(%an)%x1b[0m"$'
+alias gll='git log --graph'
 
-  for FGs in '    m' '   1m' '  30m' '1;30m' '  31m' '1;31m' '  32m' \
-             '1;32m' '  33m' '1;33m' '  34m' '1;34m' '  35m' '1;35m' \
-             '  36m' '1;36m' '  37m' '1;37m';
-    do FG=${FGs// /}
-    echo -en " $FGs \033[$FG  $T  "
-    for BG in 40m 41m 42m 43m 44m 45m 46m 47m;
-      do echo -en "$EINS \033[$FG\033[$BG  $T  \033[0m";
-    done
-    echo;
-  done
-  echo
-}
+alias  gd='git diff --color'
+alias gdf='git diff dev --name-only'
+alias gde="vim $(git diff --name-status --diff-filter=U | cut -f2 | tr '\n' ' ')"
+alias gse="vim $(git status --porcelain | cut -f2 -s -d 'M' | tr '\n' ' ' )"
 
- # parallel bash commands
- # http://www.rankfocus.com/use-cpu-cores-linux-commands/
-
- function pgrep() {
-  cat $1 | parallel --block 10M --pipe grep $2
-}
-
-function mvis() {
-  mvim --servername $1 --remote-silent ${*:2}
-}
-
-alias gem_remove_all='for i in `gem list --no-versions`; do gem uninstall -aIx $i; done'
-
-function ratio() {
-  a=$(identify -format "w=%w;h=%h" $1)
-  eval $a
-
-  if [ "$w" -ge "$h" ]; then
-      echo 'landscape'
-  else
-      echo 'portrait'
-  fi
-}
+alias gcwtc="git commit -m \"`curl http://whatthecommit.com 2>/dev/null | grep '<p>' | sed 's/<p>//'`\""
+alias wtc="echo \"merge-wtc: `curl http://whatthecommit.com 2>/dev/null | grep '<p>' | sed 's/<p>//'`\""
 
