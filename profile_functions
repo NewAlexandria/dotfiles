@@ -12,8 +12,6 @@ pman() {
   man -t "${1}" | open -f -a /Applications/Preview.app/
 }
 
-#!/bin/bash
-#
 #   This file echoes a bunch of color codes to the 
 #   terminal to demonstrate what's available.  Each 
 #   line is the color code of one forground color,
@@ -41,6 +39,32 @@ colors() {
   done
   echo
 }
+
+# generates an 8 bit color table (256 colors) for reference,
+# using the ANSI CSI+SGR \033[48;5;${val}m for background and
+# \033[38;5;${val}m for text (see "ANSI Code" on Wikipedia)
+#
+colors_256() {
+  echo -en "\n   +  "
+  for i in {0..35}; do
+    printf "%2b " $i
+  done
+  printf "\n\n %3b  " 0
+  for i in {0..15}; do
+    echo -en "\033[48;5;${i}m  \033[m "
+  done
+  #for i in 16 52 88 124 160 196 232; do
+  for i in {0..6}; do
+    let "i = i*36 +16"
+    printf "\n\n %3b  " $i
+    for j in {0..35}; do
+      let "val = i+j"
+      echo -en "\033[48;5;${val}m  \033[m "
+    done
+  done
+  echo -e "\n"
+}
+
 
  # parallel bash commands
  # http://www.rankfocus.com/use-cpu-cores-linux-commands/

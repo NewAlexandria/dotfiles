@@ -8,9 +8,12 @@ export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:/opt/swt/bin:/bb/bl
 
 # Custom prompt
 # -------------
-export PS1='\[\033[01;34m\]\u@\h\[\033[00m\]\] \w\033[32m\]$(__git_ps1) \[\033[1;31m\]| \[\033[00m\]'
-#   prompt   color  bold   u@host color  stop  path color green git-repo  color  stop | norm. color" 
+export PS1='\[\033[01;34m\]\u@\h\[\033[00m\]\] \w\033[32m\]$(__git_ps1) \[\033[31m\]| \[\033[00m\]'
+export PS1='\[\033[01;34m\]\u@\h\[\033[00m\]\] \w\033[32m\]$(__git_ps1) \[\033[38;5;202m\]Ψ \[\033[00m\]'
+#   prompt   color  bold   u@host color  stop  path color green git-repo 256code fg color Ψ  norm. color" 
 #                            ^^--replace this if you're working locally" 
+#  for bash ANSI color codes, use the profile_functions colors() and colors_256()
+#  http://bitmote.com/index.php?post/2012/11/19/Using-ANSI-Color-Codes-to-Colorize-Your-Bash-Prompt-on-Linux
 
 # Vim/Emacs key syntax for bash
 # -----------------------------

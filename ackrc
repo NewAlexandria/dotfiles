@@ -5,6 +5,8 @@
 
 --ignore-dir=public/assets
 --ignore-dir=public/stylesheets
+--ignore-dir=spec/fixtures
+--ignore-dir=spec/factories
 --ignore-dir=log
 --ignore-dir=tmp
 --ignore-dir=public/javascripts/yui2
