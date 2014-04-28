@@ -17,7 +17,7 @@ hardstatus alwayslastline
 hardstatus string "%-w%{= BW}%50>%n %t%{-}%+w%<"
 
 # Bind escape combo to Ctrl-w
-# escape ^Ww
+escape ^Xx
 # Bind screen lists key to SPACE
 bind ' ' windowlist -b
 

@@ -2,9 +2,9 @@
 # Functions
 function wtitle() { echo -ne "\033]0;$1\007"; }
 
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
-fi
+#if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  #. $(brew --prefix)/etc/bash_completion
+#fi
 
 
 # Open man pages in Preview
