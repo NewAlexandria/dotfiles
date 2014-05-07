@@ -6,6 +6,10 @@
 # ----------------
 export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:/opt/swt/bin:/bb/blaw/tools/bin:$PATH"
 
+for f in  /usr/local/etc/bash_completion.d/* ; do
+  source $f
+done
+
 # Custom prompt
 # -------------
 export PS1='\[\033[01;34m\]\u@\h\[\033[00m\]\] \w\033[32m\]$(__git_ps1) \[\033[31m\]| \[\033[00m\]'
