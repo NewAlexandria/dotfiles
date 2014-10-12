@@ -2,9 +2,9 @@
 # Functions
 function wtitle() { echo -ne "\033]0;$1\007"; }
 
-#if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  #. $(brew --prefix)/etc/bash_completion
-#fi
+function find_in_min() {
+  find . -type d -name .svn -prune -o -mmin -${1} -type f -print
+}
 
 
 # Open man pages in Preview
@@ -69,7 +69,7 @@ colors_256() {
  # parallel bash commands
  # http://www.rankfocus.com/use-cpu-cores-linux-commands/
 
- function pgrep() {
+function pgrep() {
   cat $1 | parallel --block 10M --pipe grep $2
 }
 
