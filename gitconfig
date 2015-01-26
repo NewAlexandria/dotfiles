@@ -1,6 +1,6 @@
 [user]
-	name = Zachary StarkJones
-	email = zachary.starkjones@fynanz.com
+	name = Zachary Jones
+	email = zjones@mdsol.com
 
 [github]
 	user = NewAlexandria
@@ -37,8 +37,9 @@
 	graft = !legit graft \"$@\"
 
 [core]
-	excludesfile = /Users/ZacharyStarkJones/.gitignore_global
+	excludesfile = ~/user/.gitignore_global
   pager = less -FXRS
+	autocrlf = input
 
 [color]
   ui = always
@@ -51,6 +52,8 @@
   default = tracking
 
 [branch "master"]
+  rebase = true
+[branch "develop"]
   rebase = true
 
 [difftool "sourcetree"]
