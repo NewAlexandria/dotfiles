@@ -4,17 +4,13 @@
 
 # Common bin paths
 # ----------------
-export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:/opt/swt/bin:/bb/blaw/tools/bin:$PATH"
-
-for f in  /usr/local/etc/bash_completion.d/* ; do
-  source $f
-done
+export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:/opt/swt/bin:$PATH"
+export NODE_PATH="/usr/local/lib/jsctags:${NODE_PATH}"
 
 # Custom prompt
 # -------------
-export PS1='\[\033[01;34m\]\u@\h\[\033[00m\]\] \w\033[32m\]$(__git_ps1) \[\033[31m\]| \[\033[00m\]'
-export PS1='\[\033[01;34m\]\u@\h\[\033[00m\]\] \w\033[32m\]$(__git_ps1) \[\033[38;5;202m\]Ψ \[\033[00m\]'
-#   prompt   color  bold   u@host color  stop  path color green git-repo 256code fg color Ψ  norm. color" 
+export PS1='\[\033[01;34m\]\u@\h\[\033[00m\]\] \w\033[32m\]$(__git_ps1) \[\033[38;5;202m\]\nΨ \[\033[00m\]'
+#   prompt   color  bold   u@host color  stop  path color green git-repo 256code fg color lf Ψ norm. color" 
 #                            ^^--replace this if you're working locally" 
 #  for bash ANSI color codes, use the profile_functions colors() and colors_256()
 #  http://bitmote.com/index.php?post/2012/11/19/Using-ANSI-Color-Codes-to-Colorize-Your-Bash-Prompt-on-Linux
@@ -45,4 +41,7 @@ export CC=gcc-4.2
 # use .profile.local for setting machine-specific options
 [[ -f ~/.profile.local ]] && .  ~/.profile.local
 
-
+export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
+export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
+export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
+export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH

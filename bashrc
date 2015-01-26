@@ -1,4 +1,8 @@
 
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  . $(brew --prefix)/etc/bash_completion
+fi
+
 # Aliases
 ## FileSystem
 alias ll='ls -alGh'
@@ -9,7 +13,7 @@ alias ag='ag --color  --color-path=37  --color-line-number=32'
 alias rspec='rspec -f d -c'
 alias bes='bundle exec rspec -f d -c'
 alias dif='colordiff'
-alias grep='GREP_OPTIONS="--color=auto --ignore-case --line-number --context=0 --exclude=*.log" GREP_COLOR="1;37;41" LANG=C grep'
+alias grep='GREP_OPTIONS="--color=auto --line-number --context=0 --exclude=*.log" GREP_COLOR="1;37;41" LANG=C grep'
 alias ack='ack --color-lineno=green --color-filename=white --color --follow'
 
 ## Apps
