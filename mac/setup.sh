@@ -66,9 +66,15 @@ rbenv rehash
 
 echo "✓ Rubygems installed"
 
+
 echo "  → Installing utilities..."
+git clone git@github.com:NewAlexandria/vim.ana.git ~/.vim.ana
+~/.vim.ana/install.sh
 brew install macvim
 brew install unrar
 brew install wget
+sudo easy_install pip
+pip install Pygments
+brew install ctags
 
 echo "✓ Utilities installed"
