@@ -21,6 +21,11 @@ pman() {
 #
 #   Source: http://www.faqs.org/docs/Linux-HOWTO/Bash-Prompt-HOWTO.html
 
+# colorize file syntax and display in less
+p() {
+  pygmentize "${1}" | less -r
+}
+
 colors() {
   T='gYw'   # The test text
 
@@ -71,10 +76,6 @@ colors_256() {
 
 function pgrep() {
   cat $1 | parallel --block 10M --pipe grep $2
-}
-
-function mvis() {
-  mvim --servername $1 --remote-silent ${*:2}
 }
 
 alias gem_remove_all='for i in `gem list --no-versions`; do gem uninstall -aIx $i; done'
