@@ -1,6 +1,8 @@
 require 'rubygems'
 require 'rake'
 
+DOTFILE_SKIPLIST = %w[Rakefile README.markdown mac]
+
 desc "Install the dotfiles as symlinks in $HOME directory"
 task :install => 'dotfiles:install'
 task :default => 'dotfiles:install'
@@ -9,7 +11,7 @@ namespace :dotfiles do
   task :install do
     replace_all = false
     Dir['*'].each do |file|
-      next if %w[Rakefile README.markdown mac].include? file
+      next if DOTFILE_SKIPLIST.include? file
     
       if File.exist?(File.join(ENV['HOME'], ".#{file}"))
         if replace_all
@@ -35,6 +37,18 @@ namespace :dotfiles do
     print "Reload ~/.bash_profile? [yn] "
     if $stdin.gets.chomp == 'y'
       system "source ~/.bash_profile"
+    end
+  end
+end
+
+require 'pry'
+
+namespace :cli_utils do
+  desc 'CLI utils that should be maanged with Chef'
+  task :install do
+    Dir['utils/*'].each do |file|
+      puts "\n Installing #{file.split('/').last}"
+      system File.read(file)
     end
   end
 end
