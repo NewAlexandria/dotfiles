@@ -44,7 +44,7 @@ end
 require 'pry'
 
 namespace :cli_utils do
-  desc 'CLI utils that should be maanged with Chef'
+  desc 'CLI utils that should be managed with Chef'
   task :install do
     Dir['utils/*'].each do |file|
       puts "\n Installing #{file.split('/').last}"

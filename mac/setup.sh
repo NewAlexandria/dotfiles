@@ -68,13 +68,31 @@ echo "✓ Rubygems installed"
 
 
 echo "  → Installing utilities..."
+brew install npm
 git clone git@github.com:NewAlexandria/vim.ana.git ~/.vim.ana
 ~/.vim.ana/install.sh
 brew install macvim
-brew install unrar
-brew install wget
+brew install lua
+brew install chromedriver
+brew install tmux
+
+brew install ctags
+npm install jsctags
+brew install ag
+brew install ack
+
 sudo easy_install pip
 pip install Pygments
-brew install ctags
+brew install colordiff
+
+brew install jp2a
+brew install ffmpeg
+brew install imagemagick
+
+brew install gnu-units
+brew install unrar
+brew install wget
+brew install tesseract
+brew install mmv
 
 echo "✓ Utilities installed"

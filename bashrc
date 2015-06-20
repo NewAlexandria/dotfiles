@@ -36,3 +36,5 @@ alias gse="vim $(git status --porcelain | cut -f2 -s -d 'M' | tr '\n' ' ' )"
 alias gcwtc="git commit -m \"`curl http://whatthecommit.com 2>/dev/null | grep '<p>' | sed 's/<p>//'`\""
 alias wtc="echo \"merge-wtc: `curl http://whatthecommit.com 2>/dev/null | grep '<p>' | sed 's/<p>//'`\""
 
+export UNITS="$(brew --cellar gnu-units)/$(gunits -V | head -n 1 | awk '{ print $4 }')/share/units/definitions.units'
+# /usr/share/misc/units.lib
