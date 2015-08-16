@@ -1,7 +1,7 @@
 # http://git-scm.com/docs/githooks
 [user]
 	name = Zachary Jones
-	email = zjones@mdsol.com
+	email = zak@newalexandria.org
 
 [github]
 	user = NewAlexandria
@@ -38,7 +38,7 @@
 	graft = !legit graft \"$@\"
 
 [core]
-	excludesfile = ~/user/.gitignore_global
+	excludesfile = /Users/equinox/.gitignore_global
   pager = less -FXRS
 	autocrlf = input
 
@@ -68,3 +68,5 @@
 	receivepack = git receive-pack
 [url "https://"]
 	insteadOf = git://
+[pull]
+	rebase = true
