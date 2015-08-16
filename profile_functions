@@ -26,6 +26,10 @@ p() {
   pygmentize "${1}" | less -r
 }
 
+color_get() {
+  ruby ~/.dotfiles/mac/color_picker.rb
+}
+
 colors() {
   T='gYw'   # The test text
 
