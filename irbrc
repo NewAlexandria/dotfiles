@@ -10,6 +10,16 @@ begin
   IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
   IRB.conf[:PROMPT_MODE]  = :SIMPLE
 
+  IRB.conf[:PROMPT][:CUSTOM] = {
+    :PROMPT_I => "%03n>> ",
+    :PROMPT_S => "%l>> ",
+    :PROMPT_C => ".. ",
+    :PROMPT_N => ".. ",
+    :RETURN => "=> %s\n"
+  }
+  IRB.conf[:PROMPT_MODE] = :CUSTOM
+  IRB.conf[:AUTO_INDENT] = true
+
   # Load rubygems and wirble
   # begin
   #   require 'rubygems'
