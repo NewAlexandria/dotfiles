@@ -41,8 +41,6 @@ namespace :dotfiles do
   end
 end
 
-require 'pry'
-
 namespace :cli_utils do
   desc 'CLI utils that should be managed with Chef'
   task :install do
