@@ -7,6 +7,7 @@
 export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:/opt/swt/bin:$PATH"
 export NODE_PATH="/usr/local/lib/jsctags:${NODE_PATH}"
 export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
+export PATH=$PATH:/usr/local/opt/go/libexec/bin
 
 # Custom prompt
 # -------------

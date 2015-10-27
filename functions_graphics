@@ -1,0 +1,13 @@
+
+function ratio() {
+  a=$(identify -format "w=%w;h=%h" $1)
+  eval $a
+
+  if [ "$w" -ge "$h" ]; then
+      echo 'landscape'
+  else
+      echo 'portrait'
+  fi
+}
+
+

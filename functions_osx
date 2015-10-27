@@ -1,0 +1,7 @@
+
+# OSX helpers
+## Open man pages in Preview
+pman() {
+  man -t "${1}" | open -f -a /Applications/Preview.app/
+}
+

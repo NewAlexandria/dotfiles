@@ -1,16 +1,15 @@
+#!/usr/bin/sh
 
-# Functions
-function wtitle() { echo -ne "\033]0;$1\007"; }
-
-function find_in_min() {
-  find . -type d -name .svn -prune -o -mmin -${1} -type f -print
+# Color helpers
+## colorize file syntax and display in less
+p() {
+  pygmentize "${1}" | less -r
 }
 
-
-# Open man pages in Preview
-pman() {
-  man -t "${1}" | open -f -a /Applications/Preview.app/
+color_get() {
+  ruby ~/.dotfiles/mac/color_picker.rb
 }
+
 
 #   This file echoes a bunch of color codes to the 
 #   terminal to demonstrate what's available.  Each 
@@ -20,16 +19,6 @@ pman() {
 #   colors (default + 8 escapes).
 #
 #   Source: http://www.faqs.org/docs/Linux-HOWTO/Bash-Prompt-HOWTO.html
-
-# colorize file syntax and display in less
-p() {
-  pygmentize "${1}" | less -r
-}
-
-color_get() {
-  ruby ~/.dotfiles/mac/color_picker.rb
-}
-
 colors() {
   T='gYw'   # The test text
 
@@ -73,46 +62,5 @@ colors_256() {
   done
   echo -e "\n"
 }
-
-
- # parallel bash commands
- # http://www.rankfocus.com/use-cpu-cores-linux-commands/
-
-function pgrep() {
-  cat $1 | parallel --block 10M --pipe grep $2
-}
-
-alias gem_remove_all='for i in `gem list --no-versions`; do gem uninstall -aIx $i; done'
-
-function ratio() {
-  a=$(identify -format "w=%w;h=%h" $1)
-  eval $a
-
-  if [ "$w" -ge "$h" ]; then
-      echo 'landscape'
-  else
-      echo 'portrait'
-  fi
-}
-
-function _ssh_completion() {
-perl -ne 'print "$1 " if /^Host (.+)$/' ~/.ssh/config
-}
-complete -W "$(_ssh_completion)" ssh
-complete -W "$(_ssh_completion)" scp
-
-
-pathed_cd () {
-  if [ "$1" == "" ]; then
-    builtin cd
-  else
-    builtin cd "$1"
-  fi
-  pwd > ~/.cdpath
-}
-alias cd="pathed_cd"
-if [ -f ~/.cdpath ]; then
-  cd $(cat ~/.cdpath)
-fi
 
 
