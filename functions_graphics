@@ -10,4 +10,14 @@ function ratio() {
   fi
 }
 
+function video2agif() {
+  INPUT  = $1
+  OUTPUT = $1.gif
+  SCALE  = ${2?"240"}
+  FPS    = ${3?"10"}
+
+  ffmpeg -i $INPUT -vf scale=$SCALE:-1 -r $FPS -f image2pipe -vcodec ppm - | \
+  convert -delay 0 -loop 0 - gif:- | \
+  convert -layers Optimize - $OUTPUT
+}
 
