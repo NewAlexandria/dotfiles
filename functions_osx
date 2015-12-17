@@ -5,3 +5,13 @@ pman() {
   man -t "${1}" | open -f -a /Applications/Preview.app/
 }
 
+## Open markdown in MacDown
+md() {
+  open -a /Applications/MacDown.app/Contents/MacOS/MacDown "${1}"
+}
+
+## Open markdown in Mou
+mou() {
+  open -a /Applications/Mou.app/Contents/MacOS/Mou "${1}"
+}
+
