@@ -4,12 +4,11 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
 fi
 
 complete -C aws_completer aws
+complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | \
+    sed -e s/,.*//g | uniq | grep -v "\["`;)" ssh
 
-function _ssh_completion() {
-  perl -ne 'print "$1 " if /^Host (.+)$/' ~/.ssh/config
-}
-complete -W "$(_ssh_completion)" ssh
-complete -W "$(_ssh_completion)" scp
+#complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g | uniq | grep -v "\["`;)" ssh
+#complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g | uniq | grep -v "\["`;)" scp
 
 
 
