@@ -4,7 +4,16 @@ alias bes='bundle exec rspec -f d -c'
 #alias rspec='wtitle "rspec"; rspec'
 alias rspec='rspec -f d -c'
 
-alias gem_remove_all='for i in `gem list --no-versions`; do gem uninstall -aIx $i; done'
+function gem_remove_all() {
+  for i in `gem list --no-versions`
+  do 
+    gem uninstall -aIx $i
+  done
+}
+
+function gempath() {
+  rbenv exec gem environment | grep INSTALLATION | cut -d : -f 3 | xargs 
+}
 
 ## Apps
 alias bb='bbedit --clean --view-top'
