@@ -5,9 +5,7 @@
 # Common bin paths
 # ----------------
 export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:/opt/swt/bin:$PATH"
-export NODE_PATH="/usr/local/lib/jsctags:${NODE_PATH}"
-export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
-export PATH=$PATH:/usr/local/opt/go/libexec/bin
+export PATH="$PATH:$HOME/.dotfiles/bin:"
 
 # Custom prompt
 # -------------
@@ -43,6 +41,9 @@ export PATH=~/.rbenv/shims:$PATH
 eval "$(rbenv init -)"  # config for rbenv
 export CC=gcc-4.2
 
+export NODE_PATH="/usr/local/lib/jsctags:${NODE_PATH}"
+export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
+export PATH="$PATH:/usr/local/opt/go/libexec/bin:"
 
 # use .profile.local for setting machine-specific options
 [[ -f ~/.profile.local ]] && .  ~/.profile.local

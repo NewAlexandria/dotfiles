@@ -36,13 +36,6 @@ rm -rf /tmp/myhomebrew
 
 echo "✓ Homebrew origin pointed to http://github.com:$USER/homebrew"
 
-echo "  → Installing dotfiles..."
-git clone git://github.com/$USER/dotfiles $HOME/dotfiles
-cd $HOME/dotfiles
-rake install
-
-echo "✓ Dotfiles installed"
-
 echo "  → Installing essential RBEnv and Ruby-Build..."
 brew install rbenv
 brew install ruby-build

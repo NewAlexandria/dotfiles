@@ -5,6 +5,7 @@
 p() {
   pygmentize "${1}" | less -r
 }
+alias pp=p
 
 color_get() {
   ruby ~/.dotfiles/mac/color_picker.rb

@@ -1,7 +1,11 @@
 require 'rubygems'
 require 'rake'
 
-DOTFILE_SKIPLIST = %w[Rakefile README.markdown mac]
+DOTFILE_SKIPLIST = %w[
+  Rakefile
+  README.markdown
+  mac
+]
 
 desc "Install the dotfiles as symlinks in $HOME directory"
 task :install => 'dotfiles:install'
