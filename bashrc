@@ -31,4 +31,7 @@ function pgrep() {
   cat $1 | parallel --block 10M --pipe grep $2
 }
 
+# Correct a previous bash CLI typo
+# aliased like a Fika, a small party between me and the tools
+eval "$(thefuck --alias fk)"
 
