@@ -17,6 +17,7 @@ function gempath() {
 
 ## Apps
 alias bb='bbedit --clean --view-top'
+alias jobs='jobs -l'
 
 alias gs='git status'
 alias gse="nvim $(git status --porcelain | cut -f2 -s -d 'M' | tr '\n' ' ' )"
