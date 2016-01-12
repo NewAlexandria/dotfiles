@@ -48,3 +48,4 @@ export PATH="$PATH:/usr/local/opt/go/libexec/bin:"
 # use .profile.local for setting machine-specific options
 [[ -f ~/.profile.local ]] && .  ~/.profile.local
 
+export PATH="$HOME/.dotfiles/bin:$PATH"
