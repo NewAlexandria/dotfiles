@@ -1,3 +1,4 @@
+#!/usr/bin/sh
 
 # OSX helpers
 ## Open man pages in Preview
@@ -13,5 +14,14 @@ md() {
 ## Open markdown in Mou
 mou() {
   open -a /Applications/Mou.app/Contents/MacOS/Mou "${1}"
+}
+
+## Open markdown in Mou
+git-kraken() {
+  open -a /Applications/GitKraken.app/Contents/MacOS/GitKraken "${1}"
+}
+alias gk=git-kraken
+gitkraken() {
+  /Applications/GitKraken.app/Contents/MacOS/GitKraken "${1}" &
 }
 
