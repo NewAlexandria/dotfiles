@@ -1,3 +1,4 @@
+#!/usr/bin/sh
 
 alias be='bundle exec'
 alias bes='bundle exec rspec -f d -c'
@@ -24,6 +25,28 @@ alias gse="nvim $(git status --porcelain | cut -f2 -s -d 'M' | tr '\n' ' ' )"
 
 alias ga='git add'
 alias gc='git commit'
+function gpr() {
+  hub pull-request -m $2 $1 | open
+}
+
+export JIRA_PROJECT_PREFIX='BT'
+function hubpr() {
+  TARGET=$1
+  [ ! -z $1 ] || TARGET='develop'
+
+  echo $(git branch |
+    grep '*' |
+    cut -d' ' -f2 |
+    ruby -e 'jira_regex = Regexp.new(ENV["JIRA_PROJECT_PREFIX"]+"-[0-9]+"); \
+      b=gets; j=b.match(jira_regex)[0].to_s; \
+      n=(b.split(j) - [j] - [""]).compact.first.strip.tr("/\()-_"," "); \
+      $stdout.puts "#{n} : #{j}\n#### [#{j}](https://adsixty.atlassian.net/browse/#{j})" \
+      ') > /tmp/prfile
+  cat PR_TEMPLATE.md >> /tmp/prfile
+  URL=$(hub pull-request -b $TARGET -F /tmp/prfile)
+  echo "New PR created at $URL"
+  open $URL
+}
 
 alias gdo='git diff --name-only | uniq | xargs nvim'
 alias  gd='git diff --color'
