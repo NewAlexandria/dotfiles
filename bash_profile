@@ -1,3 +1,4 @@
+#!/usr/bin/sh
 # functions and load-onces stuff for the environment
 source ~/.profile
 source ~/.functions_shell

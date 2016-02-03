@@ -1,3 +1,4 @@
+#!/usr/bin/sh
 
 # Functions
 function wtitle() { echo -ne "\033]0;$1\007"; }

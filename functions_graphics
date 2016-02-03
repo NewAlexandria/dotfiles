@@ -1,3 +1,4 @@
+#!/usr/bin/sh
 
 function ratio() {
   a=$(identify -format "w=%w;h=%h" $1)

@@ -1,3 +1,4 @@
+#!/usr/bin/sh
 #!/bin/sh
 
 DIR=$( dirname "$0" )

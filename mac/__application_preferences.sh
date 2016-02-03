@@ -1,3 +1,4 @@
+#!/usr/bin/sh
 # Settings copied from:
 #
 # <https://github.com/ptb/Mac-OS-X-Lion-Setup/blob/master/setup.sh>
