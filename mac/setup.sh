@@ -90,3 +90,9 @@ brew install tesseract
 brew install mmv
 
 echo "✓ Utilities installed"
+
+echo "  → Installing launchctl (cron) jobs"
+launchctl load  ~/.dotfiles/mac/launchctl/local.brew.plist
+launchctl start ~/.dotfiles/mac/launchctl/local.brew.plist
+echo "✓ Launchers installed"
+
