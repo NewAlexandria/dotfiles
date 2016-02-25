@@ -1,5 +1,7 @@
 #!/usr/bin/sh
 
+alias brewup="brew upgrade $(brew outdated | cut -d ' ' -f1 | grep -v mysql | cut -d ':' -f2 | xargs)"
+
 # OSX helpers
 ## Open man pages in Preview
 pman() {
