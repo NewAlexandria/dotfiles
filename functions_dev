@@ -38,10 +38,12 @@ function hubpr() {
     grep '*' |
     cut -d' ' -f2 |
     ruby -e 'jira_regex = Regexp.new(ENV["JIRA_PROJECT_PREFIX"]+"-[0-9]+"); \
-      b=gets; j=b.match(jira_regex)[0].to_s; \
-      n=(b.split(j) - [j] - [""]).compact.first.strip.tr("/\()-_"," "); \
-      $stdout.puts "#{n} : #{j}\n#### [#{j}](https://adsixty.atlassian.net/browse/#{j})" \
-      ') > /tmp/prfile
+      b=gets; j=(b.match(jira_regex) || [])[0].to_s; \
+      title=((j.empty?) ? b : (b.split(j) - [j] - [""]).compact.first).strip.tr("/\()-_"," "); \
+      title+=" : #{j}" if !j.empty?; \
+      `echo "#{title}" > /tmp/prfile`; \
+      (`echo "#### [#{j}](https://adsixty.atlassian.net/browse/#{j})" >> /tmp/prfile`) if !j.empty? \
+      ')
   cat PR_TEMPLATE.md >> /tmp/prfile
   URL=$(hub pull-request -b $TARGET -F /tmp/prfile)
   echo "New PR created at $URL"
