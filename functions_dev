@@ -2,6 +2,7 @@
 
 alias be='bundle exec'
 alias bes='bundle exec rspec -f d -c'
+alias bec='bundle cucumber'
 #alias rspec='wtitle "rspec"; rspec'
 alias rspec='rspec -f d -c'
 
