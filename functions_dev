@@ -18,6 +18,15 @@ function gempath() {
   rbenv exec gem environment | grep INSTALLATION | cut -d : -f 3 | xargs 
 }
 
+function npmget() {
+  mkdir $1
+  cd $1
+  wget $(npm v $1 dist.tarball)
+  FNAME=$(ls  | grep $1.*\.tgz | cut -d':' -f 2)
+  tar -zxvf $FNAME
+  cd ..
+}
+
 ## Apps
 alias bb='bbedit --clean --view-top'
 alias jobs='jobs -l'
