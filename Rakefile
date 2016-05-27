@@ -5,6 +5,11 @@ DOTFILE_SKIPLIST = %w[
   Rakefile
   README.markdown
   mac
+  bin
+  home
+  utils
+  var
+  _site
 ]
 
 desc "Install the dotfiles as symlinks in $HOME directory"
