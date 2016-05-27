@@ -72,3 +72,26 @@ alias gll='git log --graph'
 
 # alias gcwtc="git commit -m \"`curl http://whatthecommit.com 2>/dev/null | grep '<p>' | sed 's/<p>//'`\""
 # alias wtc="echo \"merge-wtc: `curl http://whatthecommit.com 2>/dev/null | grep '<p>' | sed 's/<p>//'`\""
+
+function release_complete() {
+  if [ $# -eq 0 ]; then
+    echo "No tag value provided"
+    exit 1
+  fi
+  git co master
+  git pull origin master
+  git tag $1
+  git push --tags
+  git co develop
+  git pull origin develop
+  git merge -m 'merge release master into develop' master
+  git push origin develop
+}
+
+function release_start() {
+  now=$(date "+%Y%m%d")
+  git co develop
+  git pull
+  git co -b release/$($now).1
+  git push origin release/$($now).1
+}
