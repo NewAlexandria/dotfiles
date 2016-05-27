@@ -13,3 +13,5 @@
 
 --ignore-file=is:tags
 --ignore-file=match:/.*min.js/
+--ignore-file=match:/.*xml/
+--ignore-file=match:/.*temp/

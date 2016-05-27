@@ -1,0 +1,14 @@
+*.xml
+tags
+tags*
+*min.js
+*.temp
+
+public/assets
+public/stylesheets
+spec/fixtures
+spec/factories
+log
+tmp
+public/javascripts/yui2
+
