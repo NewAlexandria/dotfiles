@@ -11,4 +11,5 @@ spec/factories
 log
 tmp
 public/javascripts/yui2
+features/cassettes
 
