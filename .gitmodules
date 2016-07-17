@@ -1,3 +1,6 @@
 [submodule "utils/git-when-merged"]
 	path = utils/git-when-merged
 	url = https://github.com/mhagger/git-when-merged.git
+[submodule "utils/git-open"]
+	path = utils/git-open
+	url = https://gist.github.com/1517095.git
