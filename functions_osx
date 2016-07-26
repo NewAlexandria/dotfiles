@@ -8,6 +8,11 @@ pman() {
   man -t "${1}" | open -f -a /Applications/Preview.app/
 }
 
+## Open in Preview
+pv() {
+  open -a /Applications/Preview.app/ "${1}"
+}
+
 ## Open markdown in MacDown
 md() {
   open -a /Applications/MacDown.app/Contents/MacOS/MacDown "${1}"
