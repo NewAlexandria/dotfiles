@@ -1,5 +1,9 @@
 .DS_Store
+
 .bash_profile
 .profile.local
+
+leaf.txt
+
 tags
 tags.log

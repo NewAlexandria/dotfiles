@@ -12,22 +12,22 @@ complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | \
 #complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g | uniq | grep -v "\["`;)" scp
 
 
-
 # Aliases
 ## FileSystem
 alias ll='ls -alGh'
 alias les='less -FRSXQ'
 
 alias cdd='cd ~/.ssh/'
+alias cddot='cd ~/.dotfiles/'
 
 alias ag='ag --color  --color-path=37  --color-line-number=32'
 alias dif='colordiff'
-alias grep='GREP_OPTIONS="--color=auto --line-number --context=0 --exclude=*.log" GREP_COLOR="1;37;41" LANG=C grep'
 alias ack='ack --color-lineno=green --color-filename=white --color --follow'
 
+
+alias grep='GREP_OPTIONS="--color=auto --line-number --context=0 --exclude=*.log" GREP_COLOR="1;37;41" LANG=C grep'
  # parallel bash commands
  # http://www.rankfocus.com/use-cpu-cores-linux-commands/
-
 function pgrep() {
   cat $1 | parallel --block 10M --pipe grep $2
 }
