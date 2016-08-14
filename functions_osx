@@ -2,6 +2,13 @@
 
 alias brewup="brew upgrade $(brew outdated | cut -d ' ' -f1 | grep -v mysql | cut -d ':' -f2 | xargs)"
 
+# workaround for Timeout
+# http://apple.stackexchange.com/q/234419/37586
+pboard_fix() {
+  sudo kill -9 `ps aux | grep pboard | grep -v "grep" | awk '{print $2}'`
+  sudo killall -KILL Finder
+}
+
 # OSX helpers
 ## Open man pages in Preview
 pman() {
