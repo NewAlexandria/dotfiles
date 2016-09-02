@@ -10,8 +10,11 @@
   co = checkout
   ci = commit
   rb = rebase
-  diff = diff --color
   rebase = rebase --autostash
+
+  patch = --no-pager diff --no-color
+  diff = diff --color
+
   wherefrom = "!sh -c \"git reflog show --all | grep $1\" -"
 
   lv   = log --graph --full-history --all --color --pretty=tformat:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s%x20%x1b[33m(%an)%x1b[0m"
@@ -41,8 +44,10 @@
 
 [core]
 	excludesfile = /Users/equinox/.gitignore_global
-  pager = less -FXRS
 	autocrlf = input
+
+[pager]
+    diff = diff-so-fancy | less --tabs=4 -RFX --pattern '^(Date|added|deleted|modified): '
 
 [color]
   ui = always

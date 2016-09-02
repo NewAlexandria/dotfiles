@@ -19,11 +19,16 @@ cd $HOME && mkdir -p homebrew
 curl -# -L -k https://github.com/mxcl/homebrew/tarball/master | tar xz --strip 1 -C homebrew
 ln -nfs $HOME/homebrew/bin/brew /usr/local/bin/
 brew update
+brew install bash-completion
 
 echo "✓ Homebrew installed"
 
 echo "  → Installing Git..."
 brew install git
+brew install diff-so-fancy
+brew install git-flow
+brew install git-extras
+brew install bash-git-prompt
 
 echo "✓ Git installed"
 
