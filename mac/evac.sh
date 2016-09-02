@@ -1,4 +1,5 @@
 sudo rm -Rf ~/../equinox/
+rm -Rf /Users/Zachary/dropbox_fp 
 rm -Rf ~/dropbox_fp
 rm -Rf ~/google_drive_kf
 
