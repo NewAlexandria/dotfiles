@@ -39,6 +39,9 @@ alias gc='git commit'
 function gpr() {
   hub pull-request -m $2 $1 | open
 }
+function gco() {
+  git checkout $( git branch | grep $1 | awk '{ print $2 }' | xargs | awk '{ print $1 }' )
+}
 
 alias  grd='git rebase develop'
 alias grod='git rebase origin develop'
