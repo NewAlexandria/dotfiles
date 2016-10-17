@@ -44,7 +44,8 @@ function gco() {
 }
 
 alias  grd='git rebase develop'
-alias grod='git rebase origin develop'
+alias  grc='git rebase --continue'
+alias grod='git fetch; git rebase origin/develop'
 alias  gdo='git diff --name-only | uniq | xargs nvim'
 alias   gd='git diff --color'
 alias  fix='$EDITOR `git diff --name-only | uniq`'
