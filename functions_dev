@@ -3,7 +3,7 @@
 alias be='bundle exec'
 alias bes='bundle exec rspec -f d -c'
 alias bec='bundle exec cucumber'
-alias berdbm='bundle exec rake db:migrate'
+alias berdbm='bundle exec rake db:migrate; RAILS_ENV=test bundle exec rake db:migrate'
 #alias rspec='wtitle "rspec"; rspec'
 alias rspec='rspec -f d -c'
 
