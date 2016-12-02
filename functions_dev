@@ -60,14 +60,16 @@ alias gll='git log --graph'
 # alias wtc="echo \"merge-wtc: `curl http://whatthecommit.com 2>/dev/null | grep '<p>' | sed 's/<p>//'`\""
 
 function release_complete() {
+  now=$(date "+%Y%m%d")
   if [ $# -eq 0 ]; then
     echo "No tag value provided"
     exit 1
   else
     git co master
     git pull origin master
+    git merge origin release/$now.1
     git tag $1
-    git push --tags
+    git push origin master --tags
     git co develop
     git pull origin develop
     git merge -m 'merge release master into develop' master
