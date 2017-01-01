@@ -22,3 +22,13 @@ function video2agif() {
   convert -layers Optimize - $OUTPUT
 }
 
+# converts most sources, actually
+# cannot convert gif->gif
+# source: https://gist.github.com/ndarville/10010916
+function gif2webm() {
+  BITRATE=${3:='1000'}
+  RATE_SZ='K'
+  CRF=${4:='12'}
+  ffmpeg -i "$1" $2 -c:v libvpx -crf $CRF -b:v $BITRATE$RATE_SZ  -auto-alt-ref 0 "$1.webm"
+}
+
