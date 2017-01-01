@@ -79,3 +79,5 @@
 	rebase = true
 [stash]
 	showPatch = true
+[credential]
+	helper = osxkeychain
