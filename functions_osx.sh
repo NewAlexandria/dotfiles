@@ -1,6 +1,7 @@
 #!/usr/bin/sh
 
 alias brewup="brew upgrade $(brew outdated | cut -d ' ' -f1 | grep -v mysql | cut -d ':' -f2 | xargs)"
+alias brew_deptree="brew deps --installed --tree"
 alias act="open -a Activity\ Monitor.app"
 
 # spotlight control

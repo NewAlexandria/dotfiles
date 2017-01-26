@@ -23,7 +23,7 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 # -----------------------------
 # set -o vi
 set -o emacs
-export EDITOR="nvim "
+export EDITOR="vim "
 
 # History settings
 # ----------------

@@ -37,7 +37,7 @@ alias gse="$EDITOR $(git status --porcelain | cut -f2 -s -d 'M' | tr '\n' ' ' )"
 alias ga='git add'
 alias gc='git commit'
 function gpr() {
-  hub pull-request -m $2 $1 | open
+  hub pull-request -h $2 -b $1 -m | open
 }
 function gco() {
   git checkout $( git branch | grep $1 | awk '{ print $2 }' | xargs | awk '{ print $1 }' )
@@ -48,7 +48,9 @@ function gom() {
 
 alias gpom='git push origin master --tags'
 alias gpod='git push origin develop'
-alias  gpo='git push origin'
+alias  gpo='git push origin $(git rev-parse --abbrev-ref HEAD) --set-upstream'
+
+alias  gpc='git pull origin $(git rev-parse --abbrev-ref HEAD)'
 
 alias  grd='git rebase develop'
 alias  grc='git rebase --continue'
