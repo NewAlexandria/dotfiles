@@ -34,12 +34,17 @@ md() {
   open -a /Applications/MacDown.app/Contents/MacOS/MacDown "${1}"
 }
 
+# Fidder seOWASP tool
+function  fiddler() {
+  mono /Applications/fiddler-mac/Fiddler.exe
+}
+
 ## Open markdown in Mou
 mou() {
   open -a /Applications/Mou.app/Contents/MacOS/Mou "${1}"
 }
 
-## Open markdown in Mou
+## Open git kraken
 git-kraken() {
   open -a /Applications/GitKraken.app/Contents/MacOS/GitKraken "${1}"
 }
