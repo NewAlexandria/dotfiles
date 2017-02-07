@@ -55,9 +55,16 @@ alias  gpc='git pull origin $(git rev-parse --abbrev-ref HEAD)'
 alias  grd='git rebase develop'
 alias  grc='git rebase --continue'
 alias grod='git fetch; git rebase origin/develop'
-alias  gdo='git diff --name-only | uniq | xargs $EDITOR'
 alias   gd='git diff --color'
 alias  fix='$EDITOR `git diff --name-only | uniq`'
+
+# pipe control via http://unix.stackexchange.com/a/77593/14845
+function gdo() {
+  ref=$1
+  [ ! -x $1 ] || ref='HEAD'
+  git diff --name-only $ref | uniq | xargs sh -c '$EDITOR -- "$@" <$0' /dev/tty
+  #$EDITOR $( git diff --name-only $ref | uniq | xargs )
+}
 
 alias  gl='git log --graph --full-history --all --color --pretty=tformat:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s%x20%x1b[33m(%an)%x1b[0m"$'
 alias gll='git log --graph'
