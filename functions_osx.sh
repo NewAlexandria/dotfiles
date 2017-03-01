@@ -45,11 +45,8 @@ mou() {
 }
 
 ## Open git kraken
-git-kraken() {
-  open -a /Applications/GitKraken.app/Contents/MacOS/GitKraken "${1}"
-}
-alias gk=git-kraken
 gitkraken() {
   /Applications/GitKraken.app/Contents/MacOS/GitKraken "${1}" &
 }
+alias gk=gitkraken
 
