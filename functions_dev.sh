@@ -9,13 +9,13 @@ alias rspec='rspec -f d -c'
 
 function gem_remove_all() {
   for i in `gem list --no-versions`
-  do 
+  do
     gem uninstall -aIx $i
   done
 }
 
 function gempath() {
-  rbenv exec gem environment | grep INSTALLATION | cut -d : -f 3 | xargs 
+  rbenv exec gem environment | grep INSTALLATION | cut -d : -f 3 | xargs
 }
 
 function npmget() {
@@ -120,4 +120,49 @@ function hubpr() {
   URL=$(hub pull-request -b $TARGET -F /tmp/prfile)
   echo "New PR created at $URL"
   open $URL
+}
+
+function mux() {
+  source /Users/Zachary/.bashrc_local
+
+  tmux new-session -d -s mbt
+  tmux new-window -t mbt:1
+  {
+    sleep 7
+    tmux send-keys   -t mbt:1 'cdm' Enter
+    tmux send-keys   -t mbt:1 'tmux split-window -h' Enter
+    tmux send-keys   -t mbt:1 'tmux select-pane -t :.-' Enter
+  }
+  tmux rename-window -t mbt:1 web
+  #tmux set-option remain-on-exit on
+  #tmux split-window 'ping -c 3 127.0.0.1'
+
+  tmux new-window -t mbt:2
+  {
+    sleep 7
+    tmux send-keys   -t mbt:2 'cdma' Enter
+    tmux send-keys   -t mbt:2 'tmux split-window -h' Enter
+    tmux send-keys   -t mbt:2 'tmux select-pane -t :.-' Enter
+  }
+  tmux rename-window -t mbt:2 analytics
+
+  tmux new-window -t mbt:3
+  {
+    sleep 7
+    tmux send-keys   -t mbt:3 'cdmd' Enter
+    tmux send-keys   -t mbt:3 'tmux split-window -h' Enter
+    tmux send-keys   -t mbt:3 'tmux select-pane -t :.-' Enter
+  }
+  tmux rename-window -t mbt:3 dashboard
+
+  tmux new-window -t mbt:4
+  {
+    sleep 7
+    tmux send-keys   -t mbt:4 'cddb' Enter
+    tmux send-keys   -t mbt:4 'tmux split-window -h' Enter
+    tmux send-keys   -t mbt:4 'tmux select-pane -t :.-' Enter
+  }
+  tmux rename-window -t mbt:4 mbt-db
+
+  tmux attach
 }
