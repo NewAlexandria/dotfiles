@@ -2,10 +2,17 @@
 
 IGNORE_PATHS = %w{config}
 
-# get all the modified files that are part of the repo
-test_targets = `svn status`.split("\n").
-               map(&:split).
-               reject{|chg| chg.first == '?' }
+def test_targets
+  @test_targets ||= case ENV["DVCS"]
+    when "svn"
+      # get all the modified files that are part of the repo
+      `svn status`.split("\n")
+        .map(&:split)
+        .reject{|chg| chg.first == '?' }
+    else 
+      `git diff --name-only develop`.split
+    end
+end
 
 puts "nothing!" && exit unless test_targets
 
@@ -13,9 +20,11 @@ puts "nothing!" && exit unless test_targets
 start_of_specs = test_targets.index{|x| x.last[0..3] == 'spec'}
 test_runs      = (start_of_specs) ? test_targets.slice!(start_of_specs, test_targets.size) : []
 
-# remove files from non-testable dirs
-ignore_paths = Regexp.new "^#{IGNORE_PATHS.join('^|')}"
-test_targets.reject! {|chg| chg.last.scan(ignore_paths).any? }
+def remove_paths
+  # remove files from non-testable dirs
+  ignore_paths = Regexp.new "^#{IGNORE_PATHS.join('^|')}"
+  test_targets.reject! {|chg| chg.last.scan(ignore_paths).any? }
+end
 
 # rewrite paths in spec names, and
 # reject any that do not exist
