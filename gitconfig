@@ -42,6 +42,8 @@
 	publish = !legit publish \"$@\"
 	graft = !legit graft \"$@\"
 
+	aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort
+
 [core]
 	excludesfile = /Users/equinox/.gitignore_global
 	autocrlf = input
@@ -59,10 +61,10 @@
 [push]
   default = tracking
 
-[branch "master"]
-  rebase = true
-[branch "develop"]
-  rebase = true
+;[branch "master"]
+  ;rebase = true
+;[branch "develop"]
+  ;rebase = true
 
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"

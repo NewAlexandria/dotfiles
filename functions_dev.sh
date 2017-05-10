@@ -50,13 +50,14 @@ alias gpom='git push origin master --tags'
 alias gpod='git push origin develop'
 alias  gpo='git push origin $(git rev-parse --abbrev-ref HEAD) --set-upstream'
 
-alias  guo='git pull origin $(git rev-parse --abbrev-ref HEAD)'
+alias  guo='git pull origin $(git rev-parse --abbrev-ref HEAD) && git fetch &'
 
 alias  grd='git rebase develop'
 alias  grc='git rebase --continue'
 alias  gra='git rebase --abort'
 alias grod='git fetch; git rebase origin/develop'
 alias   gd='git diff --color'
+alias  gdd='git diff --color origin/develop'
 alias  fix='$EDITOR `git diff --name-only | uniq`'
 
 # pipe control via http://unix.stackexchange.com/a/77593/14845
