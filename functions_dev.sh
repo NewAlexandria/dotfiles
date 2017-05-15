@@ -122,137 +122,111 @@ function hubpr() {
   open $URL
 }
 
-function mux() {
-  source /Users/Zachary/.bashrc_local
+function tmux_layout_code() {
+  tmux list-windows -F "#{window_active} #{window_layout}" | grep "^1" | cut -d " " -f 2
+}
 
+function mux() {
   tmux new-session -d -s mbt
 
   tmux new-window    -t mbt:1 'bash --noprofile --norc'
   tmux rename-window -t mbt:1 web
-  {
-    #sleep 1
-    tmux send-keys   -t mbt:1 'cdm' Enter
     tmux send-keys   -t mbt:1 'tmux split-window -h "bash --noprofile --norc"' Enter
     tmux send-keys   -t mbt:1 'tmux select-pane -t :.-' Enter
-  }
 
   tmux new-window    -t mbt:2 'bash --noprofile --norc'
   tmux rename-window -t mbt:2 analytics
-  {
-    #sleep 1
-    tmux send-keys   -t mbt:2 'cdma' Enter
     tmux send-keys   -t mbt:2 'tmux split-window -h "bash --noprofile --norc"' Enter
     tmux send-keys   -t mbt:2 'tmux select-pane -t :.-' Enter
-  }
 
   tmux new-window    -t mbt:3 'bash --noprofile --norc'
   tmux rename-window -t mbt:3 dashboard
-  {
-    #sleep 1
-    tmux send-keys   -t mbt:3 'cdmd' Enter
     tmux send-keys   -t mbt:3 'tmux split-window -h "bash --noprofile --norc"' Enter
     tmux send-keys   -t mbt:3 'tmux select-pane -t :.-' Enter
-  }
 
   tmux new-window    -t mbt:4 'bash --noprofile --norc'
   tmux rename-window -t mbt:4 mbt-db
-  {
-    #sleep 1
-    tmux send-keys   -t mbt:4 'cddb' Enter
     tmux send-keys   -t mbt:4 'tmux split-window -h "bash --noprofile --norc"' Enter
     tmux send-keys   -t mbt:4 'tmux select-pane -t :.-' Enter
-  }
 
   tmux send-keys -t mbt:1 'tmux select-pane -t :.-' Enter
   tmux send-keys -t mbt:1 'source ~/.bash_profile' Enter
   sleep 5
-  tmux send-keys -t mbt:1 'cdm' Enter
-
-  #tmux attach
 }
 
-
-function muxs() {
-  source /Users/Zachary/.bashrc_local
-  #tmux set-option remain-on-exit on
-  #tmux split-window 'ping -c 3 127.0.0.1'
-
+function muxnew() {
   tmux new-session -d -s mbt
 
   tmux new-window    -t mbt:1 'bash --noprofile --norc'
-  tmux new-window    -t mbt:2 'bash --noprofile --norc'
-  tmux new-window    -t mbt:3 'bash --noprofile --norc'
-  tmux new-window    -t mbt:4 'bash --noprofile --norc'
-
   tmux rename-window -t mbt:1 web
+    tmux send-keys   -t mbt:1 'tmux split-window -h "bash --noprofile --norc"' Enter
+
+  tmux new-window    -t mbt:2 'bash --noprofile --norc'
   tmux rename-window -t mbt:2 analytics
+    tmux send-keys   -t mbt:2 'tmux split-window -h "bash --noprofile --norc"' Enter
+
+  tmux new-window    -t mbt:3 'bash --noprofile --norc'
   tmux rename-window -t mbt:3 dashboard
+    tmux send-keys   -t mbt:3 'tmux split-window -h "bash --noprofile --norc"' Enter
+
+  tmux new-window    -t mbt:4 'bash --noprofile --norc'
   tmux rename-window -t mbt:4 mbt-db
-
-  tmux send-keys -t mbt:1 'tmux split-window -h "bash --noprofile --norc"' Enter
-  tmux send-keys -t mbt:2 'tmux split-window -h "bash --noprofile --norc"' Enter
-  tmux send-keys -t mbt:3 'tmux split-window -h "bash --noprofile --norc"' Enter
-  tmux send-keys -t mbt:4 'tmux split-window -h "bash --noprofile --norc"' Enter
-
-  tmux send-keys -t mbt:1 'tmux select-pane -t :.-' Enter
-  tmux send-keys -t mbt:2 'tmux select-pane -t :.-' Enter
-  tmux send-keys -t mbt:3 'tmux select-pane -t :.-' Enter
-  tmux send-keys -t mbt:4 'tmux select-pane -t :.-' Enter
-
-  tmux attach
+    tmux send-keys   -t mbt:4 'tmux split-window -h "bash --noprofile --norc"' Enter
 }
 
+
+# loads the shell for every tmux pane
 function muxl {
   tmux select-window -t mbt:1
+  tmux select-pane -t 0
   tmux send-keys -t mbt:1 'source ~/.bash_profile' Enter
   sleep 5
   tmux send-keys -t mbt:1 'cdm' Enter
-
-  tmux send-keys -t mbt:1 'tmux select-pane -t :.-' Enter
-
+  tmux select-pane -t 1
   tmux send-keys -t mbt:1 'source ~/.bash_profile' Enter
   sleep 5
   tmux send-keys -t mbt:1 'cdm' Enter
-  sleep 0.5
+  tmux send-keys -t mbt:1 'clear' Enter
 
-  tmux select-window -t mbt:2
+    tmux select-window -t mbt:2
+    tmux select-pane -t 0
     tmux send-keys -t mbt:2 'source ~/.bash_profile' Enter
     sleep 5
     tmux send-keys -t mbt:2 'cdma' Enter
     sleep 0.5
-
-    tmux send-keys -t mbt:2 'tmux select-pane -t :.-' Enter
-
+    tmux select-pane -t 1
     tmux send-keys -t mbt:2 'source ~/.bash_profile' Enter
     sleep 5
     tmux send-keys -t mbt:2 'cdma' Enter
-    sleep 0.5
+    tmux send-keys -t mbt:2 'clear' Enter
 
   tmux select-window -t mbt:3
+  tmux select-pane -t 0
   tmux send-keys -t mbt:3 'source ~/.bash_profile' Enter
   sleep 5
   tmux send-keys -t mbt:3 'cdmd' Enter
   sleep 0.5
-
-  tmux send-keys -t mbt:3 'tmux select-pane -t :.-' Enter
-
+  tmux select-pane -t 1
   tmux send-keys -t mbt:3 'source ~/.bash_profile' Enter
   sleep 5
   tmux send-keys -t mbt:3 'cdmd' Enter
-  sleep 0.5
+  tmux send-keys -t mbt:3 'clear' Enter
 
-  tmux select-window -t mbt:4
+    tmux select-window -t mbt:4
+    tmux select-pane -t 0
     tmux send-keys -t mbt:4 'source ~/.bash_profile' Enter
     sleep 5
     tmux send-keys -t mbt:4 'cddb' Enter
     sleep 0.5
-
-    tmux send-keys -t mbt:4 'tmux select-pane -t :.-' Enter
-
+    tmux select-pane -t 1
     tmux send-keys -t mbt:4 'source ~/.bash_profile' Enter
     sleep 5
     tmux send-keys -t mbt:4 'cddb' Enter
-
+    tmux send-keys -t mbt:4 'clear' Enter
 
   tmux a
+}
+
+function muxa() {
+  mux && muxl
 }
