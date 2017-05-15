@@ -23,6 +23,8 @@ function llg() {
   ll "$the_path" | grep "[0-9][0-9]\(\.[0-9]\)\?M "
 }
 
+alias rless='less -Xr'
+
 # export UNITS="$(brew --cellar gnu-units)/$(gunits -V | head -n 1 | awk '{ print $4 }')/share/units/definitions.units'
 # /usr/share/misc/units.lib
 
