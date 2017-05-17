@@ -1,0 +1,61 @@
+windows:
+  - name: rails-web
+    root: $MBT_REPO_PATH/mybanktracker-rails
+    layout: 4bd1,230x54,0,0{140x54,0,0,1,89x54,141,0[89x27,141,0,2,89x26,141,28,28]}
+    #layout: b339,230x54,0,0{140x54,0,0,1,89x54,141,0,2}
+    panes:
+      - commands:
+        - cd $MBT_REPO_PATH/mybanktracker-rails
+        - vim
+      - commands:
+        - cd $MBT_REPO_PATH/mybanktracker-rails
+        - git pull
+        - git status
+      - commands:
+        - cd $MBT_REPO_PATH/mybanktracker-rails
+        - be rails s
+  - name: analytics
+    root: $MBT_REPO_PATH/mbtmedia-analytics
+    layout: 4bd1,230x54,0,0{140x54,0,0,1,89x54,141,0[89x27,141,0,2,89x26,141,28,28]}
+    #layout: b339,230x54,0,0{140x54,0,0,1,89x54,141,0,2}
+    panes:
+      - commands:
+        - cd $MBT_REPO_PATH/mbtmedia-analytics
+        - vim
+      - commands:
+        - cd $MBT_REPO_PATH/mbtmedia-analytics
+        - git pull
+        - git status
+      - commands:
+        - cd $MBT_REPO_PATH/mbtmedia-analytics
+        - be rails s
+  - name: dashboard
+    root: $MBT_REPO_PATH/mbtmedia-dashboard
+    layout: 4bd1,230x54,0,0{140x54,0,0,1,89x54,141,0[89x27,141,0,2,89x26,141,28,28]}
+    #layout: b339,230x54,0,0{140x54,0,0,1,89x54,141,0,2}
+    panes:
+      - commands:
+        - cd $MBT_REPO_PATH/mbtmedia-dashboard
+        - vim
+      - commands:
+        - cd $MBT_REPO_PATH/mbtmedia-dashboard
+        - git pull
+        - git status
+      - commands:
+        - cd $MBT_REPO_PATH/mbtmedia-dashboard
+        - be rails s
+  - name: mbt-db
+    root: $MBT_REPO_PATH/mbt-db
+    layout: 4bd1,230x54,0,0{140x54,0,0,1,89x54,141,0[89x27,141,0,2,89x26,141,28,28]}
+    #layout: b339,230x54,0,0{140x54,0,0,1,89x54,141,0,2}
+    panes:
+      - commands:
+        - cd $MBT_REPO_PATH/mbt-db
+        - vim
+      - commands:
+        - cd $MBT_REPO_PATH/mbt-db
+        - git pull
+        - git status
+      - commands:
+        - cd $MBT_REPO_PATH/mbt-db
+        - be rails s
