@@ -1,0 +1,66 @@
+windows:
+  - name: pursuit-api
+    root: ~/src/projects/pursuit/pursuit-api
+    layout: 4bd1,230x54,0,0{140x54,0,0,1,89x54,141,0[89x27,141,0,2,89x26,141,28,28]}
+    panes:
+      - commands:
+        - cd ~/src/projects/pursuit/pursuit-api
+        - vim
+      - commands:
+        - cd ~/src/projects/pursuit/pursuit-api
+        - git pull
+        - git status
+      - commands:
+        - cd ~/src/projects/pursuit/pursuit-api
+  - name: pursuit-kagu
+    root: ~/src/projects/pursuit/pursuit-kagu
+    layout: 4bd1,230x54,0,0{140x54,0,0,1,89x54,141,0[89x27,141,0,2,89x26,141,28,28]}
+    panes:
+      - commands:
+        - cd ~/src/projects/pursuit/pursuit-kagu
+        - vim
+      - commands:
+        - cd ~/src/projects/pursuit/pursuit-kagu
+        - git pull
+        - git status
+      - commands:
+        - cd ~/src/projects/pursuit/pursuit-kagu
+  - name: spec
+    root: ~/src/projects/pursuit/pursuit-kagu
+    layout: 4bd1,230x54,0,0{140x54,0,0,1,89x54,141,0[89x27,141,0,2,89x26,141,28,28]}
+    panes:
+      - commands:
+        - cd ~/src/projects/pursuit/pursuit-kagu
+        - vim
+      - commands:
+        - cd ~/src/projects/pursuit/pursuit-kagu
+        - git pull
+        - git status
+      - commands:
+        - cd ~/src/projects/pursuit/pursuit-kagu
+  - name: landing-page
+    root: ~/src/projects/pursuit/pursuit-landing-page
+    layout: 4bd1,230x54,0,0{140x54,0,0,1,89x54,141,0[89x27,141,0,2,89x26,141,28,28]}
+    panes:
+      - commands:
+        - cd ~/src/projects/pursuit/pursuit-landing-page
+        - vim
+      - commands:
+        - cd ~/src/projects/pursuit/pursuit-landing-page
+        - git pull
+        - git status
+      - commands:
+        - cd ~/src/projects/pursuit/pursuit-landing-page
+  - name: app
+    root: ~/src/projects/pursuit/pursuit-app
+    layout: 4bd1,230x54,0,0{140x54,0,0,1,89x54,141,0[89x27,141,0,2,89x26,141,28,28]}
+    panes:
+      - commands:
+        - cd ~/src/projects/pursuit/pursuit-app
+        - vim
+      - commands:
+        - cd ~/src/projects/pursuit/pursuit-kagu
+        - git pull
+        - git status
+      - commands:
+        - cd ~/src/projects/pursuit/pursuit-app

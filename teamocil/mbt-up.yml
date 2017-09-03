@@ -13,6 +13,7 @@ windows:
         - git status
       - commands:
         - cd $MBT_REPO_PATH/mybanktracker-rails
+        - be rails s
   - name: analytics
     root: $MBT_REPO_PATH/mbtmedia-analytics
     layout: 4bd1,230x54,0,0{140x54,0,0,1,89x54,141,0[89x27,141,0,2,89x26,141,28,28]}
@@ -27,6 +28,7 @@ windows:
         - git status
       - commands:
         - cd $MBT_REPO_PATH/mbtmedia-analytics
+        - be rails s -p 3002
   - name: dashboard
     root: $MBT_REPO_PATH/mbtmedia-dashboard
     layout: 4bd1,230x54,0,0{140x54,0,0,1,89x54,141,0[89x27,141,0,2,89x26,141,28,28]}
@@ -41,6 +43,7 @@ windows:
         - git status
       - commands:
         - cd $MBT_REPO_PATH/mbtmedia-dashboard
+        - SECRET_KEY_BASE=7a4f2bb332ba3915cd850f584a7a7ff5f9b903f57759f5021d4bbe03caee9ef6d7eef4ae011419f6b15c11054cc7caa80380a0db71f179701f1d02c5587b55b0 RAILS_ENV=staging  be rails s -b 0.0.0.0 -p 3001
   - name: mbt-db
     root: $MBT_REPO_PATH/mbt-db
     layout: 4bd1,230x54,0,0{140x54,0,0,1,89x54,141,0[89x27,141,0,2,89x26,141,28,28]}
@@ -57,10 +60,4 @@ windows:
         - cd $MBT_REPO_PATH/mbt-db
         - git co master
         - git pull origin master
-  - name: IRC
-    root: $MBT_REPO_PATH/..
-    #layout: 4bd1,230x54,0,0{140x54,0,0,1,89x54,141,0[89x27,141,0,2,89x26,141,28,28]}
-    panes:
-      - commands:
-        - cd $MBT_REPO_PATH/..
-        - irssi
+        - DATABASE_URL=mysql2://root:root@127.0.0.1/mbt_cluster  RAILS_ENV=development bundle exec rake db:migrate
