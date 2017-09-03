@@ -10,6 +10,7 @@
   co = checkout
   ci = commit
   rb = rebase
+  cp = cherry-pick
   rebase = rebase --autostash
 
   patch = --no-pager diff --no-color

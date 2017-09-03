@@ -1,7 +1,9 @@
 #!/usr/bin/sh
 
+alias exportenv='export $(cat .env | grep -v ^# | cut -d: -f2 | xargs)'
+
 alias be='bundle exec'
-alias bes='bundle exec rspec -f d -c'
+alias bes='RAILS_ENV=test bundle exec rspec -f d -c'
 alias bec='bundle exec cucumber'
 alias berdbm='bundle exec rake db:migrate; echo "=============="; echo "= running Test env. migrations"; echo "=============="; RAILS_ENV=test bundle exec rake db:migrate'
 #alias rspec='wtitle "rspec"; rspec'
@@ -53,6 +55,7 @@ alias  gpo='git push origin $(git rev-parse --abbrev-ref HEAD) --set-upstream'
 alias  guo='git pull origin $(git rev-parse --abbrev-ref HEAD) && git fetch &'
 
 alias  grd='git rebase develop'
+alias  grm='git rebase master'
 alias  grc='git rebase --continue'
 alias  gra='git rebase --abort'
 alias grod='git fetch; git rebase origin/develop'
