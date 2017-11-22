@@ -1,5 +1,19 @@
 windows:
-  - name: pursuit-api
+  - name: Learn
+    root: ~/src/projects/pursuit/pursuit-learn
+    layout: 4bd1,230x54,0,0{140x54,0,0,1,89x54,141,0[89x27,141,0,2,89x26,141,28,28]}
+    panes:
+      - commands:
+        - cd ~/src/projects/pursuit/pursuit-learn
+        - vim
+      - commands:
+        - cd ~/src/projects/pursuit/pursuit-learn
+        - git pull
+        - git status
+      - commands:
+        - cd ~/src/projects/pursuit/pursuit-learn
+        - unset KAGU_PATH
+  - name: API
     root: ~/src/projects/pursuit/pursuit-api
     layout: 4bd1,230x54,0,0{140x54,0,0,1,89x54,141,0[89x27,141,0,2,89x26,141,28,28]}
     panes:
@@ -12,7 +26,8 @@ windows:
         - git status
       - commands:
         - cd ~/src/projects/pursuit/pursuit-api
-  - name: pursuit-kagu
+        - unset KAGU_PATH
+  - name: kagu gem
     root: ~/src/projects/pursuit/pursuit-kagu
     layout: 4bd1,230x54,0,0{140x54,0,0,1,89x54,141,0[89x27,141,0,2,89x26,141,28,28]}
     panes:
@@ -25,19 +40,21 @@ windows:
         - git status
       - commands:
         - cd ~/src/projects/pursuit/pursuit-kagu
-  - name: spec
-    root: ~/src/projects/pursuit/pursuit-kagu
+        - unset KAGU_PATH
+  - name: app
+    root: ~/src/projects/pursuit/pegasus
     layout: 4bd1,230x54,0,0{140x54,0,0,1,89x54,141,0[89x27,141,0,2,89x26,141,28,28]}
     panes:
       - commands:
-        - cd ~/src/projects/pursuit/pursuit-kagu
+        - cd ~/src/projects/pursuit/pegasus
         - vim
       - commands:
-        - cd ~/src/projects/pursuit/pursuit-kagu
+        - cd ~/src/projects/pursuit/pegasus
         - git pull
         - git status
       - commands:
-        - cd ~/src/projects/pursuit/pursuit-kagu
+        - cd ~/src/projects/pursuit/pegasus
+        - unset KAGU_PATH
   - name: landing-page
     root: ~/src/projects/pursuit/pursuit-landing-page
     layout: 4bd1,230x54,0,0{140x54,0,0,1,89x54,141,0[89x27,141,0,2,89x26,141,28,28]}
@@ -51,16 +68,4 @@ windows:
         - git status
       - commands:
         - cd ~/src/projects/pursuit/pursuit-landing-page
-  - name: app
-    root: ~/src/projects/pursuit/pursuit-app
-    layout: 4bd1,230x54,0,0{140x54,0,0,1,89x54,141,0[89x27,141,0,2,89x26,141,28,28]}
-    panes:
-      - commands:
-        - cd ~/src/projects/pursuit/pursuit-app
-        - vim
-      - commands:
-        - cd ~/src/projects/pursuit/pursuit-kagu
-        - git pull
-        - git status
-      - commands:
-        - cd ~/src/projects/pursuit/pursuit-app
+        - unset KAGU_PATH
