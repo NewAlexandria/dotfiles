@@ -1,7 +1,11 @@
-sudo rm -Rf ~/../equinox/
+sudo rm -Rf ~/src/projects/pursuit
+
+rm -Rf ~/../equinox/
 rm -Rf /Users/Zachary/dropbox_fp 
 rm -Rf ~/dropbox_fp
 rm -Rf ~/google_drive_kf
+rm -Rf ~/src/production/
+rm -Rf ~/src/projects/
 
 rm -Rf ~/Documents/*
 rm -Rf ~/Pictures/*
@@ -29,5 +33,4 @@ rm -Rf ~/Movies/*
 rm -Rf ~/.dotfiles
 rm -Rf ~/.vim.ana
 
-rm -Rf ~/.ssh
 echo "Remember to delete Internet Accounts"
