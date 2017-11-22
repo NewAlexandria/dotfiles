@@ -32,3 +32,11 @@ function gif2webm() {
   ffmpeg -i "$1" $2 -c:v libvpx -crf $CRF -b:v $BITRATE$RATE_SZ  -auto-alt-ref 0 "$1.webm"
 }
 
+function mp3shorten() {
+   ffmpeg -i  $1 -ss 0 -to 18  -acodec copy $2
+}
+
+function mp32ringtone() {
+  ffmpeg -i $1 -c:a libfdk_aac -f ipod -b:a 96k $2
+}
+
