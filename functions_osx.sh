@@ -11,6 +11,10 @@ alias spof="sudo mdutil -a -i off"
 alias spoff="spof"
 alias spmds='sudo lsof -c "/mds$/"'
 
+alias nettetherorder='sudo networksetup -ordernetworkservices "Display Ethernet" "Thunderbolt Ethernet" "Display FireWire" "Bluetooth PAN" "Wi-Fi"  "iPhone USB" "Thunderbolt Bridge"'
+alias netwifiorder='sudo networksetup -ordernetworkservices "Display Ethernet" "Thunderbolt Ethernet" "Display FireWire" "Wi-Fi" "Bluetooth PAN" "iPhone USB" "Thunderbolt Bridge"'
+
+
 # workaround for Timeout
 # http://apple.stackexchange.com/q/234419/37586
 pboard_fix() {
