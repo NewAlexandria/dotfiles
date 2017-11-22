@@ -59,8 +59,11 @@ alias  grm='git rebase master'
 alias  grc='git rebase --continue'
 alias  gra='git rebase --abort'
 alias grod='git fetch; git rebase origin/develop'
+
 alias   gd='git diff --color'
-alias  gdd='git diff --color origin/develop'
+alias gdod='git diff --color origin/develop'
+alias gdom='git diff --color origin/master'
+
 alias  fix='$EDITOR `git diff --name-only | uniq`'
 
 # pipe control via http://unix.stackexchange.com/a/77593/14845
