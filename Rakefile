@@ -69,10 +69,6 @@ namespace :mac do
   task :setup do
     system File.expand_path('../mac/setup.sh', __FILE__).to_s
   end
-  desc "Remove XCode and install GCC"
-  task :devtools do
-    system File.expand_path('../mac/devtools.sh', __FILE__).to_s
-  end
 end
 
 def replace_file(file)
