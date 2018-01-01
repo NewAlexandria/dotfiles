@@ -7,3 +7,9 @@
 [submodule "utils/git-recent"]
 	path = utils/git-recent
 	url = https://github.com/paulirish/git-recent.git
+[submodule "mac/terminal/osx-terminal.app-colors-solarized"]
+	path = mac/terminal/osx-terminal.app-colors-solarized
+	url = https://github.com/tomislav/osx-terminal.app-colors-solarized.git
+[submodule "mac/terminal/FiraCode"]
+	path = mac/terminal/FiraCode
+	url = https://github.com/tonsky/FiraCode.git
