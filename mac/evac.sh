@@ -8,6 +8,8 @@ rm -Rf ~/src/production/
 rm -Rf ~/src/projects/
 
 rm -Rf ~/Documents/*
+rm -Rf ~/Desktop/*
+rm -Rf ~/Downloads/*
 rm -Rf ~/Pictures/*
 rm -Rf ~/images
 
@@ -29,6 +31,8 @@ rm -Rf ~/Music/*
 rm -Rf ~/Desktop/*
 rm -Rf ~/Downloads/*
 rm -Rf ~/Movies/*
+
+keybase uninstall
 
 rm -Rf ~/.dotfiles
 rm -Rf ~/.vim.ana
