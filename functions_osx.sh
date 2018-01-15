@@ -4,6 +4,10 @@ alias brewup="brew upgrade $(brew outdated | cut -d ' ' -f1 | grep -v mysql | cu
 alias brew_deptree="brew deps --installed --tree"
 alias act="open -a Activity\ Monitor.app"
 
+# security control
+alias sec_policy_enable="sudo spctl --master-enable"
+alias sec_policy_disable="sudo spctl --master-disable"
+
 # spotlight control
 alias spsize="sudo du -m /.Spotlight-V100"
 alias spon="sudo mdutil -a -i on"
