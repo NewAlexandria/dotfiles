@@ -52,7 +52,6 @@ llvm
 lzlib
 macvim
 markdown
-homebrew/science/matplotlib
 maven
 mosh
 mp4v2
@@ -66,15 +65,14 @@ optipng
 p7zip
 parallel
 phantomjs
-homebrew/php/php70
+php70
 pip-completion
 plantuml
 pngcrush
-jonof/kenutils/pngout
+pngout
 pngquant
 popt
 postgresql
-postgresql@9.6
 pow
 progress
 rabbitmq
@@ -98,7 +96,7 @@ tmux
 unar
 unrar
 utf8proc
-v8@3.15
+v8
 vim
 watchman
 wget
