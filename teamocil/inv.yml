@@ -1,0 +1,66 @@
+windows:
+  - name: borden-vertx
+    root: ~/src/work/borden-vertx/
+    layout: 4bd1,230x54,0,0{140x54,0,0,1,89x54,141,0[89x27,141,0,2,89x26,141,28,28]}
+    panes:
+      - commands:
+        - cd ~/src/work/borden-vertx/
+        - vim
+      - commands:
+        - cd ~/src/work/borden-vertx/
+        - git pull
+        - git status
+      - commands:
+        - cd ~/src/work/borden-vertx/
+  - name: kennedy-components
+    root: ~/src/work/broker-react-components
+    layout: 4bd1,230x54,0,0{140x54,0,0,1,89x54,141,0[89x27,141,0,2,89x26,141,28,28]}
+    panes:
+      - commands:
+        - cd ~/src/work/broker-react-components
+        - vim
+      - commands:
+        - cd ~/src/work/broker-react-components
+        - git pull
+        - git status
+      - commands:
+        - cd ~/src/work/broker-react-components
+  - name: Dorado
+    root: ~/src/work/dorado
+    layout: 4bd1,230x54,0,0{140x54,0,0,1,89x54,141,0[89x27,141,0,2,89x26,141,28,28]}
+    panes:
+      - commands:
+        - cd ~/src/work/dorado
+        - vim
+      - commands:
+        - cd ~/src/work/dorado
+        - git pull
+        - git status
+      - commands:
+        - cd ~/src/work/dorado
+  - name: Ralph
+    root: ~/src/work/ralph
+    layout: 4bd1,230x54,0,0{140x54,0,0,1,89x54,141,0[89x27,141,0,2,89x26,141,28,28]}
+    panes:
+      - commands:
+        - cd ~/src/work/ralph
+        - vim
+      - commands:
+        - cd ~/src/work/ralph
+        - git pull
+        - git status
+      - commands:
+        - cd ~/src/work/ralph
+  - name: www
+    root: ~/src/work/www
+    layout: 4bd1,230x54,0,0{140x54,0,0,1,89x54,141,0[89x27,141,0,2,89x26,141,28,28]}
+    panes:
+      - commands:
+        - cd ~/src/work/www
+        - vim
+      - commands:
+        - cd ~/src/work/www
+        - git pull
+        - git status
+      - commands:
+        - cd ~/src/work/www
