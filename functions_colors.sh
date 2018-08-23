@@ -44,6 +44,7 @@ colors() {
 # \033[38;5;${val}m for text (see "ANSI Code" on Wikipedia)
 #
 colors_256() {
+  echo -en "\n Add X+Y to get the ANSI code"
   echo -en "\n   +  "
   for i in {0..35}; do
     printf "%2b " $i
