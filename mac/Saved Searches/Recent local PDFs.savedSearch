@@ -14,7 +14,7 @@
 		<string>((_kMDItemGroupId = 11) &amp;&amp; InRange(kMDItemContentModificationDate,$time.today(-30d),$time.today(+1d)))</string>
 		<key>SearchScopes</key>
 		<array>
-			<string>/Users/zachary</string>
+			<string>/Users/zak</string>
 		</array>
 		<key>UserFilesOnly</key>
 		<true/>
@@ -23,7 +23,7 @@
 	<dict>
 		<key>CurrentFolderPath</key>
 		<array>
-			<string>/Users/zachary</string>
+			<string>/Users/zak</string>
 		</array>
 		<key>FXCriteriaSlices</key>
 		<array>
@@ -72,7 +72,7 @@
 		<integer>1396925286</integer>
 		<key>FXScopeArrayOfPaths</key>
 		<array>
-			<string>/Users/zachary</string>
+			<string>/Users/zak</string>
 		</array>
 	</dict>
 	<key>SuggestedAttributes</key>

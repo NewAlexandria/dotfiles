@@ -46,7 +46,7 @@
 	aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort
 
 [core]
-	excludesfile = /Users/equinox/.gitignore_global
+	excludesfile = /Users/zak/.gitignore_global
 	autocrlf = input
 
 [pager]

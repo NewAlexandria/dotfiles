@@ -14,7 +14,7 @@
 		<string>((kMDItemPhysicalSize &gt; 600000) &amp;&amp; (kMDItemPixelCount &gt; 100000) &amp;&amp; InRange(kMDItemContentModificationDate,$time.today(-30d),$time.today(+1d)))</string>
 		<key>SearchScopes</key>
 		<array>
-			<string>/Users/zachary/images</string>
+			<string>/Users/zak/images</string>
 		</array>
 		<key>UserFilesOnly</key>
 		<true/>
@@ -23,7 +23,7 @@
 	<dict>
 		<key>CurrentFolderPath</key>
 		<array>
-			<string>/Users/zachary/images</string>
+			<string>/Users/zak/images</string>
 		</array>
 		<key>FXCriteriaSlices</key>
 		<array>
@@ -92,7 +92,7 @@
 		<integer>1396925286</integer>
 		<key>FXScopeArrayOfPaths</key>
 		<array>
-			<string>/Users/zachary/images</string>
+			<string>/Users/zak/images</string>
 		</array>
 	</dict>
 	<key>SuggestedAttributes</key>
