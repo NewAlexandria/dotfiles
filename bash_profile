@@ -14,3 +14,8 @@ source ~/.bashrc_local
 # Vim IDE settings
 source ~/.bash_vim_append
 
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+alias gcc=cc
+alias gcc-4.2=cc

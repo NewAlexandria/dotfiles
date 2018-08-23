@@ -30,7 +30,7 @@ git-extras
 gnu-units
 gnupg
 go
-gpg-agent
+gpg
 gradle
 graphicsmagick
 gsl
@@ -69,7 +69,6 @@ php70
 pip-completion
 plantuml
 pngcrush
-pngout
 pngquant
 popt
 postgresql
@@ -90,7 +89,6 @@ sshuttle
 swig
 tesseract
 the_silver_searcher
-thefuck
 tidy-html5
 tmux
 unar

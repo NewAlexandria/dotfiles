@@ -41,6 +41,8 @@ unset MAILCHECK
 export PATH=~/.rbenv/shims:$PATH
 eval "$(rbenv init -)"  # config for rbenv
 export CC=gcc-4.2
+alias gcc=cc
+alias gcc-4.2=cc
 
 export NODE_PATH="/usr/local/lib/jsctags:${NODE_PATH}"
 export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH

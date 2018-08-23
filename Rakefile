@@ -10,6 +10,7 @@ DOTFILE_SKIPLIST = %w[
   utils
   var
   _site
+  LICENSE.md
 ]
 
 desc "Install the dotfiles as symlinks in $HOME directory"
