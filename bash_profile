@@ -19,3 +19,5 @@ eval "$(rbenv init -)"
 
 alias gcc=cc
 alias gcc-4.2=cc
+
+test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"

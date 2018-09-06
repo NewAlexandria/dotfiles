@@ -47,3 +47,10 @@ man() {
 		LESS_TERMCAP_us=$(printf "\e[1;32m") \
 			man "$@"
 }
+
+#!/bin/bash
+# requires that iTerm have accessibility permissions
+if [ $TERM_PROGRAM = "iTerm.app" ]; then
+  osascript -e 'tell application "System Events" to keystroke "e" using {command down, shift down}'
+fi
+
