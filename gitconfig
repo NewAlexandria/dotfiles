@@ -2,6 +2,7 @@
 [user]
 	name = Zachary Jones
 	email = zak@newalexandria.org
+	signingkey = B4081B80723B3ECD
 
 [github]
 	user = NewAlexandria
@@ -84,3 +85,5 @@
 	showPatch = true
 [credential]
 	helper = osxkeychain
+[commit]
+	gpgsign = true
