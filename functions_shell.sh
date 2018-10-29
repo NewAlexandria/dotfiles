@@ -14,6 +14,10 @@ function find_in_min() {
 function ff() {
   find . -type f -name "*${1}*"
 }
+function ffrm() {
+  find . -name ${1} -depth -exec rm {} \;
+}
+
 
 # find files that are 10MB in size, or larger
 # takes PATH as an argument
