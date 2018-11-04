@@ -18,6 +18,21 @@ alias spmds='sudo lsof -c "/mds$/"'
 alias nettetherorder='sudo networksetup -ordernetworkservices "Display Ethernet" "Thunderbolt Ethernet" "Display FireWire" "Bluetooth PAN" "Wi-Fi"  "iPhone USB" "Thunderbolt Bridge"'
 alias netwifiorder='sudo networksetup -ordernetworkservices "Display Ethernet" "Thunderbolt Ethernet" "Display FireWire" "Wi-Fi" "Bluetooth PAN" "iPhone USB" "Thunderbolt Bridge"'
 
+cdf () {
+    currFolderPath=$( /usr/bin/osascript <<EOT
+        tell application "Finder"
+            try
+        set currFolder to (folder of the front window as alias)
+            on error
+        set currFolder to (path to desktop folder as alias)
+            end try
+            POSIX path of currFolder
+        end tell
+EOT
+    )
+    echo "cd to \"$currFolderPath\""
+    cd "$currFolderPath"
+}
 
 # workaround for Timeout
 # http://apple.stackexchange.com/q/234419/37586
@@ -45,11 +60,6 @@ md() {
 # Fidder seOWASP tool
 function  fiddler() {
   mono /Applications/fiddler-mac/Fiddler.exe
-}
-
-## Open markdown in Mou
-mou() {
-  open -a /Applications/Mou.app/Contents/MacOS/Mou "${1}"
 }
 
 ## Open git kraken
