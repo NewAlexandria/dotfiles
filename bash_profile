@@ -15,6 +15,8 @@ source ~/.bashrc_local
 source ~/.bash_vim_append
 
 export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="/usr/local/opt/node@8/bin:$PATH"
+export PATH=~/.sem/bin:$PATH
 eval "$(rbenv init -)"
 
 alias gcc=cc
