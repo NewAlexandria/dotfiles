@@ -71,9 +71,9 @@ alias gk=gitkraken
 # I need to cut field-1 for this to trim evenly
 function __batt_state() {
   bstate=$(pmset -g batt | awk '/charging|discharging|charged/ {print $4}' | cut -f1 -d';')
-  yellow="$(printf '\033[33m')"
-  green="$( printf '\033[32m')"
-  red="$(   printf '\033[31m')"
+  yellow=$(tput setaf 184)
+  green=$(tput setaf 120)
+  red=$(tput setaf 160)
   reset="$( printf '\033[00m')"
   case "$bstate" in
     charged)
