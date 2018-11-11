@@ -68,4 +68,5 @@ gitkraken() {
 }
 alias gk=gitkraken
 
-source ~/.dotfiles/lib/osx-shell-battery/functions_battery.sh
+source "${DOTFILES_REPO}/lib/osx-shell-battery/functions_battery.sh"
+
