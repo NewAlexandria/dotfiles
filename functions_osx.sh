@@ -75,18 +75,15 @@ function __batt_state() {
   green="$( printf '\033[32m')"
   red="$(   printf '\033[31m')"
   reset="$( printf '\033[00m')"
-  crd='charged'
-  crg='charging'
-  dcg='discharging'
   case "$bstate" in
     charged)
-      echo "$green$crd$reset"
+      echo "$green$bstate$reset"
       ;;
     charging)
-      echo "$yellow$crg$reset"
+      echo "$yellow$bstate$reset"
       ;;
     discharging)
-      echo "$red$dcg$reset"
+      echo "$red$bstate$reset"
       ;;
     *)
       echo $bstate

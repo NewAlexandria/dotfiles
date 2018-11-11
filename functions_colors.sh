@@ -37,6 +37,20 @@ colors() {
     echo;
   done
   echo
+
+  color(){
+    for c; do
+        printf '\e[48;5;%dm%03d' $c $c
+    done
+    printf '\e[0m \n'
+  }
+
+  IFS=$' \t\n'
+  color {0..15}
+  for ((i=0;i<6;i++)); do
+      color $(seq $((i*36+16)) $((i*36+51)))
+  done
+  color {232..255}
 }
 
 # generates an 8 bit color table (256 colors) for reference,
@@ -65,4 +79,14 @@ colors_256() {
   echo -e "\n"
 }
 
+# via https://unix.stackexchange.com/a/269085/14845
+fromhex(){
+    hex=${1#"#"}
+    r=$(printf '0x%0.2s' "$hex")
+    g=$(printf '0x%0.2s' ${hex#??})
+    b=$(printf '0x%0.2s' ${hex#????})
+    printf '%03d' "$(( (r<75?0:(r-35)/40)*6*6 +
+                       (g<75?0:(g-35)/40)*6   +
+                       (b<75?0:(b-35)/40)     + 16 ))"
+}
 
