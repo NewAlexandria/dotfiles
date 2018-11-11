@@ -74,7 +74,7 @@ function __batt_state() {
   yellow=$(tput setaf 184)
   green=$(tput setaf 120)
   red=$(tput setaf 160)
-  reset="$( printf '\033[00m')"
+  reset="$(tput reset)"
   case "$bstate" in
     charged)
       echo "$green$bstate$reset"
