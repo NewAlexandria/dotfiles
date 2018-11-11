@@ -1,6 +1,5 @@
 #!/usr/bin/sh
 # functions and load-onces stuff for the environment
-source ~/.profile
 source ~/.functions_shell.sh
 source ~/.functions_colors.sh
 source ~/.functions_dev.sh
@@ -23,3 +22,6 @@ alias gcc=cc
 alias gcc-4.2=cc
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+source ~/.profile
+
