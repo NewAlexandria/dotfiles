@@ -13,3 +13,6 @@
 [submodule "mac/terminal/FiraCode"]
 	path = mac/terminal/FiraCode
 	url = https://github.com/tonsky/FiraCode.git
+[submodule "lib/osx-shell-battery"]
+	path = lib/osx-shell-battery
+	url = git@github.com:NewAlexandria/osx-shell-battery.git
