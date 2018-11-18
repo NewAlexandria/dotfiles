@@ -81,6 +81,23 @@ alias gll='git log --graph'
 # alias gcwtc="git commit -m \"`curl http://whatthecommit.com 2>/dev/null | grep '<p>' | sed 's/<p>//'`\""
 # alias wtc="echo \"merge-wtc: `curl http://whatthecommit.com 2>/dev/null | grep '<p>' | sed 's/<p>//'`\""
 
+function update_repos() {
+  __batt_yellow=$(tput setaf 184)
+  __batt_green=$( tput setaf 120)
+  __batt_red=$(   tput setaf 160)
+  __batt_reset="$(tput init)"
+  for f in $(ls -w)
+  do 
+    echo "";
+    echo "$__batt_green$f$__batt_reset";
+    cd ${f}
+    git stash save "xxx"
+    git pull
+    git stash pop $(git log -g stash --grep="xxx" --pretty=format:"%gd")
+    cd ..
+  done
+}
+
 function release_complete() {
   now=$(date "+%Y%m%d")
   if [ $# -eq 0 ]; then
