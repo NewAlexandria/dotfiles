@@ -26,10 +26,16 @@ function video2agif() {
 # cannot convert gif->gif
 # source: https://gist.github.com/ndarville/10010916
 function gif2webm() {
-  BITRATE=${3:='1000'}
-  RATE_SZ='K'
-  CRF=${4:='12'}
-  ffmpeg -i "$1" $2 -c:v libvpx -crf $CRF -b:v $BITRATE$RATE_SZ  -auto-alt-ref 0 "$1.webm"
+  if [ $# -eq 0 ]
+    then
+      echo "usage: file-name [format] [bitrate 1000] [crf 12]"
+    else
+      FORMAT=${2:-'webm'}
+      BITRATE=${3:-'1000'}
+      RATE_SZ='K'
+      CRF=${4:-'12'}
+      ffmpeg -i "$1" -c:v libvpx -crf $CRF -b:v $BITRATE$RATE_SZ  -auto-alt-ref 0 "$1.$FORMAT"
+  fi
 }
 
 function mp3shorten() {
