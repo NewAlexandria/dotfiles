@@ -16,3 +16,6 @@
 [submodule "lib/osx-shell-battery"]
 	path = lib/osx-shell-battery
 	url = git@github.com:NewAlexandria/osx-shell-battery.git
+[submodule "irssi/sources/irssi-smartfilter"]
+	path = irssi/sources/irssi-smartfilter
+	url = https://github.com/lifeforms/irssi-smartfilter.git

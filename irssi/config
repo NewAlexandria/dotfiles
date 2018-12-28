@@ -1,0 +1,47 @@
+servers = (
+  {
+    address = "irc.freenode.net";
+    chatnet = "freenode";
+    port = "6667";
+    use_ssl = "no";
+    ssl_verify = "no";
+    autoconnect = "yes";
+  }
+);
+
+chatnets = {
+  Freenode = {
+    type = "IRC";
+    autosendcmd = "/msg nickserv identify newalexandria";
+  };
+};
+
+channels = ( 
+  { name = "#vim"; chatnet = "Freenode"; autojoin = "Yes"; }
+);
+
+settings = {
+  core = {
+    real_name = "New Alexandria";
+    user_name = "newalexandria";
+    nick = "newalexandria";
+  };
+  "fe-text" = {
+    actlist_sort = "refnum";
+    term_force_colors = "yes";
+    scrollback_time = "7day ";
+  };
+  "fe-common/core" = { theme = "default"; };
+};
+ignores = (
+  { 
+    level = "JOINS PARTS QUITS MODES";
+    channels = ( "#xkcd-signal" );
+  },
+  {
+    level = "ALL";
+    pattern = "yourNick";
+    exception = "yes";
+    channels = ( "#xkcd-signal" );
+  }
+);
