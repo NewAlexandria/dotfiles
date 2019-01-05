@@ -1,5 +1,7 @@
 #!/usr/bin/sh
 
+alias pr="qlmanage -p "
+
 function ratio() {
   a=$(identify -format "w=%w;h=%h" $1)
   eval $a
