@@ -36,12 +36,12 @@ settings = {
 ignores = (
   { 
     level = "JOINS PARTS QUITS MODES";
-    channels = ( "#xkcd-signal" );
+    channels = ( "#vim" );
   },
   {
     level = "ALL";
-    pattern = "yourNick";
+    pattern = "newalexandria";
     exception = "yes";
-    channels = ( "#xkcd-signal" );
+    channels = ( "#vim" );
   }
 );
