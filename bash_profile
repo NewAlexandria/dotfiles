@@ -18,10 +18,28 @@ export PATH="/usr/local/opt/node@8/bin:$PATH"
 export PATH=~/.sem/bin:$PATH
 eval "$(rbenv init -)"
 
-alias gcc=cc
-alias gcc-4.2=cc
-
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+# Aliases
+## FileSystem
+alias ll='ls -alGh'
+alias les='less -FRSXQ'
+
+alias cdd='cd ~/.ssh/'
+alias cddot='cd ~/.dotfiles/'
+alias cds='cd ~/src/'
+
+alias ..='cd ../'                           # Go back 1 directory level
+alias ...='cd ../../'                       # Go back 2 directory levels
+alias .3='cd ../../../'                     # Go back 3 directory levels
+alias .4='cd ../../../../'                  # Go back 4 directory levels
+alias .5='cd ../../../../../'               # Go back 5 directory levels
+alias .6='cd ../../../../../../'            # Go back 6 directory levels
+
+alias ag='ag --color  --color-path=37  --color-line-number=32'
+alias dif='colordiff'
+alias ack='ack --color-lineno=green --color-filename=white --color --follow'
+
 
 source ~/.profile
 

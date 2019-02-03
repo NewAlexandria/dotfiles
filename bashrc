@@ -6,33 +6,15 @@ fi
 
 source ~/.dotfiles/lib/git-completion.sh
 
+alias gcc=cc
+alias gcc-4.2=gcc
+
 complete -C aws_completer aws
 complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | \
     sed -e s/,.*//g | uniq | grep -v "\["`;)" ssh
 
 #complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g | uniq | grep -v "\["`;)" ssh
 #complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g | uniq | grep -v "\["`;)" scp
-
-
-# Aliases
-## FileSystem
-alias ll='ls -alGh'
-alias les='less -FRSXQ'
-
-alias cdd='cd ~/.ssh/'
-alias cddot='cd ~/.dotfiles/'
-alias cds='cd ~/src/'
-
-alias ..='cd ../'                           # Go back 1 directory level
-alias ...='cd ../../'                       # Go back 2 directory levels
-alias .3='cd ../../../'                     # Go back 3 directory levels
-alias .4='cd ../../../../'                  # Go back 4 directory levels
-alias .5='cd ../../../../../'               # Go back 5 directory levels
-alias .6='cd ../../../../../../'            # Go back 6 directory levels
-
-alias ag='ag --color  --color-path=37  --color-line-number=32'
-alias dif='colordiff'
-alias ack='ack --color-lineno=green --color-filename=white --color --follow'
 
 
 alias grep='GREP_OPTIONS="--color=auto --line-number --context=0 --exclude=*.log" GREP_COLOR="1;37;41" LANG=C grep'
