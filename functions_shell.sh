@@ -79,4 +79,10 @@ if [ -f ~/.cdpath ]; then
   cd $(cat ~/.cdpath)
 fi
 
+function random() {
+  num=$1
+  [ ! -z $1 ] || num='12'
+  env LC_CTYPE=C LC_ALL=C tr -dc "a-zA-Z0-9-_\^\&\$\?\(\)\*\#\@\!\%" < /dev/urandom | head -c $num; echo
+  #openssl rand -base64 $num
+}
 
