@@ -1,8 +1,10 @@
 #!/usr/bin/sh
 # Completions
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
+  source $(brew --prefix)/etc/bash_completion
 fi
+
+source ~/.dotfiles/lib/git-completion.sh
 
 complete -C aws_completer aws
 complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | \
