@@ -2,6 +2,16 @@
 
 alias brewup="brew upgrade $(brew outdated | cut -d ' ' -f1 | grep -v mysql | cut -d ':' -f2 | xargs)"
 alias brew_deptree="brew deps --installed --tree"
+function brewreset() {
+  nam=$1 
+  brew unlink $nam
+  brew uninstall $nam
+  mkdir -p /usr/local/Cellar/$nam
+  # chown -R $(whoami):admin   /usr/local/Cellar/$nam
+  sudo chown -R $(whoami):admin   /usr/local/Cellar/$nam
+  brew install $nam
+}
+
 alias act="open -a Activity\ Monitor.app"
 
 # security control
