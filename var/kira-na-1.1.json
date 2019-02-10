@@ -1,0 +1,3207 @@
+{
+  "matrix": [
+    {
+      "code": "0x01",
+      "x": 0,
+      "y": 0,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "APP",
+          "label": "MENU"
+        },
+        "1": {
+          "key": "#:flashMode()",
+          "label": "FLASH"
+        },
+        "2": {
+          "key": "#:animation_control(4)",
+          "label": "V:RESET"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x02",
+      "x": 4,
+      "y": 0,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "F1",
+          "label": "F1"
+        },
+        "1": {
+          "key": "#:toggleKbdProtocol()",
+          "label": "6/N-KRO"
+        },
+        "2": {
+          "key": "#:rotate(0, 1)",
+          "label": "C:KEYS"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x03",
+      "x": 8,
+      "y": 0,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "F2",
+          "label": "F2"
+        },
+        "1": {
+          "key": "#:kbdProtocolBoot()",
+          "label": "6KRO"
+        },
+        "2": {
+          "key": "#:rotate(1, 1)",
+          "label": "C:UNDER"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x04",
+      "x": 12,
+      "y": 0,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "F3",
+          "label": "F3"
+        },
+        "1": {
+          "key": "#:kbdProtocolNKRO()",
+          "label": "NKRO"
+        },
+        "2": {
+          "key": "#:rotate(2, 1)",
+          "label": "F:KEYS"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x05",
+      "x": 16,
+      "y": 0,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "F4",
+          "label": "F4"
+        },
+        "2": {
+          "key": "#:rotate(3, 1)",
+          "label": "F:UNDER"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x06",
+      "x": 20,
+      "y": 0,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "F5",
+          "label": "F5"
+        },
+        "1": {
+          "key": "CONS:BRIGHTNESS INCREMENT",
+          "label": "SCRN+"
+        },
+        "2": {
+          "key": "#:rotate(4, 1)",
+          "label": "F:INDIC"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x07",
+      "x": 24,
+      "y": 0,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "F6",
+          "label": "F6"
+        },
+        "1": {
+          "key": "CONS:BRIGHTNESS DECREMENT",
+          "label": "SCRN-"
+        },
+        "2": {
+          "key": "#:rotate(5, 1)",
+          "label": "F:LAYER"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x08",
+      "x": 28,
+      "y": 0,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "F7",
+          "label": "F7"
+        },
+        "1": {
+          "key": "SYS:WAKE UP",
+          "label": "WAKEUP"
+        },
+        "2": {
+          "key": "#:rotate(6, 1)",
+          "label": "V:NEXT"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x09",
+      "x": 32,
+      "y": 0,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "F8",
+          "label": "F8"
+        },
+        "1": {
+          "key": "SYS:SLEEP",
+          "label": "SLEEP"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x0A",
+      "x": 36,
+      "y": 0,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "F9",
+          "label": "F9"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x0B",
+      "x": 40,
+      "y": 0,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "F10",
+          "label": "F10"
+        },
+        "1": {
+          "key": "#:storage_control(2)",
+          "label": "DEFAULTS"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x0C",
+      "x": 44,
+      "y": 0,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "F11",
+          "label": "F11"
+        },
+        "1": {
+          "key": "#:storage_control(0)",
+          "label": "LOAD"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x0D",
+      "x": 48,
+      "y": 0,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "F12",
+          "label": "F12"
+        },
+        "1": {
+          "key": "#:storage_control(1)",
+          "label": "SAVE"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x0E",
+      "x": 52,
+      "y": 0,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "PRINTSCREEN",
+          "label": "PRSC"
+        },
+        "2": {
+          "key": "#:ledControl(4, 255)",
+          "label": "LED ON"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x0F",
+      "x": 56,
+      "y": 0,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "DELETE",
+          "label": "DEL"
+        },
+        "2": {
+          "key": "#:ledControl(3, 255)",
+          "label": "LED OFF"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x10",
+      "x": 60,
+      "y": 0,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "HOME",
+          "label": "HOME"
+        },
+        "1": {
+          "key": "#:U\"Volume Down\" + CONS\"Volume Down\"",
+          "label": "VOL-"
+        },
+        "2": {
+          "key": "#:animation_control(2)",
+          "label": "V:PLAY"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x11",
+      "x": 64,
+      "y": 0,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "END",
+          "label": "END"
+        },
+        "1": {
+          "key": "#:U\"Volume Up\" + CONS\"Volume Up\"",
+          "label": "VOL+"
+        },
+        "2": {
+          "key": "#:animation_control(3)",
+          "label": "V:STOP"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x12",
+      "x": 68,
+      "y": 0,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "PAGEUP",
+          "label": "PGUP"
+        },
+        "1": {
+          "key": "CONS:PAUSE PLAY",
+          "label": "PL/PS"
+        },
+        "2": {
+          "key": "#:ledControl(7, 1)",
+          "label": "V:SPD+"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x13",
+      "x": 72,
+      "y": 0,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "PAGEDOWN",
+          "label": "PGDN"
+        },
+        "1": {
+          "key": "#:U\"Mute\" + CONS\"Mute\"",
+          "label": "MUT"
+        },
+        "2": {
+          "key": "#:ledControl(8, 1)",
+          "label": "V:SPD-"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x14",
+      "x": 0,
+      "y": 4,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "`",
+          "label": "`"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x15",
+      "x": 4,
+      "y": 4,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "1",
+          "label": "1"
+        },
+        "1": {
+          "key": "International1",
+          "label": "INTL1"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x16",
+      "x": 8,
+      "y": 4,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "2",
+          "label": "2"
+        },
+        "1": {
+          "key": "International2",
+          "label": "カナ"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x17",
+      "x": 12,
+      "y": 4,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "3",
+          "label": "3"
+        },
+        "1": {
+          "key": "International3",
+          "label": "¥"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x18",
+      "x": 16,
+      "y": 4,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "4",
+          "label": "4"
+        },
+        "1": {
+          "key": "International4",
+          "label": "変換"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x19",
+      "x": 20,
+      "y": 4,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "5",
+          "label": "5"
+        },
+        "1": {
+          "key": "International5",
+          "label": "無変換"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x1A",
+      "x": 24,
+      "y": 4,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "6",
+          "label": "6"
+        },
+        "1": {
+          "key": "International6",
+          "label": "INTL6"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x1B",
+      "x": 28,
+      "y": 4,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "7",
+          "label": "7"
+        },
+        "1": {
+          "key": "International7",
+          "label": "INTL7"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x1C",
+      "x": 32,
+      "y": 4,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "8",
+          "label": "8"
+        },
+        "1": {
+          "key": "International8",
+          "label": "INTL8"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x1D",
+      "x": 36,
+      "y": 4,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "9",
+          "label": "9"
+        },
+        "1": {
+          "key": "International9",
+          "label": "INTL9"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x1E",
+      "x": 40,
+      "y": 4,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "0",
+          "label": "0"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x1F",
+      "x": 44,
+      "y": 4,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "-",
+          "label": "-"
+        },
+        "2": {
+          "key": "#:ledControl(0, 15)",
+          "label": "LED-"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x20",
+      "x": 48,
+      "y": 4,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "=",
+          "label": "="
+        },
+        "2": {
+          "key": "#:ledControl(1, 15)",
+          "label": "LED+"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x21",
+      "x": 52,
+      "y": 4,
+      "w": 8,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "BACKSPACE",
+          "label": "BKSP"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x22",
+      "x": 60,
+      "y": 4,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "NUMLOCK",
+          "label": "NMLK"
+        },
+        "1": {
+          "key": "CONS:SCAN PREVIOUS TRACK",
+          "label": "PREV"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x23",
+      "x": 64,
+      "y": 4,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "P/",
+          "label": "P/"
+        },
+        "1": {
+          "key": "CONS:SCAN NEXT TRACK",
+          "label": "NEXT"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x24",
+      "x": 68,
+      "y": 4,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "P*",
+          "label": "P*"
+        },
+        "1": {
+          "key": "CONS:REWIND",
+          "label": "RW"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x25",
+      "x": 72,
+      "y": 4,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "P-",
+          "label": "P-"
+        },
+        "1": {
+          "key": "CONS:FAST FORWARD",
+          "label": "FF"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x26",
+      "x": 0,
+      "y": 8,
+      "w": 6,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "TAB",
+          "label": "TAB"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x27",
+      "x": 6,
+      "y": 8,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "Q",
+          "label": "Q"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x28",
+      "x": 10,
+      "y": 8,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "W",
+          "label": "W"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x29",
+      "x": 14,
+      "y": 8,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "E",
+          "label": "E"
+        },
+        "1": {
+          "key": "CONS:EJECT",
+          "label": "EJECT"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x2A",
+      "x": 18,
+      "y": 8,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "R",
+          "label": "R"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x2B",
+      "x": 22,
+      "y": 8,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "T",
+          "label": "T"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x2C",
+      "x": 26,
+      "y": 8,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "Y",
+          "label": "Y"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x2D",
+      "x": 30,
+      "y": 8,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "U",
+          "label": "U"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x2E",
+      "x": 34,
+      "y": 8,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "I",
+          "label": "I"
+        },
+        "1": {
+          "key": "CONS:INTERNET BROWSER",
+          "label": "WEB"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x2F",
+      "x": 38,
+      "y": 8,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "O",
+          "label": "O"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x30",
+      "x": 42,
+      "y": 8,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "P",
+          "label": "P"
+        },
+        "1": {
+          "key": "CONS:PAUSE",
+          "label": "PAUSE"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x31",
+      "x": 46,
+      "y": 8,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "[",
+          "label": "["
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x32",
+      "x": 50,
+      "y": 8,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "]",
+          "label": "]"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x33",
+      "x": 54,
+      "y": 8,
+      "w": 6,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "\\",
+          "label": "\\"
+        },
+        "2": {
+          "key": "#:gamma(2)",
+          "label": "GAMMA"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x34",
+      "x": 60,
+      "y": 8,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "P7",
+          "label": "P7"
+        },
+        "1": {
+          "key": "LANG7",
+          "label": "LANG7"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x35",
+      "x": 64,
+      "y": 8,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "P8",
+          "label": "P8"
+        },
+        "1": {
+          "key": "LANG8",
+          "label": "LANG8"
+        },
+        "2": {
+          "key": "#:animation_control(3), ledTest(1, 0xFFFF)",
+          "label": "ChanInc"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x36",
+      "x": 68,
+      "y": 8,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "P9",
+          "label": "P9"
+        },
+        "1": {
+          "key": "LGUI",
+          "label": "LGUI"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x37",
+      "x": 72,
+      "y": 8,
+      "w": 4,
+      "h": 8,
+      "layers": {
+        "0": {
+          "key": "KEYPAD PLUS",
+          "label": "P+"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x38",
+      "x": 0,
+      "y": 12,
+      "w": 7,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "LCTRL",
+          "label": "LCTRL"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x39",
+      "x": 7,
+      "y": 12,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "A",
+          "label": "A"
+        },
+        "1": {
+          "key": "APP",
+          "label": "MENU"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x3A",
+      "x": 11,
+      "y": 12,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "S",
+          "label": "S"
+        },
+        "1": {
+          "key": "SCROLLLOCK",
+          "label": "SCLK"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x3B",
+      "x": 15,
+      "y": 12,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "D",
+          "label": "D"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x3C",
+      "x": 19,
+      "y": 12,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "F",
+          "label": "F"
+        },
+        "1": {
+          "key": "CONS:FILE BROWSER",
+          "label": "FILES"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x3D",
+      "x": 23,
+      "y": 12,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "G",
+          "label": "G"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x3E",
+      "x": 27,
+      "y": 12,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "H",
+          "label": "H"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x3F",
+      "x": 31,
+      "y": 12,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "J",
+          "label": "J"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x40",
+      "x": 35,
+      "y": 12,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "K",
+          "label": "K"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x41",
+      "x": 39,
+      "y": 12,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "L",
+          "label": "L"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x42",
+      "x": 43,
+      "y": 12,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": ";",
+          "label": ";"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x43",
+      "x": 47,
+      "y": 12,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "'",
+          "label": "'"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x44",
+      "x": 51,
+      "y": 12,
+      "w": 9,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "ENTER",
+          "label": "↵"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x45",
+      "x": 60,
+      "y": 12,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "P4",
+          "label": "P4"
+        },
+        "1": {
+          "key": "LANG4",
+          "label": "ひらがな"
+        },
+        "2": {
+          "key": "#:animation_control(3), ledTest(11, 0xFFFF)",
+          "label": "PixDec"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x46",
+      "x": 64,
+      "y": 12,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "P5",
+          "label": "P5"
+        },
+        "1": {
+          "key": "LANG5",
+          "label": "半角/全角"
+        },
+        "2": {
+          "key": "#:animation_control(3), ledTest(15, 0)",
+          "label": "TstRst"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x47",
+      "x": 68,
+      "y": 12,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "P6",
+          "label": "P6"
+        },
+        "1": {
+          "key": "LANG6",
+          "label": "LANG6"
+        },
+        "2": {
+          "key": "#:animation_control(3), ledTest(10, 0xFFFF)",
+          "label": "PixInc"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x48",
+      "x": 0,
+      "y": 16,
+      "w": 9,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "LSHIFT",
+          "label": "L⇑"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x49",
+      "x": 9,
+      "y": 16,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "Z",
+          "label": "Z"
+        },
+        "1": {
+          "key": "ISO/",
+          "label": "ISO/"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x4A",
+      "x": 13,
+      "y": 16,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "X",
+          "label": "X"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x4B",
+      "x": 17,
+      "y": 16,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "C",
+          "label": "C"
+        },
+        "1": {
+          "key": "CONS:CALCULATOR",
+          "label": "CALC"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x4C",
+      "x": 21,
+      "y": 16,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "V",
+          "label": "V"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x4D",
+      "x": 25,
+      "y": 16,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "B",
+          "label": "B"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x4E",
+      "x": 29,
+      "y": 16,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "N",
+          "label": "N"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x4F",
+      "x": 33,
+      "y": 16,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "M",
+          "label": "M"
+        },
+        "1": {
+          "key": "APP",
+          "label": "MENU"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x50",
+      "x": 37,
+      "y": 16,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": ",",
+          "label": ","
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x51",
+      "x": 41,
+      "y": 16,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": ".",
+          "label": "."
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x52",
+      "x": 45,
+      "y": 16,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "/",
+          "label": "/"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x53",
+      "x": 49,
+      "y": 16,
+      "w": 7,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "RSHIFT",
+          "label": "R⇑"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x54",
+      "x": 56,
+      "y": 16,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "UP",
+          "label": "↑"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x55",
+      "x": 60,
+      "y": 16,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "P1",
+          "label": "P1"
+        },
+        "1": {
+          "key": "LANG1",
+          "label": "한/영"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x56",
+      "x": 64,
+      "y": 16,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "P2",
+          "label": "P2"
+        },
+        "1": {
+          "key": "LANG2",
+          "label": "英数/한자"
+        },
+        "2": {
+          "key": "#:animation_control(3), ledTest(2, 0xFFFF)",
+          "label": "ChanDec"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x57",
+      "x": 68,
+      "y": 16,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "P3",
+          "label": "P3"
+        },
+        "1": {
+          "key": "LANG3",
+          "label": "カタカナ"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x58",
+      "x": 72,
+      "y": 16,
+      "w": 4,
+      "h": 8,
+      "layers": {
+        "0": {
+          "key": "PENTER",
+          "label": "P↵"
+        },
+        "2": {
+          "key": "#:A[test_animation](start)",
+          "label": "A:start"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x59",
+      "x": 0,
+      "y": 20,
+      "w": 5,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "ESC",
+          "label": "ESC"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x5A",
+      "x": 5,
+      "y": 20,
+      "w": 5,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "LALT",
+          "label": "LALT"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x5B",
+      "x": 10,
+      "y": 20,
+      "w": 5,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "LGUI",
+          "label": "LGUI"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x5C",
+      "x": 15,
+      "y": 20,
+      "w": 25,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "SPACE",
+          "label": "[ ]"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x5D",
+      "x": 40,
+      "y": 20,
+      "w": 6,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "RALT",
+          "label": "RALT"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x5E",
+      "x": 46,
+      "y": 20,
+      "w": 6,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "RCTRL",
+          "label": "RCTRL"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x5F",
+      "x": 52,
+      "y": 20,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "LEFT",
+          "label": "←"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x60",
+      "x": 56,
+      "y": 20,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "DOWN",
+          "label": "↓"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x61",
+      "x": 60,
+      "y": 20,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "RIGHT",
+          "label": "→"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x62",
+      "x": 64,
+      "y": 20,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "P0",
+          "label": "P0"
+        }
+      },
+      "triggers": null
+    },
+    {
+      "code": "0x63",
+      "x": 68,
+      "y": 20,
+      "w": 4,
+      "h": 4,
+      "layers": {
+        "0": {
+          "key": "P.",
+          "label": "P."
+        }
+      },
+      "triggers": null
+    }
+  ],
+  "custom": {
+    "0": "### Layer Highlights ###\n\nLayer[1] : fade_layer_highlight(1);\nLayer[2] : fade_layer_highlight(2);\n\n### Fade Configuration ###\n\n# Fade Period\n# .start and .end must be between 0 and 15\n# .start == (1 << start) - 1\n# .end   == (1 << end)\n# This means incrementing end will exponentially increase the time of the period.\n# .start = 0 and .end = 0 disables that time period\n# A non-zero start will prevent the LED from dimming to 0 for Off->On and On->Off\n# the subsequent Off state afterwards will use the previous start from On->Off for the display value.\n# Only 16 fade periods can be used.\nKLL_LED_FadePeriod => KLL_LED_FadePeriod_define;\nKLL_LED_FadePeriod[0] = \"{ .start = 0, .end = 0 }\";\nKLL_LED_FadePeriod[1] = \"{ .start = 0, .end = 4 }\";\nKLL_LED_FadePeriod[2] = \"{ .start = 0, .end = 5 }\";\nKLL_LED_FadePeriod[3] = \"{ .start = 0, .end = 6 }\";\nKLL_LED_FadePeriod[4] = \"{ .start = 0, .end = 7 }\";\nKLL_LED_FadePeriod[5] = \"{ .start = 0, .end = 8 }\";\nKLL_LED_FadePeriod[6] = \"{ .start = 0, .end = 9 }\";\nKLL_LED_FadePeriod[7] = \"{ .start = 0, .end = 10 }\";\nKLL_LED_FadePeriod[8] = \"{ .start = 0, .end = 11 }\";\nKLL_LED_FadePeriod[9] = \"{ .start = 0, .end = 12 }\";\nKLL_LED_FadePeriod[10] = \"{ .start = 5, .end = 6 }\";\nKLL_LED_FadePeriod[11] = \"{ .start = 6, .end = 7 }\";\nKLL_LED_FadePeriod[12] = \"{ .start = 7, .end = 8 }\";\nKLL_LED_FadePeriod[13] = \"{ .start = 8, .end = 9 }\";\nKLL_LED_FadePeriod[14] = \"{ .start = 9, .end = 10 }\";\nKLL_LED_FadePeriod[15] = \"{ .start = 10, .end = 11 }\";\n\n# Fade Default Configuration\n# There are 4 fade profiles\n# 0) Keys\n# 1) Underlighting\n# 2) Indicators\n# 3) Active Layer (uses fade_layer_highlight to refresh)\n# Each fade profile has 4 fade period configurations (see above).\n# 0) Off to On\n# 1) On\n# 2) On to Off\n# 3) Off\n## Keys\nKLL_LED_FadeDefaultConfig0 => KLL_LED_FadeDefaultConfig0_define;\nKLL_LED_FadeDefaultConfig0[0] = 0;\nKLL_LED_FadeDefaultConfig0[1] = 0;\nKLL_LED_FadeDefaultConfig0[2] = 0;\nKLL_LED_FadeDefaultConfig0[3] = 0;\n## Underlighting\nKLL_LED_FadeDefaultConfig1 => KLL_LED_FadeDefaultConfig1_define;\nKLL_LED_FadeDefaultConfig1[0] = 0;\nKLL_LED_FadeDefaultConfig1[1] = 0;\nKLL_LED_FadeDefaultConfig1[2] = 0;\nKLL_LED_FadeDefaultConfig1[3] = 0;\n## Indicators\nKLL_LED_FadeDefaultConfig2 => KLL_LED_FadeDefaultConfig2_define;\nKLL_LED_FadeDefaultConfig2[0] = 0;\nKLL_LED_FadeDefaultConfig2[1] = 0;\nKLL_LED_FadeDefaultConfig2[2] = 0;\nKLL_LED_FadeDefaultConfig2[3] = 0;\n## Active Layer\nKLL_LED_FadeDefaultConfig3 => KLL_LED_FadeDefaultConfig3_define;\nKLL_LED_FadeDefaultConfig3[0] = 1;\nKLL_LED_FadeDefaultConfig3[1] = 1;\nKLL_LED_FadeDefaultConfig3[2] = 1;\nKLL_LED_FadeDefaultConfig3[3] = 1;\n\n\n#~~~START ANIMATION (${__NAME__}) INJECTION~~~#\n# Macro 'Layer 1'\nU\"RCTRL\" + U\"RSHIFT\" : Layer[1];\n# Macro 'Layer 2'\nU\"RCTRL\" + U\"RALT\" : Layer[2];\n#~~~END ANIMATION (${__NAME__}) INJECTION~~~#\n",
+    "2": "### Color-Select Keys ###\n\n# Rotation Select\nT[21,0](0)  : A[keys_only_rotation](single, pos:0);\nT[21,0](1)  : A[keys_only_rotation](single, pos:1);\nT[21,0](2)  : A[keys_only_rotation](single, pos:2);\nT[21,0](3)  : A[keys_only_rotation](single, pos:3);\nT[21,0](4)  : A[keys_only_rotation](single, pos:4);\nT[21,0](5)  : A[keys_only_rotation](single, pos:5);\nT[21,0](6)  : A[keys_only_rotation](single, pos:6);\nT[21,0](7)  : A[keys_only_rotation](single, pos:7);\nT[21,0](8)  : A[keys_only_rotation](single, pos:8);\nT[21,0](9)  : A[keys_only_rotation](single, pos:9);\nT[21,0](10) : A[keys_only_rotation](single, pos:10);\n\nT[21,0](11) : A[keys_only_rotation](single, pos:11);\nT[21,0](12) : A[keys_only_rotation](single, pos:12);\nT[21,0](13) : A[keys_only_rotation](single, pos:13);\nT[21,0](14) : A[keys_only_rotation](single, pos:14);\nT[21,0](15) : A[keys_only_rotation](single, pos:15);\nT[21,0](16) : A[keys_only_rotation](single, pos:16);\n\nT[21,0](17) : A[keys_only_rotation](single, pos:17);\nT[21,0](18) : A[keys_only_rotation](single, pos:18);\nT[21,0](19) : A[keys_only_rotation](single, pos:19);\nT[21,0](20) : A[keys_only_rotation](single, pos:20);\n\n\n\n### Color-Select Underglow ###\n\n# Rotation Select\nT[21,1](0)  : A[underlighting_only_rotation](single, pos:0);\nT[21,1](1)  : A[underlighting_only_rotation](single, pos:1);\nT[21,1](2)  : A[underlighting_only_rotation](single, pos:2);\nT[21,1](3)  : A[underlighting_only_rotation](single, pos:3);\nT[21,1](4)  : A[underlighting_only_rotation](single, pos:4);\nT[21,1](5)  : A[underlighting_only_rotation](single, pos:5);\nT[21,1](6)  : A[underlighting_only_rotation](single, pos:6);\nT[21,1](7)  : A[underlighting_only_rotation](single, pos:7);\nT[21,1](8)  : A[underlighting_only_rotation](single, pos:8);\nT[21,1](9)  : A[underlighting_only_rotation](single, pos:9);\nT[21,1](10) : A[underlighting_only_rotation](single, pos:10);\n\nT[21,1](11) : A[underlighting_only_rotation](single, pos:11);\nT[21,1](12) : A[underlighting_only_rotation](single, pos:12);\nT[21,1](13) : A[underlighting_only_rotation](single, pos:13);\nT[21,1](14) : A[underlighting_only_rotation](single, pos:14);\nT[21,1](15) : A[underlighting_only_rotation](single, pos:15);\nT[21,1](16) : A[underlighting_only_rotation](single, pos:16);\n\nT[21,1](17) : A[underlighting_only_rotation](single, pos:17);\nT[21,1](18) : A[underlighting_only_rotation](single, pos:18);\nT[21,1](19) : A[underlighting_only_rotation](single, pos:19);\nT[21,1](20) : A[underlighting_only_rotation](single, pos:20);\n\n\n\n### Fade Control ###\n\n# Keys\nT[21,2](0) : fade_set(0, 0, 0) + fade_set(0, 1, 0) + fade_set(0, 2, 0) + fade_set(0, 3, 0);\nT[21,2](1) : fade_set(0, 0, 1) + fade_set(0, 1, 0) + fade_set(0, 2, 1) + fade_set(0, 3, 0);\nT[21,2](2) : fade_set(0, 0, 2) + fade_set(0, 1, 0) + fade_set(0, 2, 2) + fade_set(0, 3, 0);\nT[21,2](3) : fade_set(0, 0, 3) + fade_set(0, 1, 50 + fade_set(0, 2, 3) + fade_set(0, 3, 0);\nT[21,2](4) : fade_set(0, 0, 4) + fade_set(0, 1, 0) + fade_set(0, 2, 6) + fade_set(0, 3, 0);\nT[21,2](5) : fade_set(0, 0, 5) + fade_set(0, 1, 0) + fade_set(0, 2, 7) + fade_set(0, 3, 0);\nT[21,2](6) : fade_set(0, 0, 7) + fade_set(0, 1, 5) + fade_set(0, 2, 7) + fade_set(0, 3, 0);\nT[21,2](7) : fade_set(0, 0, 10) + fade_set(0, 1, 3) + fade_set(0, 2, 10) + fade_set(0, 3, 0);\nT[21,2](8) : fade_set(0, 0, 11) + fade_set(0, 1, 4) + fade_set(0, 2, 11) + fade_set(0, 3, 0);\nT[21,2](9) : fade_set(0, 0,12) + fade_set(0, 1, 5) + fade_set(0, 2, 12) + fade_set(0, 3, 0);\nT[21,2](10) : fade_set(0, 0, 13) + fade_set(0, 1, 5) + fade_set(0, 2, 13) + fade_set(0, 3, 0);\n\n# Underlighting\nT[21,3](0)  : fade_set(1, 0, 0)  + fade_set(1, 1, 0) + fade_set(1, 2, 0)  + fade_set(1, 3, 0);\nT[21,3](1)  : fade_set(1, 0, 1)  + fade_set(1, 1, 0) + fade_set(1, 2, 1)  + fade_set(1, 3, 0);\nT[21,3](2)  : fade_set(1, 0, 2) + fade_set(1, 1, 0) + fade_set(1, 2, 2) + fade_set(1, 3, 0);\nT[21,3](3)  : fade_set(1, 0, 3) + fade_set(1, 1, 0) + fade_set(1, 2, 3) + fade_set(1, 3, 0);\nT[21,3](4)  : fade_set(1, 0, 4) + fade_set(1, 1, 0) + fade_set(1, 2, 6) + fade_set(1, 3, 0);\nT[21,3](5)  : fade_set(1, 0, 5) + fade_set(1, 1, 0) + fade_set(1, 2, 7) + fade_set(1, 3, 0);\nT[21,3](6)  : fade_set(1, 0, 6)  + fade_set(1, 1, 5) + fade_set(1, 2, 7)  + fade_set(1, 3, 0);\nT[21,3](7)  : fade_set(1, 0, 10)  + fade_set(1, 1, 3) + fade_set(1, 2, 10)  + fade_set(1, 3, 0);\nT[21,3](8)  : fade_set(1, 0, 11)  + fade_set(1, 1, 4) + fade_set(1, 2, 11)  + fade_set(1, 3, 0);\nT[21,3](9)  : fade_set(1, 0, 12)  + fade_set(1, 1, 5) + fade_set(1, 2, 12)  + fade_set(1, 3, 0);\nT[21,3](10) : fade_set(1, 0, 13)  + fade_set(1, 1, 5) + fade_set(1, 2, 13)  + fade_set(1, 3, 0);\n\n# Indicators\nT[21,4](0) : fade_set(2, 0, 4) + fade_set(2, 1, 2) + fade_set(2, 2, 4) + fade_set(2, 3, 0);\nT[21,4](1) : fade_set(2, 0, 5) + fade_set(2, 1, 3) + fade_set(2, 2, 5) + fade_set(2, 3, 0);\nT[21,4](2) : fade_set(2, 0, 5) + fade_set(2, 1, 0) + fade_set(2, 2, 7) + fade_set(2, 3, 0);\nT[21,4](3) : fade_set(2, 0, 6) + fade_set(2, 1, 4) + fade_set(2, 2, 6) + fade_set(2, 3, 0);\nT[21,4](4) : fade_set(2, 0, 7) + fade_set(2, 1, 5) + fade_set(2, 2, 7) + fade_set(2, 3, 0);\nT[21,4](5) : fade_set(2, 0, 11) + fade_set(2, 1, 0) + fade_set(2, 2, 11) + fade_set(2, 3, 0);\nT[21,4](6) : fade_set(2, 0, 0) + fade_set(2, 1, 0) + fade_set(2, 2, 0) + fade_set(2, 3, 0);\nT[21,4](7) : fade_set(2, 0, 3) + fade_set(2, 1, 0) + fade_set(2, 2, 6) + fade_set(2, 3, 0);\n\n# Layer\nT[21,5](0) : fade_set(3, 0, 4) + fade_set(3, 1, 2) + fade_set(3, 2, 4) + fade_set(3, 3, 0);\nT[21,5](1) : fade_set(3, 0, 5) + fade_set(3, 1, 3) + fade_set(3, 2, 5) + fade_set(3, 3, 0);\nT[21,5](2) : fade_set(3, 0, 5) + fade_set(3, 1, 0) + fade_set(3, 2, 6) + fade_set(3, 3, 0);\nT[21,5](3) : fade_set(3, 0, 6) + fade_set(3, 1, 4) + fade_set(3, 2, 6) + fade_set(3, 3, 0);\nT[21,5](4) : fade_set(3, 0, 7) + fade_set(3, 1, 5) + fade_set(3, 2, 7) + fade_set(3, 3, 0);\nT[21,5](5) : fade_set(3, 0, 11) + fade_set(3, 1, 0) + fade_set(3, 2, 11) + fade_set(3, 3, 0);\nT[21,5](6) : fade_set(3, 0, 0) + fade_set(3, 1, 0) + fade_set(3, 2, 0) + fade_set(3, 3, 0);\nT[21,5](7) : fade_set(3, 0, 3) + fade_set(3, 1, 0) + fade_set(3, 2, 6) + fade_set(3, 3, 0);\n\n\n\n### General Animations ###\n\n# Waves + Start Animation\nT[21,6](0) : A[miami_wave](start, replace:clear); # Miami\nT[21,6](1) : A[rainbow_wave](start, replace:clear); # Rainbow\nT[21,6](2) : A[pastel_wave](start, replace:clear); # Pastel Rainbow\nT[21,6](3) : A[kira_wave](start, replace:clear); # Kira Wave\nT[21,6](4) : A[orange_fade_in](start, replace:clear); # Orange fade animation\n"
+  },
+  "animations": {
+    "keys_only_rotation": {
+      "type": "custom",
+      "frames": [
+        "S1(0xC1, 0x2D, 0x1D), S99(0xC1, 0x2D, 0x1D)",
+        "S1(0xEE, 0x6D, 0x28), S99(0xEE, 0x6D, 0x28)",
+        "S1(0xE0, 0x9E, 0x3B), S99(0xE0, 0x9E, 0x3B)",
+        "S1(0xE5, 0xC9, 0x43), S99(0xE5, 0xC9, 0x43)",
+        "S1(0x1E, 0xB8, 0x6D), S99(0x1E, 0xB8, 0x6D)",
+        "S1(0x00, 0xB3, 0xA6), S99(0x00, 0xB3, 0xA6)",
+        "S1(0x20, 0x82, 0xC6), S99(0x20, 0x82, 0xC6)",
+        "S1(0x43, 0x54, 0xC1), S99(0x43, 0x54, 0xC1)",
+        "S1(0x71, 0x1C, 0x9E), S99(0x71, 0x1C, 0x9E)",
+        "S1(0xCD, 0x3B, 0x70), S99(0xCD, 0x3B, 0x70)",
+        "S1(0xB8, 0x34, 0x3E), S99(0xB8, 0x34, 0x3E)",
+        "S1(40,255,40), S99(40,255,40)",
+        "S1(255,255,40), S99(255,255,40)",
+        "S1(255,40,40), S99(255,40,40)",
+        "S1(127,40,255), S99(127,40,255)",
+        "S1(40,40,255), S99(40,40,255)",
+        "S1(255,80,0), S99(255,80,0)",
+        "S1(239,10,129), S99(239,10,129)",
+        "S1(129,10,239), S99(129,10,239)",
+        "S1(10,60,255), S99(10,60,255)"
+      ],
+      "settings": "pfunc:interp, replace:clearactive",
+      "data": null
+    },
+    "kira_wave": {
+      "type": "custom",
+      "frames": [
+        "                      P[c:0%] (255,80,0),   P[c:33%](239,10,129), P[c:66%](129,10,239),   P[c:100%](10,60,255)",
+        "P[c:-31%](10,60,255), P[c:2%] (255,80,0),   P[c:36%](239,10,129), P[c:68%](129,10,239),   P[c:102%](10,60,255)",
+        "P[c:-29%](10,60,255), P[c:4%] (255,80,0),   P[c:38%](239,10,129), P[c:70%](129,10,239),   P[c:104%](10,60,255)",
+        "P[c:-27%](10,60,255), P[c:6%] (255,80,0),   P[c:40%](239,10,129), P[c:72%](129,10,239),   P[c:106%](10,60,255)",
+        "P[c:-25%](10,60,255), P[c:8%] (255,80,0),   P[c:42%](239,10,129), P[c:74%](129,10,239),   P[c:108%](10,60,255)",
+        "P[c:-23%](10,60,255), P[c:10%](255,80,0),   P[c:44%](239,10,129), P[c:76%](129,10,239),   P[c:110%](10,60,255)",
+        "P[c:-21%](10,60,255), P[c:12%](255,80,0),   P[c:46%](239,10,129), P[c:78%](129,10,239),   P[c:112%](10,60,255)",
+        "P[c:-19%](10,60,255), P[c:14%](255,80,0),   P[c:48%](239,10,129), P[c:80%](129,10,239),   P[c:114%](10,60,255)",
+        "P[c:-17%](10,60,255), P[c:16%](255,80,0),   P[c:50%](239,10,129), P[c:82%](129,10,239),   P[c:116%](10,60,255)",
+        "P[c:-15%](10,60,255), P[c:18%](255,80,0),   P[c:52%](239,10,129), P[c:84%](129,10,239),   P[c:118%](10,60,255)",
+        "P[c:-13%](10,60,255), P[c:20%](255,80,0),   P[c:54%](239,10,129), P[c:86%](129,10,239),   P[c:120%](10,60,255)",
+        "P[c:-11%](10,60,255), P[c:22%](255,80,0),   P[c:56%](239,10,129), P[c:88%](129,10,239),   P[c:122%](10,60,255)",
+        "P[c:-9%] (10,60,255), P[c:24%](255,80,0),   P[c:58%](239,10,129), P[c:90%](129,10,239),   P[c:124%](10,60,255)",
+        "P[c:-7%] (10,60,255), P[c:26%](255,80,0),   P[c:60%](239,10,129), P[c:92%](129,10,239),   P[c:126%](10,60,255)",
+        "P[c:-5%] (10,60,255), P[c:28%](255,80,0),   P[c:62%](239,10,129), P[c:94%](129,10,239),   P[c:128%](10,60,255)",
+        "P[c:-3%] (10,60,255), P[c:30%](255,80,0),   P[c:64%](239,10,129), P[c:96%](129,10,239),   P[c:130%](10,60,255)",
+        "                       P[c:0%] (10,60,255),   P[c:33%](255,80,0), P[c:66%](239,10,129),   P[c:100%](129,10,239)",
+        "P[c:-31%](129,10,239), P[c:2%] (10,60,255),   P[c:36%](255,80,0), P[c:68%](239,10,129),   P[c:102%](129,10,239)",
+        "P[c:-29%](129,10,239), P[c:4%] (10,60,255),   P[c:38%](255,80,0), P[c:70%](239,10,129),   P[c:104%](129,10,239)",
+        "P[c:-27%](129,10,239), P[c:6%] (10,60,255),   P[c:40%](255,80,0), P[c:72%](239,10,129),   P[c:106%](129,10,239)",
+        "P[c:-25%](129,10,239), P[c:8%] (10,60,255),   P[c:42%](255,80,0), P[c:74%](239,10,129),   P[c:108%](129,10,239)",
+        "P[c:-23%](129,10,239), P[c:10%](10,60,255),   P[c:44%](255,80,0), P[c:76%](239,10,129),   P[c:110%](129,10,239)",
+        "P[c:-21%](129,10,239), P[c:12%](10,60,255),   P[c:46%](255,80,0), P[c:78%](239,10,129),   P[c:112%](129,10,239)",
+        "P[c:-19%](129,10,239), P[c:14%](10,60,255),   P[c:48%](255,80,0), P[c:80%](239,10,129),   P[c:114%](129,10,239)",
+        "P[c:-17%](129,10,239), P[c:16%](10,60,255),   P[c:50%](255,80,0), P[c:82%](239,10,129),   P[c:116%](129,10,239)",
+        "P[c:-15%](129,10,239), P[c:18%](10,60,255),   P[c:52%](255,80,0), P[c:84%](239,10,129),   P[c:118%](129,10,239)",
+        "P[c:-13%](129,10,239), P[c:20%](10,60,255),   P[c:54%](255,80,0), P[c:86%](239,10,129),   P[c:120%](129,10,239)",
+        "P[c:-11%](129,10,239), P[c:22%](10,60,255),   P[c:56%](255,80,0), P[c:88%](239,10,129),   P[c:122%](129,10,239)",
+        "P[c:-9%] (129,10,239), P[c:24%](10,60,255),   P[c:58%](255,80,0), P[c:90%](239,10,129),   P[c:124%](129,10,239)",
+        "P[c:-7%] (129,10,239), P[c:26%](10,60,255),   P[c:60%](255,80,0), P[c:92%](239,10,129),   P[c:126%](129,10,239)",
+        "P[c:-5%] (129,10,239), P[c:28%](10,60,255),   P[c:62%](255,80,0), P[c:94%](239,10,129),   P[c:128%](129,10,239)",
+        "P[c:-3%] (129,10,239), P[c:30%](10,60,255),   P[c:64%](255,80,0), P[c:96%](239,10,129),   P[c:130%](129,10,239)",
+        "                       P[c:0%] (129,10,239),   P[c:33%](10,60,255), P[c:66%](255,80,0),   P[c:100%](239,10,129)",
+        "P[c:-31%](239,10,129), P[c:2%] (129,10,239),   P[c:36%](10,60,255), P[c:68%](255,80,0),   P[c:102%](239,10,129)",
+        "P[c:-29%](239,10,129), P[c:4%] (129,10,239),   P[c:38%](10,60,255), P[c:70%](255,80,0),   P[c:104%](239,10,129)",
+        "P[c:-27%](239,10,129), P[c:6%] (129,10,239),   P[c:40%](10,60,255), P[c:72%](255,80,0),   P[c:106%](239,10,129)",
+        "P[c:-25%](239,10,129), P[c:8%] (129,10,239),   P[c:42%](10,60,255), P[c:74%](255,80,0),   P[c:108%](239,10,129)",
+        "P[c:-23%](239,10,129), P[c:10%](129,10,239),   P[c:44%](10,60,255), P[c:76%](255,80,0),   P[c:110%](239,10,129)",
+        "P[c:-21%](239,10,129), P[c:12%](129,10,239),   P[c:46%](10,60,255), P[c:78%](255,80,0),   P[c:112%](239,10,129)",
+        "P[c:-19%](239,10,129), P[c:14%](129,10,239),   P[c:48%](10,60,255), P[c:80%](255,80,0),   P[c:114%](239,10,129)",
+        "P[c:-17%](239,10,129), P[c:16%](129,10,239),   P[c:50%](10,60,255), P[c:82%](255,80,0),   P[c:116%](239,10,129)",
+        "P[c:-15%](239,10,129), P[c:18%](129,10,239),   P[c:52%](10,60,255), P[c:84%](255,80,0),   P[c:118%](239,10,129)",
+        "P[c:-13%](239,10,129), P[c:20%](129,10,239),   P[c:54%](10,60,255), P[c:86%](255,80,0),   P[c:120%](239,10,129)",
+        "P[c:-11%](239,10,129), P[c:22%](129,10,239),   P[c:56%](10,60,255), P[c:88%](255,80,0),   P[c:122%](239,10,129)",
+        "P[c:-9%] (239,10,129), P[c:24%](129,10,239),   P[c:58%](10,60,255), P[c:90%](255,80,0),   P[c:124%](239,10,129)",
+        "P[c:-7%] (239,10,129), P[c:26%](129,10,239),   P[c:60%](10,60,255), P[c:92%](255,80,0),   P[c:126%](239,10,129)",
+        "P[c:-5%] (239,10,129), P[c:28%](129,10,239),   P[c:62%](10,60,255), P[c:94%](255,80,0),   P[c:128%](239,10,129)",
+        "P[c:-3%] (239,10,129), P[c:30%](129,10,239),   P[c:64%](10,60,255), P[c:96%](255,80,0),   P[c:130%](239,10,129)",
+        "                     P[c:0%] (239,10,129),   P[c:33%](129,10,239), P[c:66%](10,60,255),   P[c:100%](255,80,0)",
+        "P[c:-31%](255,80,0), P[c:2%] (239,10,129),   P[c:36%](129,10,239), P[c:68%](10,60,255),   P[c:102%](255,80,0)",
+        "P[c:-29%](255,80,0), P[c:4%] (239,10,129),   P[c:38%](129,10,239), P[c:70%](10,60,255),   P[c:104%](255,80,0)",
+        "P[c:-27%](255,80,0), P[c:6%] (239,10,129),   P[c:40%](129,10,239), P[c:72%](10,60,255),   P[c:106%](255,80,0)",
+        "P[c:-25%](255,80,0), P[c:8%] (239,10,129),   P[c:42%](129,10,239), P[c:74%](10,60,255),   P[c:108%](255,80,0)",
+        "P[c:-23%](255,80,0), P[c:10%](239,10,129),   P[c:44%](129,10,239), P[c:76%](10,60,255),   P[c:110%](255,80,0)",
+        "P[c:-21%](255,80,0), P[c:12%](239,10,129),   P[c:46%](129,10,239), P[c:78%](10,60,255),   P[c:112%](255,80,0)",
+        "P[c:-19%](255,80,0), P[c:14%](239,10,129),   P[c:48%](129,10,239), P[c:80%](10,60,255),   P[c:114%](255,80,0)",
+        "P[c:-17%](255,80,0), P[c:16%](239,10,129),   P[c:50%](129,10,239), P[c:82%](10,60,255),   P[c:116%](255,80,0)",
+        "P[c:-15%](255,80,0), P[c:18%](239,10,129),   P[c:52%](129,10,239), P[c:84%](10,60,255),   P[c:118%](255,80,0)",
+        "P[c:-13%](255,80,0), P[c:20%](239,10,129),   P[c:54%](129,10,239), P[c:86%](10,60,255),   P[c:120%](255,80,0)",
+        "P[c:-11%](255,80,0), P[c:22%](239,10,129),   P[c:56%](129,10,239), P[c:88%](10,60,255),   P[c:122%](255,80,0)",
+        "P[c:-9%] (255,80,0), P[c:24%](239,10,129),   P[c:58%](129,10,239), P[c:90%](10,60,255),   P[c:124%](255,80,0)",
+        "P[c:-7%] (255,80,0), P[c:26%](239,10,129),   P[c:60%](129,10,239), P[c:92%](10,60,255),   P[c:126%](255,80,0)",
+        "P[c:-5%] (255,80,0), P[c:28%](239,10,129),   P[c:62%](129,10,239), P[c:94%](10,60,255),   P[c:128%](255,80,0)",
+        "P[c:-3%] (255,80,0), P[c:30%](239,10,129),   P[c:64%](129,10,239), P[c:96%](10,60,255),   P[c:130%](255,80,0)"
+      ],
+      "settings": "start, framedelay:3, framestretch, loop, replace:clear, pfunc:interp",
+      "data": null
+    },
+    "miami_wave": {
+      "type": "custom",
+      "frames": [
+        "                      P[c:0%] (0,255,0),   P[c:25%](255,255,0), P[c:50%](255,255,255),   P[c:75%](127,0,255), P[c:100%](0,0,255)",
+        "P[c:-24%](0,0,255),   P[c:2%] (0,255,0),   P[c:27%](255,255,0), P[c:52%](255,255,255),   P[c:77%](127,0,255), P[c:102%](0,0,255)",
+        "P[c:-22%](0,0,255),   P[c:4%] (0,255,0),   P[c:29%](255,255,0), P[c:54%](255,255,255),   P[c:79%](127,0,255), P[c:104%](0,0,255)",
+        "P[c:-20%](0,0,255),   P[c:6%] (0,255,0),   P[c:31%](255,255,0), P[c:56%](255,255,255),   P[c:81%](127,0,255), P[c:106%](0,0,255)",
+        "P[c:-18%](0,0,255),   P[c:8%] (0,255,0),   P[c:33%](255,255,0), P[c:58%](255,255,255),   P[c:83%](127,0,255), P[c:108%](0,0,255)",
+        "P[c:-16%](0,0,255),   P[c:10%](0,255,0),   P[c:35%](255,255,0), P[c:60%](255,255,255),   P[c:85%](127,0,255), P[c:110%](0,0,255)",
+        "P[c:-14%](0,0,255),   P[c:12%](0,255,0),   P[c:37%](255,255,0), P[c:62%](255,255,255),   P[c:87%](127,0,255), P[c:112%](0,0,255)",
+        "P[c:-12%](0,0,255),   P[c:14%](0,255,0),   P[c:39%](255,255,0), P[c:64%](255,255,255),   P[c:89%](127,0,255), P[c:114%](0,0,255)",
+        "P[c:-10%](0,0,255),   P[c:16%](0,255,0),   P[c:41%](255,255,0), P[c:66%](255,255,255),   P[c:91%](127,0,255), P[c:116%](0,0,255)",
+        "P[c:-8%] (0,0,255),   P[c:18%](0,255,0),   P[c:43%](255,255,0), P[c:68%](255,255,255),   P[c:93%](127,0,255), P[c:118%](0,0,255)",
+        "P[c:-6%] (0,0,255),   P[c:20%](0,255,0),   P[c:45%](255,255,0), P[c:70%](255,255,255),   P[c:95%](127,0,255), P[c:120%](0,0,255)",
+        "P[c:-4%] (0,0,255),   P[c:22%](0,255,0),   P[c:47%](255,255,0), P[c:72%](255,255,255),   P[c:97%](127,0,255), P[c:122%](0,0,255)",
+        "P[c:-2%] (0,0,255),   P[c:24%](0,255,0),   P[c:49%](255,255,0), P[c:74%](255,255,255),   P[c:99%](127,0,255), P[c:124%](0,0,255)",
+        "                      P[c:0%] (0,0,255),   P[c:25%](0,255,0),   P[c:50%](255,255,0), P[c:75%](255,255,255),   P[c:100%](127,0,255)",
+        "P[c:-24%](127,0,255), P[c:2%] (0,0,255),   P[c:27%](0,255,0),   P[c:52%](255,255,0), P[c:77%](255,255,255),   P[c:102%](127,0,255)",
+        "P[c:-22%](127,0,255), P[c:4%] (0,0,255),   P[c:29%](0,255,0),   P[c:54%](255,255,0), P[c:79%](255,255,255),   P[c:104%](127,0,255)",
+        "P[c:-20%](127,0,255), P[c:6%] (0,0,255),   P[c:31%](0,255,0),   P[c:56%](255,255,0), P[c:81%](255,255,255),   P[c:106%](127,0,255)",
+        "P[c:-18%](127,0,255), P[c:8%] (0,0,255),   P[c:33%](0,255,0),   P[c:58%](255,255,0), P[c:83%](255,255,255),   P[c:108%](127,0,255)",
+        "P[c:-16%](127,0,255), P[c:10%](0,0,255),   P[c:35%](0,255,0),   P[c:60%](255,255,0), P[c:85%](255,255,255),   P[c:110%](127,0,255)",
+        "P[c:-14%](127,0,255), P[c:12%](0,0,255),   P[c:37%](0,255,0),   P[c:62%](255,255,0), P[c:87%](255,255,255),   P[c:112%](127,0,255)",
+        "P[c:-12%](127,0,255), P[c:14%](0,0,255),   P[c:39%](0,255,0),   P[c:64%](255,255,0), P[c:89%](255,255,255),   P[c:114%](127,0,255)",
+        "P[c:-10%](127,0,255), P[c:16%](0,0,255),   P[c:41%](0,255,0),   P[c:66%](255,255,0), P[c:91%](255,255,255),   P[c:116%](127,0,255)",
+        "P[c:-8%] (127,0,255), P[c:18%](0,0,255),   P[c:43%](0,255,0),   P[c:68%](255,255,0), P[c:93%](255,255,255),   P[c:118%](127,0,255)",
+        "P[c:-6%] (127,0,255), P[c:20%](0,0,255),   P[c:45%](0,255,0),   P[c:70%](255,255,0), P[c:95%](255,255,255),   P[c:120%](127,0,255)",
+        "P[c:-4%] (127,0,255), P[c:22%](0,0,255),   P[c:47%](0,255,0),   P[c:72%](255,255,0), P[c:97%](255,255,255),   P[c:122%](127,0,255)",
+        "P[c:-2%] (127,0,255), P[c:24%](0,0,255),   P[c:49%](0,255,0),   P[c:74%](255,255,0), P[c:99%](255,255,255),   P[c:124%](127,0,255)",
+        "                      P[c:0%] (127,0,255), P[c:25%](0,0,255),   P[c:50%](0,255,0),   P[c:75%](255,255,0), P[c:100%](255,255,255)",
+        "P[c:-24%](255,255,255),   P[c:2%] (127,0,255), P[c:27%](0,0,255),   P[c:52%](0,255,0),   P[c:77%](255,255,0), P[c:102%](255,255,255)",
+        "P[c:-22%](255,255,255),   P[c:4%] (127,0,255), P[c:29%](0,0,255),   P[c:54%](0,255,0),   P[c:79%](255,255,0), P[c:104%](255,255,255)",
+        "P[c:-20%](255,255,255),   P[c:6%] (127,0,255), P[c:31%](0,0,255),   P[c:56%](0,255,0),   P[c:81%](255,255,0), P[c:106%](255,255,255)",
+        "P[c:-18%](255,255,255),   P[c:8%] (127,0,255), P[c:33%](0,0,255),   P[c:58%](0,255,0),   P[c:83%](255,255,0), P[c:108%](255,255,255)",
+        "P[c:-16%](255,255,255),   P[c:10%](127,0,255), P[c:35%](0,0,255),   P[c:60%](0,255,0),   P[c:85%](255,255,0), P[c:110%](255,255,255)",
+        "P[c:-14%](255,255,255),   P[c:12%](127,0,255), P[c:37%](0,0,255),   P[c:62%](0,255,0),   P[c:87%](255,255,0), P[c:112%](255,255,255)",
+        "P[c:-12%](255,255,255),   P[c:14%](127,0,255), P[c:39%](0,0,255),   P[c:64%](0,255,0),   P[c:89%](255,255,0), P[c:114%](255,255,255)",
+        "P[c:-10%](255,255,255),   P[c:16%](127,0,255), P[c:41%](0,0,255),   P[c:66%](0,255,0),   P[c:91%](255,255,0), P[c:116%](255,255,255)",
+        "P[c:-8%] (255,255,255),   P[c:18%](127,0,255), P[c:43%](0,0,255),   P[c:68%](0,255,0),   P[c:93%](255,255,0), P[c:118%](255,255,255)",
+        "P[c:-6%] (255,255,255),   P[c:20%](127,0,255), P[c:45%](0,0,255),   P[c:70%](0,255,0),   P[c:95%](255,255,0), P[c:120%](255,255,255)",
+        "P[c:-4%] (255,255,255),   P[c:22%](127,0,255), P[c:47%](0,0,255),   P[c:72%](0,255,0),   P[c:97%](255,255,0), P[c:122%](255,255,255)",
+        "P[c:-2%] (255,255,255),   P[c:24%](127,0,255), P[c:49%](0,0,255),   P[c:74%](0,255,0),   P[c:99%](255,255,0), P[c:124%](255,255,255)",
+        "                      P[c:0%] (255,255,255),   P[c:25%](127,0,255), P[c:50%](0,0,255),   P[c:75%](0,255,0),   P[c:100%](255,255,0)",
+        "P[c:-24%](255,255,0), P[c:2%] (255,255,255),   P[c:27%](127,0,255), P[c:52%](0,0,255),   P[c:77%](0,255,0),   P[c:102%](255,255,0)",
+        "P[c:-22%](255,255,0), P[c:4%] (255,255,255),   P[c:29%](127,0,255), P[c:54%](0,0,255),   P[c:79%](0,255,0),   P[c:104%](255,255,0)",
+        "P[c:-20%](255,255,0), P[c:6%] (255,255,255),   P[c:31%](127,0,255), P[c:56%](0,0,255),   P[c:81%](0,255,0),   P[c:106%](255,255,0)",
+        "P[c:-18%](255,255,0), P[c:8%] (255,255,255),   P[c:33%](127,0,255), P[c:58%](0,0,255),   P[c:83%](0,255,0),   P[c:108%](255,255,0)",
+        "P[c:-16%](255,255,0), P[c:10%](255,255,255),   P[c:35%](127,0,255), P[c:60%](0,0,255),   P[c:85%](0,255,0),   P[c:110%](255,255,0)",
+        "P[c:-14%](255,255,0), P[c:12%](255,255,255),   P[c:37%](127,0,255), P[c:62%](0,0,255),   P[c:87%](0,255,0),   P[c:112%](255,255,0)",
+        "P[c:-12%](255,255,0), P[c:14%](255,255,255),   P[c:39%](127,0,255), P[c:64%](0,0,255),   P[c:89%](0,255,0),   P[c:114%](255,255,0)",
+        "P[c:-10%](255,255,0), P[c:16%](255,255,255),   P[c:41%](127,0,255), P[c:66%](0,0,255),   P[c:91%](0,255,0),   P[c:116%](255,255,0)",
+        "P[c:-8%] (255,255,0), P[c:18%](255,255,255),   P[c:43%](127,0,255), P[c:68%](0,0,255),   P[c:93%](0,255,0),   P[c:118%](255,255,0)",
+        "P[c:-6%] (255,255,0), P[c:20%](255,255,255),   P[c:45%](127,0,255), P[c:70%](0,0,255),   P[c:95%](0,255,0),   P[c:120%](255,255,0)",
+        "P[c:-4%] (255,255,0), P[c:22%](255,255,255),   P[c:47%](127,0,255), P[c:72%](0,0,255),   P[c:97%](0,255,0),   P[c:122%](255,255,0)",
+        "P[c:-2%] (255,255,0), P[c:24%](255,255,255),   P[c:49%](127,0,255), P[c:74%](0,0,255),   P[c:99%](0,255,0),   P[c:124%](255,255,0)",
+        "                      P[c:0%] (255,255,0), P[c:25%](255,255,255),   P[c:50%](127,0,255), P[c:75%](0,0,255),   P[c:100%](0,255,0)",
+        "P[c:-24%](0,255,0),   P[c:2%] (255,255,0), P[c:27%](255,255,255),   P[c:52%](127,0,255), P[c:77%](0,0,255),   P[c:102%](0,255,0)",
+        "P[c:-22%](0,255,0),   P[c:4%] (255,255,0), P[c:29%](255,255,255),   P[c:54%](127,0,255), P[c:79%](0,0,255),   P[c:104%](0,255,0)",
+        "P[c:-20%](0,255,0),   P[c:6%] (255,255,0), P[c:31%](255,255,255),   P[c:56%](127,0,255), P[c:81%](0,0,255),   P[c:106%](0,255,0)",
+        "P[c:-18%](0,255,0),   P[c:8%] (255,255,0), P[c:33%](255,255,255),   P[c:58%](127,0,255), P[c:83%](0,0,255),   P[c:108%](0,255,0)",
+        "P[c:-16%](0,255,0),   P[c:10%](255,255,0), P[c:35%](255,255,255),   P[c:60%](127,0,255), P[c:85%](0,0,255),   P[c:110%](0,255,0)",
+        "P[c:-14%](0,255,0),   P[c:12%](255,255,0), P[c:37%](255,255,255),   P[c:62%](127,0,255), P[c:87%](0,0,255),   P[c:112%](0,255,0)",
+        "P[c:-12%](0,255,0),   P[c:14%](255,255,0), P[c:39%](255,255,255),   P[c:64%](127,0,255), P[c:89%](0,0,255),   P[c:114%](0,255,0)",
+        "P[c:-10%](0,255,0),   P[c:16%](255,255,0), P[c:41%](255,255,255),   P[c:66%](127,0,255), P[c:91%](0,0,255),   P[c:116%](0,255,0)",
+        "P[c:-8%] (0,255,0),   P[c:18%](255,255,0), P[c:43%](255,255,255),   P[c:68%](127,0,255), P[c:93%](0,0,255),   P[c:118%](0,255,0)",
+        "P[c:-6%] (0,255,0),   P[c:20%](255,255,0), P[c:45%](255,255,255),   P[c:70%](127,0,255), P[c:95%](0,0,255),   P[c:120%](0,255,0)",
+        "P[c:-4%] (0,255,0),   P[c:22%](255,255,0), P[c:47%](255,255,255),   P[c:72%](127,0,255), P[c:97%](0,0,255),   P[c:122%](0,255,0)",
+        "P[c:-2%] (0,255,0),   P[c:24%](255,255,0), P[c:49%](255,255,255),   P[c:74%](127,0,255), P[c:99%](0,0,255),   P[c:124%](0,255,0)"
+      ],
+      "settings": "framedelay:3, framestretch, loop, replace:clear, pfunc:interp",
+      "data": null
+    },
+    "orange_fade_in": {
+      "type": "custom",
+      "frames": [
+        "P[1](0,0,0), P[128](0,0,0)",
+        "P[1](10,10,10), P[128](10,10,10)",
+        "P[1](20,20,20), P[128](20,20,20)",
+        "P[1](30,30,30), P[128](30,30,30)",
+        "P[1](40,40,40), P[128](40,40,40)",
+        "P[1](50,50,50), P[128](50,50,50)",
+        "P[1](60,60,60), P[128](60,60,60)",
+        "P[1](70,70,70), P[128](70,70,70)",
+        "P[1](80,80,80), P[128](80,80,80)",
+        "P[1](90,90,90), P[128](90,90,90)",
+        "P[1](100,100,100), P[128](100,100,100)",
+        "P[1](110,110,110), P[128](110,110,110)",
+        "P[1](120,120,120), P[128](120,120,120)",
+        "P[1](130,130,130), P[128](130,130,130)",
+        "P[1](140,140,140), P[128](140,140,140)",
+        "P[1](150,150,150), P[128](150,150,150)",
+        "P[1](160,160,160), P[128](160,160,160)",
+        "P[1](170,170,170), P[128](170,170,170)",
+        "P[1](180,180,180), P[128](180,180,180)",
+        "P[1](190,190,190), P[128](190,190,190)",
+        "P[1](200,200,200), P[128](200,200,200)",
+        "P[1](210,210,210), P[128](210,210,210)",
+        "P[1](220,220,220), P[128](220,220,220)",
+        "P[1](230,230,230), P[128](230,230,230)",
+        "P[1](240,240,240), P[128](240,240,240)",
+        "P[1](250,250,250), P[128](250,250,250)",
+        "P[1](255,255,255), P[128](255,255,255)",
+        "P[1](255,250,250), P[128](255,250,250)",
+        "P[1](255,240,240), P[128](255,240,240)",
+        "P[1](255,230,230), P[128](255,230,230)",
+        "P[1](255,220,220), P[128](255,220,220)",
+        "P[1](255,210,210), P[128](255,210,210)",
+        "P[1](255,200,200), P[128](255,200,200)",
+        "P[1](255,190,190), P[128](255,190,190)",
+        "P[1](255,180,180), P[128](255,180,180)",
+        "P[1](255,170,170), P[128](255,170,170)",
+        "P[1](255,160,160), P[128](255,160,160)",
+        "P[1](255,150,150), P[128](255,150,150)",
+        "P[1](255,140,140), P[128](255,140,140)",
+        "P[1](255,130,130), P[128](255,130,130)",
+        "P[1](255,120,120), P[128](255,120,120)",
+        "P[1](255,110,110), P[128](255,110,110)",
+        "P[1](255,100,100), P[128](255,100,100)",
+        "P[1](255,90,90), P[128](255,90,90)",
+        "P[1](255,88,80), P[128](255,88,80)",
+        "P[1](255,88,70), P[128](255,88,70)",
+        "P[1](255,88,60), P[128](255,88,60)",
+        "P[1](255,88,50), P[128](255,88,50)",
+        "P[1](255,88,40), P[128](255,88,40)",
+        "P[1](255,88,30), P[128](255,88,30)",
+        "P[1](255,88,20), P[128](255,88,20)",
+        "P[1](255,88,10), P[128](255,88,10)",
+        "P[1](255,88,0), P[128](255,88,0)",
+        "P[126-128](0,0,0)"
+      ],
+      "settings": "loops:1, pfunc:interp, replace:clear",
+      "data": null
+    },
+    "pastel_wave": {
+      "type": "custom",
+      "frames": [
+        "                      P[c:0%] (40,255,40),   P[c:25%](255,255,40), P[c:50%](255,40,40),   P[c:75%](127,40,255), P[c:100%](40,40,255)",
+        "P[c:-24%](40,40,255),   P[c:2%] (40,255,40),   P[c:27%](255,255,40), P[c:52%](255,40,40),   P[c:77%](127,40,255), P[c:102%](40,40,255)",
+        "P[c:-22%](40,40,255),   P[c:4%] (40,255,40),   P[c:29%](255,255,40), P[c:54%](255,40,40),   P[c:79%](127,40,255), P[c:104%](40,40,255)",
+        "P[c:-20%](40,40,255),   P[c:6%] (40,255,40),   P[c:31%](255,255,40), P[c:56%](255,40,40),   P[c:81%](127,40,255), P[c:106%](40,40,255)",
+        "P[c:-18%](40,40,255),   P[c:8%] (40,255,40),   P[c:33%](255,255,40), P[c:58%](255,40,40),   P[c:83%](127,40,255), P[c:108%](40,40,255)",
+        "P[c:-16%](40,40,255),   P[c:10%](40,255,40),   P[c:35%](255,255,40), P[c:60%](255,40,40),   P[c:85%](127,40,255), P[c:110%](40,40,255)",
+        "P[c:-14%](40,40,255),   P[c:12%](40,255,40),   P[c:37%](255,255,40), P[c:62%](255,40,40),   P[c:87%](127,40,255), P[c:112%](40,40,255)",
+        "P[c:-12%](40,40,255),   P[c:14%](40,255,40),   P[c:39%](255,255,40), P[c:64%](255,40,40),   P[c:89%](127,40,255), P[c:114%](40,40,255)",
+        "P[c:-10%](40,40,255),   P[c:16%](40,255,40),   P[c:41%](255,255,40), P[c:66%](255,40,40),   P[c:91%](127,40,255), P[c:116%](40,40,255)",
+        "P[c:-8%] (40,40,255),   P[c:18%](40,255,40),   P[c:43%](255,255,40), P[c:68%](255,40,40),   P[c:93%](127,40,255), P[c:118%](40,40,255)",
+        "P[c:-6%] (40,40,255),   P[c:20%](40,255,40),   P[c:45%](255,255,40), P[c:70%](255,40,40),   P[c:95%](127,40,255), P[c:120%](40,40,255)",
+        "P[c:-4%] (40,40,255),   P[c:22%](40,255,40),   P[c:47%](255,255,40), P[c:72%](255,40,40),   P[c:97%](127,40,255), P[c:122%](40,40,255)",
+        "P[c:-2%] (40,40,255),   P[c:24%](40,255,40),   P[c:49%](255,255,40), P[c:74%](255,40,40),   P[c:99%](127,40,255), P[c:124%](40,40,255)",
+        "                      P[c:0%] (40,40,255),   P[c:25%](40,255,40),   P[c:50%](255,255,40), P[c:75%](255,40,40),   P[c:100%](127,40,255)",
+        "P[c:-24%](127,40,255), P[c:2%] (40,40,255),   P[c:27%](40,255,40),   P[c:52%](255,255,40), P[c:77%](255,40,40),   P[c:102%](127,40,255)",
+        "P[c:-22%](127,40,255), P[c:4%] (40,40,255),   P[c:29%](40,255,40),   P[c:54%](255,255,40), P[c:79%](255,40,40),   P[c:104%](127,40,255)",
+        "P[c:-20%](127,40,255), P[c:6%] (40,40,255),   P[c:31%](40,255,40),   P[c:56%](255,255,40), P[c:81%](255,40,40),   P[c:106%](127,40,255)",
+        "P[c:-18%](127,40,255), P[c:8%] (40,40,255),   P[c:33%](40,255,40),   P[c:58%](255,255,40), P[c:83%](255,40,40),   P[c:108%](127,40,255)",
+        "P[c:-16%](127,40,255), P[c:10%](40,40,255),   P[c:35%](40,255,40),   P[c:60%](255,255,40), P[c:85%](255,40,40),   P[c:110%](127,40,255)",
+        "P[c:-14%](127,40,255), P[c:12%](40,40,255),   P[c:37%](40,255,40),   P[c:62%](255,255,40), P[c:87%](255,40,40),   P[c:112%](127,40,255)",
+        "P[c:-12%](127,40,255), P[c:14%](40,40,255),   P[c:39%](40,255,40),   P[c:64%](255,255,40), P[c:89%](255,40,40),   P[c:114%](127,40,255)",
+        "P[c:-10%](127,40,255), P[c:16%](40,40,255),   P[c:41%](40,255,40),   P[c:66%](255,255,40), P[c:91%](255,40,40),   P[c:116%](127,40,255)",
+        "P[c:-8%] (127,40,255), P[c:18%](40,40,255),   P[c:43%](40,255,40),   P[c:68%](255,255,40), P[c:93%](255,40,40),   P[c:118%](127,40,255)",
+        "P[c:-6%] (127,40,255), P[c:20%](40,40,255),   P[c:45%](40,255,40),   P[c:70%](255,255,40), P[c:95%](255,40,40),   P[c:120%](127,40,255)",
+        "P[c:-4%] (127,40,255), P[c:22%](40,40,255),   P[c:47%](40,255,40),   P[c:72%](255,255,40), P[c:97%](255,40,40),   P[c:122%](127,40,255)",
+        "P[c:-2%] (127,40,255), P[c:24%](40,40,255),   P[c:49%](40,255,40),   P[c:74%](255,255,40), P[c:99%](255,40,40),   P[c:124%](127,40,255)",
+        "                      P[c:0%] (127,40,255), P[c:25%](40,40,255),   P[c:50%](40,255,40),   P[c:75%](255,255,40), P[c:100%](255,40,40)",
+        "P[c:-24%](255,40,40),   P[c:2%] (127,40,255), P[c:27%](40,40,255),   P[c:52%](40,255,40),   P[c:77%](255,255,40), P[c:102%](255,40,40)",
+        "P[c:-22%](255,40,40),   P[c:4%] (127,40,255), P[c:29%](40,40,255),   P[c:54%](40,255,40),   P[c:79%](255,255,40), P[c:104%](255,40,40)",
+        "P[c:-20%](255,40,40),   P[c:6%] (127,40,255), P[c:31%](40,40,255),   P[c:56%](40,255,40),   P[c:81%](255,255,40), P[c:106%](255,40,40)",
+        "P[c:-18%](255,40,40),   P[c:8%] (127,40,255), P[c:33%](40,40,255),   P[c:58%](40,255,40),   P[c:83%](255,255,40), P[c:108%](255,40,40)",
+        "P[c:-16%](255,40,40),   P[c:10%](127,40,255), P[c:35%](40,40,255),   P[c:60%](40,255,40),   P[c:85%](255,255,40), P[c:110%](255,40,40)",
+        "P[c:-14%](255,40,40),   P[c:12%](127,40,255), P[c:37%](40,40,255),   P[c:62%](40,255,40),   P[c:87%](255,255,40), P[c:112%](255,40,40)",
+        "P[c:-12%](255,40,40),   P[c:14%](127,40,255), P[c:39%](40,40,255),   P[c:64%](40,255,40),   P[c:89%](255,255,40), P[c:114%](255,40,40)",
+        "P[c:-10%](255,40,40),   P[c:16%](127,40,255), P[c:41%](40,40,255),   P[c:66%](40,255,40),   P[c:91%](255,255,40), P[c:116%](255,40,40)",
+        "P[c:-8%] (255,40,40),   P[c:18%](127,40,255), P[c:43%](40,40,255),   P[c:68%](40,255,40),   P[c:93%](255,255,40), P[c:118%](255,40,40)",
+        "P[c:-6%] (255,40,40),   P[c:20%](127,40,255), P[c:45%](40,40,255),   P[c:70%](40,255,40),   P[c:95%](255,255,40), P[c:120%](255,40,40)",
+        "P[c:-4%] (255,40,40),   P[c:22%](127,40,255), P[c:47%](40,40,255),   P[c:72%](40,255,40),   P[c:97%](255,255,40), P[c:122%](255,40,40)",
+        "P[c:-2%] (255,40,40),   P[c:24%](127,40,255), P[c:49%](40,40,255),   P[c:74%](40,255,40),   P[c:99%](255,255,40), P[c:124%](255,40,40)",
+        "                      P[c:0%] (255,40,40),   P[c:25%](127,40,255), P[c:50%](40,40,255),   P[c:75%](40,255,40),   P[c:100%](255,255,40)",
+        "P[c:-24%](255,255,40), P[c:2%] (255,40,40),   P[c:27%](127,40,255), P[c:52%](40,40,255),   P[c:77%](40,255,40),   P[c:102%](255,255,40)",
+        "P[c:-22%](255,255,40), P[c:4%] (255,40,40),   P[c:29%](127,40,255), P[c:54%](40,40,255),   P[c:79%](40,255,40),   P[c:104%](255,255,40)",
+        "P[c:-20%](255,255,40), P[c:6%] (255,40,40),   P[c:31%](127,40,255), P[c:56%](40,40,255),   P[c:81%](40,255,40),   P[c:106%](255,255,40)",
+        "P[c:-18%](255,255,40), P[c:8%] (255,40,40),   P[c:33%](127,40,255), P[c:58%](40,40,255),   P[c:83%](40,255,40),   P[c:108%](255,255,40)",
+        "P[c:-16%](255,255,40), P[c:10%](255,40,40),   P[c:35%](127,40,255), P[c:60%](40,40,255),   P[c:85%](40,255,40),   P[c:110%](255,255,40)",
+        "P[c:-14%](255,255,40), P[c:12%](255,40,40),   P[c:37%](127,40,255), P[c:62%](40,40,255),   P[c:87%](40,255,40),   P[c:112%](255,255,40)",
+        "P[c:-12%](255,255,40), P[c:14%](255,40,40),   P[c:39%](127,40,255), P[c:64%](40,40,255),   P[c:89%](40,255,40),   P[c:114%](255,255,40)",
+        "P[c:-10%](255,255,40), P[c:16%](255,40,40),   P[c:41%](127,40,255), P[c:66%](40,40,255),   P[c:91%](40,255,40),   P[c:116%](255,255,40)",
+        "P[c:-8%] (255,255,40), P[c:18%](255,40,40),   P[c:43%](127,40,255), P[c:68%](40,40,255),   P[c:93%](40,255,40),   P[c:118%](255,255,40)",
+        "P[c:-6%] (255,255,40), P[c:20%](255,40,40),   P[c:45%](127,40,255), P[c:70%](40,40,255),   P[c:95%](40,255,40),   P[c:120%](255,255,40)",
+        "P[c:-4%] (255,255,40), P[c:22%](255,40,40),   P[c:47%](127,40,255), P[c:72%](40,40,255),   P[c:97%](40,255,40),   P[c:122%](255,255,40)",
+        "P[c:-2%] (255,255,40), P[c:24%](255,40,40),   P[c:49%](127,40,255), P[c:74%](40,40,255),   P[c:99%](40,255,40),   P[c:124%](255,255,40)",
+        "                      P[c:0%] (255,255,40), P[c:25%](255,40,40),   P[c:50%](127,40,255), P[c:75%](40,40,255),   P[c:100%](40,255,40)",
+        "P[c:-24%](40,255,40),   P[c:2%] (255,255,40), P[c:27%](255,40,40),   P[c:52%](127,40,255), P[c:77%](40,40,255),   P[c:102%](40,255,40)",
+        "P[c:-22%](40,255,40),   P[c:4%] (255,255,40), P[c:29%](255,40,40),   P[c:54%](127,40,255), P[c:79%](40,40,255),   P[c:104%](40,255,40)",
+        "P[c:-20%](40,255,40),   P[c:6%] (255,255,40), P[c:31%](255,40,40),   P[c:56%](127,40,255), P[c:81%](40,40,255),   P[c:106%](40,255,40)",
+        "P[c:-18%](40,255,40),   P[c:8%] (255,255,40), P[c:33%](255,40,40),   P[c:58%](127,40,255), P[c:83%](40,40,255),   P[c:108%](40,255,40)",
+        "P[c:-16%](40,255,40),   P[c:10%](255,255,40), P[c:35%](255,40,40),   P[c:60%](127,40,255), P[c:85%](40,40,255),   P[c:110%](40,255,40)",
+        "P[c:-14%](40,255,40),   P[c:12%](255,255,40), P[c:37%](255,40,40),   P[c:62%](127,40,255), P[c:87%](40,40,255),   P[c:112%](40,255,40)",
+        "P[c:-12%](40,255,40),   P[c:14%](255,255,40), P[c:39%](255,40,40),   P[c:64%](127,40,255), P[c:89%](40,40,255),   P[c:114%](40,255,40)",
+        "P[c:-10%](40,255,40),   P[c:16%](255,255,40), P[c:41%](255,40,40),   P[c:66%](127,40,255), P[c:91%](40,40,255),   P[c:116%](40,255,40)",
+        "P[c:-8%] (40,255,40),   P[c:18%](255,255,40), P[c:43%](255,40,40),   P[c:68%](127,40,255), P[c:93%](40,40,255),   P[c:118%](40,255,40)",
+        "P[c:-6%] (40,255,40),   P[c:20%](255,255,40), P[c:45%](255,40,40),   P[c:70%](127,40,255), P[c:95%](40,40,255),   P[c:120%](40,255,40)",
+        "P[c:-4%] (40,255,40),   P[c:22%](255,255,40), P[c:47%](255,40,40),   P[c:72%](127,40,255), P[c:97%](40,40,255),   P[c:122%](40,255,40)",
+        "P[c:-2%] (40,255,40),   P[c:24%](255,255,40), P[c:49%](255,40,40),   P[c:74%](127,40,255), P[c:99%](40,40,255),   P[c:124%](40,255,40)"
+      ],
+      "settings": "framedelay:3, framestretch, loop, replace:clear, pfunc:interp",
+      "data": null
+    },
+    "rainbow_wave": {
+      "type": "custom",
+      "frames": [
+        "                      P[c:0%] (0,255,0),   P[c:25%](255,255,0), P[c:50%](255,0,0),   P[c:75%](127,0,255), P[c:100%](0,0,255)",
+        "P[c:-24%](0,0,255),   P[c:2%] (0,255,0),   P[c:27%](255,255,0), P[c:52%](255,0,0),   P[c:77%](127,0,255), P[c:102%](0,0,255)",
+        "P[c:-22%](0,0,255),   P[c:4%] (0,255,0),   P[c:29%](255,255,0), P[c:54%](255,0,0),   P[c:79%](127,0,255), P[c:104%](0,0,255)",
+        "P[c:-20%](0,0,255),   P[c:6%] (0,255,0),   P[c:31%](255,255,0), P[c:56%](255,0,0),   P[c:81%](127,0,255), P[c:106%](0,0,255)",
+        "P[c:-18%](0,0,255),   P[c:8%] (0,255,0),   P[c:33%](255,255,0), P[c:58%](255,0,0),   P[c:83%](127,0,255), P[c:108%](0,0,255)",
+        "P[c:-16%](0,0,255),   P[c:10%](0,255,0),   P[c:35%](255,255,0), P[c:60%](255,0,0),   P[c:85%](127,0,255), P[c:110%](0,0,255)",
+        "P[c:-14%](0,0,255),   P[c:12%](0,255,0),   P[c:37%](255,255,0), P[c:62%](255,0,0),   P[c:87%](127,0,255), P[c:112%](0,0,255)",
+        "P[c:-12%](0,0,255),   P[c:14%](0,255,0),   P[c:39%](255,255,0), P[c:64%](255,0,0),   P[c:89%](127,0,255), P[c:114%](0,0,255)",
+        "P[c:-10%](0,0,255),   P[c:16%](0,255,0),   P[c:41%](255,255,0), P[c:66%](255,0,0),   P[c:91%](127,0,255), P[c:116%](0,0,255)",
+        "P[c:-8%] (0,0,255),   P[c:18%](0,255,0),   P[c:43%](255,255,0), P[c:68%](255,0,0),   P[c:93%](127,0,255), P[c:118%](0,0,255)",
+        "P[c:-6%] (0,0,255),   P[c:20%](0,255,0),   P[c:45%](255,255,0), P[c:70%](255,0,0),   P[c:95%](127,0,255), P[c:120%](0,0,255)",
+        "P[c:-4%] (0,0,255),   P[c:22%](0,255,0),   P[c:47%](255,255,0), P[c:72%](255,0,0),   P[c:97%](127,0,255), P[c:122%](0,0,255)",
+        "P[c:-2%] (0,0,255),   P[c:24%](0,255,0),   P[c:49%](255,255,0), P[c:74%](255,0,0),   P[c:99%](127,0,255), P[c:124%](0,0,255)",
+        "                      P[c:0%] (0,0,255),   P[c:25%](0,255,0),   P[c:50%](255,255,0), P[c:75%](255,0,0),   P[c:100%](127,0,255)",
+        "P[c:-24%](127,0,255), P[c:2%] (0,0,255),   P[c:27%](0,255,0),   P[c:52%](255,255,0), P[c:77%](255,0,0),   P[c:102%](127,0,255)",
+        "P[c:-22%](127,0,255), P[c:4%] (0,0,255),   P[c:29%](0,255,0),   P[c:54%](255,255,0), P[c:79%](255,0,0),   P[c:104%](127,0,255)",
+        "P[c:-20%](127,0,255), P[c:6%] (0,0,255),   P[c:31%](0,255,0),   P[c:56%](255,255,0), P[c:81%](255,0,0),   P[c:106%](127,0,255)",
+        "P[c:-18%](127,0,255), P[c:8%] (0,0,255),   P[c:33%](0,255,0),   P[c:58%](255,255,0), P[c:83%](255,0,0),   P[c:108%](127,0,255)",
+        "P[c:-16%](127,0,255), P[c:10%](0,0,255),   P[c:35%](0,255,0),   P[c:60%](255,255,0), P[c:85%](255,0,0),   P[c:110%](127,0,255)",
+        "P[c:-14%](127,0,255), P[c:12%](0,0,255),   P[c:37%](0,255,0),   P[c:62%](255,255,0), P[c:87%](255,0,0),   P[c:112%](127,0,255)",
+        "P[c:-12%](127,0,255), P[c:14%](0,0,255),   P[c:39%](0,255,0),   P[c:64%](255,255,0), P[c:89%](255,0,0),   P[c:114%](127,0,255)",
+        "P[c:-10%](127,0,255), P[c:16%](0,0,255),   P[c:41%](0,255,0),   P[c:66%](255,255,0), P[c:91%](255,0,0),   P[c:116%](127,0,255)",
+        "P[c:-8%] (127,0,255), P[c:18%](0,0,255),   P[c:43%](0,255,0),   P[c:68%](255,255,0), P[c:93%](255,0,0),   P[c:118%](127,0,255)",
+        "P[c:-6%] (127,0,255), P[c:20%](0,0,255),   P[c:45%](0,255,0),   P[c:70%](255,255,0), P[c:95%](255,0,0),   P[c:120%](127,0,255)",
+        "P[c:-4%] (127,0,255), P[c:22%](0,0,255),   P[c:47%](0,255,0),   P[c:72%](255,255,0), P[c:97%](255,0,0),   P[c:122%](127,0,255)",
+        "P[c:-2%] (127,0,255), P[c:24%](0,0,255),   P[c:49%](0,255,0),   P[c:74%](255,255,0), P[c:99%](255,0,0),   P[c:124%](127,0,255)",
+        "                      P[c:0%] (127,0,255), P[c:25%](0,0,255),   P[c:50%](0,255,0),   P[c:75%](255,255,0), P[c:100%](255,0,0)",
+        "P[c:-24%](255,0,0),   P[c:2%] (127,0,255), P[c:27%](0,0,255),   P[c:52%](0,255,0),   P[c:77%](255,255,0), P[c:102%](255,0,0)",
+        "P[c:-22%](255,0,0),   P[c:4%] (127,0,255), P[c:29%](0,0,255),   P[c:54%](0,255,0),   P[c:79%](255,255,0), P[c:104%](255,0,0)",
+        "P[c:-20%](255,0,0),   P[c:6%] (127,0,255), P[c:31%](0,0,255),   P[c:56%](0,255,0),   P[c:81%](255,255,0), P[c:106%](255,0,0)",
+        "P[c:-18%](255,0,0),   P[c:8%] (127,0,255), P[c:33%](0,0,255),   P[c:58%](0,255,0),   P[c:83%](255,255,0), P[c:108%](255,0,0)",
+        "P[c:-16%](255,0,0),   P[c:10%](127,0,255), P[c:35%](0,0,255),   P[c:60%](0,255,0),   P[c:85%](255,255,0), P[c:110%](255,0,0)",
+        "P[c:-14%](255,0,0),   P[c:12%](127,0,255), P[c:37%](0,0,255),   P[c:62%](0,255,0),   P[c:87%](255,255,0), P[c:112%](255,0,0)",
+        "P[c:-12%](255,0,0),   P[c:14%](127,0,255), P[c:39%](0,0,255),   P[c:64%](0,255,0),   P[c:89%](255,255,0), P[c:114%](255,0,0)",
+        "P[c:-10%](255,0,0),   P[c:16%](127,0,255), P[c:41%](0,0,255),   P[c:66%](0,255,0),   P[c:91%](255,255,0), P[c:116%](255,0,0)",
+        "P[c:-8%] (255,0,0),   P[c:18%](127,0,255), P[c:43%](0,0,255),   P[c:68%](0,255,0),   P[c:93%](255,255,0), P[c:118%](255,0,0)",
+        "P[c:-6%] (255,0,0),   P[c:20%](127,0,255), P[c:45%](0,0,255),   P[c:70%](0,255,0),   P[c:95%](255,255,0), P[c:120%](255,0,0)",
+        "P[c:-4%] (255,0,0),   P[c:22%](127,0,255), P[c:47%](0,0,255),   P[c:72%](0,255,0),   P[c:97%](255,255,0), P[c:122%](255,0,0)",
+        "P[c:-2%] (255,0,0),   P[c:24%](127,0,255), P[c:49%](0,0,255),   P[c:74%](0,255,0),   P[c:99%](255,255,0), P[c:124%](255,0,0)",
+        "                      P[c:0%] (255,0,0),   P[c:25%](127,0,255), P[c:50%](0,0,255),   P[c:75%](0,255,0),   P[c:100%](255,255,0)",
+        "P[c:-24%](255,255,0), P[c:2%] (255,0,0),   P[c:27%](127,0,255), P[c:52%](0,0,255),   P[c:77%](0,255,0),   P[c:102%](255,255,0)",
+        "P[c:-22%](255,255,0), P[c:4%] (255,0,0),   P[c:29%](127,0,255), P[c:54%](0,0,255),   P[c:79%](0,255,0),   P[c:104%](255,255,0)",
+        "P[c:-20%](255,255,0), P[c:6%] (255,0,0),   P[c:31%](127,0,255), P[c:56%](0,0,255),   P[c:81%](0,255,0),   P[c:106%](255,255,0)",
+        "P[c:-18%](255,255,0), P[c:8%] (255,0,0),   P[c:33%](127,0,255), P[c:58%](0,0,255),   P[c:83%](0,255,0),   P[c:108%](255,255,0)",
+        "P[c:-16%](255,255,0), P[c:10%](255,0,0),   P[c:35%](127,0,255), P[c:60%](0,0,255),   P[c:85%](0,255,0),   P[c:110%](255,255,0)",
+        "P[c:-14%](255,255,0), P[c:12%](255,0,0),   P[c:37%](127,0,255), P[c:62%](0,0,255),   P[c:87%](0,255,0),   P[c:112%](255,255,0)",
+        "P[c:-12%](255,255,0), P[c:14%](255,0,0),   P[c:39%](127,0,255), P[c:64%](0,0,255),   P[c:89%](0,255,0),   P[c:114%](255,255,0)",
+        "P[c:-10%](255,255,0), P[c:16%](255,0,0),   P[c:41%](127,0,255), P[c:66%](0,0,255),   P[c:91%](0,255,0),   P[c:116%](255,255,0)",
+        "P[c:-8%] (255,255,0), P[c:18%](255,0,0),   P[c:43%](127,0,255), P[c:68%](0,0,255),   P[c:93%](0,255,0),   P[c:118%](255,255,0)",
+        "P[c:-6%] (255,255,0), P[c:20%](255,0,0),   P[c:45%](127,0,255), P[c:70%](0,0,255),   P[c:95%](0,255,0),   P[c:120%](255,255,0)",
+        "P[c:-4%] (255,255,0), P[c:22%](255,0,0),   P[c:47%](127,0,255), P[c:72%](0,0,255),   P[c:97%](0,255,0),   P[c:122%](255,255,0)",
+        "P[c:-2%] (255,255,0), P[c:24%](255,0,0),   P[c:49%](127,0,255), P[c:74%](0,0,255),   P[c:99%](0,255,0),   P[c:124%](255,255,0)",
+        "                      P[c:0%] (255,255,0), P[c:25%](255,0,0),   P[c:50%](127,0,255), P[c:75%](0,0,255),   P[c:100%](0,255,0)",
+        "P[c:-24%](0,255,0),   P[c:2%] (255,255,0), P[c:27%](255,0,0),   P[c:52%](127,0,255), P[c:77%](0,0,255),   P[c:102%](0,255,0)",
+        "P[c:-22%](0,255,0),   P[c:4%] (255,255,0), P[c:29%](255,0,0),   P[c:54%](127,0,255), P[c:79%](0,0,255),   P[c:104%](0,255,0)",
+        "P[c:-20%](0,255,0),   P[c:6%] (255,255,0), P[c:31%](255,0,0),   P[c:56%](127,0,255), P[c:81%](0,0,255),   P[c:106%](0,255,0)",
+        "P[c:-18%](0,255,0),   P[c:8%] (255,255,0), P[c:33%](255,0,0),   P[c:58%](127,0,255), P[c:83%](0,0,255),   P[c:108%](0,255,0)",
+        "P[c:-16%](0,255,0),   P[c:10%](255,255,0), P[c:35%](255,0,0),   P[c:60%](127,0,255), P[c:85%](0,0,255),   P[c:110%](0,255,0)",
+        "P[c:-14%](0,255,0),   P[c:12%](255,255,0), P[c:37%](255,0,0),   P[c:62%](127,0,255), P[c:87%](0,0,255),   P[c:112%](0,255,0)",
+        "P[c:-12%](0,255,0),   P[c:14%](255,255,0), P[c:39%](255,0,0),   P[c:64%](127,0,255), P[c:89%](0,0,255),   P[c:114%](0,255,0)",
+        "P[c:-10%](0,255,0),   P[c:16%](255,255,0), P[c:41%](255,0,0),   P[c:66%](127,0,255), P[c:91%](0,0,255),   P[c:116%](0,255,0)",
+        "P[c:-8%] (0,255,0),   P[c:18%](255,255,0), P[c:43%](255,0,0),   P[c:68%](127,0,255), P[c:93%](0,0,255),   P[c:118%](0,255,0)",
+        "P[c:-6%] (0,255,0),   P[c:20%](255,255,0), P[c:45%](255,0,0),   P[c:70%](127,0,255), P[c:95%](0,0,255),   P[c:120%](0,255,0)",
+        "P[c:-4%] (0,255,0),   P[c:22%](255,255,0), P[c:47%](255,0,0),   P[c:72%](127,0,255), P[c:97%](0,0,255),   P[c:122%](0,255,0)",
+        "P[c:-2%] (0,255,0),   P[c:24%](255,255,0), P[c:49%](255,0,0),   P[c:74%](127,0,255), P[c:99%](0,0,255),   P[c:124%](0,255,0)"
+      ],
+      "settings": "framedelay:3, framestretch, loop, replace:clear, pfunc:interp",
+      "data": null
+    },
+    "test_animation": {
+      "type": "custom",
+      "frames": [
+        "P[1](255,255,255), P[128](255,255,255)",
+        "P[1](255,0,0), P[128](255,0,0)",
+        "P[1](0,255,0), P[128](0,255,0)",
+        "P[1](0,0,255), P[128](0,0,255)"
+      ],
+      "settings": "loop, replace:clear, pfunc:interp, framedelay:255",
+      "data": null
+    },
+    "underlighting_only_rotation": {
+      "type": "custom",
+      "frames": [
+        "P[18,21,24,27,30,115,118,120,122,113,33,108,49,106,65,104,82,85-86,88-90,92,95,98,100](0xC1, 0x2D, 0x1D)",
+        "P[18,21,24,27,30,115,118,120,122,113,33,108,49,106,65,104,82,85-86,88-90,92,95,98,100](0xEE, 0x6D, 0x28)",
+        "P[18,21,24,27,30,115,118,120,122,113,33,108,49,106,65,104,82,85-86,88-90,92,95,98,100](0xE0, 0x9E, 0x3B)",
+        "P[18,21,24,27,30,115,118,120,122,113,33,108,49,106,65,104,82,85-86,88-90,92,95,98,100](0xE5, 0xC9, 0x43)",
+        "P[18,21,24,27,30,115,118,120,122,113,33,108,49,106,65,104,82,85-86,88-90,92,95,98,100](0x1E, 0xB8, 0x6D)",
+        "P[18,21,24,27,30,115,118,120,122,113,33,108,49,106,65,104,82,85-86,88-90,92,95,98,100](0x00, 0xB3, 0xA6)",
+        "P[18,21,24,27,30,115,118,120,122,113,33,108,49,106,65,104,82,85-86,88-90,92,95,98,100](0x20, 0x82, 0xC6)",
+        "P[18,21,24,27,30,115,118,120,122,113,33,108,49,106,65,104,82,85-86,88-90,92,95,98,100](0x43, 0x54, 0xC1)",
+        "P[18,21,24,27,30,115,118,120,122,113,33,108,49,106,65,104,82,85-86,88-90,92,95,98,100](0x71, 0x1C, 0x9E)",
+        "P[18,21,24,27,30,115,118,120,122,113,33,108,49,106,65,104,82,85-86,88-90,92,95,98,100](0xCD, 0x3B, 0x70)",
+        "P[18,21,24,27,30,115,118,120,122,113,33,108,49,106,65,104,82,85-86,88-90,92,95,98,100](0xB8, 0x34, 0x3E)",
+        "P[18,21,24,27,30,115,118,120,122,113,33,108,49,106,65,104,82,85-86,88-90,92,95,98,100](40,255,40)",
+        "P[18,21,24,27,30,115,118,120,122,113,33,108,49,106,65,104,82,85-86,88-90,92,95,98,100](255,255,40)",
+        "P[18,21,24,27,30,115,118,120,122,113,33,108,49,106,65,104,82,85-86,88-90,92,95,98,100](255,40,40)",
+        "P[18,21,24,27,30,115,118,120,122,113,33,108,49,106,65,104,82,85-86,88-90,92,95,98,100](127,40,255)",
+        "P[18,21,24,27,30,115,118,120,122,113,33,108,49,106,65,104,82,85-86,88-90,92,95,98,100](40,40,255)",
+        "P[18,21,24,27,30,115,118,120,122,113,33,108,49,106,65,104,82,85-86,88-90,92,95,98,100](255,80,0)",
+        "P[18,21,24,27,30,115,118,120,122,113,33,108,49,106,65,104,82,85-86,88-90,92,95,98,100](239,10,129)",
+        "P[18,21,24,27,30,115,118,120,122,113,33,108,49,106,65,104,82,85-86,88-90,92,95,98,100](129,10,239)",
+        "P[18,21,24,27,30,115,118,120,122,113,33,108,49,106,65,104,82,85-86,88-90,92,95,98,100](10,60,255)"
+      ],
+      "settings": "replace:clearactive",
+      "data": null
+    }
+  },
+  "canned": {
+    "custom_wave": {
+      "settings": "framedelay:${speed}, framestretch, loop, replace:clear, pfunc:interp",
+      "type": "animation",
+      "description": "Create your own custom wave of colors",
+      "configurable": [
+        {
+          "name": "color_1",
+          "type": "color",
+          "default": {
+            "b": 0,
+            "g": 255,
+            "r": 0
+          },
+          "values": null
+        },
+        {
+          "name": "color_2",
+          "type": "color",
+          "default": {
+            "b": 0,
+            "g": 255,
+            "r": 255
+          },
+          "values": null
+        },
+        {
+          "name": "color_3",
+          "type": "color",
+          "default": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "values": null
+        },
+        {
+          "name": "color_4",
+          "type": "color",
+          "default": {
+            "b": 255,
+            "g": 0,
+            "r": 127
+          },
+          "values": null
+        },
+        {
+          "name": "color_5",
+          "type": "color",
+          "default": {
+            "b": 255,
+            "g": 0,
+            "r": 0
+          },
+          "values": null
+        },
+        {
+          "name": "speed",
+          "type": "select",
+          "default": 3,
+          "values": [
+            {
+              "name": "warp",
+              "value": 1
+            },
+            {
+              "name": "fast",
+              "value": 2
+            },
+            {
+              "name": "normal",
+              "value": 3
+            }
+          ]
+        }
+      ],
+      "frames": [
+        "                      P[c:1%] (${color_1}),   P[c:25%](${color_2}), P[c:50%](${color_3}),   P[c:75%](${color_4}), P[c:100%](${color_5})",
+        "P[c:-24%](${color_5}),   P[c:2%] (${color_1}),   P[c:27%](${color_2}), P[c:52%](${color_3}),   P[c:77%](${color_4}), P[c:102%](${color_5})",
+        "P[c:-22%](${color_5}),   P[c:4%] (${color_1}),   P[c:29%](${color_2}), P[c:54%](${color_3}),   P[c:79%](${color_4}), P[c:104%](${color_5})",
+        "P[c:-20%](${color_5}),   P[c:6%] (${color_1}),   P[c:31%](${color_2}), P[c:56%](${color_3}),   P[c:81%](${color_4}), P[c:106%](${color_5})",
+        "P[c:-18%](${color_5}),   P[c:8%] (${color_1}),   P[c:33%](${color_2}), P[c:58%](${color_3}),   P[c:83%](${color_4}), P[c:108%](${color_5})",
+        "P[c:-16%](${color_5}),   P[c:10%](${color_1}),   P[c:35%](${color_2}), P[c:60%](${color_3}),   P[c:85%](${color_4}), P[c:110%](${color_5})",
+        "P[c:-14%](${color_5}),   P[c:12%](${color_1}),   P[c:37%](${color_2}), P[c:62%](${color_3}),   P[c:87%](${color_4}), P[c:112%](${color_5})",
+        "P[c:-12%](${color_5}),   P[c:14%](${color_1}),   P[c:39%](${color_2}), P[c:64%](${color_3}),   P[c:89%](${color_4}), P[c:114%](${color_5})",
+        "P[c:-10%](${color_5}),   P[c:16%](${color_1}),   P[c:41%](${color_2}), P[c:66%](${color_3}),   P[c:91%](${color_4}), P[c:116%](${color_5})",
+        "P[c:-8%] (${color_5}),   P[c:18%](${color_1}),   P[c:43%](${color_2}), P[c:68%](${color_3}),   P[c:93%](${color_4}), P[c:118%](${color_5})",
+        "P[c:-6%] (${color_5}),   P[c:20%](${color_1}),   P[c:45%](${color_2}), P[c:70%](${color_3}),   P[c:95%](${color_4}), P[c:120%](${color_5})",
+        "P[c:-4%] (${color_5}),   P[c:22%](${color_1}),   P[c:47%](${color_2}), P[c:72%](${color_3}),   P[c:97%](${color_4}), P[c:122%](${color_5})",
+        "P[c:-2%] (${color_5}),   P[c:24%](${color_1}),   P[c:49%](${color_2}), P[c:74%](${color_3}),   P[c:99%](${color_4}), P[c:124%](${color_5})",
+        "                      P[c:0%] (${color_5}),   P[c:25%](${color_1}),   P[c:50%](${color_2}), P[c:75%](${color_3}),   P[c:100%](${color_4})",
+        "P[c:-24%](${color_4}), P[c:2%] (${color_5}),   P[c:27%](${color_1}),   P[c:52%](${color_2}), P[c:77%](${color_3}),   P[c:102%](${color_4})",
+        "P[c:-22%](${color_4}), P[c:4%] (${color_5}),   P[c:29%](${color_1}),   P[c:54%](${color_2}), P[c:79%](${color_3}),   P[c:104%](${color_4})",
+        "P[c:-20%](${color_4}), P[c:6%] (${color_5}),   P[c:31%](${color_1}),   P[c:56%](${color_2}), P[c:81%](${color_3}),   P[c:106%](${color_4})",
+        "P[c:-18%](${color_4}), P[c:8%] (${color_5}),   P[c:33%](${color_1}),   P[c:58%](${color_2}), P[c:83%](${color_3}),   P[c:108%](${color_4})",
+        "P[c:-16%](${color_4}), P[c:10%](${color_5}),   P[c:35%](${color_1}),   P[c:60%](${color_2}), P[c:85%](${color_3}),   P[c:110%](${color_4})",
+        "P[c:-14%](${color_4}), P[c:12%](${color_5}),   P[c:37%](${color_1}),   P[c:62%](${color_2}), P[c:87%](${color_3}),   P[c:112%](${color_4})",
+        "P[c:-12%](${color_4}), P[c:14%](${color_5}),   P[c:39%](${color_1}),   P[c:64%](${color_2}), P[c:89%](${color_3}),   P[c:114%](${color_4})",
+        "P[c:-10%](${color_4}), P[c:16%](${color_5}),   P[c:41%](${color_1}),   P[c:66%](${color_2}), P[c:91%](${color_3}),   P[c:116%](${color_4})",
+        "P[c:-8%] (${color_4}), P[c:18%](${color_5}),   P[c:43%](${color_1}),   P[c:68%](${color_2}), P[c:93%](${color_3}),   P[c:118%](${color_4})",
+        "P[c:-6%] (${color_4}), P[c:20%](${color_5}),   P[c:45%](${color_1}),   P[c:70%](${color_2}), P[c:95%](${color_3}),   P[c:120%](${color_4})",
+        "P[c:-4%] (${color_4}), P[c:22%](${color_5}),   P[c:47%](${color_1}),   P[c:72%](${color_2}), P[c:97%](${color_3}),   P[c:122%](${color_4})",
+        "P[c:-2%] (${color_4}), P[c:24%](${color_5}),   P[c:49%](${color_1}),   P[c:74%](${color_2}), P[c:99%](${color_3}),   P[c:124%](${color_4})",
+        "                      P[c:0%] (${color_4}), P[c:25%](${color_5}),   P[c:50%](${color_1}),   P[c:75%](${color_2}), P[c:100%](${color_3})",
+        "P[c:-24%](${color_3}),   P[c:2%] (${color_4}), P[c:27%](${color_5}),   P[c:52%](${color_1}),   P[c:77%](${color_2}), P[c:102%](${color_3})",
+        "P[c:-22%](${color_3}),   P[c:4%] (${color_4}), P[c:29%](${color_5}),   P[c:54%](${color_1}),   P[c:79%](${color_2}), P[c:104%](${color_3})",
+        "P[c:-20%](${color_3}),   P[c:6%] (${color_4}), P[c:31%](${color_5}),   P[c:56%](${color_1}),   P[c:81%](${color_2}), P[c:106%](${color_3})",
+        "P[c:-18%](${color_3}),   P[c:8%] (${color_4}), P[c:33%](${color_5}),   P[c:58%](${color_1}),   P[c:83%](${color_2}), P[c:108%](${color_3})",
+        "P[c:-16%](${color_3}),   P[c:10%](${color_4}), P[c:35%](${color_5}),   P[c:60%](${color_1}),   P[c:85%](${color_2}), P[c:110%](${color_3})",
+        "P[c:-14%](${color_3}),   P[c:12%](${color_4}), P[c:37%](${color_5}),   P[c:62%](${color_1}),   P[c:87%](${color_2}), P[c:112%](${color_3})",
+        "P[c:-12%](${color_3}),   P[c:14%](${color_4}), P[c:39%](${color_5}),   P[c:64%](${color_1}),   P[c:89%](${color_2}), P[c:114%](${color_3})",
+        "P[c:-10%](${color_3}),   P[c:16%](${color_4}), P[c:41%](${color_5}),   P[c:66%](${color_1}),   P[c:91%](${color_2}), P[c:116%](${color_3})",
+        "P[c:-8%] (${color_3}),   P[c:18%](${color_4}), P[c:43%](${color_5}),   P[c:68%](${color_1}),   P[c:93%](${color_2}), P[c:118%](${color_3})",
+        "P[c:-6%] (${color_3}),   P[c:20%](${color_4}), P[c:45%](${color_5}),   P[c:70%](${color_1}),   P[c:95%](${color_2}), P[c:120%](${color_3})",
+        "P[c:-4%] (${color_3}),   P[c:22%](${color_4}), P[c:47%](${color_5}),   P[c:72%](${color_1}),   P[c:97%](${color_2}), P[c:122%](${color_3})",
+        "P[c:-2%] (${color_3}),   P[c:24%](${color_4}), P[c:49%](${color_5}),   P[c:74%](${color_1}),   P[c:99%](${color_2}), P[c:124%](${color_3})",
+        "                      P[c:0%] (${color_3}),   P[c:25%](${color_4}), P[c:50%](${color_5}),   P[c:75%](${color_1}),   P[c:100%](${color_2})",
+        "P[c:-24%](${color_2}), P[c:2%] (${color_3}),   P[c:27%](${color_4}), P[c:52%](${color_5}),   P[c:77%](${color_1}),   P[c:102%](${color_2})",
+        "P[c:-22%](${color_2}), P[c:4%] (${color_3}),   P[c:29%](${color_4}), P[c:54%](${color_5}),   P[c:79%](${color_1}),   P[c:104%](${color_2})",
+        "P[c:-20%](${color_2}), P[c:6%] (${color_3}),   P[c:31%](${color_4}), P[c:56%](${color_5}),   P[c:81%](${color_1}),   P[c:106%](${color_2})",
+        "P[c:-18%](${color_2}), P[c:8%] (${color_3}),   P[c:33%](${color_4}), P[c:58%](${color_5}),   P[c:83%](${color_1}),   P[c:108%](${color_2})",
+        "P[c:-16%](${color_2}), P[c:10%](${color_3}),   P[c:35%](${color_4}), P[c:60%](${color_5}),   P[c:85%](${color_1}),   P[c:110%](${color_2})",
+        "P[c:-14%](${color_2}), P[c:12%](${color_3}),   P[c:37%](${color_4}), P[c:62%](${color_5}),   P[c:87%](${color_1}),   P[c:112%](${color_2})",
+        "P[c:-12%](${color_2}), P[c:14%](${color_3}),   P[c:39%](${color_4}), P[c:64%](${color_5}),   P[c:89%](${color_1}),   P[c:114%](${color_2})",
+        "P[c:-10%](${color_2}), P[c:16%](${color_3}),   P[c:41%](${color_4}), P[c:66%](${color_5}),   P[c:91%](${color_1}),   P[c:116%](${color_2})",
+        "P[c:-8%] (${color_2}), P[c:18%](${color_3}),   P[c:43%](${color_4}), P[c:68%](${color_5}),   P[c:93%](${color_1}),   P[c:118%](${color_2})",
+        "P[c:-6%] (${color_2}), P[c:20%](${color_3}),   P[c:45%](${color_4}), P[c:70%](${color_5}),   P[c:95%](${color_1}),   P[c:120%](${color_2})",
+        "P[c:-4%] (${color_2}), P[c:22%](${color_3}),   P[c:47%](${color_4}), P[c:72%](${color_5}),   P[c:97%](${color_1}),   P[c:122%](${color_2})",
+        "P[c:-2%] (${color_2}), P[c:24%](${color_3}),   P[c:49%](${color_4}), P[c:74%](${color_5}),   P[c:99%](${color_1}),   P[c:124%](${color_2})",
+        "                      P[c:0%] (${color_2}), P[c:25%](${color_3}),   P[c:50%](${color_4}), P[c:75%](${color_5}),   P[c:100%](${color_1})",
+        "P[c:-24%](${color_1}),   P[c:2%] (${color_2}), P[c:27%](${color_3}),   P[c:52%](${color_4}), P[c:77%](${color_5}),   P[c:102%](${color_1})",
+        "P[c:-22%](${color_1}),   P[c:4%] (${color_2}), P[c:29%](${color_3}),   P[c:54%](${color_4}), P[c:79%](${color_5}),   P[c:104%](${color_1})",
+        "P[c:-20%](${color_1}),   P[c:6%] (${color_2}), P[c:31%](${color_3}),   P[c:56%](${color_4}), P[c:81%](${color_5}),   P[c:106%](${color_1})",
+        "P[c:-18%](${color_1}),   P[c:8%] (${color_2}), P[c:33%](${color_3}),   P[c:58%](${color_4}), P[c:83%](${color_5}),   P[c:108%](${color_1})",
+        "P[c:-16%](${color_1}),   P[c:10%](${color_2}), P[c:35%](${color_3}),   P[c:60%](${color_4}), P[c:85%](${color_5}),   P[c:110%](${color_1})",
+        "P[c:-14%](${color_1}),   P[c:12%](${color_2}), P[c:37%](${color_3}),   P[c:62%](${color_4}), P[c:87%](${color_5}),   P[c:112%](${color_1})",
+        "P[c:-12%](${color_1}),   P[c:14%](${color_2}), P[c:39%](${color_3}),   P[c:64%](${color_4}), P[c:89%](${color_5}),   P[c:114%](${color_1})",
+        "P[c:-10%](${color_1}),   P[c:16%](${color_2}), P[c:41%](${color_3}),   P[c:66%](${color_4}), P[c:91%](${color_5}),   P[c:116%](${color_1})",
+        "P[c:-8%] (${color_1}),   P[c:18%](${color_2}), P[c:43%](${color_3}),   P[c:68%](${color_4}), P[c:93%](${color_5}),   P[c:118%](${color_1})",
+        "P[c:-6%] (${color_1}),   P[c:20%](${color_2}), P[c:45%](${color_3}),   P[c:70%](${color_4}), P[c:95%](${color_5}),   P[c:120%](${color_1})",
+        "P[c:-4%] (${color_1}),   P[c:22%](${color_2}), P[c:47%](${color_3}),   P[c:72%](${color_4}), P[c:97%](${color_5}),   P[c:122%](${color_1})",
+        "P[c:-2%] (${color_1}),   P[c:24%](${color_2}), P[c:49%](${color_3}),   P[c:74%](${color_4}), P[c:99%](${color_5}),   P[c:124%](${color_1})"
+      ],
+      "custom-kll": ""
+    },
+    "fingerprints": {
+      "settings": "framedelay:${speed}, framestretch, loops:1, replace:stack",
+      "type": "reaction",
+      "description": "Leave your mark wherever you go",
+      "configurable": [
+        {
+          "name": "color",
+          "type": "color",
+          "default": {
+            "b": 0,
+            "g": 0,
+            "r": 255
+          },
+          "values": null
+        },
+        {
+          "name": "speed",
+          "type": "select",
+          "default": 2,
+          "values": [
+            {
+              "name": "warp",
+              "value": 1
+            },
+            {
+              "name": "fast",
+              "value": 2
+            }
+          ]
+        }
+      ],
+      "frames": [
+        "P[r:i,c:i](${color})",
+        "P[r:i,c:i](${color})",
+        "P[r:i,c:i](${color})",
+        "P[r:i,c:i](${color})"
+      ],
+      "custom-kll": "S[0x00-0x5F] :+ A[${__NAME__}](start);"
+    },
+    "fingerprints_two_tone": {
+      "settings": "framedelay:${speed}, framestretch, loops:1, replace:stack",
+      "type": "reaction",
+      "description": "Leave your mark wherever you go",
+      "configurable": [
+        {
+          "name": "start_color",
+          "type": "color",
+          "default": {
+            "b": 0,
+            "g": 0,
+            "r": 255
+          },
+          "values": null
+        },
+        {
+          "name": "end_color",
+          "type": "color",
+          "default": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "values": null
+        },
+        {
+          "name": "speed",
+          "type": "select",
+          "default": 2,
+          "values": [
+            {
+              "name": "warp",
+              "value": 1
+            },
+            {
+              "name": "fast",
+              "value": 2
+            }
+          ]
+        }
+      ],
+      "frames": [
+        "P[r:i,c:i](${start_color})",
+        "P[r:i,c:i](${start_color})",
+        "P[r:i,c:i](${start_color})",
+        "P[r:i,c:i](${start_color})",
+        "P[r:i,c:i](${start_color:end_color:0.3})",
+        "P[r:i,c:i](${start_color:end_color:0.6})",
+        "P[r:i,c:i](${start_color:end_color:0.75})",
+        "P[r:i,c:i](${start_color:end_color:0.80})",
+        "P[r:i,c:i](${start_color:end_color:0.85})",
+        "P[r:i,c:i](${start_color:end_color:0.90})",
+        "P[r:i,c:i](${start_color:end_color:0.95})",
+        "P[r:i,c:i](${end_color})"
+      ],
+      "custom-kll": "S[0x00-0x5F] :+ A[${__NAME__}](start);"
+    },
+    "miami_wave": {
+      "settings": "framedelay:${speed}, framestretch, loop, replace:clear, pfunc:interp",
+      "type": "animation",
+      "description": "Lets the lights of Miami roll over you.",
+      "configurable": [
+        {
+          "name": "speed",
+          "type": "select",
+          "default": 3,
+          "values": [
+            {
+              "name": "warp",
+              "value": 1
+            },
+            {
+              "name": "fast",
+              "value": 2
+            },
+            {
+              "name": "normal",
+              "value": 3
+            }
+          ]
+        }
+      ],
+      "frames": [
+        "                      P[c:1%] (255,0,180),   P[c:25%](46,255,255), P[c:50%](255,0,180),   P[c:75%](204,255,0), P[c:100%](46,255,255)",
+        "P[c:-24%](46,255,255),   P[c:2%] (255,0,180),   P[c:27%](46,255,255), P[c:52%](255,0,180),   P[c:77%](204,255,0), P[c:102%](46,255,255)",
+        "P[c:-22%](46,255,255),   P[c:4%] (255,0,180),   P[c:29%](46,255,255), P[c:54%](255,0,180),   P[c:79%](204,255,0), P[c:104%](46,255,255)",
+        "P[c:-20%](46,255,255),   P[c:6%] (255,0,180),   P[c:31%](46,255,255), P[c:56%](255,0,180),   P[c:81%](204,255,0), P[c:106%](46,255,255)",
+        "P[c:-18%](46,255,255),   P[c:8%] (255,0,180),   P[c:33%](46,255,255), P[c:58%](255,0,180),   P[c:83%](204,255,0), P[c:108%](46,255,255)",
+        "P[c:-16%](46,255,255),   P[c:10%](255,0,180),   P[c:35%](46,255,255), P[c:60%](255,0,180),   P[c:85%](204,255,0), P[c:110%](46,255,255)",
+        "P[c:-14%](46,255,255),   P[c:12%](255,0,180),   P[c:37%](46,255,255), P[c:62%](255,0,180),   P[c:87%](204,255,0), P[c:112%](46,255,255)",
+        "P[c:-12%](46,255,255),   P[c:14%](255,0,180),   P[c:39%](46,255,255), P[c:64%](255,0,180),   P[c:89%](204,255,0), P[c:114%](46,255,255)",
+        "P[c:-10%](46,255,255),   P[c:16%](255,0,180),   P[c:41%](46,255,255), P[c:66%](255,0,180),   P[c:91%](204,255,0), P[c:116%](46,255,255)",
+        "P[c:-8%] (46,255,255),   P[c:18%](255,0,180),   P[c:43%](46,255,255), P[c:68%](255,0,180),   P[c:93%](204,255,0), P[c:118%](46,255,255)",
+        "P[c:-6%] (46,255,255),   P[c:20%](255,0,180),   P[c:45%](46,255,255), P[c:70%](255,0,180),   P[c:95%](204,255,0), P[c:120%](46,255,255)",
+        "P[c:-4%] (46,255,255),   P[c:22%](255,0,180),   P[c:47%](46,255,255), P[c:72%](255,0,180),   P[c:97%](204,255,0), P[c:122%](46,255,255)",
+        "P[c:-2%] (46,255,255),   P[c:24%](255,0,180),   P[c:49%](46,255,255), P[c:74%](255,0,180),   P[c:99%](204,255,0), P[c:124%](46,255,255)",
+        "                      P[c:0%] (46,255,255),   P[c:25%](255,0,180),   P[c:50%](46,255,255), P[c:75%](255,0,180),   P[c:100%](204,255,0)",
+        "P[c:-24%](204,255,0), P[c:2%] (46,255,255),   P[c:27%](255,0,180),   P[c:52%](46,255,255), P[c:77%](255,0,180),   P[c:102%](204,255,0)",
+        "P[c:-22%](204,255,0), P[c:4%] (46,255,255),   P[c:29%](255,0,180),   P[c:54%](46,255,255), P[c:79%](255,0,180),   P[c:104%](204,255,0)",
+        "P[c:-20%](204,255,0), P[c:6%] (46,255,255),   P[c:31%](255,0,180),   P[c:56%](46,255,255), P[c:81%](255,0,180),   P[c:106%](204,255,0)",
+        "P[c:-18%](204,255,0), P[c:8%] (46,255,255),   P[c:33%](255,0,180),   P[c:58%](46,255,255), P[c:83%](255,0,180),   P[c:108%](204,255,0)",
+        "P[c:-16%](204,255,0), P[c:10%](46,255,255),   P[c:35%](255,0,180),   P[c:60%](46,255,255), P[c:85%](255,0,180),   P[c:110%](204,255,0)",
+        "P[c:-14%](204,255,0), P[c:12%](46,255,255),   P[c:37%](255,0,180),   P[c:62%](46,255,255), P[c:87%](255,0,180),   P[c:112%](204,255,0)",
+        "P[c:-12%](204,255,0), P[c:14%](46,255,255),   P[c:39%](255,0,180),   P[c:64%](46,255,255), P[c:89%](255,0,180),   P[c:114%](204,255,0)",
+        "P[c:-10%](204,255,0), P[c:16%](46,255,255),   P[c:41%](255,0,180),   P[c:66%](46,255,255), P[c:91%](255,0,180),   P[c:116%](204,255,0)",
+        "P[c:-8%] (204,255,0), P[c:18%](46,255,255),   P[c:43%](255,0,180),   P[c:68%](46,255,255), P[c:93%](255,0,180),   P[c:118%](204,255,0)",
+        "P[c:-6%] (204,255,0), P[c:20%](46,255,255),   P[c:45%](255,0,180),   P[c:70%](46,255,255), P[c:95%](255,0,180),   P[c:120%](204,255,0)",
+        "P[c:-4%] (204,255,0), P[c:22%](46,255,255),   P[c:47%](255,0,180),   P[c:72%](46,255,255), P[c:97%](255,0,180),   P[c:122%](204,255,0)",
+        "P[c:-2%] (204,255,0), P[c:24%](46,255,255),   P[c:49%](255,0,180),   P[c:74%](46,255,255), P[c:99%](255,0,180),   P[c:124%](204,255,0)",
+        "                      P[c:0%] (204,255,0), P[c:25%](46,255,255),   P[c:50%](255,0,180),   P[c:75%](46,255,255), P[c:100%](255,0,180)",
+        "P[c:-24%](255,0,180),   P[c:2%] (204,255,0), P[c:27%](46,255,255),   P[c:52%](255,0,180),   P[c:77%](46,255,255), P[c:102%](255,0,180)",
+        "P[c:-22%](255,0,180),   P[c:4%] (204,255,0), P[c:29%](46,255,255),   P[c:54%](255,0,180),   P[c:79%](46,255,255), P[c:104%](255,0,180)",
+        "P[c:-20%](255,0,180),   P[c:6%] (204,255,0), P[c:31%](46,255,255),   P[c:56%](255,0,180),   P[c:81%](46,255,255), P[c:106%](255,0,180)",
+        "P[c:-18%](255,0,180),   P[c:8%] (204,255,0), P[c:33%](46,255,255),   P[c:58%](255,0,180),   P[c:83%](46,255,255), P[c:108%](255,0,180)",
+        "P[c:-16%](255,0,180),   P[c:10%](204,255,0), P[c:35%](46,255,255),   P[c:60%](255,0,180),   P[c:85%](46,255,255), P[c:110%](255,0,180)",
+        "P[c:-14%](255,0,180),   P[c:12%](204,255,0), P[c:37%](46,255,255),   P[c:62%](255,0,180),   P[c:87%](46,255,255), P[c:112%](255,0,180)",
+        "P[c:-12%](255,0,180),   P[c:14%](204,255,0), P[c:39%](46,255,255),   P[c:64%](255,0,180),   P[c:89%](46,255,255), P[c:114%](255,0,180)",
+        "P[c:-10%](255,0,180),   P[c:16%](204,255,0), P[c:41%](46,255,255),   P[c:66%](255,0,180),   P[c:91%](46,255,255), P[c:116%](255,0,180)",
+        "P[c:-8%] (255,0,180),   P[c:18%](204,255,0), P[c:43%](46,255,255),   P[c:68%](255,0,180),   P[c:93%](46,255,255), P[c:118%](255,0,180)",
+        "P[c:-6%] (255,0,180),   P[c:20%](204,255,0), P[c:45%](46,255,255),   P[c:70%](255,0,180),   P[c:95%](46,255,255), P[c:120%](255,0,180)",
+        "P[c:-4%] (255,0,180),   P[c:22%](204,255,0), P[c:47%](46,255,255),   P[c:72%](255,0,180),   P[c:97%](46,255,255), P[c:122%](255,0,180)",
+        "P[c:-2%] (255,0,180),   P[c:24%](204,255,0), P[c:49%](46,255,255),   P[c:74%](255,0,180),   P[c:99%](46,255,255), P[c:124%](255,0,180)",
+        "                      P[c:0%] (255,0,180),   P[c:25%](204,255,0), P[c:50%](46,255,255),   P[c:75%](255,0,180),   P[c:100%](46,255,255)",
+        "P[c:-24%](46,255,255), P[c:2%] (255,0,180),   P[c:27%](204,255,0), P[c:52%](46,255,255),   P[c:77%](255,0,180),   P[c:102%](46,255,255)",
+        "P[c:-22%](46,255,255), P[c:4%] (255,0,180),   P[c:29%](204,255,0), P[c:54%](46,255,255),   P[c:79%](255,0,180),   P[c:104%](46,255,255)",
+        "P[c:-20%](46,255,255), P[c:6%] (255,0,180),   P[c:31%](204,255,0), P[c:56%](46,255,255),   P[c:81%](255,0,180),   P[c:106%](46,255,255)",
+        "P[c:-18%](46,255,255), P[c:8%] (255,0,180),   P[c:33%](204,255,0), P[c:58%](46,255,255),   P[c:83%](255,0,180),   P[c:108%](46,255,255)",
+        "P[c:-16%](46,255,255), P[c:10%](255,0,180),   P[c:35%](204,255,0), P[c:60%](46,255,255),   P[c:85%](255,0,180),   P[c:110%](46,255,255)",
+        "P[c:-14%](46,255,255), P[c:12%](255,0,180),   P[c:37%](204,255,0), P[c:62%](46,255,255),   P[c:87%](255,0,180),   P[c:112%](46,255,255)",
+        "P[c:-12%](46,255,255), P[c:14%](255,0,180),   P[c:39%](204,255,0), P[c:64%](46,255,255),   P[c:89%](255,0,180),   P[c:114%](46,255,255)",
+        "P[c:-10%](46,255,255), P[c:16%](255,0,180),   P[c:41%](204,255,0), P[c:66%](46,255,255),   P[c:91%](255,0,180),   P[c:116%](46,255,255)",
+        "P[c:-8%] (46,255,255), P[c:18%](255,0,180),   P[c:43%](204,255,0), P[c:68%](46,255,255),   P[c:93%](255,0,180),   P[c:118%](46,255,255)",
+        "P[c:-6%] (46,255,255), P[c:20%](255,0,180),   P[c:45%](204,255,0), P[c:70%](46,255,255),   P[c:95%](255,0,180),   P[c:120%](46,255,255)",
+        "P[c:-4%] (46,255,255), P[c:22%](255,0,180),   P[c:47%](204,255,0), P[c:72%](46,255,255),   P[c:97%](255,0,180),   P[c:122%](46,255,255)",
+        "P[c:-2%] (46,255,255), P[c:24%](255,0,180),   P[c:49%](204,255,0), P[c:74%](46,255,255),   P[c:99%](255,0,180),   P[c:124%](46,255,255)",
+        "                      P[c:0%] (46,255,255), P[c:25%](255,0,180),   P[c:50%](204,255,0), P[c:75%](46,255,255),   P[c:100%](255,0,180)",
+        "P[c:-24%](255,0,180),   P[c:2%] (46,255,255), P[c:27%](255,0,180),   P[c:52%](204,255,0), P[c:77%](46,255,255),   P[c:102%](255,0,180)",
+        "P[c:-22%](255,0,180),   P[c:4%] (46,255,255), P[c:29%](255,0,180),   P[c:54%](204,255,0), P[c:79%](46,255,255),   P[c:104%](255,0,180)",
+        "P[c:-20%](255,0,180),   P[c:6%] (46,255,255), P[c:31%](255,0,180),   P[c:56%](204,255,0), P[c:81%](46,255,255),   P[c:106%](255,0,180)",
+        "P[c:-18%](255,0,180),   P[c:8%] (46,255,255), P[c:33%](255,0,180),   P[c:58%](204,255,0), P[c:83%](46,255,255),   P[c:108%](255,0,180)",
+        "P[c:-16%](255,0,180),   P[c:10%](46,255,255), P[c:35%](255,0,180),   P[c:60%](204,255,0), P[c:85%](46,255,255),   P[c:110%](255,0,180)",
+        "P[c:-14%](255,0,180),   P[c:12%](46,255,255), P[c:37%](255,0,180),   P[c:62%](204,255,0), P[c:87%](46,255,255),   P[c:112%](255,0,180)",
+        "P[c:-12%](255,0,180),   P[c:14%](46,255,255), P[c:39%](255,0,180),   P[c:64%](204,255,0), P[c:89%](46,255,255),   P[c:114%](255,0,180)",
+        "P[c:-10%](255,0,180),   P[c:16%](46,255,255), P[c:41%](255,0,180),   P[c:66%](204,255,0), P[c:91%](46,255,255),   P[c:116%](255,0,180)",
+        "P[c:-8%] (255,0,180),   P[c:18%](46,255,255), P[c:43%](255,0,180),   P[c:68%](204,255,0), P[c:93%](46,255,255),   P[c:118%](255,0,180)",
+        "P[c:-6%] (255,0,180),   P[c:20%](46,255,255), P[c:45%](255,0,180),   P[c:70%](204,255,0), P[c:95%](46,255,255),   P[c:120%](255,0,180)",
+        "P[c:-4%] (255,0,180),   P[c:22%](46,255,255), P[c:47%](255,0,180),   P[c:72%](204,255,0), P[c:97%](46,255,255),   P[c:122%](255,0,180)",
+        "P[c:-2%] (255,0,180),   P[c:24%](46,255,255), P[c:49%](255,0,180),   P[c:74%](204,255,0), P[c:99%](46,255,255),   P[c:124%](255,0,180)"
+      ],
+      "custom-kll": ""
+    },
+    "single_color": {
+      "settings": "replace:clear, pfunc:interp",
+      "type": "animation",
+      "description": "A nice classic single color back (and under) light.",
+      "configurable": [
+        {
+          "name": "color",
+          "type": "color",
+          "default": {
+            "b": 255,
+            "g": 255,
+            "r": 255
+          },
+          "values": null
+        }
+      ],
+      "frames": [
+        "P[c:0%](${color}), P[c:100%](${color})"
+      ],
+      "custom-kll": null
+    }
+  },
+  "defines": [],
+  "header": {
+    "Name": "Kira",
+    "Variant": "standard",
+    "Layout": "Standard",
+    "Base": "Standard",
+    "Version": "0.4.1",
+    "Author": "jbondeson (Jeremy Bondeson) 2017",
+    "KLL": "0.5c",
+    "Date": "2019-02-04",
+    "Generator": "NONE"
+  },
+  "leds": [
+    {
+      "id": 1,
+      "scanCode": "0x01",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "id": 2,
+      "scanCode": "0x02",
+      "x": 19.05,
+      "y": 0
+    },
+    {
+      "id": 3,
+      "scanCode": "0x03",
+      "x": 38.1,
+      "y": 0
+    },
+    {
+      "id": 4,
+      "scanCode": "0x04",
+      "x": 57.15,
+      "y": 0
+    },
+    {
+      "id": 5,
+      "scanCode": "0x05",
+      "x": 76.2,
+      "y": 0
+    },
+    {
+      "id": 6,
+      "scanCode": "0x06",
+      "x": 95.25,
+      "y": 0
+    },
+    {
+      "id": 7,
+      "scanCode": "0x07",
+      "x": 114.3,
+      "y": 0
+    },
+    {
+      "id": 8,
+      "scanCode": "0x08",
+      "x": 133.35,
+      "y": 0
+    },
+    {
+      "id": 9,
+      "scanCode": "0x09",
+      "x": 152.4,
+      "y": 0
+    },
+    {
+      "id": 10,
+      "scanCode": "0x0a",
+      "x": 171.45,
+      "y": 0
+    },
+    {
+      "id": 11,
+      "scanCode": "0x0b",
+      "x": 190.5,
+      "y": 0
+    },
+    {
+      "id": 12,
+      "scanCode": "0x0c",
+      "x": 209.55,
+      "y": 0
+    },
+    {
+      "id": 13,
+      "scanCode": "0x0d",
+      "x": 228.6,
+      "y": 0
+    },
+    {
+      "id": 14,
+      "scanCode": "0x0e",
+      "x": 247.65,
+      "y": 0
+    },
+    {
+      "id": 15,
+      "scanCode": "0x0f",
+      "x": 266.7,
+      "y": 0
+    },
+    {
+      "id": 16,
+      "scanCode": "0x10",
+      "x": 285.75,
+      "y": 0
+    },
+    {
+      "id": 17,
+      "scanCode": "0x14",
+      "x": 0,
+      "y": 19.05
+    },
+    {
+      "id": 18,
+      "scanCode": null,
+      "x": 10.16,
+      "y": 13.97
+    },
+    {
+      "id": 19,
+      "scanCode": "0x15",
+      "x": 19.05,
+      "y": 19.05
+    },
+    {
+      "id": 20,
+      "scanCode": "0x16",
+      "x": 38.1,
+      "y": 19.05
+    },
+    {
+      "id": 21,
+      "scanCode": null,
+      "x": 46.99,
+      "y": 13.97
+    },
+    {
+      "id": 22,
+      "scanCode": "0x17",
+      "x": 57.15,
+      "y": 19.05
+    },
+    {
+      "id": 23,
+      "scanCode": "0x18",
+      "x": 76.2,
+      "y": 19.05
+    },
+    {
+      "id": 24,
+      "scanCode": null,
+      "x": 85.09,
+      "y": 13.97
+    },
+    {
+      "id": 25,
+      "scanCode": "0x19",
+      "x": 95.25,
+      "y": 19.05
+    },
+    {
+      "id": 26,
+      "scanCode": "0x1a",
+      "x": 114.3,
+      "y": 19.05
+    },
+    {
+      "id": 27,
+      "scanCode": null,
+      "x": 124.46,
+      "y": 13.97
+    },
+    {
+      "id": 28,
+      "scanCode": "0x1b",
+      "x": 133.35,
+      "y": 19.05
+    },
+    {
+      "id": 29,
+      "scanCode": "0x1c",
+      "x": 152.4,
+      "y": 19.05
+    },
+    {
+      "id": 30,
+      "scanCode": null,
+      "x": 162.56,
+      "y": 13.97
+    },
+    {
+      "id": 31,
+      "scanCode": "0x1d",
+      "x": 171.45,
+      "y": 19.05
+    },
+    {
+      "id": 32,
+      "scanCode": "0x1e",
+      "x": 190.5,
+      "y": 19.05
+    },
+    {
+      "id": 33,
+      "scanCode": null,
+      "x": 10.16,
+      "y": 27.94
+    },
+    {
+      "id": 34,
+      "scanCode": "0x26",
+      "x": 4.76,
+      "y": 38.1
+    },
+    {
+      "id": 35,
+      "scanCode": "0x27",
+      "x": 28.58,
+      "y": 38.1
+    },
+    {
+      "id": 36,
+      "scanCode": "0x28",
+      "x": 47.63,
+      "y": 38.1
+    },
+    {
+      "id": 37,
+      "scanCode": "0x29",
+      "x": 66.68,
+      "y": 38.1
+    },
+    {
+      "id": 38,
+      "scanCode": "0x2a",
+      "x": 85.73,
+      "y": 38.1
+    },
+    {
+      "id": 39,
+      "scanCode": "0x2b",
+      "x": 104.77,
+      "y": 38.1
+    },
+    {
+      "id": 40,
+      "scanCode": "0x2c",
+      "x": 123.83,
+      "y": 38.1
+    },
+    {
+      "id": 41,
+      "scanCode": "0x2d",
+      "x": 142.88,
+      "y": 38.1
+    },
+    {
+      "id": 42,
+      "scanCode": "0x2e",
+      "x": 161.93,
+      "y": 38.1
+    },
+    {
+      "id": 43,
+      "scanCode": "0x2f",
+      "x": 180.98,
+      "y": 38.1
+    },
+    {
+      "id": 44,
+      "scanCode": "0x30",
+      "x": 200.02,
+      "y": 38.1
+    },
+    {
+      "id": 45,
+      "scanCode": "0x31",
+      "x": 219.07,
+      "y": 38.1
+    },
+    {
+      "id": 46,
+      "scanCode": "0x32",
+      "x": 238.13,
+      "y": 38.1
+    },
+    {
+      "id": 47,
+      "scanCode": "0x33",
+      "x": 261.94,
+      "y": 38.1
+    },
+    {
+      "id": 48,
+      "scanCode": "0x34",
+      "x": 285.75,
+      "y": 38.1
+    },
+    {
+      "id": 49,
+      "scanCode": null,
+      "x": 10.16,
+      "y": 46.99
+    },
+    {
+      "id": 50,
+      "scanCode": "0xa8",
+      "x": 7.14,
+      "y": 57.15
+    },
+    {
+      "id": 51,
+      "scanCode": "0x39",
+      "x": 33.33,
+      "y": 57.15
+    },
+    {
+      "id": 52,
+      "scanCode": "0x3a",
+      "x": 52.39,
+      "y": 57.15
+    },
+    {
+      "id": 53,
+      "scanCode": "0x3b",
+      "x": 71.44,
+      "y": 57.15
+    },
+    {
+      "id": 54,
+      "scanCode": "0x3c",
+      "x": 90.49,
+      "y": 57.15
+    },
+    {
+      "id": 55,
+      "scanCode": "0x3d",
+      "x": 109.54,
+      "y": 57.15
+    },
+    {
+      "id": 56,
+      "scanCode": "0x3e",
+      "x": 128.6,
+      "y": 57.15
+    },
+    {
+      "id": 57,
+      "scanCode": "0x3f",
+      "x": 147.64,
+      "y": 57.15
+    },
+    {
+      "id": 58,
+      "scanCode": "0x40",
+      "x": 166.69,
+      "y": 57.15
+    },
+    {
+      "id": 59,
+      "scanCode": "0x41",
+      "x": 185.74,
+      "y": 57.15
+    },
+    {
+      "id": 60,
+      "scanCode": "0x42",
+      "x": 204.79,
+      "y": 57.15
+    },
+    {
+      "id": 61,
+      "scanCode": "0x43",
+      "x": 223.84,
+      "y": 57.15
+    },
+    {
+      "id": 62,
+      "scanCode": "0x44",
+      "x": 254.06,
+      "y": 57.15
+    },
+    {
+      "id": 63,
+      "scanCode": "0x45",
+      "x": 285.75,
+      "y": 57.15
+    },
+    {
+      "id": 64,
+      "scanCode": "0x46",
+      "x": 304.8,
+      "y": 57.15
+    },
+    {
+      "id": 65,
+      "scanCode": null,
+      "x": 10.16,
+      "y": 66.04
+    },
+    {
+      "id": 66,
+      "scanCode": "0x48",
+      "x": 11.9,
+      "y": 76.2
+    },
+    {
+      "id": 67,
+      "scanCode": "0x49",
+      "x": 42.85,
+      "y": 76.2
+    },
+    {
+      "id": 68,
+      "scanCode": "0x4a",
+      "x": 61.91,
+      "y": 76.2
+    },
+    {
+      "id": 69,
+      "scanCode": "0x4b",
+      "x": 80.96,
+      "y": 76.2
+    },
+    {
+      "id": 70,
+      "scanCode": "0x4c",
+      "x": 100,
+      "y": 76.2
+    },
+    {
+      "id": 71,
+      "scanCode": "0x4d",
+      "x": 119.04,
+      "y": 76.2
+    },
+    {
+      "id": 72,
+      "scanCode": "0x4e",
+      "x": 138.1,
+      "y": 76.2
+    },
+    {
+      "id": 73,
+      "scanCode": "0x4f",
+      "x": 157.16,
+      "y": 76.2
+    },
+    {
+      "id": 74,
+      "scanCode": "0x50",
+      "x": 176.21,
+      "y": 76.2
+    },
+    {
+      "id": 75,
+      "scanCode": "0x51",
+      "x": 195.26,
+      "y": 76.2
+    },
+    {
+      "id": 76,
+      "scanCode": "0x52",
+      "x": 214.31,
+      "y": 76.2
+    },
+    {
+      "id": 77,
+      "scanCode": "0x53",
+      "x": 240.505,
+      "y": 76.2
+    },
+    {
+      "id": 78,
+      "scanCode": "0x54",
+      "x": 266.7,
+      "y": 76.2
+    },
+    {
+      "id": 79,
+      "scanCode": "0x55",
+      "x": 285.75,
+      "y": 76.2
+    },
+    {
+      "id": 80,
+      "scanCode": "0x56",
+      "x": 304.8,
+      "y": 76.2
+    },
+    {
+      "id": 81,
+      "scanCode": "0x59",
+      "x": 2.38,
+      "y": 95.25
+    },
+    {
+      "id": 82,
+      "scanCode": null,
+      "x": 22.86,
+      "y": 86.36
+    },
+    {
+      "id": 83,
+      "scanCode": "0x5a",
+      "x": 26.19,
+      "y": 95.25
+    },
+    {
+      "id": 84,
+      "scanCode": "0x5b",
+      "x": 50,
+      "y": 95.25
+    },
+    {
+      "id": 85,
+      "scanCode": null,
+      "x": 55.88,
+      "y": 86.36
+    },
+    {
+      "id": 86,
+      "scanCode": null,
+      "x": 85.09,
+      "y": 86.36
+    },
+    {
+      "id": 87,
+      "scanCode": "0x5c",
+      "x": 121.44,
+      "y": 95.25
+    },
+    {
+      "id": 88,
+      "scanCode": null,
+      "x": 124.46,
+      "y": 86.36
+    },
+    {
+      "id": 89,
+      "scanCode": null,
+      "x": 154.94,
+      "y": 86.36
+    },
+    {
+      "id": 90,
+      "scanCode": null,
+      "x": 187.96,
+      "y": 86.36
+    },
+    {
+      "id": 91,
+      "scanCode": "0x5d",
+      "x": 195.265,
+      "y": 95.25
+    },
+    {
+      "id": 92,
+      "scanCode": null,
+      "x": 220.98,
+      "y": 86.36
+    },
+    {
+      "id": 93,
+      "scanCode": "0x5e",
+      "x": 223.835,
+      "y": 95.25
+    },
+    {
+      "id": 94,
+      "scanCode": "0x5f",
+      "x": 247.65,
+      "y": 95.25
+    },
+    {
+      "id": 95,
+      "scanCode": null,
+      "x": 254,
+      "y": 86.36
+    },
+    {
+      "id": 96,
+      "scanCode": "0x60",
+      "x": 266.7,
+      "y": 95.25
+    },
+    {
+      "id": 97,
+      "scanCode": "0x61",
+      "x": 285.75,
+      "y": 95.25
+    },
+    {
+      "id": 98,
+      "scanCode": null,
+      "x": 287.02,
+      "y": 86.36
+    },
+    {
+      "id": 99,
+      "scanCode": "0x62",
+      "x": 304.8,
+      "y": 95.25
+    },
+    {
+      "id": 100,
+      "scanCode": null,
+      "x": 320.04,
+      "y": 86.36
+    },
+    {
+      "id": 101,
+      "scanCode": "0x63",
+      "x": 323.85,
+      "y": 95.25
+    },
+    {
+      "id": 102,
+      "scanCode": "0x58",
+      "x": 342.9,
+      "y": 85.725
+    },
+    {
+      "id": 103,
+      "scanCode": "0x57",
+      "x": 323.85,
+      "y": 76.2
+    },
+    {
+      "id": 104,
+      "scanCode": null,
+      "x": 332.74,
+      "y": 66.04
+    },
+    {
+      "id": 105,
+      "scanCode": "0x47",
+      "x": 323.85,
+      "y": 57.15
+    },
+    {
+      "id": 106,
+      "scanCode": null,
+      "x": 332.74,
+      "y": 46.99
+    },
+    {
+      "id": 107,
+      "scanCode": "0x37",
+      "x": 342.9,
+      "y": 47.625
+    },
+    {
+      "id": 108,
+      "scanCode": null,
+      "x": 332.74,
+      "y": 27.94
+    },
+    {
+      "id": 109,
+      "scanCode": "0x35",
+      "x": 304.8,
+      "y": 38.1
+    },
+    {
+      "id": 110,
+      "scanCode": "0x36",
+      "x": 323.85,
+      "y": 38.1
+    },
+    {
+      "id": 111,
+      "scanCode": "0x23",
+      "x": 304.8,
+      "y": 19.05
+    },
+    {
+      "id": 112,
+      "scanCode": "0x24",
+      "x": 323.85,
+      "y": 19.05
+    },
+    {
+      "id": 113,
+      "scanCode": null,
+      "x": 332.74,
+      "y": 13.97
+    },
+    {
+      "id": 114,
+      "scanCode": "0x25",
+      "x": 342.9,
+      "y": 19.05
+    },
+    {
+      "id": 115,
+      "scanCode": null,
+      "x": 200.66,
+      "y": 13.97
+    },
+    {
+      "id": 116,
+      "scanCode": "0x1f",
+      "x": 209.55,
+      "y": 19.05
+    },
+    {
+      "id": 117,
+      "scanCode": "0x20",
+      "x": 228.6,
+      "y": 19.05
+    },
+    {
+      "id": 118,
+      "scanCode": null,
+      "x": 242.57,
+      "y": 13.97
+    },
+    {
+      "id": 119,
+      "scanCode": "0x21",
+      "x": 257.17,
+      "y": 19.05
+    },
+    {
+      "id": 120,
+      "scanCode": null,
+      "x": 269.24,
+      "y": 13.97
+    },
+    {
+      "id": 121,
+      "scanCode": "0x22",
+      "x": 285.75,
+      "y": 19.05
+    },
+    {
+      "id": 122,
+      "scanCode": null,
+      "x": 295.91,
+      "y": 13.97
+    },
+    {
+      "id": 123,
+      "scanCode": "0x11",
+      "x": 304.8,
+      "y": 0
+    },
+    {
+      "id": 124,
+      "scanCode": "0x12",
+      "x": 323.85,
+      "y": 0
+    },
+    {
+      "id": 125,
+      "scanCode": "0x13",
+      "x": 342.9,
+      "y": 0
+    }
+  ],
+  "macros": {}
+}
