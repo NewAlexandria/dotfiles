@@ -3,11 +3,6 @@
 # Bash profile, reload with `. .profile`
 # ======================================
 
-# Common bin paths
-# ----------------
-export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:/opt/swt/bin:$PATH"
-export PATH="$PATH:$HOME/.dotfiles/bin:"
-
 # Custom prompt
 # -------------
 if [ "Users" = ^\/Users* ]; then
@@ -44,16 +39,8 @@ unset MAILCHECK
 # Building
 # --------
 export PATH=~/.rbenv/shims:$PATH
-eval "$(rbenv init -)"  # config for rbenv
 export CC=gcc-4.2
-# alias gcc=cc
-alias gcc-4.2=gcc
-
-export NODE_PATH="/usr/local/lib/jsctags:${NODE_PATH}"
-export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
-export PATH="$PATH:/usr/local/opt/go/libexec/bin:"
 
 # use .profile.local for setting machine-specific options
 [[ -f ~/.profile.local ]] && .  ~/.profile.local
 
-export PATH="$HOME/.dotfiles/bin:$PATH"

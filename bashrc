@@ -3,11 +3,7 @@
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   source $(brew --prefix)/etc/bash_completion
 fi
-
 source ~/.dotfiles/lib/git-completion.sh
-
-alias gcc=cc
-alias gcc-4.2=gcc
 
 complete -C aws_completer aws
 complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | \
@@ -16,6 +12,23 @@ complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | \
 #complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g | uniq | grep -v "\["`;)" ssh
 #complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g | uniq | grep -v "\["`;)" scp
 
+#complete -C /usr/local/bin/vault vault
+
+
+# Compiler things
+echo "Compiler things"
+alias gcc=cc
+alias gcc-4.2=gcc
+
+export PATH="/usr/local/opt/node@8/bin:$PATH"
+export NODE_PATH="/usr/local/lib/jsctags:${NODE_PATH}"
+export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
+export PATH="$PATH:/usr/local/opt/go/libexec/bin:"
+export PATH="/usr/local/opt/libxml2/bin:$PATH"
+
+export LDFLAGS="-L/usr/local/opt/libxml2/lib"
+export CPPFLAGS="-I/usr/local/opt/libxml2/include"
+export PKG_CONFIG_PATH="/usr/local/opt/libxml2/lib/pkgconfig"
 
 alias grep='GREP_OPTIONS="--color=auto --line-number --context=0 --exclude=*.log" GREP_COLOR="1;37;41" LANG=C grep'
  # parallel bash commands
@@ -26,7 +39,7 @@ function pgrep() {
 
 # Correct a previous bash CLI typo
 # aliased like a Fika, a small party between me and the tools
-eval "$(thefuck --alias fk)"
+#eval "$(thefuck --alias fk)"
 
 man() {
 	env \
@@ -39,11 +52,3 @@ man() {
 		LESS_TERMCAP_us=$(printf "\e[1;32m") \
 			man "$@"
 }
-
-#!/bin/bash
-# requires that iTerm have accessibility permissions
-if [ $TERM_PROGRAM = "iTerm.app" ]; then
-  osascript -e 'tell application "System Events" to keystroke "e" using {command down, shift down}'
-fi
-
-complete -C /usr/local/bin/vault vault

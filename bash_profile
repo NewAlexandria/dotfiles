@@ -1,24 +1,41 @@
 #!/usr/bin/sh
 # functions and load-onces stuff for the environment
+echo "function config"
 source ~/.functions_shell.sh
 source ~/.functions_colors.sh
 source ~/.functions_dev.sh
 source ~/.functions_osx.sh
 source ~/.functions_graphics.sh
 
-# aliases and variables that should be available in any sub-shell or certain processes
-source ~/.bashrc
-source ~/.bashrc_local
-
 # Vim IDE settings
 source ~/.bash_vim_append
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="/usr/local/opt/node@8/bin:$PATH"
-export PATH=~/.sem/bin:$PATH
+# Common bin paths
+# ----------------
+echo "bin PATH config"
+export PATH="$HOME/.dotfiles/bin:$PATH"
+export PATH="$HOME/.sem/bin:$PATH"
 eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:/opt/swt/bin:$PATH"
+
+# aliases and variables that should be available in any sub-shell or certain processes
+echo "local shell config"
+source ~/.bashrc
+source ~/.bashrc_local
+GPG_TTY=$(tty)
+export GPG_TTY
+
+# iTerm config
+echo "iTerm config"
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+
+#!/bin/bash
+# requires that iTerm have accessibility permissions
+if [ $TERM_PROGRAM = "iTerm.app" ]; then
+  osascript -e 'tell application "System Events" to keystroke "e" using {command down, shift down}'
+fi
+
 
 # Aliases
 ## FileSystem
@@ -41,5 +58,6 @@ alias dif='colordiff'
 alias ack='ack --color-lineno=green --color-filename=white --color --follow'
 
 
+echo ".profile config"
 source ~/.profile
 

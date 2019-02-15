@@ -87,3 +87,5 @@
 	helper = osxkeychain
 [commit]
 	gpgsign = true
+[gpg]
+	program = gpg
