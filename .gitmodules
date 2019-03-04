@@ -19,3 +19,6 @@
 [submodule "irssi/sources/irssi-smartfilter"]
 	path = irssi/sources/irssi-smartfilter
 	url = https://github.com/lifeforms/irssi-smartfilter.git
+[submodule "lib/plantuml-db-schema.git"]
+	path = lib/plantuml-db-schema.git
+	url = https://gist.github.com/0955a45383a0b6c0bc24f9654b3cb561.git
