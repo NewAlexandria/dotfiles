@@ -40,6 +40,10 @@ function gif2webm() {
   fi
 }
 
+function video4aac() {
+   ffmpeg -i "$1" -acodec aac -vcodec copy "$2"
+}
+
 function mp3shorten() {
    ffmpeg -i  $1 -ss 0 -to 18  -acodec copy $2
 }
