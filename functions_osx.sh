@@ -51,6 +51,11 @@ pboard_fix() {
   sudo killall -KILL Finder
 }
 
+rm_icons() {
+  echo 'Removing Icon files from Documents...'
+  find "${1}" -type f -name 'Icon?' -print -delete;
+}
+
 # OSX helpers
 ## Open man pages in Preview
 pman() {
