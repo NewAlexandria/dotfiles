@@ -28,6 +28,9 @@ function ff() {
 function ffrm() {
   find . -name ${1} -depth -exec rm {} \;
 }
+function mvnospace() {
+  mv "$1" "${1// /-}"
+}
 
 
 #   extract:  Extract most know archives with one command
