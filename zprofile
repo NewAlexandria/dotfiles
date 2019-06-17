@@ -32,8 +32,8 @@ patches: <patches|join( → )|pre_applied(%{$fg[yellow]%})|post_applied(%{$reset
 }
 
 PROMPT='
-%{$fg[magenta]%}%n%{$reset_color%} at %{$fg[yellow]%}%m%{$reset_color%} in %{$fg_bold[green]%}$(collapse_pwd)%{$reset_color%}$(hg_prompt_info)$(git_prompt_info)
-%{$fg[magenta]%}Ψ%{$reset_color%}$(virtualenv_info)$(prompt_char) '
+%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%} in %{$fg_bold[green]%}$(collapse_pwd)%{$reset_color%}$(hg_prompt_info)$(git_prompt_info)
+%F{202}Ψ%{$reset_color%}$(virtualenv_info)$(prompt_char) '
 
 # set macosx shell
 # sudo dscl . -create /Users/$USER UserShell /usr/local/bin/zsh
