@@ -69,18 +69,18 @@ alias rless='less -Xr'
 # export UNITS="$(brew --cellar gnu-units)/$(gunits -V | head -n 1 | awk '{ print $4 }')/share/units/definitions.units'
 # /usr/share/misc/units.lib
 
-pathed_cd () {
-  if [ "$1" == "" ]; then
-    builtin cd
-  else
-    builtin cd "$1"
-  fi
-  pwd > ~/.cdpath
-}
-alias cd="pathed_cd"
-if [ -f ~/.cdpath ]; then
-  cd $(cat ~/.cdpath)
-fi
+#pathed_cd () {
+  #if [ "$1" == "" ]; then
+    #builtin cd
+  #else
+    #builtin cd "$1"
+  #fi
+  #pwd > ~/.cdpath
+#}
+#alias cd="pathed_cd"
+#if [ -f ~/.cdpath ]; then
+  #cd $(cat ~/.cdpath)
+#fi
 
 function random() {
   num=$1

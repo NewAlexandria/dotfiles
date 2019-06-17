@@ -20,8 +20,8 @@ export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:/opt/swt/bin:$PATH"
 
 # aliases and variables that should be available in any sub-shell or certain processes
 echo "local shell config"
-source ~/.bashrc
-source ~/.bashrc_local
+#source ~/.bashrc
+#source ~/.bashrc_local
 GPG_TTY=$(tty)
 export GPG_TTY
 
@@ -59,5 +59,5 @@ alias ack='ack --color-lineno=green --color-filename=white --color --follow'
 
 
 echo ".profile config"
-source ~/.profile
+#source ~/.profile
 
