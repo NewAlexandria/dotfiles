@@ -37,3 +37,5 @@ PROMPT='
 
 # set macosx shell
 # sudo dscl . -create /Users/$USER UserShell /usr/local/bin/zsh
+
+source ~/.functions_colors_shell.zsh
