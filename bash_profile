@@ -13,7 +13,6 @@ source ~/.bash_vim_append
 # Common bin paths
 # ----------------
 echo "bin PATH config"
-export PATH="$HOME/.dotfiles/bin:$PATH"
 export PATH="$HOME/.sem/bin:$PATH"
 eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:/opt/swt/bin:$PATH"
@@ -30,7 +29,6 @@ echo "iTerm config"
 
 test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
 
-#!/bin/bash
 # requires that iTerm have accessibility permissions
 if [ $TERM_PROGRAM = "iTerm.app" ]; then
   osascript -e 'tell application "System Events" to keystroke "e" using {command down, shift down}'

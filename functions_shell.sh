@@ -1,5 +1,50 @@
 #!/usr/bin/sh
 
+# Aliases
+## FileSystem
+alias ll='ls -alGh'
+alias les='less -FRSXQ'
+
+alias cdd='cd ~/.ssh/'
+alias cddot='cd ~/.dotfiles/'
+alias cds='cd ~/src/'
+
+alias ..='cd ../'                           # Go back 1 directory level
+alias ...='cd ../../'                       # Go back 2 directory levels
+alias .3='cd ../../../'                     # Go back 3 directory levels
+alias .4='cd ../../../../'                  # Go back 4 directory levels
+alias .5='cd ../../../../../'               # Go back 5 directory levels
+alias .6='cd ../../../../../../'            # Go back 6 directory levels
+
+
+## Display
+alias rless='less -Xr'
+alias dif='colordiff'
+
+man() {
+	env \
+		LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+		LESS_TERMCAP_md=$(printf "\e[1;31m") \
+		LESS_TERMCAP_me=$(printf "\e[0m") \
+		LESS_TERMCAP_se=$(printf "\e[0m") \
+		LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+		LESS_TERMCAP_ue=$(printf "\e[0m") \
+		LESS_TERMCAP_us=$(printf "\e[1;32m") \
+			man "$@"
+}
+
+## Finding
+alias ag='ag --color  --color-path=37  --color-line-number=32'
+alias ack='ack --color-lineno=green --color-filename=white --color --follow'
+
+alias grep='GREP_OPTIONS="--color=auto --line-number --context=0 --exclude=*.log" GREP_COLOR="1;37;41" LANG=C grep'
+ # parallel bash commands
+ # http://www.rankfocus.com/use-cpu-cores-linux-commands/
+function pgrep() {
+  cat $1 | parallel --block 10M --pipe grep $2
+}
+
+
 # set dotfiles repo path for later use
 # v-naise https://stackoverflow.com/a/246128/263858
 SOURCE="${BASH_SOURCE[0]}"
@@ -63,8 +108,6 @@ function llg() {
   [ ! -x $1 ] || the_path='.'
   ll "$the_path" | grep "[0-9][0-9]\(\.[0-9]\)\?M "
 }
-
-alias rless='less -Xr'
 
 # export UNITS="$(brew --cellar gnu-units)/$(gunits -V | head -n 1 | awk '{ print $4 }')/share/units/definitions.units'
 # /usr/share/misc/units.lib

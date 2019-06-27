@@ -1,5 +1,11 @@
 #!/usr/bin/sh
+echo "OSX config"
 
+## iTerm config
+test -e "${HOME}/.dotfiles/iterm2_shell_integration.bash" && source "${HOME}/.dotfiles/iterm2_shell_integration.bash"
+
+
+## Brew
 alias brewup="brew upgrade $(brew outdated | cut -d ' ' -f1 | grep -v mysql | cut -d ':' -f2 | xargs)"
 alias brew_deptree="brew deps --installed --tree"
 function brewreset() {
@@ -12,6 +18,9 @@ function brewreset() {
   brew install $nam
 }
 
+
+
+## Aliases
 alias act="open -a Activity\ Monitor.app"
 
 # security control
@@ -28,6 +37,9 @@ alias spmds='sudo lsof -c "/mds$/"'
 alias nettetherorder='sudo networksetup -ordernetworkservices "Display Ethernet" "Thunderbolt Ethernet" "Display FireWire" "Bluetooth PAN" "Wi-Fi"  "iPhone USB" "Thunderbolt Bridge"'
 alias netwifiorder='sudo networksetup -ordernetworkservices "Display Ethernet" "Thunderbolt Ethernet" "Display FireWire" "Wi-Fi" "Bluetooth PAN" "iPhone USB" "Thunderbolt Bridge"'
 
+
+
+## Functions
 cdf () {
     currFolderPath=$( /usr/bin/osascript <<EOT
         tell application "Finder"

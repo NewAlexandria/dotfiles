@@ -1,41 +1,42 @@
-autoload bashcompinit
-bashcompinit
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
-[[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
+export TERM="xterm-256color"
 
-function collapse_pwd {
-    echo $(pwd | sed -e "s,^$HOME,~,")
-}
 
-function prompt_char {
-    git branch >/dev/null 2>/dev/null && echo '±' && return
-    hg root >/dev/null 2>/dev/null && echo '☿' && return
-    echo ''
-}
+# History settings
+# ----------------
+export HISTCONTROL=erasedups
+export HISTSIZE=10000
+PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 
-function battery_charge {
-    echo `$BAT_CHARGE` 2>/dev/null
-}
+# Services
+# --------
+unset MAILCHECK
 
-function virtualenv_info {
-    [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
-}
+# Building
+# --------
+GPG_TTY=$(tty)
+export GPG_TTY
 
-function hg_prompt_info {
-    hg prompt --angle-brackets "\
-< on %{$fg[magenta]%}<branch>%{$reset_color%}>\
-< at %{$fg[yellow]%}<tags|%{$reset_color%}, %{$fg[yellow]%}>%{$reset_color%}>\
-%{$fg[green]%}<status|modified|unknown><update>%{$reset_color%}<
-patches: <patches|join( → )|pre_applied(%{$fg[yellow]%})|post_applied(%{$reset_color%})|pre_unapplied(%{$fg_bold[black]%})|post_unapplied(%{$reset_color%})>>" 2>/dev/null
-}
-
-PROMPT='
-%{$fg[magenta]%}%n%{$reset_color%}@%{$fg[yellow]%}%m%{$reset_color%} in %{$fg_bold[green]%}$(collapse_pwd)%{$reset_color%}$(hg_prompt_info)$(git_prompt_info)
-%F{202}Ψ%{$reset_color%}$(virtualenv_info)$(prompt_char) '
+export PATH="$HOME/.dotfiles/bin:$PATH"
 
 # set macosx shell
 # sudo dscl . -create /Users/$USER UserShell /usr/local/bin/zsh
 
+source ~/.dotfiles/prompt.zsh
 source ~/.functions_colors_shell.zsh
+
+# functions and load-onces stuff for the environment
+echo "function config"
+source ~/.functions_shell.sh
+source ~/.functions_colors.sh
+source ~/.functions_dev.sh
+source ~/.functions_osx.sh
+source ~/.functions_graphics.sh
+
+# Vim IDE settings
+source ~/.bash_vim_append
+
+# use .profile.local for setting machine-specific options
+[[ -f ~/.zprofile.local.zsh ]] && .  ~/.zprofile.local.zsh

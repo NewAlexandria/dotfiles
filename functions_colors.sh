@@ -2,12 +2,12 @@
 
 # Color helpers
 ## colorize file syntax and display in less
-p() {
+function p() {
   pygmentize "${1}" | less -r
 }
 alias pp=p
 
-color_get() {
+function color_get() {
   ruby ~/.dotfiles/mac/color_picker.rb
 }
 
@@ -20,7 +20,7 @@ color_get() {
 #   colors (default + 8 escapes).
 #
 #   Source: http://www.faqs.org/docs/Linux-HOWTO/Bash-Prompt-HOWTO.html
-colors() {
+function colors() {
   T='gYw'   # The test text
 
   echo -e "\n                 40m     41m     42m     43m\
@@ -57,7 +57,7 @@ colors() {
 # using the ANSI CSI+SGR \033[48;5;${val}m for background and
 # \033[38;5;${val}m for text (see "ANSI Code" on Wikipedia)
 #
-colors_256() {
+function colors_256() {
   echo -en "\n Add X+Y to get the ANSI code"
   echo -en "\n   +  "
   for i in {0..35}; do
@@ -80,7 +80,7 @@ colors_256() {
 }
 
 # via https://unix.stackexchange.com/a/269085/14845
-fromhex(){
+function fromhex(){
     hex=${1#"#"}
     r=$(printf '0x%0.2s' "$hex")
     g=$(printf '0x%0.2s' ${hex#??})
@@ -90,7 +90,7 @@ fromhex(){
                        (b<75?0:(b-35)/40)     + 16 ))"
 }
 
-tohex(){
+function tohex(){
     dec=$(($1%256))   ### input must be a number in range 0-255.
     if [ "$dec" -lt "16" ]; then
         bas=$(( dec%16 ))

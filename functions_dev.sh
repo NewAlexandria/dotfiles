@@ -1,5 +1,36 @@
 #!/usr/bin/sh
 
+# Common bin paths
+# ----------------
+echo "bin PATH config"
+export PATH="$HOME/.sem/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:/opt/swt/bin:$PATH"
+export PATH=~/.rbenv/shims:$PATH
+
+complete -C aws_completer aws
+complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | \
+    sed -e s/,.*//g | uniq | grep -v "\["`;)" ssh
+
+
+# Compiler things
+echo "Compiler things"
+alias gcc=cc
+alias gcc-4.2=gcc
+export CC=gcc-4.2
+
+export PATH="/usr/local/opt/node@8/bin:$PATH"
+export NODE_PATH="/usr/local/lib/jsctags:${NODE_PATH}"
+export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
+export PATH="$PATH:/usr/local/opt/go/libexec/bin:"
+export PATH="/usr/local/opt/libxml2/bin:$PATH"
+
+export LDFLAGS="-L/usr/local/opt/libxml2/lib"
+export CPPFLAGS="-I/usr/local/opt/libxml2/include"
+export PKG_CONFIG_PATH="/usr/local/opt/libxml2/lib/pkgconfig"
+
+
+## Aliases
 alias exportenv='export $(cat .env | grep -v ^# | cut -d: -f2 | xargs)'
 
 alias be='bundle exec'
