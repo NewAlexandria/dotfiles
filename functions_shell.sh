@@ -53,7 +53,8 @@ while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symli
   SOURCE="$(readlink "$SOURCE")"
   [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
 done
-DOTFILES_REPO="$( dirname "$SOURCE" )"
+#DOTFILES_REPO="$( dirname "$SOURCE" )"
+DOTFILES_REPO="/Users/$(whoami)/.dotfiles"
 
 # Functions
 function wtitle() { echo -ne "\033]0;$1\007"; }

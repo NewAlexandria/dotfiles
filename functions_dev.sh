@@ -8,9 +8,9 @@ eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:/opt/swt/bin:$PATH"
 export PATH=~/.rbenv/shims:$PATH
 
-complete -C aws_completer aws
-complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | \
-    sed -e s/,.*//g | uniq | grep -v "\["`;)" ssh
+# AWS autocomplete not working, from the source, rn
+#complete -C aws_completer aws
+#complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g | uniq | grep -v "\["`;)" ssh
 
 
 # Compiler things

@@ -24,7 +24,7 @@ export PATH="$HOME/.dotfiles/bin:$PATH"
 # set macosx shell
 # sudo dscl . -create /Users/$USER UserShell /usr/local/bin/zsh
 
-source ~/.dotfiles/prompt.zsh
+source ~/.zsh/prompt.zsh
 source ~/.functions_colors_shell.zsh
 
 # functions and load-onces stuff for the environment
