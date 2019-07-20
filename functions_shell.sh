@@ -37,6 +37,17 @@ man() {
 alias ag='ag --color  --color-path=37  --color-line-number=32'
 alias ack='ack --color-lineno=green --color-filename=white --color --follow'
 
+# quick get of MB or GB files
+alias bigs='du -sh  * | grep "[0-9][MG]"'
+
+# find files that are 10MB in size, or larger
+# takes PATH as an argument
+function llg() {
+  the_path=$1
+  [ ! -x $1 ] || the_path='.'
+  ll "$the_path" | grep "[0-9][0-9]\(\.[0-9]\)\?M "
+}
+
 alias grep='GREP_OPTIONS="--color=auto --line-number --context=0 --exclude=*.log" GREP_COLOR="1;37;41" LANG=C grep'
  # parallel bash commands
  # http://www.rankfocus.com/use-cpu-cores-linux-commands/
@@ -100,14 +111,6 @@ extract () {
      else
          echo "'$1' is not a valid file"
      fi
-}
-
-# find files that are 10MB in size, or larger
-# takes PATH as an argument
-function llg() {
-  the_path=$1
-  [ ! -x $1 ] || the_path='.'
-  ll "$the_path" | grep "[0-9][0-9]\(\.[0-9]\)\?M "
 }
 
 # export UNITS="$(brew --cellar gnu-units)/$(gunits -V | head -n 1 | awk '{ print $4 }')/share/units/definitions.units'
