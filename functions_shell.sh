@@ -1,9 +1,22 @@
 #!/usr/bin/sh
 
-# Aliases
-## FileSystem
+# set dotfiles repo path for later use
+# v-naise https://stackoverflow.com/a/246128/263858
+SOURCE="${BASH_SOURCE[0]}"
+while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
+  DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null && pwd )"
+  SOURCE="$(readlink "$SOURCE")"
+  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+done
+#DOTFILES_REPO="$( dirname "$SOURCE" )"
+DOTFILES_REPO="/Users/$(whoami)/.dotfiles"
+
+
 alias ll='ls -alGh'
 alias les='less -FRSXQ'
+
+# Aliases
+## Navigation
 
 alias cdd='cd ~/.ssh/'
 alias cddot='cd ~/.dotfiles/'
@@ -33,9 +46,19 @@ man() {
 			man "$@"
 }
 
-## Finding
+## Finding in Files
 alias ag='ag --color  --color-path=37  --color-line-number=32'
 alias ack='ack --color-lineno=green --color-filename=white --color --follow'
+
+alias grep='GREP_OPTIONS="--color=auto --line-number --context=0 --exclude=*.log" GREP_COLOR="1;37;41" LANG=C grep'
+ # parallel bash commands
+ # http://www.rankfocus.com/use-cpu-cores-linux-commands/
+function pgrep() {
+  cat $1 | parallel --block 10M --pipe grep $2
+}
+
+
+## File Finders
 
 # quick get of MB or GB files
 alias bigs='du -sh  * | grep "[0-9][MG]"'
@@ -48,33 +71,6 @@ function llg() {
   ll "$the_path" | grep "[0-9][0-9]\(\.[0-9]\)\?M "
 }
 
-alias grep='GREP_OPTIONS="--color=auto --line-number --context=0 --exclude=*.log" GREP_COLOR="1;37;41" LANG=C grep'
- # parallel bash commands
- # http://www.rankfocus.com/use-cpu-cores-linux-commands/
-function pgrep() {
-  cat $1 | parallel --block 10M --pipe grep $2
-}
-
-
-# set dotfiles repo path for later use
-# v-naise https://stackoverflow.com/a/246128/263858
-SOURCE="${BASH_SOURCE[0]}"
-while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
-  DIR="$( cd -P "$( dirname "$SOURCE" )" >/dev/null && pwd )"
-  SOURCE="$(readlink "$SOURCE")"
-  [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
-done
-#DOTFILES_REPO="$( dirname "$SOURCE" )"
-DOTFILES_REPO="/Users/$(whoami)/.dotfiles"
-
-# Functions
-function wtitle() { echo -ne "\033]0;$1\007"; }
-
-function ssh_keygen_fingerprint() {
-  ssh-keygen -lv -f $1
-}
-
-
 function find_in_min() {
   find . -type d -name .svn -prune -o -mmin -${1} -type f -print
 }
@@ -85,10 +81,19 @@ function ff() {
 function ffrm() {
   find . -name ${1} -depth -exec rm {} \;
 }
+
+
+# Term Functions
+function wtitle() { echo -ne "\033]0;$1\007"; }
+
+function ssh_keygen_fingerprint() {
+  ssh-keygen -lv -f $1
+}
+
+
 function mvnospace() {
   mv "$1" "${1// /-}"
 }
-
 
 #   extract:  Extract most know archives with one command
 #   ---------------------------------------------------------
@@ -113,21 +118,6 @@ extract () {
      fi
 }
 
-# export UNITS="$(brew --cellar gnu-units)/$(gunits -V | head -n 1 | awk '{ print $4 }')/share/units/definitions.units'
-# /usr/share/misc/units.lib
-
-#pathed_cd () {
-  #if [ "$1" == "" ]; then
-    #builtin cd
-  #else
-    #builtin cd "$1"
-  #fi
-  #pwd > ~/.cdpath
-#}
-#alias cd="pathed_cd"
-#if [ -f ~/.cdpath ]; then
-  #cd $(cat ~/.cdpath)
-#fi
 
 function random() {
   num=$1
