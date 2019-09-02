@@ -27,7 +27,7 @@ export GPG_TTY
 # iTerm config
 echo "iTerm config"
 
-test -e "${HOME}/.iterm2_shell_integration.bash" && source "${HOME}/.iterm2_shell_integration.bash"
+test -e "${HOME}/.dotfiles/mac/iterm2_shell_integration.bash" && source "${HOME}/.dotfiles/mac/iterm2_shell_integration.bash"
 
 # requires that iTerm have accessibility permissions
 if [ $TERM_PROGRAM = "iTerm.app" ]; then
