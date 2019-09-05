@@ -36,7 +36,7 @@ alias exportenv='export $(cat .env | grep -v ^# | cut -d: -f2 | xargs)'
 alias be='bundle exec'
 alias bes='RAILS_ENV=test bundle exec rspec -f d -c'
 alias bec='bundle exec cucumber'
-alias berdbm='bundle exec rake db:migrate; echo "=============="; echo "= running Test env. migrations"; echo "=============="; RAILS_ENV=test bundle exec rake db:migrate'
+alias berdbm='echo "=============="; echo "= running DEVELOPMENT env migrations"; echo "=============="; bundle exec rake db:migrate; echo "=============="; echo "= running Test env. migrations"; echo "=============="; RAILS_ENV=test bundle exec rake db:migrate'
 #alias rspec='wtitle "rspec"; rspec'
 alias rspec='rspec -f d -c'
 
