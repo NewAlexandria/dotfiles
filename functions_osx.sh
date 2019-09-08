@@ -58,24 +58,24 @@ EOT
 
 # workaround for Timeout
 # http://apple.stackexchange.com/q/234419/37586
-pboard_fix() {
+function pboard_fix() {
   sudo kill -9 `ps aux | grep pboard | grep -v "grep" | awk '{print $2}'`
   sudo killall -KILL Finder
 }
 
-rm_icons() {
+function rm_icons() {
   echo 'Removing Icon files from Documents...'
   find "${1}" -type f -name 'Icon?' -print -delete;
 }
 
 # OSX helpers
 ## Open man pages in Preview
-pman() {
+function pman() {
   man -t "${1}" | open -f -a /Applications/Preview.app/
 }
 
 ## Open in Preview
-pv() {
+function pv() {
   open -a /Applications/Preview.app/ "${1}"
 }
 
