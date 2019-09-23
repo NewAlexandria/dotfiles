@@ -38,5 +38,7 @@ source ~/.functions_graphics.sh
 # Vim IDE settings
 source ~/.bash_vim_append
 
+alias mkdir=/bin/mkdir
+
 # use .profile.local for setting machine-specific options
 [[ -f ~/.zprofile.local.zsh ]] && .  ~/.zprofile.local.zsh

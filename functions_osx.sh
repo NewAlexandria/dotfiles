@@ -80,7 +80,7 @@ function pv() {
 }
 
 ## Open markdown in MacDown
-md() {
+function m() {
   open -a /Applications/MacDown.app/Contents/MacOS/MacDown "${1}"
 }
 
