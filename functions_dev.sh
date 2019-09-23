@@ -36,7 +36,7 @@ alias exportenv='export $(cat .env | grep -v ^# | cut -d: -f2 | xargs)'
 alias be='bundle exec'
 alias bes='RAILS_ENV=test bundle exec rspec -f d -c'
 alias bec='bundle exec cucumber'
-alias berdbm='echo "=============="; echo "= running DEVELOPMENT env migrations"; echo "=============="; bundle exec rake db:migrate; echo "=============="; echo "= running Test env. migrations"; echo "=============="; RAILS_ENV=test bundle exec rake db:migrate'
+alias berdbm='echo "=============="; echo "= running DEVELOPMENT env migrations"; echo "=============="; bundle exec rake db:migrate; echo "=============="; echo "= running Test env. migrations"; echo "=============="; RAILS_ENV=test dotenv -f .env bundle exec rake db:migrate'
 #alias rspec='wtitle "rspec"; rspec'
 alias rspec='rspec -f d -c'
 
@@ -129,52 +129,7 @@ function update_repos() {
   done
 }
 
-function release_complete() {
-  now=$(date "+%Y%m%d")
-  if [ $# -eq 0 ]; then
-    echo "No tag value provided"
-    exit 1
-  else
-    git co master
-    git pull origin master
-    git merge origin release/$now.1
-    git tag $1
-    git push origin master --tags
-    git co develop
-    git pull origin develop
-    git merge -m 'merge release master into develop' master
-    git push origin develop
-  fi
-}
-
-function release_start() {
-  now=$(date "+%Y%m%d")
-  git co develop
-  git pull
-  git co -b release/$now.1
-  git push origin release/$now.1
-}
-
-export JIRA_PROJECT_PREFIX='BT'
-function hubpr() {
-  TARGET=$1
-  [ ! -z $1 ] || TARGET='develop'
-
-  echo $(git branch |
-    grep '*' |
-    cut -d' ' -f2 |
-    ruby -e 'jira_regex = Regexp.new(ENV["JIRA_PROJECT_PREFIX"]+"-[0-9]+"); \
-      b=gets; j=(b.match(jira_regex) || [])[0].to_s; \
-      title=((j.empty?) ? b : (b.split(j) - [j] - [""]).compact.first).strip.tr("/\()-_"," "); \
-      title+=" : #{j}" if !j.empty?; \
-      `echo "#{title}" > /tmp/prfile`; \
-      (`echo "#### [#{j}](https://adsixty.atlassian.net/browse/#{j})" >> /tmp/prfile`) if !j.empty? \
-      ')
-  cat PR_TEMPLATE.md >> /tmp/prfile
-  URL=$(hub pull-request -b $TARGET -F /tmp/prfile)
-  echo "New PR created at $URL"
-  open $URL
-}
+### tmux support
 
 function tmux_layout_code() {
   tmux list-windows -F "#{window_active} #{window_layout}" | grep "^1" | cut -d " " -f 2
@@ -185,3 +140,16 @@ function mux() {
   tmux send-keys   -t    mbt:0 'teamocil mbt' Enter
 }
 
+
+## Examples
+
+#  If you have two CSV's that each have a column with the same data, and you'd like to join them, use join. For example:
+#  join \
+#    -t, \
+#    -1 2 \
+#    -2 1 \
+#    -o 0,1.1,1.3,2.2,2.3 \
+#    <(sort -k2 -t, leads.csv) \
+#    <(sort -t, names.csv)
+#  
+#  In this example, leads.csv has lead UUID in the second column and names.csv has lead UUID in the first column. Input files must be sorted on the join column, and the output is the lead UUID, following by the first attribute in the first file, etc (as specified by -o)
