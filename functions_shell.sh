@@ -82,6 +82,9 @@ function ffrm() {
   find . -name ${1} -depth -exec rm {} \;
 }
 
+function rm_icon() {
+  find . -name 'Icon?' -delete
+}
 
 # Term Functions
 function wtitle() { echo -ne "\033]0;$1\007"; }
