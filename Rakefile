@@ -25,15 +25,15 @@ namespace :dotfiles do
     
       if File.exist?(File.join(ENV['HOME'], ".#{file}"))
         if replace_all
-          replace_file(file)
+          replace_link_file(file)
         else
           print "Overwrite ~/.#{file}? [ynaq] "
           case $stdin.gets.chomp
           when 'a'
             replace_all = true
-            replace_file(file)
+            replace_link_file(file)
           when 'y'
-            replace_file(file)
+            replace_link_file(file)
           when 'q'
             exit
           else
@@ -72,7 +72,7 @@ namespace :mac do
   end
 end
 
-def replace_file(file)
+def replace_link_file(file)
   system %Q{rm "$HOME/.#{file}"}
   link_file(file)
 end
