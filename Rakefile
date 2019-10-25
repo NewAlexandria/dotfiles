@@ -65,12 +65,23 @@ namespace :mac do
   desc "Customize settings for Mac OS X"
   task :customize do
     system File.expand_path('../mac/customize.sh', __FILE__).to_s
+  end
 
+  desc "restore saved searches"
+  task :saved_search_restore do
     lib_save_search_path = File.expand_path('~/Library/Saved\ Searches/')
     dotfiles_saved_search_path = File.expand_path('../mac/Saved\ Searches/')
     FileUtils.mkdir_p lib_save_search_path
     system "cp -f  #{dotfiles_saved_search_path}/* #{lib_save_search_path}"
   end
+
+  desc "backup saved searches"
+  task :saved_search_backup do
+    lib_save_search_path = File.expand_path('~/Library/Saved\ Searches/')
+    dotfiles_saved_search_path = File.expand_path('../mac/Saved\ Searches/')
+    system "cp -f #{lib_save_search_path}/* #{dotfiles_saved_search_path}"
+  end
+
   desc "Setup Mac OS X"
   task :setup do
     system File.expand_path('../mac/setup.sh', __FILE__).to_s
