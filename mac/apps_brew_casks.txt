@@ -1,6 +1,0 @@
-qlimagesize
-qlstephen
-qlvideo
-quicklookase
-suspicious-package
-webpquicklook
