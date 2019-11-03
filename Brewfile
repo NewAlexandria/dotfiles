@@ -12,6 +12,7 @@ cask "suspicious-package"
 cask "virtualbox"
 cask "visualvm"
 cask "platypus"
+cask "postman"
 
 brew "cocoapods"
 brew "duti"
