@@ -9,3 +9,5 @@ leaf.txt
 
 tags
 tags.log
+*.swp
+*.swo
