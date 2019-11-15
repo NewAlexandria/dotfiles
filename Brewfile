@@ -72,6 +72,7 @@ brew "docker-compose"
 brew "docker-machine"
 brew "gdl"
 brew "heroku/brew/heroku"
+cask "docker"
 
 brew "zsh"
 brew "zsh-completions"
