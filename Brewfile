@@ -1,5 +1,8 @@
 # https://github.com/ptb/mac-setup/blob/develop/mac-setup.command
 
+cask "valentina-studio"
+cask "webex-teams"
+
 tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/cask"
