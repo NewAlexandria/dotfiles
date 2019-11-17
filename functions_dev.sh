@@ -101,7 +101,9 @@ alias  fix='$EDITOR `git diff --name-only | uniq`'
 function gdo() {
   ref=$1
   [ ! -x $1 ] || ref='HEAD'
-  git diff --name-only $ref | uniq | xargs sh -c '$EDITOR -- "$@" <$0' /dev/tty
+  #editor=$EDITOR
+  #[ ! -x $EDITOR ] || editor='vim'
+  git diff --name-only $ref | uniq | xargs sh -c 'vim -- "$@" <$0' /dev/tty
   #$EDITOR $( git diff --name-only $ref | uniq | xargs )
 }
 
