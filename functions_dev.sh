@@ -5,6 +5,7 @@
 echo "bin PATH config"
 export PATH="$HOME/.sem/bin:$PATH"
 eval "$(rbenv init -)"
+eval "$(nodenv init -)"
 export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:/opt/swt/bin:$PATH"
 export PATH=~/.rbenv/shims:$PATH
 
