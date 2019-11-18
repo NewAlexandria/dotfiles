@@ -131,6 +131,18 @@ function update_repos() {
   done
 }
 
+function clone_org() {
+  org=$1
+  token_file=$2
+  if [ ! -x $1 ] ; then
+    echo "first var, organization token, is required"
+  else
+    [ ! -x $2 ] || token_file="~/.ssh/keys/github-pers-token-all-repos.txt"
+    curl -s https://$token_file:@api.github.com/orgs/$org/repos\?per_page\=200 | jq ".[].ssh_url" | xargs -n 1 git clone --recursive
+  fi
+}
+
+
 ### tmux support
 
 function tmux_layout_code() {
