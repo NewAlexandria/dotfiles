@@ -160,6 +160,8 @@ brew "postgresql", restart_service: true
 brew "v8"
 cask "sequel-pro-nightly"
 cask "postico"
+cask "sqlworkbenchj"
+cask "valentina-studio"
 
 brew "kafka"
 brew "rabbitmq"

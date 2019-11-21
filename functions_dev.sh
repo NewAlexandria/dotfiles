@@ -18,7 +18,7 @@ export PATH=~/.rbenv/shims:$PATH
 echo "Compiler things"
 alias gcc=cc
 alias gcc-4.2=gcc
-export CC=gcc-4.2
+export CC=gcc
 
 export PATH="/usr/local/opt/node@8/bin:$PATH"
 export NODE_PATH="/usr/local/lib/jsctags:${NODE_PATH}"
