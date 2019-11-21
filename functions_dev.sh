@@ -30,6 +30,11 @@ export LDFLAGS="-L/usr/local/opt/libxml2/lib"
 export CPPFLAGS="-I/usr/local/opt/libxml2/include"
 export PKG_CONFIG_PATH="/usr/local/opt/libxml2/lib/pkgconfig"
 
+# for pyenv install, on osx 10.14
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
+
+
 
 ## Aliases
 alias exportenv='export $(cat .env | grep -v ^# | cut -d: -f2 | xargs)'
