@@ -1,3 +1,4 @@
+. /usr/local/opt/asdf/asdf.sh
 
 fpath=(/usr/local/share/zsh-completions $fpath)
 
