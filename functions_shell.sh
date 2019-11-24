@@ -11,6 +11,29 @@ done
 #DOTFILES_REPO="$( dirname "$SOURCE" )"
 DOTFILES_REPO="/Users/$(whoami)/.dotfiles"
 
+function getuser() {
+  if [ -z "$LOGNAME" ]
+  then
+    if [ -z "$USER" ]
+    then
+      if [ -z "$LNAME" ]
+      then
+        if [ -z "$USERNAME" ]
+        then
+          # do nothing
+        else
+          echo "$USERNAME"
+        fi
+      else
+        echo "$LNAME"
+      fi
+    else
+      "$USER"
+    fi
+  else
+    "$LOGNAME"
+  fi
+}
 
 alias ll='ls -alGh'
 alias les='less -FRSXQ'
@@ -22,12 +45,12 @@ alias cdd='cd ~/.ssh/'
 alias cddot='cd ~/.dotfiles/'
 alias cds='cd ~/src/'
 
-alias ..='cd ../'                           # Go back 1 directory level
+alias  ..='cd ../'                           # Go back 1 directory level
 alias ...='cd ../../'                       # Go back 2 directory levels
-alias .3='cd ../../../'                     # Go back 3 directory levels
-alias .4='cd ../../../../'                  # Go back 4 directory levels
-alias .5='cd ../../../../../'               # Go back 5 directory levels
-alias .6='cd ../../../../../../'            # Go back 6 directory levels
+alias  .3='cd ../../../'                     # Go back 3 directory levels
+alias  .4='cd ../../../../'                  # Go back 4 directory levels
+alias  .5='cd ../../../../../'               # Go back 5 directory levels
+alias  .6='cd ../../../../../../'            # Go back 6 directory levels
 
 
 ## Display
