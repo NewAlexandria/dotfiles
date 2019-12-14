@@ -13,6 +13,15 @@ export PATH=~/.rbenv/shims:$PATH
 #complete -C aws_completer aws
 #complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g | uniq | grep -v "\["`;)" ssh
 
+function awss3newest() {
+  [ -z "$1" ] && echo "Must provide bucket name" && exit 1
+  [ -z "$2" ] && echo "Must provide path" && exit 1
+  aws s3api list-objects-v2i \
+    --bucket $1 \
+    --prefix $2 \
+    --query 'reverse(sort_by(Contents,&LastModified))[0]'
+}
+
 
 # Compiler things
 echo "Compiler things"
