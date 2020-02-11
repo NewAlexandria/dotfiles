@@ -44,6 +44,16 @@ function video4aac() {
    ffmpeg -i "$1" -acodec aac -vcodec copy "$2"
 }
 
+function ytmp3() {
+  if [ $# -eq 0 ]
+    then
+      echo "usage: media-url [audio-format]"
+    else
+      FORMAT=${2:-'mp3'}
+      youtube-dl $1 -x --audio-format "$FORMAT"
+  fi
+}
+
 function mp3shorten() {
    ffmpeg -i  $1 -ss 0 -to 18  -acodec copy $2
 }
@@ -51,4 +61,3 @@ function mp3shorten() {
 function mp32ringtone() {
   ffmpeg -i $1 -c:a libfdk_aac -f ipod -b:a 96k $2
 }
-
