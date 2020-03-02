@@ -1,6 +1,5 @@
 # https://github.com/ptb/mac-setup/blob/develop/mac-setup.command
 
-cask "valentina-studio"
 cask "webex-teams"
 
 tap "heroku/brew"
@@ -16,6 +15,8 @@ cask "karabiner-elements"
 cask "wacom-tablet"
 cask "wacom-inkspace"
 cask "lulu"
+cask "kiibohd-configurator"
+cask "captain"
 
 cask "adoptopenjdk"
 cask "xquartz"
@@ -123,6 +124,8 @@ brew "progress"
 brew "awk"
 brew "markdown"
 
+brew "jupyterlab"
+
 brew "pow"
 brew "automake"
 brew "cmake"
@@ -133,6 +136,7 @@ brew "stow"
 brew "llvm"
 brew "readline"
 brew "xz"
+cask "adoptopenjdk8"
 
 brew "asdf"
 brew "crystal"
@@ -141,7 +145,9 @@ brew "rbenv"
 brew "rbenv-bundler"
 brew "rbenv-gemset"
 brew "ruby-completion"
+brew "ruby-install"
 brew "rust"
+brew "nvm"
 brew "sbt"
 brew "scala"
 brew "yarn"
@@ -163,6 +169,8 @@ cask "postico"
 cask "sqlworkbenchj"
 cask "valentina-studio"
 
+brew "avro-tools"
+brew "avro-c"
 brew "kafka"
 brew "rabbitmq"
 brew "redis", restart_service: true
@@ -216,3 +224,21 @@ cask "qlvideo"
 cask "qlstephen"
 cask "quicklookase"
 cask "webpquicklook"
+
+mas "Autodesk Pixlr", id: 880663569
+mas "FreeDiskSpace", id: 838744420
+mas "Instapaper", id: 1481302432
+mas "Keynote", id: 409183694
+mas "Magnet", id: 441258766
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "SIDT", id: 1308724728
+mas "Skitch", id: 425955336
+mas "The Unarchiver", id: 425424353
+mas "Time Out", id: 402592703
+mas "Transmit", id: 1436522307
+mas "TweetDeck", id: 485812721
+mas "Wayback Machine", id: 1472432422
+mas "Xcode", id: 497799835
+mas "iPhoto", id: 408981381
+
