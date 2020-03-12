@@ -1,11 +1,11 @@
 {
     "shortcuts": [
         {
-        "command": "notebook:hide-all-cell-code",
+        "command": "notebook:hide-cell-code",
         "keys" : ["Shift ["],
         "selector": "body"
     },{
-        "command": "notebook:show-all-cell-code",
+        "command": "notebook:show-cell-code",
         "keys" : ["Shift ]"],
         "selector": "body"
     },{
