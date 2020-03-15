@@ -1,7 +1,5 @@
 # https://github.com/ptb/mac-setup/blob/develop/mac-setup.command
 
-cask "webex-teams"
-
 tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/cask"
@@ -39,9 +37,11 @@ cask "android-studio-preview"
 cask "homebrew/cask-fonts/font-inconsolata-lgc"
 cask "font-firacode-nerd-font-mono"
 
+cask "openvpn-connect"
+cask "transmission"
+
 brew "irssi"
 cask "nzbvortex"
-cask "transmission"
 brew "wireshark"
 cask "notion"
 cask "skype"
@@ -50,10 +50,11 @@ cask "google-hangouts"
 cask "discord"
 cask "slack"
 cask "keybase"
+cask "webex-teams"
 
 brew "figlet"
 brew "brogue"
-brew "google-earth-pro"
+cask "google-earth-pro"
 
 cask "google-chrome"
 cask "chromedriver"
@@ -165,7 +166,6 @@ brew "neo4j", link: false
 brew "postgresql", restart_service: true
 brew "v8"
 cask "sequel-pro-nightly"
-cask "postico"
 cask "sqlworkbenchj"
 cask "valentina-studio"
 
