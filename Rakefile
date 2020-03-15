@@ -85,6 +85,7 @@ namespace :mac do
   desc "Setup Mac OS X"
   task :setup do
     system File.expand_path('../mac/setup.sh', __FILE__).to_s
+    system File.expand_path('../mac/setup_zsh.sh', __FILE__).to_s
   end
 end
 
