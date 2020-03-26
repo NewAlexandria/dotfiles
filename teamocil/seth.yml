@@ -1,0 +1,14 @@
+windows:
+  - name: Code
+    root: ~/src/sethmission/
+    layout: 4bd1,230x54,0,0{140x54,0,0,1,89x54,141,0[89x27,141,0,2,89x26,141,28,28]}
+    panes:
+      - commands:
+        - cd ~/src/sethmission/
+        - vim
+      - commands:
+        - cd ~/src/sethmission/
+        - git pull
+        - git status
+      - commands:
+        - cd ~/src/sethmission/
