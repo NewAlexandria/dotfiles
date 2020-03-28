@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- https://gist.github.com/p120ph37/8470353 -->
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>local.box-cp-sync</string>
+    <key>ProgramArguments</key>
+    <array>
+	    <string>/usr/local/bin/cp</string>
+	    <string>-Rf</string>
+	    <string>/Users/equinox/Box/Triple\ Point\ Liquidity</string>
+	    <string>/Users/Shared/Triple\ Point\ Liquidity</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>WatchPaths</key>
+    <array>
+	    <string>/Users/equinox/Box/Triple Point Liquidity/</string>
+    </array>
+<!--<key>StartInterval</key><integer>60</integer>-->
+    <key>ExitTimeOut</key><integer>0</integer>
+    <key>ThrottleInterval</key><integer>1</integer>
+</dict>
+</plist>
