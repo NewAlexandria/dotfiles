@@ -7,10 +7,10 @@
     <string>local.box-cp-sync</string>
     <key>ProgramArguments</key>
     <array>
-	    <string>/usr/local/bin/cp</string>
+	    <string>/bin/cp</string>
 	    <string>-Rf</string>
-	    <string>/Users/equinox/Box/Triple\ Point\ Liquidity</string>
-	    <string>/Users/Shared/Triple\ Point\ Liquidity</string>
+	    <string>/Users/equinox/Box/Triple Point Liquidity</string>
+	    <string>/Users/Shared/Triple Point Liquidity</string>
     </array>
     <key>RunAtLoad</key>
     <true/>
