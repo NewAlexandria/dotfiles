@@ -41,7 +41,7 @@ alias les='less -FRSXQ'
 # Aliases
 ## Navigation
 
-alias cdd='cd ~/.ssh/'
+alias cd.='cd ~/.ssh/'
 alias cddot='cd ~/.dotfiles/'
 alias cds='cd ~/src/'
 
