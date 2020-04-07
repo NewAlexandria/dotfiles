@@ -8,3 +8,5 @@ osascript -e '
         end tell
     end tell
 '
+
+source "$DOTFILES_REPO/mac/darkmode_manual_apps.sh"
