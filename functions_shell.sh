@@ -80,6 +80,13 @@ function pgrep() {
   cat $1 | parallel --block 10M --pipe grep $2
 }
 
+function jcp() {
+  the_path=$1
+  #[ ! -x $1 ] || the_path='.'
+  q=$2
+  [ ! -x $2 ] || q='.'
+  cat ~/.ssh/$the_path.json | jq $q -r | tr -d '\n' | pbcopy
+}
 
 ## File Finders
 
