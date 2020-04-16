@@ -1,0 +1,89 @@
+{
+    "workbench.colorTheme": "One Monokai",
+    "ibm-blockchain-platform.fabric.wallets": [],
+    "ibm-blockchain-platform.fabric.gateways": [],
+    "ibm-blockchain-platform.fabric.environments": [],
+    "ibm-blockchain-platform.ext.repositories": [],
+    "ibm-blockchain-platform.ext.enableLocalFabric": true,
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "funcList": {
+        "doubleSpacing": false,
+        "filters": [
+            {
+                "extensions": [
+                    ".c",
+                    ".h"
+                ],
+                "native": "/^[a-z]+\\s+\\w+\\(/mgi",
+                "display": "/\\S* +(\\w+)/1",
+                "sort": 0
+            },
+            {
+                "extensions": [
+                    ".cpp",
+                    ".hpp"
+                ],
+                "native": "/(?:^\\w+\\s+|^)\\w+[:]*\\w+\\(/mgi",
+                "display": "/[\\S ]+(\\w+)/",
+                "sort": 0
+            },
+            {
+                "extensions": [
+                    ".ts",
+                    ".php"
+                ],
+                "native": "/(?:^|\\s)function\\s+\\w+\\(/mg",
+                "display": "/\\s*function\\s+(\\w+)/1",
+                "sort": 0
+            },
+            {
+                "extensions": [
+                    ".asm"
+                ],
+                "native": "/^\\w+:\\s*$/mg",
+                "display": "/\\w+/",
+                "sort": 0
+            },
+            {
+                "extensions": [
+                    ".ps1"
+                ],
+                "native": "/(function|const)\\s+\\w+-?\\w*\\s*{/img",
+                "display": "/(function|const)\\s+(\\w+-?\\w*)/1",
+                "sort": 0
+            },
+            {
+                "extensions": [
+                    ".js", ".tsx"
+                ],
+                "native": "/(?:^|\\s)(function|const)\\s+\\w+\\(/mg",
+                "display": "/\\s*(function|const)\\s+(\\w+/1"
+            }
+        ]
+    },
+    "editor.tabSize": 2,
+    "workbench.tree.indent": 4,
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.colorCustomizations": {},
+    "terminal.integrated.shell.windows": "",
+    "eslint.nodePath": "/Users/zak/.asdf/installs/nodejs/10.18.0/bin/node",
+    "ibm-blockchain-platform.fabric.runtime": {
+        "1 Org Local Fabric": {
+            "ports": {
+                "startPort": 17050,
+                "endPort": 17069
+            }
+        }
+    },
+    "sync.gist": "8fbc9f15a294bfd3efc62571469fc90c",
+    "sync.autoUpload": true,
+    "php.validate.executablePath": ""
+}
+

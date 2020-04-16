@@ -86,6 +86,7 @@ namespace :mac do
   task :setup do
     system File.expand_path('../mac/setup.sh', __FILE__).to_s
     system File.expand_path('../mac/setup_zsh.sh', __FILE__).to_s
+    puts "🔐  Remeber to setup GPG keys"
   end
 end
 
