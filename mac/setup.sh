@@ -47,15 +47,30 @@ brew install rbenv
 brew install ruby-build
 echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> .bash_profile
 echo 'eval "$(rbenv init -)"' >> .bash_profile
+
+brew install asdf
+echo -e "\n. $(brew --prefix asdf)/asdf.sh" >> ~/.zshrc
+asdf plugin add ruby
+asdf plugin add python
+asdf plugin add nodejs
+asdf plugin add kubectl
+asdf plugin add helm
+asdf plugin add elixir
 exec $SHELL
 
-echo "✓ RBEnv installed"
+echo "✓ asdf installed"
 
-echo "  → Installing Ruby"
-rbenv install 1.9.3-rc1
-rbenv install 1.8.7-p352
-rbenv global  1.9.3-rc1
-rbenv rehash
+echo "  → Installing Langs"
+asdf install ruby 2.7.0
+asdf isngtall python 2.7.0
+asdf isngtall python 3.8.0
+asdf install nodejs 13.12.0
+asdf install nodejs 10.18.0
+asdf rehash
+
+asdf global ruby 2.7.0
+asdf global python 3.8.0
+asdf global nodejs 13.12.0
 
 echo "✓ Installed Ruby: $(rbenv global)"
 
@@ -67,32 +82,10 @@ echo "✓ Rubygems installed"
 
 
 echo "  → Installing utilities..."
-brew install npm
-git clone git@github.com:NewAlexandria/vim.ana.git ~/.vim.ana
-~/.vim.ana/install.sh
-brew install macvim
-brew install lua
-brew install chromedriver
-brew install tmux
-
-brew install ctags
-npm install jsctags
-brew install ag
-brew install ack
+brew bundle
 
 sudo easy_install pip
 pip install Pygments
-brew install colordiff
-
-brew install jp2a
-brew install ffmpeg
-brew install imagemagick
-
-brew install gnu-units
-brew install unrar
-brew install wget
-brew install tesseract
-brew install mmv
 
 echo "✓ Utilities installed"
 
