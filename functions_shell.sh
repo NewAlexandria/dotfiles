@@ -88,6 +88,15 @@ function jcp() {
   cat ~/.ssh/$the_path.json | jq $q -r | tr -d '\n' | pbcopy
 }
 
+function 2fa() {
+  the_path=$1
+  q=$2
+  [ ! -x $2 ] || q='.mfa_key'
+  n=$3
+  [ ! -x $3 ] || n='2'
+  oathtool --base32 -w $n $(jq $q ~/.ssh/$the_path.json -r)
+}
+
 ## File Finders
 
 # quick get of MB or GB files
