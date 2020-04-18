@@ -22,3 +22,6 @@
 [submodule "lib/plantuml-db-schema.git"]
 	path = lib/plantuml-db-schema.git
 	url = https://gist.github.com/0955a45383a0b6c0bc24f9654b3cb561.git
+[submodule "zsh/themes/powerlevel10k"]
+	path = zsh/themes/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
