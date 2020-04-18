@@ -99,8 +99,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 alias zshconfig="vim -u NONE ~/.zshrc"
 alias ohmyzsh="vim -u NONE ~/.oh-my-zsh"
-
-source ~/.zprofile
+alias ll='ls -al'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
