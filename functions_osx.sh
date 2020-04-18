@@ -18,6 +18,13 @@ function brewreset() {
   brew install $nam
 }
 
+function diffbrewfile() {
+  newfile=$1
+  [ ! -x $1 ] || newfile='HEAD'
+  oldfile=$2
+  [ ! -x $2 ] || oldfile='HEAD'
+  ruby -e "puts File.readlines('$newfile').sort - File.readlines('$oldfile').sort"
+}
 
 
 ## Aliases
