@@ -6,6 +6,11 @@ tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/services"
 
+tap "homebrew/cask-drivers"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
+tap "varenc/ffmpeg", pin: true
+
 cask "homebrew/cask-drivers/kiibohd-configurator"
 cask "pomotodo"
 cask "time-out"
@@ -29,13 +34,19 @@ cask "mactex"
 cask "latexit"
 cask "macdown"
 cask "gitkraken"
+
 brew "vim"
+cask "iterm2-nightly"
+
+cask "visual-studio-code"
 cask "sublime-text2"
 cask "intellij-idea-ce"
-cask "visual-studio-code"
 cask "android-studio-preview"
+
 cask "homebrew/cask-fonts/font-inconsolata-lgc"
 cask "font-firacode-nerd-font-mono"
+cask "font-hack-nerd-font"
+cask "font-inconsolata-lgc"
 
 cask "openvpn-connect"
 cask "transmission"
@@ -48,7 +59,6 @@ cask "skype"
 cask "zoomus"
 cask "google-hangouts"
 cask "discord"
-cask "slack"
 cask "keybase"
 cask "webex-teams"
 
@@ -57,6 +67,7 @@ brew "brogue"
 cask "google-earth-pro"
 
 cask "google-chrome"
+cask "google-chrome-canary"
 cask "chromedriver"
 cask "firefox-nightly"
 cask "firefox"
@@ -117,6 +128,7 @@ brew "git-lfs"
 brew "legit"
 brew "aview"
 brew "colordiff"
+brew "diff-so-fancy"
 brew "cscope"
 brew "ctags"
 brew "the_silver_searcher"
@@ -147,6 +159,7 @@ brew "rbenv-bundler"
 brew "rbenv-gemset"
 brew "ruby-completion"
 brew "ruby-install"
+brew "ruby-build"
 brew "rust"
 brew "nvm"
 brew "sbt"
@@ -198,7 +211,6 @@ brew "tesseract"
 brew "imagemagick"
 
 cask "vlc"
-tap "varenc/ffmpeg", pin: true
 brew "varenc/ffmpeg/ffmpeg"
 brew "youtube-dl"
 brew "gsl"
@@ -216,6 +228,8 @@ brew "little-cms"
 brew "zlib"
 brew "libxml2"
 brew "glib"
+brew "libimobiledevice"
+brew "libusbmuxd"
 brew "tidy-html5"
 
 cask "qlimagesize"
@@ -241,4 +255,16 @@ mas "TweetDeck", id: 485812721
 mas "Wayback Machine", id: 1472432422
 mas "Xcode", id: 497799835
 mas "iPhoto", id: 408981381
+
+mas "ChmPages", id: 1164062917
+mas "Duplicate Cleaner For iPhoto", id: 586862299
+mas "Duplicate Photos Finder", id: 984929789
+mas "Furiganify!", id: 1151320968
+mas "GarageBand", id: 682658836
+mas "Gemini 2", id: 1090488118
+mas "GrandPerspective", id: 1111570163
+mas "SiteSucker", id: 442168834
+mas "Slack", id: 803453959
+mas "Tot", id: 1491071483
+mas "iMovie", id: 408981434
 
