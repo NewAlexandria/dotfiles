@@ -42,11 +42,7 @@ rm -rf /tmp/myhomebrew
 
 echo "✓ Homebrew origin pointed to http://github.com:$USER/homebrew"
 
-echo "  → Installing essential RBEnv and Ruby-Build..."
-brew install rbenv
-brew install ruby-build
-echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> .bash_profile
-echo 'eval "$(rbenv init -)"' >> .bash_profile
+echo "  → Installing essential language VMs..."
 
 brew install asdf
 echo -e "\n. $(brew --prefix asdf)/asdf.sh" >> ~/.zshrc

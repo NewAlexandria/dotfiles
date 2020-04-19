@@ -3,11 +3,11 @@
 # Common bin paths
 # ----------------
 echo "bin PATH config"
-export PATH="$HOME/.sem/bin:$PATH"
-eval "$(rbenv init -)"
-eval "$(nodenv init -)"
-export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:/opt/swt/bin:$PATH"
-export PATH=~/.rbenv/shims:$PATH
+#export PATH="$HOME/.sem/bin:$PATH"
+#eval "$(rbenv init -)"
+#eval "$(nodenv init -)"
+#export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:/opt/swt/bin:$PATH"
+#export PATH=~/.rbenv/shims:$PATH
 
 # AWS autocomplete not working, from the source, rn
 #complete -C aws_completer aws
@@ -29,7 +29,7 @@ alias gcc=cc
 alias gcc-4.2=gcc
 export CC=gcc
 
-export PATH="/usr/local/opt/node@8/bin:$PATH"
+#export PATH="/usr/local/opt/node@8/bin:$PATH"
 export NODE_PATH="/usr/local/lib/jsctags:${NODE_PATH}"
 export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
 export PATH="$PATH:/usr/local/opt/go/libexec/bin:"
