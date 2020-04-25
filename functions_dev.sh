@@ -106,6 +106,9 @@ alias  grc='git rebase --continue'
 alias  gra='git rebase --abort'
 alias grod='git fetch; git rebase origin/develop'
 
+alias gspr='git submodule update --init --recursive --remote'
+alias  gsp='git submodule update --init'
+
 alias   gd='git diff --color'
 alias gdod='git diff --color origin/develop'
 alias gdom='git diff --color origin/master'
