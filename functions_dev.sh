@@ -94,23 +94,25 @@ function gom() {
   $EDITOR $(gs | grep "both modified" | cut -d' ' -f5 | xargs)
 }
 
+DEV_BRANCH='dev'
+
 alias gpom='git push origin master --tags'
-alias gpod='git push origin develop'
+alias gpod='git push origin $DEV_BRANCH'
 alias  gpo='git push origin $(git rev-parse --abbrev-ref HEAD) --set-upstream'
 
 alias  guo='git pull origin $(git rev-parse --abbrev-ref HEAD) && git fetch &'
 
-alias  grd='git rebase develop'
+alias  grd='git rebase $DEV_BRANCH'
 alias  grm='git rebase master'
 alias  grc='git rebase --continue'
 alias  gra='git rebase --abort'
-alias grod='git fetch; git rebase origin/develop'
+alias grod='git fetch; git rebase origin/$DEV_BRANCH'
 
 alias gspr='git submodule update --init --recursive --remote'
 alias  gsp='git submodule update --init'
 
 alias   gd='git diff --color'
-alias gdod='git diff --color origin/develop'
+alias gdod='git diff --color origin/$DEV_BRANCH'
 alias gdom='git diff --color origin/master'
 
 alias  fix='$EDITOR `git diff --name-only | uniq`'
