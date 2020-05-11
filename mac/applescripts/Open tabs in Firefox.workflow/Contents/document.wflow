@@ -51,7 +51,7 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {input, parameters}		set urlList to {}		tell application "Safari"		set tabCount to number of tabs in window 1				--Repeat for Every Tab in Current Window		repeat with y from 1 to tabCount			set end of urlList to URL of tab y of window 1		end repeat	end tell		set targetApp to ""		try		tell application "Finder" to get application "Firefox Nightly"		set appFirefoxNightlyExists to true		set targetApp to "Firefox Nightly"	on error		set appFirefoxNightlyExists to false	end try		try		tell application "Finder" to get application "Firefox"		set appFirefoxExists to true		if not appFirefoxNightlyExists then			set targetApp to "Firefox"		end if	on error		set appFirefoxExists to false	end try		tell application targetApp		activate		tell application "System Events" to keystroke "n" using command down		delay 0.6		tell window 1			repeat with theUrl in urlList				--open new tab with properties {URL:theUrl}				open location theUrl			end repeat		end tell		activate	end tell		return inputend run</string>
+					<string>on run {input, parameters}		set urlList to {}		tell application "Safari"		set tabCount to number of tabs in window 1				--Repeat for Every Tab in Current Window		repeat with y from 1 to tabCount			set end of urlList to URL of tab y of window 1		end repeat	end tell		set targetApp to ""		try		tell application "Finder" to get application "Firefox"		set appFirefoxNightlyExists to true		set targetApp to "Firefox Nightly"	on error		set appFirefoxNightlyExists to false	end try		try		tell application "Finder" to get application "Firefox"		set appFirefoxExists to true		if not appFirefoxNightlyExists then			set targetApp to "Firefox"		end if	on error		set appFirefoxExists to false	end try		tell application targetApp		activate		delay 0.6		tell application "System Events" to keystroke "n" using command down		delay 0.6		tell window 1			repeat with theUrl in urlList				--open new tab with properties {URL:theUrl}				open location theUrl			end repeat			--tell application "System Events" to keystroke "n" using command down			delay 0.2			tell application "System Events" to keystroke "1" using command down			delay 0.2			tell application "System Events" to keystroke "w" using command down		end tell		activate	end tell		return inputend run</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -102,8 +102,6 @@ end run</string>
 						<string>0</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
