@@ -51,7 +51,113 @@
 				<key>ActionParameters</key>
 				<dict>
 					<key>source</key>
-					<string>on run {input, parameters}		set urlList to {}		tell application "Safari"		set tabCount to number of tabs in window 1				--Repeat for Every Tab in Current Window		repeat with y from 1 to tabCount			set end of urlList to URL of tab y of window 1		end repeat	end tell		set targetApp to ""		try		tell application "Finder" to get application "Firefox"		set appFirefoxNightlyExists to true		set targetApp to "Firefox Nightly"	on error		set appFirefoxNightlyExists to false	end try		try		tell application "Finder" to get application "Firefox"		set appFirefoxExists to true		if not appFirefoxNightlyExists then			set targetApp to "Firefox"		end if	on error		set appFirefoxExists to false	end try		tell application targetApp		activate		delay 0.6		tell application "System Events" to keystroke "n" using command down		delay 0.6		tell window 1			repeat with theUrl in urlList				--open new tab with properties {URL:theUrl}				open location theUrl			end repeat			--tell application "System Events" to keystroke "n" using command down			delay 0.2			tell application "System Events" to keystroke "1" using command down			delay 0.2			tell application "System Events" to keystroke "w" using command down		end tell		activate	end tell		return inputend run</string>
+					<string>on run {input, parameters}		--display dialog "" with title "Pick the Source Browser" buttons {"Safari", "Safari Technology Preview"} default button 1		set theBrowserChoices to {"Safari", "Safari Technology Preview"}	set theBrowser to choose from list theBrowserChoices with prompt "Select your source browser:" default items {"Safari"}		--set input to the button returned of the result	return theBrowserChoicesend run</string>
+				</dict>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.RunScript</string>
+				<key>CFBundleVersion</key>
+				<string>1.0.2</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>RunScriptAction</string>
+				<key>InputUUID</key>
+				<string>EF88D233-EAE6-4142-BB6F-19CB53DCBFEE</string>
+				<key>Keywords</key>
+				<array>
+					<string>Run</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>74CD2FB0-586C-4BA7-9DEC-3AD8EF8B9B63</string>
+				<key>ShowWhenRun</key>
+				<true/>
+				<key>UUID</key>
+				<string>DC1BC161-F75D-474D-BC9F-567275683893</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string>on run {input, parameters}
+	
+	(* Your script goes here *)
+	
+	return input
+end run</string>
+						<key>name</key>
+						<string>source</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>conversionLabel</key>
+				<integer>0</integer>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>309.000000:368.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.0.2</string>
+				<key>AMApplication</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>source</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Run AppleScript.action</string>
+				<key>ActionName</key>
+				<string>Run AppleScript</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>source</key>
+					<string>on run {input, parameters}		set urlList to {}	set theBrowser to item 1 of input		using terms from application "Safari"		tell application theBrowser			set tabCount to number of tabs in window 1						--Repeat for Every Tab in Current Window			repeat with y from 1 to tabCount				set end of urlList to URL of tab y of window 1			end repeat		end tell	end using terms from		set targetApp to ""		try		tell application "Finder" to get application "Firefox"		set appFirefoxNightlyExists to true		set targetApp to "Firefox Nightly"	on error		set appFirefoxNightlyExists to false	end try		try		tell application "Finder" to get application "Firefox"		set appFirefoxExists to true		if not appFirefoxNightlyExists then			set targetApp to "Firefox"		end if	on error		set appFirefoxExists to false	end try		tell application targetApp		activate		delay 0.6		--tell application "System Events" to keystroke "n" using command down		open window		delay 1		tell window 1			repeat with theUrl in urlList				--open new tab with properties {URL:theUrl}				open location theUrl				delay 0.4			end repeat			open location ""			--tell application "System Events" to keystroke "n" using command down			delay 0.2			tell application "System Events" to keystroke "1" using command down			delay 0.2			tell application "System Events" to keystroke "w" using command down		end tell		activate	end tell		return inputend run</string>
 				</dict>
 				<key>BundleIdentifier</key>
 				<string>com.apple.Automator.RunScript</string>
@@ -75,6 +181,8 @@
 				</array>
 				<key>OutputUUID</key>
 				<string>93C31797-1A57-4CE6-BB5D-C5F115CCED44</string>
+				<key>ShowWhenRun</key>
+				<true/>
 				<key>UUID</key>
 				<string>E7453682-7E4B-4080-A65C-D0D039E06267</string>
 				<key>UnlocalizedApplications</key>
@@ -105,7 +213,7 @@ end run</string>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>309.000000:368.000000</string>
+				<string>309.000000:665.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/Base.lproj/main.nib</string>
 			</dict>
@@ -114,7 +222,34 @@ end run</string>
 		</dict>
 	</array>
 	<key>connectors</key>
-	<dict/>
+	<dict>
+		<key>BA85E496-A9C1-4077-BF75-2CF449C945DD</key>
+		<dict>
+			<key>from</key>
+			<string>DC1BC161-F75D-474D-BC9F-567275683893 - DC1BC161-F75D-474D-BC9F-567275683893</string>
+			<key>to</key>
+			<string>E7453682-7E4B-4080-A65C-D0D039E06267 - E7453682-7E4B-4080-A65C-D0D039E06267</string>
+		</dict>
+	</dict>
+	<key>variables</key>
+	<array>
+		<dict>
+			<key>UUID</key>
+			<string>338652DD-2874-41DB-AEDB-AD75D72704B7</string>
+			<key>identifier</key>
+			<string>com.apple.Automator.Variable.Storage</string>
+			<key>name</key>
+			<string>Storage</string>
+		</dict>
+		<dict>
+			<key>UUID</key>
+			<string>9DFFDEC6-F79B-4F35-BB53-817BF6A162BC</string>
+			<key>identifier</key>
+			<string>com.apple.Automator.Variable.Storage</string>
+			<key>name</key>
+			<string>sourceBrowser</string>
+		</dict>
+	</array>
 	<key>workflowMetaData</key>
 	<dict>
 		<key>applicationBundleIDsByPath</key>
@@ -124,7 +259,7 @@ end run</string>
 		<key>inputTypeIdentifier</key>
 		<string>com.apple.Automator.nothing</string>
 		<key>outputTypeIdentifier</key>
-		<string>com.apple.Automator.nothing</string>
+		<string>com.apple.Automator.text</string>
 		<key>presentationMode</key>
 		<integer>11</integer>
 		<key>processesInput</key>
@@ -132,13 +267,13 @@ end run</string>
 		<key>serviceInputTypeIdentifier</key>
 		<string>com.apple.Automator.nothing</string>
 		<key>serviceOutputTypeIdentifier</key>
-		<string>com.apple.Automator.nothing</string>
+		<string>com.apple.Automator.text</string>
 		<key>serviceProcessesInput</key>
 		<integer>0</integer>
 		<key>systemImageName</key>
 		<string>NSActionTemplate</string>
 		<key>useAutomaticInputType</key>
-		<integer>0</integer>
+		<integer>1</integer>
 		<key>workflowTypeIdentifier</key>
 		<string>com.apple.Automator.servicesMenu</string>
 	</dict>
