@@ -1,3 +1,8 @@
+## bucket gateways
+#
+# https://docs.aws.amazon.com/apigateway/latest/developerguide/integrating-api-with-aws-services-s3.html
+# https://auth0.com/blog/securing-aws-http-apis-with-jwt-authorizers/
+#
 
 files = Dir.
   children('.').
