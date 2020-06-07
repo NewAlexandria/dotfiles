@@ -66,12 +66,20 @@ end
 
 
 def log_progress( dotdirs, times=@times, threads=@threads )
-  @times = [] unless threads
-  @times.push [dotdirs.size, Time.now]
+  times = [] unless threads
+  times.push [dotdirs.size, Time.now]
 end
 
-def last_log_delta( times=@times )
-  (@times[-2].first - @times[-1].first) /
-    ((@times[-1].last.to_i - @times[-2].last.to_i) / 60 )
+def last_log_delta(offset=0, times=@times )
+  offset = 0 if offset > 0
+  offset = times.length-2 if offset < ((times.length-2) * -1)
+  start=offset-1
+  cut=start-1
+  (times[cut].first - times[start].first) /
+    ((times[start].last.to_i - times[cut].last.to_i) / 60 )
+end
+
+def est_complete(times=@times)
+  Time.now + ((times.last.first / last_log_delta(0, times)) * 60)
 end
 
