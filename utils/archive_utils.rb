@@ -42,7 +42,7 @@ def dot_dirs_for( target_bucket )
 end
 
 def batch_dot_dirs_rm( target_bucket, dotdirs, slicing=300, threads=@threads )
-  threads = [] if !@threads.map(&:alive?).reduce(&:|) || !@times
+ threads = [] if !@threads.map(&:alive?).reduce(&:|) || !@times
   dotdirs.each_slice(slicing) do |arr|
     threads.push(
       Thread.new {
