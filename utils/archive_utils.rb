@@ -28,8 +28,9 @@ ffm = ff.map {|e| [e, e.gsub(' ', '-')] }
 
 # remove folder/object paths with "./" in them.
 # These are accidental unix dot reference uploads
-def dot_dirs_for( target_bucket ) do
+def dot_dirs_for( target_bucket )
   require 'open3'
+  puts "⏱  this can take some time, based on the size of the bucket."
 
 	stdout_str, stderr_str, status = Open3.capture3(
 		"aws s3 ls --recursive #{target_bucket}"
@@ -40,10 +41,32 @@ def dot_dirs_for( target_bucket ) do
     select { |l| l.last.match(/.*\.\/.*/) }
 end
 
-threads = []; dotdirs.each_slice(300){|arr|  threads.
-➣➣push( Thread.new { arr.map{|f| stdout_str, stderr_str, status = Open3.
-➣➣capture3("aws s3 rm \"#{target_bucket}#{f.last}\"") ; stdout_str.size }}) }  ;1
+def log_progress( dotdirs, times=@times )
+  @times = [] unless @times
+  @times.push [dotdirs.size, Time.now]
+end
 
-threads.map(&:alive?).map(&:to_s).group_by(&:size).map{|e| e.last.size }
+def batch_dot_dirs_rm( target_bucket, threads=@threads )
+  threads = [] unless threads
+  dotdirs.each_slice(300) do |arr|
+    threads.push(
+      Thread.new {
+        arr.map do |f|
+          stdout_str, stderr_str, status = Open3.capture3(
+            "aws s3 rm \"#{target_bucket}#{f.last}\"")
+          stdout_str.size 
+        end
+      }
+    )
+  end
+end
+
+def threads_check(threads=@threads)
+  threads.
+    map(&:alive?).
+    map(&:to_s).
+    group_by(&:size).
+    map {|e| e.last.size }
+end
 
 
