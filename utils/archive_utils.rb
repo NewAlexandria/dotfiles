@@ -41,14 +41,9 @@ def dot_dirs_for( target_bucket )
     select { |l| l.last.match(/.*\.\/.*/) }
 end
 
-def log_progress( dotdirs, times=@times )
-  @times = [] unless @times
-  @times.push [dotdirs.size, Time.now]
-end
-
-def batch_dot_dirs_rm( target_bucket, threads=@threads )
-  threads = [] unless threads
-  dotdirs.each_slice(300) do |arr|
+def batch_dot_dirs_rm( target_bucket, dotdirs, slicing=300, threads=@threads )
+  threads = [] if !@threads.map(&:alive?).reduce(&:|) || !@times
+  dotdirs.each_slice(slicing) do |arr|
     threads.push(
       Thread.new {
         arr.map do |f|
@@ -69,4 +64,14 @@ def threads_check(threads=@threads)
     map {|e| e.last.size }
 end
 
+
+def log_progress( dotdirs, times=@times, threads=@threads )
+  @times = [] unless threads
+  @times.push [dotdirs.size, Time.now]
+end
+
+def last_log_delta( times=@times )
+  (@times[-2].first - @times[-1].first) /
+    ((@times[-1].last.to_i - @times[-2].last.to_i) / 60 )
+end
 
