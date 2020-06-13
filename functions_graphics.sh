@@ -39,6 +39,11 @@ function gif2webm() {
       ffmpeg -i "$1" -c:v libvpx -crf $CRF -b:v $BITRATE$RATE_SZ  -auto-alt-ref 0 "$1.$FORMAT"
   fi
 }
+function gifcomposite() {
+  HT=${4:-'200'}
+  HT=${5:-'200'}
+  convert $1 null: \( $2 -coalesce -resize $4x$5! \) -gravity Center -layers composite $3
+}
 
 function video4aac() {
    ffmpeg -i "$1" -acodec aac -vcodec copy "$2"
