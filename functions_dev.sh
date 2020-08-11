@@ -74,6 +74,7 @@ function npmget() {
   tar -zxvf $FNAME
   cd ..
 }
+alias fix-spotlight-npm='find . -type d -name "node_modules" -exec touch "{}/.metadata_never_index" \;'
 
 ## Apps
 alias bb='bbedit --clean --view-top'
