@@ -13,3 +13,5 @@ tmp
 public/javascripts/yui2
 features/cassettes
 
+dist
+LookBackApplication.postman_collection.json
