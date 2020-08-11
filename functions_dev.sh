@@ -188,3 +188,36 @@ function mux() {
 #    <(sort -t, names.csv)
 #  
 #  In this example, leads.csv has lead UUID in the second column and names.csv has lead UUID in the first column. Input files must be sorted on the join column, and the output is the lead UUID, following by the first attribute in the first file, etc (as specified by -o)
+
+# takes the files returned by an ag search, and opens them in vim
+function agcode() {
+  code $(ag "$1" $2 -l --nocolor | xargs)
+  return 0
+  func_arr=( 'nvim' 'mvim' 'vim' )
+  for func in "${func_arr[@]}"
+  do
+    if [ -n "$(which $func)" ] && [ "$(which $func)" = file ] || 'vim'
+    then 
+      echo "Using $func"
+      $func $(ag "$1" $2 -l --nocolor | xargs)
+      break
+    fi
+  done
+}
+
+# takes the files returned by an ack search, and opens them in vim
+function ackcode() {
+  code $(ack "$1" $2 -l --nocolor | xargs)
+  return 0
+  func_arr=( 'code' )
+  for func in "${func_arr[@]}"
+  do
+    if [ -n "$(type -t $func)" ] && [ "$(type -t $func)" = file ]
+    then 
+      echo "Using $func"
+      mvim $(ack $1 $2 -l --nocolor | xargs)
+      break
+    fi
+  done
+}
+
