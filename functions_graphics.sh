@@ -45,6 +45,19 @@ function gifcomposite() {
   convert $1 null: \( $2 -coalesce -resize $4x$5! \) -gravity Center -layers composite $3
 }
 
+function webm2anim() {
+  if [ $# -eq 0 ]
+    then
+      echo "usage: file-name [format] [bitrate 1000] [crf 12]"
+    else
+      FORMAT=${2:-'webm'}
+      BITRATE=${3:-'1000'}
+      RATE_SZ='K'
+      CRF=${4:-'12'}
+      ffmpeg -i "$1" -crf $CRF -b:v $BITRATE$RATE_SZ  "$1.$FORMAT"
+  fi
+}
+
 function video4aac() {
    ffmpeg -i "$1" -acodec aac -vcodec copy "$2"
 }
