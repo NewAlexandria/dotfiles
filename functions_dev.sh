@@ -48,12 +48,12 @@ export CPPFLAGS="-I/usr/local/opt/openssl/include"
 ## Aliases
 alias exportenv='export $(cat .env | grep -v ^# | cut -d: -f2 | xargs)'
 
-alias be='bundle exec'
-alias bes='RAILS_ENV=test bundle exec rspec -f d -c'
-alias bec='bundle exec cucumber'
-alias berdbm='echo "=============="; echo "= running DEVELOPMENT env migrations"; echo "=============="; bundle exec rake db:migrate; echo "=============="; echo "= running Test env. migrations"; echo "=============="; RAILS_ENV=test dotenv -f .env bundle exec rake db:migrate'
-#alias rspec='wtitle "rspec"; rspec'
-alias rspec='rspec -f d -c'
+### Artifact Cleanup
+
+alias docker_clean_images='docker rmi $(docker images -a --filter=dangling=true -q)'
+alias docker_clean_ps='docker rm $(docker ps --filter=status=exited --filter=status=created -q)'
+
+alias fix-spotlight-npm="find ~/. -type d -path './.*' -prune -o -path './Pictures*' -prune -o -path './Library*' -prune -o -path '*node_modules/*' -prune -o -type d -name 'node_modules' -exec touch '{}/.metadata_never_index' \; -print"
 
 function gem_remove_all() {
   for i in `gem list --no-versions`
@@ -61,6 +61,14 @@ function gem_remove_all() {
     gem uninstall -aIx $i
   done
 }
+
+### Rails support
+alias be='bundle exec'
+alias bes='RAILS_ENV=test bundle exec rspec -f d -c'
+alias bec='bundle exec cucumber'
+alias berdbm='echo "=============="; echo "= running DEVELOPMENT env migrations"; echo "=============="; bundle exec rake db:migrate; echo "=============="; echo "= running Test env. migrations"; echo "=============="; RAILS_ENV=test dotenv -f .env bundle exec rake db:migrate'
+#alias rspec='wtitle "rspec"; rspec'
+alias rspec='rspec -f d -c'
 
 function gempath() {
   rbenv exec gem environment | grep INSTALLATION | cut -d : -f 3 | xargs
@@ -74,7 +82,6 @@ function npmget() {
   tar -zxvf $FNAME
   cd ..
 }
-alias fix-spotlight-npm="find ~/. -type d -path './.*' -prune -o -path './Pictures*' -prune -o -path './Library*' -prune -o -path '*node_modules/*' -prune -o -type d -name 'node_modules' -exec touch '{}/.metadata_never_index' \; -print"
 
 ## Apps
 alias bb='bbedit --clean --view-top'
