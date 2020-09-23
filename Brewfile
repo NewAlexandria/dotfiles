@@ -9,7 +9,10 @@ tap "homebrew/services"
 tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
-tap "varenc/ffmpeg", pin: true
+tap "varenc/ffmpeg"
+
+tap "hyperledger/fabric"
+tap "mongodb/brew"
 
 cask "homebrew/cask-drivers/kiibohd-configurator"
 cask "pomotodo"
@@ -20,6 +23,7 @@ cask "wacom-inkspace"
 cask "lulu"
 cask "kiibohd-configurator"
 cask "captain"
+cask "synergy"
 
 cask "adoptopenjdk"
 cask "xquartz"
@@ -28,6 +32,7 @@ cask "virtualbox"
 cask "visualvm"
 cask "platypus"
 cask "postman"
+cask "ngrok"
 
 cask "dash"
 cask "mactex"
@@ -37,11 +42,12 @@ cask "gitkraken"
 
 brew "vim"
 cask "iterm2-nightly"
-
 cask "visual-studio-code"
-cask "sublime-text2"
 cask "intellij-idea-ce"
-cask "android-studio-preview"
+#cask "android-studio-preview"
+brew "jupyterlab"
+cask "datagrip"
+cask "db-browser-for-sqlite"
 
 cask "homebrew/cask-fonts/font-inconsolata-lgc"
 cask "font-firacode-nerd-font-mono"
@@ -50,6 +56,7 @@ cask "font-inconsolata-lgc"
 
 cask "openvpn-connect"
 cask "transmission"
+cask "chronosync"
 
 brew "irssi"
 cask "nzbvortex"
@@ -61,9 +68,13 @@ cask "google-hangouts"
 cask "discord"
 cask "keybase"
 cask "webex-teams"
+mas "Rocket.Chat", id: 1086818840
+mas "Jira", id: 1475897096
+mas "Slack", id: 803453959
 
 brew "figlet"
 brew "brogue"
+cask "angband"
 cask "google-earth-pro"
 
 cask "google-chrome"
@@ -75,13 +86,13 @@ cask "safari-technology-preview"
 cask "tor-browser"
 cask "opera"
 cask "brave-browser-nightly"
+cask "microsoft-edge"
 
 brew "cocoapods"
 brew "duti"
 brew "ios-deploy"
 brew "ideviceinstaller"
 brew "mas"
-brew "pinentry-mac"
 
 brew "docker"
 brew "docker-compose"
@@ -89,7 +100,13 @@ brew "docker-machine"
 brew "gdl"
 brew "heroku/brew/heroku"
 cask "docker"
+brew "minikube"
+brew "k9s"
+brew "argo"
+brew "hyperledger/fabric/fabric-tools@1.4.0"
+brew "hyperledger/fabric/fabric-tools@2.1.0"
 
+brew "tmux"
 brew "zsh"
 brew "zsh-completions"
 brew "zsh-git-prompt"
@@ -103,11 +120,13 @@ brew "wget"
 brew "jq"
 brew "bat"
 brew "renameutils"
+brew "python-yq"
+brew "socat"
+brew "tree"
 
 brew "dnsmasq"
 brew "ncdu"
 #brew "fasd"
-brew "ack"
 brew "aspell"
 brew "pcre2"
 brew "poppler"
@@ -119,11 +138,12 @@ brew "nmap"
 brew "p7zip"
 brew "unrar"
 brew "reattach-to-user-namespace"
-
+brew "oath-toolkit"
+brew "pinentry-mac"
 cask "gpg-suite"
-brew "tmux"
-brew "hub"
 brew "git-secret"
+
+brew "hub"
 brew "git-lfs"
 brew "legit"
 brew "aview"
@@ -132,12 +152,12 @@ brew "diff-so-fancy"
 brew "cscope"
 brew "ctags"
 brew "the_silver_searcher"
+brew "ack"
+brew "gawk"
+brew "awk"
 brew "parallel"
 brew "progress"
-brew "awk"
 brew "markdown"
-
-brew "jupyterlab"
 
 brew "pow"
 brew "automake"
@@ -152,13 +172,14 @@ brew "xz"
 cask "adoptopenjdk8"
 
 brew "asdf"
+brew "deno"
 brew "crystal"
-brew "pyenv"
+#brew "pyenv"
 brew "ruby-completion"
 brew "ruby-install"
 brew "ruby-build"
 brew "rust"
-brew "nvm"
+#brew "nvm"
 brew "sbt"
 brew "scala"
 brew "yarn"
@@ -166,14 +187,13 @@ brew "elixir"
 brew "elixir-build"
 brew "awscli"
 
-cask "db-browser-for-sqlite"
 cask "neo4j"
 brew "sqlite"
 brew "freetds"
-brew "mysql", restart_service: true, link: false
-brew "neo4j", link: false
+brew "mysql", restart_service: true
+brew "neo4j"
 brew "postgresql", restart_service: true
-brew "v8"
+brew "mongodb/brew/mongocli"
 cask "sequel-pro-nightly"
 cask "sqlworkbenchj"
 cask "valentina-studio"
@@ -205,10 +225,13 @@ cask "drawio"
 
 brew "tesseract"
 brew "imagemagick"
+brew "djvu2pdf"
+brew "djvulibre"
 
 cask "vlc"
 brew "varenc/ffmpeg/ffmpeg"
 brew "youtube-dl"
+#cask "macx-youtube-downloader"
 brew "gsl"
 brew "usbmuxd", args: ["HEAD"]
 brew "libimobiledevice", args: ["HEAD"]
@@ -227,6 +250,7 @@ brew "glib"
 brew "libimobiledevice"
 brew "libusbmuxd"
 brew "tidy-html5"
+brew "xvid"
 
 cask "qlimagesize"
 cask "qlstephen"
@@ -236,7 +260,6 @@ cask "quicklookase"
 cask "webpquicklook"
 
 mas "Autodesk Pixlr", id: 880663569
-mas "FreeDiskSpace", id: 838744420
 mas "Instapaper", id: 1481302432
 mas "Keynote", id: 409183694
 mas "Magnet", id: 441258766
@@ -248,19 +271,15 @@ mas "The Unarchiver", id: 425424353
 mas "Time Out", id: 402592703
 mas "Transmit", id: 1436522307
 mas "TweetDeck", id: 485812721
-mas "Wayback Machine", id: 1472432422
 mas "Xcode", id: 497799835
 mas "iPhoto", id: 408981381
 
 mas "ChmPages", id: 1164062917
 mas "Duplicate Cleaner For iPhoto", id: 586862299
 mas "Duplicate Photos Finder", id: 984929789
-mas "Furiganify!", id: 1151320968
-mas "GarageBand", id: 682658836
 mas "Gemini 2", id: 1090488118
 mas "GrandPerspective", id: 1111570163
+mas "FreeDiskSpace", id: 838744420
 mas "SiteSucker", id: 442168834
-mas "Slack", id: 803453959
 mas "Tot", id: 1491071483
-mas "iMovie", id: 408981434
 
