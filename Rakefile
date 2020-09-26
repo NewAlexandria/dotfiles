@@ -4,13 +4,13 @@ require 'rake'
 DOTFILE_SKIPLIST = %w[
   Brewfile
   Rakefile
-  README.markdown
   mac
   bin
   home
   utils
   var
   _site
+  README.markdown
   LICENSE.md
   CODE_OF_CONDUCT.md
   CONTRIBUTING.md
@@ -47,14 +47,29 @@ namespace :dotfiles do
         link_file(file)
       end
     end
-    print "Reload ~/.bash_profile? [yn] "
-    if $stdin.gets.chomp == 'y'
-      system "source ~/.bash_profile"
-    end
+
+    #print "Reload ~/.bash_profile? [yn] "
+    #if $stdin.gets.chomp == 'y'
+      #system "source ~/.bash_profile"
+      system "source ~/.zshrc"
+    #end
+
+    Rake::Task["mac:setup_zsh"].invoke
+    system "source ~/.zshrc"
+    Rake::Task["utils:asdf"].invoke
   end
 end
 
-namespace :cli_utils do
+namespace :utils do
+  desc 'setup asdf'
+  task :asdf do
+    toolset = File.readlines(File.expand_path('~/.tool-versions', __FILE__)).map(&:strip).map(&:split)
+    toolset.map do |lang,_|
+      system "asdf plugin-add #{lang}"
+    end
+    system "asdf install"
+  end
+
   desc 'CLI utils that should be managed with Chef'
   task :install do
     Dir['utils/*'].each do |file|
@@ -65,6 +80,11 @@ namespace :cli_utils do
 end
 
 namespace :mac do
+  desc "Setup ZSH"
+  task :setup_zsh do
+    system File.expand_path('../mac/setup_zsh.sh', __FILE__).to_s
+  end
+
   desc "Customize settings for Mac OS X"
   task :customize do
     system File.expand_path('../mac/customize.sh', __FILE__).to_s
