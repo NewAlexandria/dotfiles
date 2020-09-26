@@ -2,6 +2,7 @@ require 'rubygems'
 require 'rake'
 
 DOTFILE_SKIPLIST = %w[
+  Brewfile
   Rakefile
   README.markdown
   mac
@@ -11,6 +12,8 @@ DOTFILE_SKIPLIST = %w[
   var
   _site
   LICENSE.md
+  CODE_OF_CONDUCT.md
+  CONTRIBUTING.md
 ]
 
 desc "Install the dotfiles as symlinks in $HOME directory"
