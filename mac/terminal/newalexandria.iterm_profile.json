@@ -119,7 +119,7 @@
   },
   "Custom Command" : "No",
   "ASCII Anti Aliased" : true,
-  "Non Ascii Font" : "FuraCodeNerdFontCompleteM-Regular 11",
+  "Non Ascii Font" : "FuraCodeNerdFontCompleteM-Retina 11",
   "Vertical Spacing" : 1,
   "Use Bold Font" : true,
   "Option Key Sends" : 2,
@@ -387,7 +387,7 @@
   },
   "Use Non-ASCII Font" : true,
   "Right Option Key Sends" : 2,
-  "Normal Font" : "FuraCodeNerdFontCompleteM-Regular 11",
+  "Normal Font" : "FuraCodeNerdFontCompleteM-Retina 11",
   "Ansi 6 Color" : {
     "Red Component" : 0.34416967630386353,
     "Color Space" : "Calibrated",
