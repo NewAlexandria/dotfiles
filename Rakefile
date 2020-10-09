@@ -55,6 +55,7 @@ namespace :dotfiles do
     #end
 
     Rake::Task["mac:setup_zsh"].invoke
+    Rake::Task["mac:install_config"].invoke
     system "source ~/.zshrc"
     Rake::Task["utils:asdf"].invoke
   end
@@ -83,6 +84,13 @@ namespace :mac do
   desc "Setup ZSH"
   task :setup_zsh do
     system File.expand_path('../mac/setup_zsh.sh', __FILE__).to_s
+    system "ln -s ~/.dotfiles/zsh/themes/powerlevel10k ~/.oh-my-zsh/themes/powerlevel10k"
+  end
+
+  desc "install mac util configs"
+  task :install_configs do
+    system "mkdir -p ~/.config"
+    system "ln -s #{File.expand_path('../mac/karabiner', __FILE__).to_s} ~/.config/karabiner"
   end
 
   desc "Customize settings for Mac OS X"
