@@ -25,7 +25,7 @@ namespace :dotfiles do
     replace_all = false
     Dir['*'].each do |file|
       next if DOTFILE_SKIPLIST.include? file
-    
+
       if File.exist?(File.join(ENV['HOME'], ".#{file}"))
         if replace_all
           replace_link_file(file)
@@ -53,6 +53,10 @@ namespace :dotfiles do
       #system "source ~/.bash_profile"
       system "source ~/.zshrc"
     #end
+
+    git submodule init
+    git submodule sync
+    git submodule update
 
     Rake::Task["mac:setup_zsh"].invoke
     Rake::Task["mac:install_config"].invoke
