@@ -30,13 +30,6 @@ export LDFLAGS="-L/usr/local/opt/libxml2/lib"
 export CPPFLAGS="-I/usr/local/opt/libxml2/include"
 export PKG_CONFIG_PATH="/usr/local/opt/libxml2/lib/pkgconfig"
 
-alias grep='GREP_OPTIONS="--color=auto --line-number --context=0 --exclude=*.log" GREP_COLOR="1;37;41" LANG=C grep'
- # parallel bash commands
- # http://www.rankfocus.com/use-cpu-cores-linux-commands/
-function pgrep() {
-  cat $1 | parallel --block 10M --pipe grep $2
-}
-
 # Correct a previous bash CLI typo
 # aliased like a Fika, a small party between me and the tools
 #eval "$(thefuck --alias fk)"

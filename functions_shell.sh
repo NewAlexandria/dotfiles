@@ -73,7 +73,9 @@ man() {
 alias ag='ag --color  --color-path=37  --color-line-number=32'
 alias ack='ack --color-lineno=green --color-filename=white --color --follow'
 
-alias grep='GREP_OPTIONS="--color=auto --line-number --context=0 --exclude=*.log" GREP_COLOR="1;37;41" LANG=C grep'
+export GREP_OPTIONS="--color=auto --line-number --context=0 --exclude=*.log" 
+export GREP_COLOR="1;37;41" 
+
  # parallel bash commands
  # http://www.rankfocus.com/use-cpu-cores-linux-commands/
 function pgrep() {
