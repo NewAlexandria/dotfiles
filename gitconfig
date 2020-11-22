@@ -28,7 +28,6 @@
   le   = log --oneline --decorate
   fl   = log -u
 
-  grep = grep -Ii
   la = "!git config -l | grep alias | cut -c 7-"
 
   lasttag = describe --tags --abbrev=0

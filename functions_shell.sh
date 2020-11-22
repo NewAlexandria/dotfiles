@@ -73,7 +73,7 @@ man() {
 alias ag='ag --color  --color-path=37  --color-line-number=32'
 alias ack='ack --color-lineno=green --color-filename=white --color --follow'
 
-export GREP_OPTIONS="--color=auto --line-number --context=0 --exclude=*.log" 
+# export GREP_OPTIONS="--color=auto --line-number --context=0 --exclude=*.log" 
 export GREP_COLOR="1;37;41" 
 
  # parallel bash commands
