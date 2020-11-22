@@ -20,6 +20,21 @@ desc "Install the dotfiles as symlinks in $HOME directory"
 task :install => 'dotfiles:install'
 task :default => 'dotfiles:install'
 
+def osname 
+  system('
+uname="$(uname -a)"
+os=
+arch=x86
+case "$uname" in
+  Linux\ *) os=linux ;;
+  Darwin\ *) os=darwin ;;
+  SunOS\ *) os=sunos ;;
+esac
+case "$uname" in
+  *x86_64*) arch=x64 ;;
+esac ')
+end
+
 namespace :dotfiles do
   task :install do
     replace_all = false
@@ -54,11 +69,12 @@ namespace :dotfiles do
       system "source ~/.zshrc"
     #end
 
-    git submodule init
-    git submodule sync
-    git submodule update
+    system "git submodule init"
+    system "git submodule sync"
+    system "git submodule update"
 
-    Rake::Task["mac:setup_zsh"].invoke
+    Rake::Task["mac:setup_zsh"].invoke if osname.match(/darwin/) 
+    
     Rake::Task["mac:install_config"].invoke
     system "source ~/.zshrc"
     Rake::Task["utils:asdf"].invoke
