@@ -106,9 +106,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
-fpath=(/completions /Users/zak/.oh-my-zsh/plugins/git /Users/zak/.oh-my-zsh/functions /Users/zak/.oh-my-zsh/completions /usr/local/share/zsh/site-functions /usr/share/zsh/site-functions /usr/share/zsh/5.7.1/functions)
+# fpath=(/completions /Users/zak/.oh-my-zsh/plugins/git /Users/zak/.oh-my-zsh/functions /Users/zak/.oh-my-zsh/completions /usr/local/share/zsh/site-functions /usr/share/zsh/site-functions /usr/share/zsh/5.7.1/functions)
 
-autoload -Uz compinit && compinit
+# autoload -Uz compinit && compinit
 
 if [[ -e ~/.zshrc_local.sh ]]; then
   source ~/.zshrc_local.sh
