@@ -50,7 +50,7 @@ cask "datagrip"
 cask "db-browser-for-sqlite"
 
 cask "homebrew/cask-fonts/font-inconsolata-lgc"
-cask "font-firacode-nerd-font-mono"
+cask "font-fira-code-nerd-font"
 cask "font-hack-nerd-font"
 cask "font-inconsolata-lgc"
 
