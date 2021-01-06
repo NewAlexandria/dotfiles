@@ -47,6 +47,9 @@ export CPPFLAGS="-I/usr/local/opt/openssl/include"
 
 ## Aliases
 alias exportenv='export $(cat .env | grep -v ^# | cut -d: -f2 | xargs)'
+alias a="arch -x86_64"
+alias ibrew="arch -x86_64 brew"
+
 
 ### Artifact Cleanup
 
