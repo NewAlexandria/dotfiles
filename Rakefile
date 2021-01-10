@@ -110,7 +110,7 @@ namespace :mac do
   desc "install mac util configs"
   task :install_configs do
     system "mkdir -p ~/.config"
-    system "ln -s #{File.expand_path('../mac/karabiner', __FILE__).to_s} ~/.config/karabiner"
+    system "rm -Rf ~/.config/karabiner ; ln -sf #{File.expand_path('../mac/karabiner', __FILE__).to_s} ~/.config/karabiner"
   end
 
   desc "Customize settings for Mac OS X"
