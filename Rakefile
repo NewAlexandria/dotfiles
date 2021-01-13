@@ -73,9 +73,8 @@ namespace :dotfiles do
     system "git submodule sync"
     system "git submodule update"
 
-    Rake::Task["mac:setup_zsh"].invoke if osname.match(/darwin/) 
+    Rake::Task["mac:setup"].invoke if osname.match(/darwin/) 
     
-    Rake::Task["mac:install_config"].invoke
     system "source ~/.zshrc"
     Rake::Task["utils:asdf"].invoke
   end
@@ -84,11 +83,15 @@ end
 namespace :utils do
   desc 'setup asdf'
   task :asdf do
+    system "bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'"
     toolset = File.readlines(File.expand_path('~/.tool-versions', __FILE__)).map(&:strip).map(&:split)
     toolset.map do |lang,_|
       system "asdf plugin-add #{lang}"
     end
-    system "asdf install"
+    toolset.map do |lang,ver|
+      puts "🧾 #{lang} #{ver} "
+      system "asdf install #{lang} #{ver} "
+    end
   end
 
   desc 'CLI utils that should be managed with Chef'
@@ -111,6 +114,21 @@ namespace :mac do
   task :install_configs do
     system "mkdir -p ~/.config"
     system "rm -Rf ~/.config/karabiner ; ln -sf #{File.expand_path('../mac/karabiner', __FILE__).to_s} ~/.config/karabiner"
+  end
+
+  desc "Set application handlers for OSX"
+  task :app_handlers do
+    system "duti -s io.brackets.appshell .md all"
+    system "duti -s com.microsoft.VSCode .ts all"
+    system "duti -s com.microsoft.VSCode .js all"
+    system "duti -s com.microsoft.VSCode .json all"
+    system "duti -s com.microsoft.VSCode .xml all"
+    system "duti -s com.microsoft.VSCode .html all"
+    system "duti -s com.microsoft.VSCode .css all"
+    system "duti -s com.microsoft.VSCode .rb all"
+    system "duti -s com.microsoft.VSCode .erb all"
+    system "duti -s com.microsoft.VSCode . all"
+    system "duti -s com.microsoft.VSCode .css all"
   end
 
   desc "Customize settings for Mac OS X"
@@ -136,7 +154,8 @@ namespace :mac do
   desc "Setup Mac OS X"
   task :setup do
     system File.expand_path('../mac/setup.sh', __FILE__).to_s
-    system File.expand_path('../mac/setup_zsh.sh', __FILE__).to_s
+    Rake::Task["mac:install_configs"].invoke
+    Rake::Task["mac:setup_zsh"].invoke
     puts "🔐  Remeber to setup GPG keys"
   end
 end
