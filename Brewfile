@@ -6,6 +6,8 @@ tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/services"
 
+brew "svn"
+
 tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
@@ -59,12 +61,12 @@ cask "chronosync"
 
 brew "irssi"
 cask "nzbvortex"
-brew "wireshark"
+cask "wireshark"
 cask "notion"
 cask "skype"
 cask "zoomus"
 cask "discord"
-cask "keybase"
+# cask "keybase"
 mas "Rocket.Chat", id: 1086818840
 mas "Jira", id: 1475897096
 mas "Slack", id: 803453959
@@ -89,7 +91,7 @@ brew "cocoapods"
 brew "duti"
 brew "ios-deploy"
 brew "ideviceinstaller"
-brew "mas"
+brew "mas", args: ["--build-from-source"]
 
 brew "docker"
 brew "docker-compose"
@@ -97,7 +99,7 @@ brew "docker-machine"
 brew "gdl"
 brew "heroku/brew/heroku"
 cask "docker"
-brew "minikube"
+brew "minikube", args: ["--build-from-source"]
 brew "k9s"
 brew "argo"
 brew "hyperledger/fabric/fabric-tools@1.4.0"
@@ -116,7 +118,7 @@ brew "curl-openssl"
 brew "wget"
 brew "jq"
 brew "bat"
-brew "renameutils"
+brew "renameutils", args: ["--build-from-source"]
 brew "python-yq"
 brew "socat"
 brew "tree"
@@ -130,7 +132,7 @@ brew "poppler"
 brew "popt"
 brew "potrace"
 brew "intltool"
-brew "ipfs"
+brew "ipfs", args: ["--build-from-source"]
 brew "nmap"
 brew "p7zip"
 #brew "unrar"
@@ -197,18 +199,18 @@ cask "valentina-studio"
 
 brew "avro-tools"
 brew "avro-c"
-brew "kafka"
+cask "kafka"
 brew "rabbitmq"
 brew "redis", restart_service: true
 
-brew "r"
+cask "r"
 cask "racket"
 cask "protege"
-brew "jupyter"
+brew "jupyter", args: ["--build-from-source"]
 brew "sphinx-doc"
 brew "stanford-corenlp"
 cask "julia"
-brew "vowpal-wabbit"
+brew "vowpal-wabbit", args: ["--build-from-source"]
 
 brew "graphviz"
 brew "plantuml"
