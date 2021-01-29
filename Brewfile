@@ -55,6 +55,7 @@ cask "font-fira-code-nerd-font"
 cask "font-hack-nerd-font"
 cask "font-inconsolata-lgc"
 
+cask "tunnelbear"
 cask "openvpn-connect"
 cask "transmission"
 cask "chronosync"
@@ -67,7 +68,7 @@ cask "skype"
 cask "zoomus"
 cask "discord"
 # cask "keybase"
-mas "Rocket.Chat", id: 1086818840
+#mas "Rocket.Chat", id: 1086818840
 mas "Jira", id: 1475897096
 mas "Slack", id: 803453959
 
@@ -218,7 +219,7 @@ cask "inkscape"
 cask "gimp"
 cask "omnigraffle"
 cask "omnigraffle6"
-cask "skitch"
+mas "skitch"
 cask "sketch"
 cask "drawio"
 
