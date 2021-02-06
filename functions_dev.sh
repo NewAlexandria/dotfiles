@@ -231,3 +231,11 @@ function ackcode() {
   done
 }
 
+function kubesh() {
+  kubectl run -i --tty --rm --privileged debug --image=amazonlinux --restart=Never --overrides='{ "apiVersion": "v1", "metadata": {"annotations": { "eks.amazonaws.com/compute-type":"ec2" } } }' -- sh
+}
+
+function kubelogs() {
+  kubectl logs -f -n tpl-development  $(kubectl get pods -n tpl-development | grep $1 | cut -f 1 -d" ")
+}
+
