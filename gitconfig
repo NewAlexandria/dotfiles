@@ -4,6 +4,13 @@
 	email = zak@newalexandria.org
 	signingkey = 5FBC4EFA03B99124
 
+[credential]
+	helper = osxkeychain
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
+
 [github]
 	user = NewAlexandria
 
@@ -48,6 +55,30 @@
 [core]
 	excludesfile = /Users/zak/.gitignore_global
 	autocrlf = input
+[remote "origin"]
+	receivepack = git receive-pack
+[url "https://"]
+	insteadOf = git://
+
+[push]
+  default = tracking
+[pull]
+	rebase = true
+[stash]
+	showPatch = true
+
+;[branch "master"]
+  ;rebase = true
+;[branch "develop"]
+  ;rebase = true
+
+[diff]
+    tool = vscode
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+[mergetool "opendiff"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
 
 [pager]
     dif = diff-so-fancy | less --tabs=4 -RFX --pattern '^(Date|added|deleted|modified): '
@@ -58,33 +89,3 @@
   status = auto
   branch = auto
   interactive = auto
-
-[push]
-  default = tracking
-
-;[branch "master"]
-  ;rebase = true
-;[branch "develop"]
-  ;rebase = true
-
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-
-[mergetool "opendiff"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[remote "origin"]
-	receivepack = git receive-pack
-[url "https://"]
-	insteadOf = git://
-[pull]
-	rebase = true
-[stash]
-	showPatch = true
-[credential]
-	helper = osxkeychain
-[commit]
-	gpgsign = true
-[gpg]
-	program = gpg
