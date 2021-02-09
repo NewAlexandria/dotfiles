@@ -90,6 +90,8 @@ function npmget() {
 alias bb='bbedit --clean --view-top'
 alias jobs='jobs -l'
 
+
+## Git
 alias gs='git status'
 alias gse="$EDITOR $(git status --porcelain | cut -f2 -s -d 'M' | tr '\n' ' ' )"
 
@@ -198,6 +200,10 @@ function mux() {
 #    <(sort -t, names.csv)
 #  
 #  In this example, leads.csv has lead UUID in the second column and names.csv has lead UUID in the first column. Input files must be sorted on the join column, and the output is the lead UUID, following by the first attribute in the first file, etc (as specified by -o)
+
+function _perimiter_array() {
+  ruby -e "div=((ARGV[0]||6)-1); min=0.0;max=1.0; x=Array.new(div,(max/div)).map.with_index{|i,idx| (i*(idx+1)).floor(2) }.unshift(0.0); y=x.zip(Array.new(div+1,min)) + x.zip(Array.new(div+1,max)) + Array.new(div+1,max).zip(x) + Array.new(div+1,min).zip(x); puts y.uniq.to_s.gsub(' ','')"
+}
 
 # takes the files returned by an ag search, and opens them in vim
 function agcode() {
