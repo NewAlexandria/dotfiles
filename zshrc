@@ -110,9 +110,12 @@ fpath=(/completions /Users/zak/.oh-my-zsh/plugins/git /Users/zak/.oh-my-zsh/func
 
 # autoload -Uz compinit && compinit
 
+. $(brew --prefix asdf)/asdf.sh
+
 if [[ -e ~/.zshrc_local.sh ]]; then
   source ~/.zshrc_local.sh
 fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
