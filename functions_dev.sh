@@ -106,6 +106,10 @@ function gco() {
 function gom() {
   $EDITOR $(gs | grep "both modified" | cut -d' ' -f5 | xargs)
 }
+# git commit with the last message
+function gcam() {
+  git commit --amend -m "$(git log -1 --pretty=%B )"
+}
 
 DEV_BRANCH='dev'
 
