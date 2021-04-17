@@ -22,6 +22,9 @@ function awss3newest() {
     --query 'reverse(sort_by(Contents,&LastModified))[0]'
 }
 
+function awsact() {
+  aws sts get-caller-identity | jq .Account -r | pbcopy
+}
 
 # Compiler things
 echo "Compiler things"
@@ -50,6 +53,10 @@ alias exportenv='export $(cat .env | grep -v ^# | cut -d: -f2 | xargs)'
 alias a="arch -x86_64"
 alias ibrew="arch -x86_64 brew"
 
+#alias findport() {
+  #$(netstat -vanp tcp | grep $1)
+#}
+
 
 ### Artifact Cleanup
 
@@ -66,6 +73,8 @@ function gem_remove_all() {
 }
 
 ### Rails support
+echo "rails Support"
+
 alias be='bundle exec'
 alias bes='RAILS_ENV=test bundle exec rspec -f d -c'
 alias bec='bundle exec cucumber'
@@ -92,6 +101,7 @@ alias jobs='jobs -l'
 
 
 ## Git
+echo "Git"
 alias gs='git status'
 alias gse="$EDITOR $(git status --porcelain | cut -f2 -s -d 'M' | tr '\n' ' ' )"
 
@@ -108,7 +118,10 @@ function gom() {
 }
 # git commit with the last message
 function gcam() {
-  git commit --amend -m "$(git log -1 --pretty=%B )"
+  $( git commit --amend -m "$(exec lcm)" )
+}
+function lcm() {
+  git log -1 --pretty=%B
 }
 
 DEV_BRANCH='dev'
@@ -146,10 +159,16 @@ function gdo() {
 
 alias  gl='git log --graph --full-history --all --color --pretty=tformat:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s%x20%x1b[33m(%an)%x1b[0m"$'
 alias gll='git log --graph'
+# seach git logs for a string from a diff
+alias gls='git log --pickaxe-regex -p --color-words -S '
 
 
 # alias gcwtc="git commit -m \"`curl http://whatthecommit.com 2>/dev/null | grep '<p>' | sed 's/<p>//'`\""
 # alias wtc="echo \"merge-wtc: `curl http://whatthecommit.com 2>/dev/null | grep '<p>' | sed 's/<p>//'`\""
+
+
+## Repos
+echo "Repo helpers"
 
 function update_repos() {
   __batt_yellow=$(tput setaf 184)
@@ -208,6 +227,10 @@ function mux() {
 function _perimiter_array() {
   ruby -e "div=((ARGV[0]||6)-1); min=0.0;max=1.0; x=Array.new(div,(max/div)).map.with_index{|i,idx| (i*(idx+1)).floor(2) }.unshift(0.0); y=x.zip(Array.new(div+1,min)) + x.zip(Array.new(div+1,max)) + Array.new(div+1,max).zip(x) + Array.new(div+1,min).zip(x); puts y.uniq.to_s.gsub(' ','')"
 }
+
+
+## Search
+echo "search helpers"
 
 # takes the files returned by an ag search, and opens them in vim
 function agcode() {
