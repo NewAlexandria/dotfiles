@@ -1,3 +1,5 @@
+#!/usr/bin/ruby
+
 path = ENV['PATH'].split(':')
 
 intel_brew_idx = path.index("/usr/local/bin")
