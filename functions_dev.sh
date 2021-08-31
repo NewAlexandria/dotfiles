@@ -113,6 +113,17 @@ function gpr() {
 function gco() {
   git checkout $( git branch | grep $1 | awk '{ print $2 }' | xargs | awk '{ print $1 }' )
 }
+function gfb() {
+  git co dev; git pull; git co $1
+}
+function gfbr() {
+  git co dev; git pull; git co $1; git rebase dev
+}
+
+function ghpr() {
+  gh pr view --web $1
+}
+
 function gom() {
   $EDITOR $(gs | grep "both modified" | cut -d' ' -f5 | xargs)
 }
@@ -271,4 +282,6 @@ function kubesh() {
 function kubelogs() {
   kubectl logs -f -n tpl-development  $(kubectl get pods -n tpl-development | grep $1 | cut -f 1 -d" ")
 }
+
+alias kubectl=kubecolor
 
