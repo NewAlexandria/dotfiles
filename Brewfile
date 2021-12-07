@@ -6,6 +6,8 @@ tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/services"
 
+brew "mas", args: ["--build-from-source"]
+
 brew "svn"
 
 tap "homebrew/cask-drivers"
@@ -68,7 +70,7 @@ cask "skype"
 cask "zoomus"
 cask "discord"
 # cask "keybase"
-#mas "Rocket.Chat", id: 1086818840
+mas "Rocket.Chat", id: 1086818840
 mas "Jira", id: 1475897096
 mas "Slack", id: 803453959
 
@@ -92,7 +94,6 @@ brew "cocoapods"
 brew "duti"
 brew "ios-deploy"
 brew "ideviceinstaller"
-brew "mas", args: ["--build-from-source"]
 
 brew "docker"
 brew "docker-compose"
@@ -259,27 +260,27 @@ cask "qlstephen"
 cask "quicklookase"
 cask "webpquicklook"
 
-mas "Autodesk Pixlr", id: 880663569
-mas "Instapaper", id: 1481302432
-mas "Keynote", id: 409183694
+#mas "Autodesk Pixlr", id: 880663569
+#mas "Instapaper", id: 1481302432
+#mas "Keynote", id: 409183694
 mas "Magnet", id: 441258766
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
-mas "SIDT", id: 1308724728
+#mas "Numbers", id: 409203825
+#mas "Pages", id: 409201541
+#mas "SIDT", id: 1308724728
 mas "Skitch", id: 425955336
 mas "The Unarchiver", id: 425424353
 mas "Time Out", id: 402592703
 mas "Transmit", id: 1436522307
 mas "TweetDeck", id: 485812721
-mas "Xcode", id: 497799835
-mas "iPhoto", id: 408981381
-
+#mas "Xcode", id: 497799835
+#mas "iPhoto", id: 408981381
+#
 mas "ChmPages", id: 1164062917
-mas "Duplicate Cleaner For iPhoto", id: 586862299
-mas "Duplicate Photos Finder", id: 984929789
+#mas "Duplicate Cleaner For iPhoto", id: 586862299
+#mas "Duplicate Photos Finder", id: 984929789
 mas "Gemini 2", id: 1090488118
 mas "GrandPerspective", id: 1111570163
 mas "FreeDiskSpace", id: 838744420
 mas "SiteSucker", id: 442168834
 mas "Tot", id: 1491071483
-
+#
