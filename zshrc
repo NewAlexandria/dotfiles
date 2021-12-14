@@ -110,7 +110,8 @@ fpath=(/completions /Users/zak/.oh-my-zsh/plugins/git /Users/zak/.oh-my-zsh/func
 
 # autoload -Uz compinit && compinit
 
-. $(brew --prefix asdf)/asdf.sh
+# . $(brew --prefix asdf)/asdf.sh
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
 
 if [[ -e ~/.zshrc_local.sh ]]; then
   source ~/.zshrc_local.sh
@@ -136,3 +137,9 @@ unset __conda_setup
 # <<< conda initialize <<<
 
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+# get zsh complete kubectl
+source <(kubectl completion zsh)
+alias kubectl=kubecolor
+# make completion work with kubecolor
+compdef kubecolor=kubectl
