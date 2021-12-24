@@ -2,7 +2,7 @@
 
 # Common bin paths
 # ----------------
-echo "bin PATH config"
+echo "🎫  bin PATH config"
 #export PATH="$HOME/.sem/bin:$PATH"
 #eval "$(rbenv init -)"
 #eval "$(nodenv init -)"
@@ -27,7 +27,7 @@ function awsact() {
 }
 
 # Compiler things
-echo "Compiler things"
+echo "🎫  Compiler things"
 alias gcc=cc
 alias gcc-4.2=gcc
 export CC=gcc
@@ -73,7 +73,7 @@ function gem_remove_all() {
 }
 
 ### Rails support
-echo "rails Support"
+echo "🎫  rails Support"
 
 alias be='bundle exec'
 alias bes='RAILS_ENV=test bundle exec rspec -f d -c'
@@ -101,7 +101,7 @@ alias jobs='jobs -l'
 
 
 ## Git
-echo "Git"
+echo "🎫  Git"
 alias gs='git status'
 alias gse="$EDITOR $(git status --porcelain | cut -f2 -s -d 'M' | tr '\n' ' ' )"
 
@@ -179,7 +179,7 @@ alias gls='git log --pickaxe-regex -p --color-words -S '
 
 
 ## Repos
-echo "Repo helpers"
+echo "🎫  Repo helpers"
 
 function update_repos() {
   __batt_yellow=$(tput setaf 184)
@@ -241,7 +241,7 @@ function _perimiter_array() {
 
 
 ## Search
-echo "search helpers"
+echo "🎫  search helpers"
 
 # takes the files returned by an ag search, and opens them in vim
 function agcode() {
