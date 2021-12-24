@@ -113,11 +113,27 @@ function gpr() {
 function gco() {
   git checkout $( git branch | grep $1 | awk '{ print $2 }' | xargs | awk '{ print $1 }' )
 }
+
+### git in-flow cleanups
+#function gfbr() {
+  #git co dev; git pull; git co $1; git rebase dev
+#}
 function gfb() {
-  git co dev; git pull; git co $1
-}
-function gfbr() {
-  git co dev; git pull; git co $1; git rebase dev
+  echo $1
+  echo $2
+  echo 'vars'
+  branch=$1
+  exists=$(git branch --list | grep $branch)
+  [[ -z "$exists" ]] && branch='-b'"$1"
+  #if [[ -z "$exists" ]]; then
+    #branch="-b $1"
+  #fi
+  #if [[ -z "$exists" ]]; then
+    #branch="-b $1"
+  #fi
+  ref_branch=$2
+  [ ! -x $2 ] || ref_branch="dev"
+  git co $ref_branch; git pull; git co $branch; git rebase $ref_branch
 }
 
 function ghpr() {
