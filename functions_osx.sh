@@ -104,3 +104,9 @@ alias gk=gitkraken
 
 source "${DOTFILES_REPO}/lib/osx-shell-battery/functions_battery.sh"
 
+function killdock() {
+  # Dock, Finder, SystemUIServer
+  syspart=$1
+  [ ! -x $1 ] || syspart='Dock'
+  killall -KILL $syspart
+}
