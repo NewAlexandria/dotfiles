@@ -13,6 +13,9 @@ function ratio() {
   fi
 }
 
+
+### ==== Converters =======================================
+
 function video2agif() {
   INPUT  = $1
   OUTPUT = $1.gif
@@ -78,4 +81,13 @@ function mp3shorten() {
 
 function mp32ringtone() {
   ffmpeg -i $1 -c:a libfdk_aac -f ipod -b:a 96k $2
+}
+
+### ==== Getters  =======================================
+
+function rumble-dl() {
+ [ -n "$1" ] && for s in $*
+  do url=`wget -O- $s | sed -n -E 's/^.*embedUrl...([^"]+).*$/\1/p'`
+  [ -n "$url" ] && youtube-dl $url
+ done
 }
