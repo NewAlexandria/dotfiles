@@ -59,3 +59,5 @@ alias ack='ack --color-lineno=green --color-filename=white --color --follow'
 echo ".profile config"
 #source ~/.profile
 
+PATH=$PATH:/opt/metasploit-framework/bin
+export PATH=$PATH:/opt/metasploit-framework/bin
