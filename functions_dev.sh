@@ -124,7 +124,8 @@ function gfb() {
   echo 'vars'
   branch=$1
   exists=$(git branch --list | grep $branch)
-  [[ -z "$exists" ]] && branch='-b'"$1"
+  new_branch=''
+  [[ -z "$exists" ]] && new_branch=' -b '
   #if [[ -z "$exists" ]]; then
     #branch="-b $1"
   #fi
@@ -133,7 +134,13 @@ function gfb() {
   #fi
   ref_branch=$2
   [ ! -x $2 ] || ref_branch="dev"
-  git co $ref_branch; git pull; git co $branch; git rebase $ref_branch
+
+  git co $ref_branch
+  git pull
+  git co $new_branch $branch
+  git branch --set-upstream-to=origin/$branch $branch
+  git pull
+  git rebase $ref_branch
 }
 
 function ghpr() {
