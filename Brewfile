@@ -226,7 +226,6 @@ brew "djvulibre"
 cask "vlc"
 brew "varenc/ffmpeg/ffmpeg"
 brew "youtube-dl"
-#cask "macx-youtube-downloader"
 brew "gsl"
 brew "usbmuxd", args: ["HEAD"]
 brew "libimobiledevice", args: ["HEAD"]
