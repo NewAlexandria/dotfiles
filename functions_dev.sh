@@ -138,7 +138,7 @@ function gfb() {
   git co $ref_branch
   git pull
   git co $new_branch $branch
-  git branch --set-upstream-to=origin/$branch $branch
+  [[ -z "$exists" ]] && git branch --set-upstream-to=origin/$branch $branch
   git pull
   git rebase $ref_branch
 }
