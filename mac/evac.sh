@@ -1,7 +1,7 @@
 sudo rm -Rf ~/src/projects/pursuit
 
 rm -Rf ~/../equinox/
-rm -Rf /Users/Zachary/dropbox_fp 
+rm -Rf /Users/zak/dropbox_fp 
 rm -Rf ~/dropbox_fp
 rm -Rf ~/google_drive_kf
 rm -Rf ~/src/production/
