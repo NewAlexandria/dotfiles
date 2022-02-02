@@ -32,6 +32,8 @@ brew "crystal"
 #brew "pyenv"
 brew "ruby-completion"
 brew "ruby-install"
+brew "rbenv"
+brew "rbenv-gemset"
 brew "ruby-build"
 brew "rust"
 #brew "nvm"
@@ -41,6 +43,13 @@ brew "yarn"
 brew "elixir"
 brew "elixir-build"
 brew "awscli"
+
+brew "circleci"
+brew "devspace"
+brew "dosbox"
+brew "gh"
+brew "kubernetes-cli"
+brew "vault"
 
 brew "kubectl"
 brew "hidetatz/tap/kubecolor"
@@ -184,10 +193,11 @@ cask "adoptopenjdk8"
 
 tap "mongodb/brew"
 
-cask "neo4j"
+brew "neo4j", link: false
 brew "sqlite"
 brew "freetds"
 brew "mysql", restart_service: true
+brew "nginx", restart_service: true
 brew "postgresql", restart_service: true
 brew "mongodb/brew/mongocli"
 cask "sequel-pro-nightly"
@@ -224,8 +234,9 @@ brew "djvu2pdf"
 brew "djvulibre"
 
 cask "vlc"
-brew "varenc/ffmpeg/ffmpeg"
+brew "ffmpeg"
 brew "youtube-dl"
+brew "yt-dlp/taps/yt-dlp"
 brew "gsl"
 brew "usbmuxd", args: ["HEAD"]
 brew "libimobiledevice", args: ["HEAD"]
@@ -257,9 +268,9 @@ cask "webpquicklook"
 ##mas "Instapaper", id: 1481302432
 ##mas "Keynote", id: 409183694
 #mas "Magnet", id: 441258766
+brew "rectangle"
 ##mas "Numbers", id: 409203825
 ##mas "Pages", id: 409201541
-##mas "SIDT", id: 1308724728
 #mas "Skitch", id: 425955336
 #mas "The Unarchiver", id: 425424353
 #mas "Time Out", id: 402592703
