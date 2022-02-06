@@ -1,6 +1,6 @@
-. /usr/local/opt/asdf/asdf.sh
+#. /usr/local/opt/asdf/asdf.sh
 
-fpath=(/usr/local/share/zsh-completions $fpath)
+#fpath=(/usr/local/share/zsh-completions $fpath)
 
 export TERM="xterm-256color"
 
