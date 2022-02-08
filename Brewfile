@@ -51,6 +51,7 @@ brew "gh"
 brew "kubernetes-cli"
 brew "vault"
 
+brew "lsd"
 brew "kubectl"
 brew "hidetatz/tap/kubecolor"
 cask "adoptopenjdk"

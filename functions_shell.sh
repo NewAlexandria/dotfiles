@@ -35,10 +35,18 @@ function getuser() {
   fi
 }
 
-alias ll='ls -alGh'
+# Aliases
+
+## Display
+alias rless='less -Xr'
+alias dif='colordiff'
+
+#alias ls='lsd'
+
+alias ll='lsd -Alh'
+#alias ll='ls -alGh'
 alias les='less -FRSXQ'
 
-# Aliases
 ## Navigation
 
 alias cd.='cd ~/.ssh/'
@@ -52,10 +60,6 @@ alias  .4='cd ../../../../'                  # Go back 4 directory levels
 alias  .5='cd ../../../../../'               # Go back 5 directory levels
 alias  .6='cd ../../../../../../'            # Go back 6 directory levels
 
-
-## Display
-alias rless='less -Xr'
-alias dif='colordiff'
 
 man() {
 	env \
