@@ -60,8 +60,10 @@ namespace :dotfiles do
         end
       else
         link_file(file)
-      end
+      end 
     end
+
+    system %Q{ln -sf "$PWD/tool-versions" "$PWD/.tool-versions"}
 
     #print "Reload ~/.bash_profile? [yn] "
     #if $stdin.gets.chomp == 'y'
