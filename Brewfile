@@ -219,6 +219,7 @@ brew "stanford-corenlp"
 cask "julia"
 brew "vowpal-wabbit", args: ["--build-from-source"]
 
+brew "blender"
 brew "graphviz"
 brew "plantuml"
 cask "inkscape"
