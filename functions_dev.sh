@@ -158,6 +158,7 @@ function lcm() {
   git log -1 --pretty=%B
 }
 
+# https://stackoverflow.com/a/17843908/263858
 function parent_branch() {
   git show-branch \
     | sed "s/].*//" \
@@ -167,8 +168,10 @@ function parent_branch() {
     | sed "s/^.*\[//"
 }
 
+# https://stackoverflow.com/a/69649359/263858
 function default_branch() {
   gh repo view --json defaultBranchRef --jq .defaultBranchRef.name
+  # git remote show origin | sed -n '/HEAD branch/s/.*: //p'
 }
 
 # should be read from a dotfile per repo
