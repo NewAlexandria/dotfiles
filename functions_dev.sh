@@ -119,26 +119,26 @@ function gco() {
   #git co dev; git pull; git co $1; git rebase dev
 #}
 function gfb() {
-  echo $1
-  echo $2
-  echo 'vars'
+  # echo $1
+  # echo $2
+  # echo 'vars'
+  input_base_branch=${2:-$(parent_branch)}
+  echo "input_base_branch: $input_base_branch"
   branch=$1
   exists=$(git branch --list | grep $branch)
   new_branch=''
-  [[ -z "$exists" ]] && new_branch=' -b '
-  #if [[ -z "$exists" ]]; then
-    #branch="-b $1"
-  #fi
-  #if [[ -z "$exists" ]]; then
-    #branch="-b $1"
-  #fi
+  if [[ -z "$exists" ]]; then
+    new_branch="-b"
+  fi
   ref_branch=$2
-  [ ! -x $2 ] || ref_branch="dev"
+  [ ! -x $2 ] || ref_branch="$input_base_branch"
 
   git co $ref_branch
   git pull
   git co $new_branch $branch
-  [[ -z "$exists" ]] && git branch --set-upstream-to=origin/$branch $branch
+  if [[ -z "$exists" ]]; then
+    git branch --set-upstream-to=origin/$branch $branch
+  fi
   git pull
   git rebase $ref_branch
 }
@@ -158,25 +158,39 @@ function lcm() {
   git log -1 --pretty=%B
 }
 
-DEV_BRANCH='dev'
+function parent_branch() {
+  git show-branch \
+    | sed "s/].*//" \
+    | grep "\*" \
+    | grep -v "$(git rev-parse --abbrev-ref HEAD)" \
+    | head -n1 \
+    | sed "s/^.*\[//"
+}
+
+function default_branch() {
+  gh repo view --json defaultBranchRef --jq .defaultBranchRef.name
+}
+
+# should be read from a dotfile per repo
+DEV_BRANCH="development"
 
 alias gpom='git push origin master --tags'
-alias gpod='git push origin $DEV_BRANCH'
+alias gpod='git push origin $dev_branch'
 alias  gpo='git push origin $(git rev-parse --abbrev-ref HEAD) --set-upstream'
 
 alias  guo='git pull origin $(git rev-parse --abbrev-ref HEAD) && git fetch &'
 
-alias  grd='git rebase $DEV_BRANCH'
+alias  grd='git rebase $dev_branch'
 alias  grm='git rebase master'
 alias  grc='git rebase --continue'
 alias  gra='git rebase --abort'
-alias grod='git fetch; git rebase origin/$DEV_BRANCH'
+alias grod='git fetch; git rebase origin/$dev_branch'
 
 alias gspr='git submodule update --init --recursive --remote'
 alias  gsp='git submodule update --init'
 
 alias   gd='git diff --color'
-alias gdod='git diff --color origin/$DEV_BRANCH'
+alias gdod='git diff --color origin/$dev_branch'
 alias gdom='git diff --color origin/master'
 
 alias  fix='$EDITOR `git diff --name-only | uniq`'
