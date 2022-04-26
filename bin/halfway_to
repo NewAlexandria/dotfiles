@@ -1,0 +1,5 @@
+#!/usr/bin/ruby
+require 'date'
+
+target_date = ARGV[0] || '2022-10-31'
+puts Date.jd((Date.parse target_date).jd -  (364/2)).iso8601
