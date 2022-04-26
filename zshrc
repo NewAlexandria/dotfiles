@@ -106,7 +106,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
-fpath=(/completions /Users/zak/.oh-my-zsh/plugins/git /Users/zak/.oh-my-zsh/functions /Users/zak/.oh-my-zsh/completions /usr/local/share/zsh/site-functions /usr/share/zsh/site-functions /usr/share/zsh/5.8/functions)
+#fpath=(/completions /Users/zak/.oh-my-zsh/plugins/git /Users/zak/.oh-my-zsh/functions /Users/zak/.oh-my-zsh/completions /usr/local/share/zsh/site-functions /usr/share/zsh/site-functions /usr/share/zsh/5.8/functions)
 
 # autoload -Uz compinit && compinit
 
@@ -139,9 +139,9 @@ unset __conda_setup
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 # get zsh complete kubectl
-source <(kubectl completion zsh)
-alias kubectl=kubecolor
+#source <(kubectl completion zsh)
+#alias kubectl=kubecolor
 # make completion work with kubecolor
-compdef kubecolor=kubectl
+#compdef kubecolor=kubectl
 
 eval "$(rbenv init - zsh)"
