@@ -1,0 +1,47 @@
+windows:
+  - name: suvie-cloud
+    root: $SV_REPO_PATH/suvie-cloud
+    layout: 4bd1,230x54,0,0{140x54,0,0,1,89x54,141,0[89x27,141,0,2,89x26,141,28,28]}
+    #layout: b339,230x54,0,0{140x54,0,0,1,89x54,141,0,2}
+    panes:
+      - commands:
+        - cd $SV_REPO_PATH/suvie-cloud
+        - git pull
+        - git status
+        - export DEV_BRANCH=development
+      - commands:
+        - cd $SV_REPO_PATH/suvie-cloud
+        - export DEV_BRANCH=development
+  - name: planner
+    root: $SV_REPO_PATH/suvie-planner
+    layout: 4bd1,230x54,0,0{140x54,0,0,1,89x54,141,0[89x27,141,0,2,89x26,141,28,28]}
+    #layout: b339,230x54,0,0{140x54,0,0,1,89x54,141,0,2}
+    panes:
+      - commands:
+        - cd $SV_REPO_PATH/suvie-planner
+        - git pull
+        - git status
+        - export DEV_BRANCH=development
+      - commands:
+        - cd $SV_REPO_PATH/suvie-planner
+        - unset MBT_DB_PATH
+        - export DEV_BRANCH=development
+  - name: notes
+    root: ~/src
+    #layout: 4bd1,230x54,0,0{140x54,0,0,1,89x54,141,0[89x27,141,0,2,89x26,141,28,28]}
+    panes:
+      - commands:
+        - cd newalexandria-web
+      - commands:
+        - cd leadership_readme
+      - commands:
+        - cd ~
+      - commands:
+        - cd ~/.dotfiles
+  - name: IRC
+    root: $SV_REPO_PATH/..
+    #layout: 4bd1,230x54,0,0{140x54,0,0,1,89x54,141,0[89x27,141,0,2,89x26,141,28,28]}
+    panes:
+      - commands:
+        - cd $SV_REPO_PATH/..
+        - irssi
