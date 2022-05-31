@@ -122,7 +122,8 @@ function gfb() {
   # echo $1
   # echo $2
   # echo 'vars'
-  input_base_branch=${2:-$(parent_branch)}
+  arg_or_var=${2:-$(DEV_BRANCH)}
+  input_base_branch=${arg_or_var:-$(parent_branch)}
   echo "input_base_branch: $input_base_branch"
   branch=$1
   exists=$(git branch --list | grep $branch)
@@ -132,6 +133,7 @@ function gfb() {
   fi
   ref_branch=$2
   [ ! -x $2 ] || ref_branch="$input_base_branch"
+  echo "ref_branch: $ref_branch"
 
   git co $ref_branch
   git pull
@@ -145,6 +147,9 @@ function gfb() {
 
 function ghpr() {
   gh pr view --web $1
+}
+function ghbo() {
+  gh repo view --web -b $1
 }
 
 function gom() {
@@ -227,7 +232,7 @@ function update_repos() {
   __batt_red=$(   tput setaf 160)
   __batt_reset="$(tput init)"
   for f in $(ls -w)
-  do 
+  do
     echo "";
     echo "$__batt_green$f$__batt_reset";
     cd ${f}
@@ -272,7 +277,7 @@ function mux() {
 #    -o 0,1.1,1.3,2.2,2.3 \
 #    <(sort -k2 -t, leads.csv) \
 #    <(sort -t, names.csv)
-#  
+#
 #  In this example, leads.csv has lead UUID in the second column and names.csv has lead UUID in the first column. Input files must be sorted on the join column, and the output is the lead UUID, following by the first attribute in the first file, etc (as specified by -o)
 
 function _perimiter_array() {
@@ -291,7 +296,7 @@ function agcode() {
   for func in "${func_arr[@]}"
   do
     if [ -n "$(which $func)" ] && [ "$(which $func)" = file ] || 'vim'
-    then 
+    then
       echo "Using $func"
       $func $(ag "$1" $2 -l --nocolor | xargs)
       break
@@ -307,7 +312,7 @@ function ackcode() {
   for func in "${func_arr[@]}"
   do
     if [ -n "$(type -t $func)" ] && [ "$(type -t $func)" = file ]
-    then 
+    then
       echo "Using $func"
       mvim $(ack $1 $2 -l --nocolor | xargs)
       break
