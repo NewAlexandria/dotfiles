@@ -145,3 +145,5 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 #compdef kubecolor=kubectl
 
 eval "$(rbenv init - zsh)"
+# fzf tab completion
+source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab/fzf-tab.plugin.zsh
