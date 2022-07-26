@@ -46,17 +46,14 @@ export PKG_CONFIG_PATH="/usr/local/opt/libxml2/lib/pkgconfig"
 export LDFLAGS="-L/usr/local/opt/openssl/lib"
 export CPPFLAGS="-I/usr/local/opt/openssl/include"
 
-
-
 ## Aliases
 alias exportenv='export $(cat .env | grep -v ^# | cut -d: -f2 | xargs)'
 alias a="arch -x86_64"
 alias ibrew="arch -x86_64 brew"
 
 #alias findport() {
-  #$(netstat -vanp tcp | grep $1)
+#$(netstat -vanp tcp | grep $1)
 #}
-
 
 ### Artifact Cleanup
 
@@ -66,8 +63,7 @@ alias docker_clean_ps='docker rm $(docker ps --filter=status=exited --filter=sta
 alias fix-spotlight-npm="find ~/. -type d -path './.*' -prune -o -path './Pictures*' -prune -o -path './Library*' -prune -o -path '*node_modules/*' -prune -o -type d -name 'node_modules' -exec touch '{}/.metadata_never_index' \; -print"
 
 function gem_remove_all() {
-  for i in `gem list --no-versions`
-  do
+  for i in $(gem list --no-versions); do
     gem uninstall -aIx $i
   done
 }
@@ -90,7 +86,7 @@ function npmget() {
   mkdir $1
   cd $1
   wget $(npm v $1 dist.tarball)
-  FNAME=$(ls  | grep $1.*\.tgz | cut -d':' -f 2)
+  FNAME=$(ls | grep $1.*\.tgz | cut -d':' -f 2)
   tar -zxvf $FNAME
   cd ..
 }
@@ -99,11 +95,10 @@ function npmget() {
 alias bb='bbedit --clean --view-top'
 alias jobs='jobs -l'
 
-
 ## Git
 echo "🎫  Git"
 alias gs='git status'
-alias gse="$EDITOR $(git status --porcelain | cut -f2 -s -d 'M' | tr '\n' ' ' )"
+alias gse="$EDITOR $(git status --porcelain | cut -f2 -s -d 'M' | tr '\n' ' ')"
 
 alias ga='git add'
 alias gc='git commit'
@@ -111,12 +106,12 @@ function gpr() {
   hub pull-request -h $2 -b $1 -m | open
 }
 function gco() {
-  git checkout $( git branch | grep $1 | awk '{ print $2 }' | xargs | awk '{ print $1 }' )
+  git checkout $(git branch | grep $1 | awk '{ print $2 }' | xargs | awk '{ print $1 }')
 }
 
 ### git in-flow cleanups
 #function gfbr() {
-  #git co dev; git pull; git co $1; git rebase dev
+#git co dev; git pull; git co $1; git rebase dev
 #}
 function gfb() {
   # echo $1
@@ -157,20 +152,38 @@ function gom() {
 }
 # git commit with the last message
 function gcam() {
-  $( git commit --amend -m "$(exec lcm)" )
+  $(git commit --amend -m "$(exec lcm)")
 }
+
+# refresh the release branch from main
+function gmr() {
+  MAIN="main"
+  # MAIN=${$(MAIN_BRANCH):-'main'};
+  DEVL="development"
+  # DEVL=${$(DEV_BRANCH):-'development'};
+  RELEASE="release"
+  # RELEASE=${$(RELEASE_BRANCH):-'main-release'};
+  git co $MAIN
+  git pull
+  git co $DEVL
+  git pull
+  git co $RELEASE
+  git reset --hard $MAIN
+  git merge $DEVELOPMENT
+}
+
 function lcm() {
   git log -1 --pretty=%B
 }
 
 # https://stackoverflow.com/a/17843908/263858
 function parent_branch() {
-  git show-branch \
-    | sed "s/].*//" \
-    | grep "\*" \
-    | grep -v "$(git rev-parse --abbrev-ref HEAD)" \
-    | head -n1 \
-    | sed "s/^.*\[//"
+  git show-branch |
+    sed "s/].*//" |
+    grep "\*" |
+    grep -v "$(git rev-parse --abbrev-ref HEAD)" |
+    head -n1 |
+    sed "s/^.*\[//"
 }
 
 # https://stackoverflow.com/a/69649359/263858
@@ -184,24 +197,24 @@ DEV_BRANCH="development"
 
 alias gpom='git push origin master --tags'
 alias gpod='git push origin $DEV_BRANCH'
-alias  gpo='git push origin $(git rev-parse --abbrev-ref HEAD) --set-upstream'
+alias gpo='git push origin $(git rev-parse --abbrev-ref HEAD) --set-upstream'
 
-alias  guo='git pull origin $(git rev-parse --abbrev-ref HEAD) && git fetch &'
+alias guo='git pull origin $(git rev-parse --abbrev-ref HEAD) && git fetch &'
 
-alias  grd='git rebase $DEV_BRANCH'
-alias  grm='git rebase master'
-alias  grc='git rebase --continue'
-alias  gra='git rebase --abort'
+alias grd='git rebase $DEV_BRANCH'
+alias grm='git rebase master'
+alias grc='git rebase --continue'
+alias gra='git rebase --abort'
 alias grod='git fetch; git rebase origin/$DEV_BRANCH'
 
 alias gspr='git submodule update --init --recursive --remote'
-alias  gsp='git submodule update --init'
+alias gsp='git submodule update --init'
 
-alias   gd='git diff --color'
+alias gd='git diff --color'
 alias gdod='git diff --color origin/$DEV_BRANCH'
 alias gdom='git diff --color origin/master'
 
-alias  fix='$EDITOR `git diff --name-only | uniq`'
+alias fix='$EDITOR `git diff --name-only | uniq`'
 
 # pipe control via http://unix.stackexchange.com/a/77593/14845
 function gdo() {
@@ -213,28 +226,25 @@ function gdo() {
   #$EDITOR $( git diff --name-only $ref | uniq | xargs )
 }
 
-alias  gl='git log --graph --full-history --all --color --pretty=tformat:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s%x20%x1b[33m(%an)%x1b[0m"$'
+alias gl='git log --graph --full-history --all --color --pretty=tformat:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s%x20%x1b[33m(%an)%x1b[0m"$'
 alias gll='git log --graph'
 # seach git logs for a string from a diff
 alias gls='git log --pickaxe-regex -p --color-words -S '
 
-
 # alias gcwtc="git commit -m \"`curl http://whatthecommit.com 2>/dev/null | grep '<p>' | sed 's/<p>//'`\""
 # alias wtc="echo \"merge-wtc: `curl http://whatthecommit.com 2>/dev/null | grep '<p>' | sed 's/<p>//'`\""
-
 
 ## Repos
 echo "🎫  Repo helpers"
 
 function update_repos() {
   __batt_yellow=$(tput setaf 184)
-  __batt_green=$( tput setaf 120)
-  __batt_red=$(   tput setaf 160)
+  __batt_green=$(tput setaf 120)
+  __batt_red=$(tput setaf 160)
   __batt_reset="$(tput init)"
-  for f in $(ls -w)
-  do
-    echo "";
-    echo "$__batt_green$f$__batt_reset";
+  for f in $(ls -w); do
+    echo ""
+    echo "$__batt_green$f$__batt_reset"
     cd ${f}
     git stash save "xxx"
     git pull
@@ -246,14 +256,13 @@ function update_repos() {
 function clone_org() {
   org=$1
   token_file=$2
-  if [ ! -x $1 ] ; then
+  if [ ! -x $1 ]; then
     echo "first var, organization token, is required"
   else
     [ ! -x $2 ] || token_file="~/.ssh/keys/github-pers-token-all-repos.txt"
     curl -s https://$token_file:@api.github.com/orgs/$org/repos\?per_page\=200 | jq ".[].ssh_url" | xargs -n 1 git clone --recursive
   fi
 }
-
 
 ### tmux support
 
@@ -263,9 +272,8 @@ function tmux_layout_code() {
 
 function mux() {
   tmux new-session -d -s mbt
-  tmux send-keys   -t    mbt:0 'teamocil mbt' Enter
+  tmux send-keys -t mbt:0 'teamocil mbt' Enter
 }
-
 
 ## Examples
 
@@ -284,7 +292,6 @@ function _perimiter_array() {
   ruby -e "div=((ARGV[0]||6)-1); min=0.0;max=1.0; x=Array.new(div,(max/div)).map.with_index{|i,idx| (i*(idx+1)).floor(2) }.unshift(0.0); y=x.zip(Array.new(div+1,min)) + x.zip(Array.new(div+1,max)) + Array.new(div+1,max).zip(x) + Array.new(div+1,min).zip(x); puts y.uniq.to_s.gsub(' ','')"
 }
 
-
 ## Search
 echo "🎫  search helpers"
 
@@ -292,11 +299,9 @@ echo "🎫  search helpers"
 function agcode() {
   code $(ag "$1" $2 -l --nocolor | xargs)
   return 0
-  func_arr=( 'nvim' 'mvim' 'vim' )
-  for func in "${func_arr[@]}"
-  do
-    if [ -n "$(which $func)" ] && [ "$(which $func)" = file ] || 'vim'
-    then
+  func_arr=('nvim' 'mvim' 'vim')
+  for func in "${func_arr[@]}"; do
+    if [ -n "$(which $func)" ] && [ "$(which $func)" = file ] || 'vim'; then
       echo "Using $func"
       $func $(ag "$1" $2 -l --nocolor | xargs)
       break
@@ -308,11 +313,9 @@ function agcode() {
 function ackcode() {
   code $(ack "$1" $2 -l --nocolor | xargs)
   return 0
-  func_arr=( 'code' )
-  for func in "${func_arr[@]}"
-  do
-    if [ -n "$(type -t $func)" ] && [ "$(type -t $func)" = file ]
-    then
+  func_arr=('code')
+  for func in "${func_arr[@]}"; do
+    if [ -n "$(type -t $func)" ] && [ "$(type -t $func)" = file ]; then
       echo "Using $func"
       mvim $(ack $1 $2 -l --nocolor | xargs)
       break
@@ -325,8 +328,7 @@ function kubesh() {
 }
 
 function kubelogs() {
-  kubectl logs -f -n tpl-development  $(kubectl get pods -n tpl-development | grep $1 | cut -f 1 -d" ")
+  kubectl logs -f -n tpl-development $(kubectl get pods -n tpl-development | grep $1 | cut -f 1 -d" ")
 }
 
 alias kubectl=kubecolor
-
