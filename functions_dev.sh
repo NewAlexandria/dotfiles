@@ -102,6 +102,8 @@ alias gse="$EDITOR $(git status --porcelain | cut -f2 -s -d 'M' | tr '\n' ' ')"
 
 alias ga='git add'
 alias gc='git commit'
+alias ggc='lucky commit'
+
 function gpr() {
   hub pull-request -h $2 -b $1 -m | open
 }
