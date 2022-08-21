@@ -157,21 +157,25 @@ function gcam() {
   $(git commit --amend -m "$(exec lcm)")
 }
 
+alias gcps='git cherry-pick --skip'
+alias gcpc='git cherry-pick --continue'
+alias gcpa='git cherry-pick --abort'
+
 # refresh the release branch from main
 function gmr() {
-  MAIN="main"
+  MAIN_BR="main"
   # MAIN=${$(MAIN_BRANCH):-'main'};
-  DEVL="development"
+  DEVL_BR="development"
   # DEVL=${$(DEV_BRANCH):-'development'};
-  RELEASE="release"
+  RELEASE_BR="main-release"
   # RELEASE=${$(RELEASE_BRANCH):-'main-release'};
-  git co $MAIN
+  git co $MAIN_BR
   git pull
-  git co $DEVL
+  git co $DEVL_BR
   git pull
-  git co $RELEASE
-  git reset --hard $MAIN
-  git merge $DEVELOPMENT
+  git co $RELEASE_BR
+  git reset --hard $MAIN_BR
+  git merge $DEVL_BR
 }
 
 function lcm() {
