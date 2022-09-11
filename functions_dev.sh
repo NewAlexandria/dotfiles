@@ -103,6 +103,8 @@ alias gse="$EDITOR $(git status --porcelain | cut -f2 -s -d 'M' | tr '\n' ' ')"
 alias ga='git add'
 alias gc='git commit'
 alias ggc='lucky commit'
+alias gcaa='gc -a --amend'
+alias gcaae='gc -a --amend --no-edit'
 
 function gpr() {
   hub pull-request -h $2 -b $1 -m | open
@@ -176,6 +178,21 @@ function gmr() {
   git co $RELEASE_BR
   git reset --hard $MAIN_BR
   git merge $DEVL_BR
+}
+
+function gmra() {
+  MAIN_BR="main"
+  # MAIN=${$(MAIN_BRANCH):-'main'};
+  DEVL_BR="development"
+  # DEVL=${$(DEV_BRANCH):-'development'};
+  RELEASE_BR="main-release-2nd-pipe"
+  # RELEASE=${$(RELEASE_BRANCH):-'main-release'};
+  git co $MAIN_BR
+  git pull
+  git co $DEVL_BR
+  git pull
+  git co $RELEASE_BR
+  git reset --hard $MAIN_BR
 }
 
 function lcm() {
