@@ -6,7 +6,10 @@ test -e "${HOME}/.dotfiles/mac/iterm2_shell_integration.bash" && source "${HOME}
 
 
 ## Brew
+
 alias brewup="brew upgrade $(brew outdated | cut -d ' ' -f1 | grep -v mysql | cut -d ':' -f2 | xargs)"
+alias brewpull="brew update && brew upgrade && brew cleanup && brew cleanup -s --prune=all"
+
 alias brew_deptree="brew deps --installed --tree"
 function brewreset() {
   nam=$1 
