@@ -24,3 +24,8 @@ Blog
 ------------
 
 [Technical blogging, ampersand](http://newalexandria.github.io/dotfiles/), will begin here.
+
+Futures
+------------
+
+* [zsh antidote plugin manager](https://getantidote.github.io)

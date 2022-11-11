@@ -17,3 +17,11 @@ end
 def pp_serializer(ser)
   puts JSON.pretty_generate( ser.serializable_hash )
 end
+
+def arflush
+  ActiveRecord::Base.connection.execute 'ROLLBACK'
+end
+alias :arrollback :arflush
+alias :arclear :arflush
+
+# heroku run 'bundle exec rails c -- --nomultiline' -a suvie-cloud
