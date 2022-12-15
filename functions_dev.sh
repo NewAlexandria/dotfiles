@@ -144,6 +144,8 @@ function gfb() {
   git rebase $ref_branch
 }
 
+alias gmd="git merge $DEV_BRANCH"
+
 function ghpr() {
   gh pr view --web $1
 }
@@ -193,6 +195,15 @@ function gmra() {
   git pull
   git co $RELEASE_BR
   git reset --hard $MAIN_BR
+}
+
+function gmmd() {
+  gcd
+  git pull
+  git co main
+  git pull
+  gcd
+  git merge main
 }
 
 function lcm() {
