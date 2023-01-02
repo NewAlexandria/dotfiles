@@ -182,28 +182,50 @@ function gmr() {
   git merge $DEVL_BR
 }
 
+export MAIN_BR="main"
+# export MAIN_BR=${$(MAIN_BRANCH):-'main'};
+export DEVL_BR="development"
+# export DEVL_BR=${$(DEV_BRANCH):-'development'};
+export RELEASE_BR="main-release-2nd-pipe"
+# export RELEASE_BR=${$(RELEASE_BRANCH):-'main-release'};
+export STAGING_BR="staging"
+
 function gmra() {
-  MAIN_BR="main"
-  # MAIN=${$(MAIN_BRANCH):-'main'};
-  DEVL_BR="development"
-  # DEVL=${$(DEV_BRANCH):-'development'};
-  RELEASE_BR="main-release-2nd-pipe"
-  # RELEASE=${$(RELEASE_BRANCH):-'main-release'};
-  git co $MAIN_BR
-  git pull
-  git co $DEVL_BR
-  git pull
+  gcml
+  gcdl
   git co $RELEASE_BR
   git reset --hard $MAIN_BR
 }
 
 function gmmd() {
-  gcd
-  git pull
-  git co main
-  git pull
+  gcdl
+  gcml
   gcd
   git merge main
+}
+
+function gcd() {
+  git co $DEVL_BR
+}
+function gcdl() {
+  gcd
+  git pull
+}
+
+function gcst() {
+  git co $STAGING_BR
+}
+function gcstl() {
+  gcst
+  git pull
+}
+
+function gcm() {
+  git co $MAIN_BR
+}
+function gcml() {
+  gcm
+  git pull
 }
 
 function lcm() {
