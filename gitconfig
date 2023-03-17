@@ -14,6 +14,24 @@
 [github]
 	user = NewAlexandria
 
+[core]
+    pager = delta
+  	excludesfile = /Users/zak/.gitignore_global
+  	autocrlf = input
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+
 [alias]
   co = checkout
   ci = commit
@@ -22,7 +40,7 @@
   rebase = rebase --autostash
 
   patch = --no-pager diff --no-color
-  diff = diff --color
+  ;diff = diff --color
 
   wherefrom = "!sh -c \"git reflog show --all | grep $1\" -"
 
@@ -52,9 +70,6 @@
 
 	aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort
 
-[core]
-	excludesfile = /Users/zak/.gitignore_global
-	autocrlf = input
 [remote "origin"]
 	receivepack = git receive-pack
 [url "https://"]
@@ -72,10 +87,10 @@
 ;[branch "develop"]
   ;rebase = true
 
-[diff]
-    tool = vscode
-[difftool "vscode"]
-    cmd = code --wait --diff $LOCAL $REMOTE
+;[diff]
+    ;tool = vscode
+;[difftool "vscode"]
+    ;cmd = code --wait --diff $LOCAL $REMOTE
 [mergetool "opendiff"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
