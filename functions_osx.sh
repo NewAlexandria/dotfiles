@@ -21,12 +21,21 @@ function brewreset() {
   brew install $nam
 }
 
+function brewdump() {
+  fout=$1
+  # [ ! -x $1 ] || fout='~/.dotfiles/brewfile_new'
+  [ ! -x $1 ] || fout="$DOTFILES_REPO/Brewfile_new"
+  brew bundle dump --file=$fout
+}
+
+
 function diffbrewfile() {
   newfile=$1
   [ ! -x $1 ] || newfile='HEAD'
   oldfile=$2
   [ ! -x $2 ] || oldfile='HEAD'
-  ruby -e "puts File.readlines('$newfile').sort - File.readlines('$oldfile').sort"
+  ruby -e "puts File.readlines('$newfile').sort - File.readlines('$oldfile').sort" > Brewfile.removed
+  ruby -e "puts File.readlines('$oldfile').sort - File.readlines('$newfile').sort" > Brewfile.added
 }
 
 
