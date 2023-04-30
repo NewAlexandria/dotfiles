@@ -42,6 +42,7 @@ function gif2webm() {
       ffmpeg -i "$1" -c:v libvpx -crf $CRF -b:v $BITRATE$RATE_SZ  -auto-alt-ref 0 "$1.$FORMAT"
   fi
 }
+
 function gifcomposite() {
   HT=${4:-'200'}
   HT=${5:-'200'}
@@ -73,6 +74,12 @@ function ytmp3() {
       FORMAT=${2:-'mp3'}
       youtube-dl $1 -x --audio-format "$FORMAT"
   fi
+}
+
+function audiospeed() {
+  splitrate=( echo $1 | ruby -e 'puts 1 / readline.strip.to_f' )
+  namebase=(echo $2 | ruby -e 'puts readline.split(".")[0..-2].join(".")')
+  ffmpeg -i "$splitrate" -filter_complex "[0:v]setpts=0.5*PTS[v];[0:a]atempo=2[a]" -map "[v]" -map "[a]" "$namebase-$1x.mp3"
 }
 
 function mp3shorten() {

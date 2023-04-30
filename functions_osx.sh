@@ -12,7 +12,7 @@ alias brewpull="brew update && brew upgrade && brew cleanup && brew cleanup -s -
 
 alias brew_deptree="brew deps --installed --tree"
 function brewreset() {
-  nam=$1 
+  nam=$1
   brew unlink $nam
   brew uninstall $nam
   mkdir -p /usr/local/Cellar/$nam
