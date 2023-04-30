@@ -15,16 +15,22 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "varenc/ffmpeg"
 
-cask "homebrew/cask-drivers/kiibohd-configurator"
-cask "pomotodo"
-cask "time-out"
-cask "karabiner-elements"
+mas "ArtSaverApp", id: 1528854781
 #cask "wacom-tablet"
-cask "wacom-inkspace"
+# cask "wacom-inkspace"
+# cask "synergy"
+
 cask "lulu"
+
+mas "Time Out", id: 402592703
+mas "One Thing", id: 1604176982
+mas "Shareful", id: 1522267256
+mas "Tot", id: 1491071483
+
+brew "rectangle"
+cask "karabiner-elements"
+cask "homebrew/cask-drivers/kiibohd-configurator"
 cask "kiibohd-configurator"
-cask "captain"
-cask "synergy"
 cask "mos" # scroll control
 
 brew "asdf"
@@ -44,6 +50,8 @@ brew "yarn"
 brew "elixir"
 brew "elixir-build"
 brew "awscli"
+brew "aws-sam-cli"
+
 
 #brew "circleci"
 brew "devspace"
@@ -54,7 +62,6 @@ brew "vault"
 cask "adoptopenjdk"
 cask "xquartz"
 cask "suspicious-package"
-cask "virtualbox"
 cask "visualvm"
 cask "platypus"
 
@@ -64,6 +71,7 @@ cask "intellij-idea-ce"
 #cask "android-studio-preview"
 brew "jupyterlab"
 brew "miniconda"
+brew "conda-zsh-completion"
 cask "datagrip"
 cask "db-browser-for-sqlite"
 cask "timeular"
@@ -71,10 +79,10 @@ cask "timeular"
 cask "font-fira-code-nerd-font"
 cask "font-hack-nerd-font"
 cask "font-inconsolata-lgc"
+cask "font-photonico-code"
 
-cask "transmission"
-cask "chronosync"
 
+brew "exa"
 brew "lsd"
 brew "tmux"
 brew "zsh"
@@ -88,6 +96,11 @@ brew "bundler-completion"
 brew "curl"
 brew "curl-openssl"
 brew "wget"
+
+cask "transmission"
+brew "i2p"
+brew "ipfs", args: ["--build-from-source"]
+
 brew "jq"
 brew "ijq"
 brew "bat"
@@ -95,6 +108,14 @@ brew "renameutils", args: ["--build-from-source"]
 brew "python-yq"
 brew "socat"
 brew "tree"
+
+mas "GrandPerspective", id: 1111570163
+mas "HEIC Converter", id: 1294126402
+mas "Control Center", id: 1515453657
+mas "SiteSucker", id: 442168834
+mas "Spectrum Analyzer", id: 1049212349
+
+## Browsers
 
 cask "google-chrome"
 cask "google-chrome-canary"
@@ -106,6 +127,13 @@ cask "tor-browser"
 cask "opera"
 cask "brave-browser-nightly"
 #cask "microsoft-edge"
+
+cask "finicky"
+mas "Cascadea", id: 1432182561
+mas "Refined GitHub", id: 1519867270
+
+
+## Chat
 
 brew "irssi"
 cask "notion"
@@ -122,36 +150,46 @@ brew "brogue"
 cask "angband"
 cask "google-earth-pro"
 
+
 brew "cocoapods"
 brew "duti"
 brew "ios-deploy"
 brew "ideviceinstaller"
 
+## Virtualization
+
 brew "docker"
 brew "docker-compose"
 brew "docker-machine"
-brew "gdl"
-brew "heroku/brew/heroku"
-cask "docker"
+cask "captain"
+cask "virtualbox"
+
 brew "minikube", args: ["--build-from-source"]
 brew "kubernetes-cli"
 brew "kubectl"
+brew "minikube"
 brew "hidetatz/tap/kubecolor"
 brew "k9s"
+
 brew "argo"
 tap "hyperledger/fabric"
 brew "hyperledger/fabric/fabric-tools@1.4.0"
 brew "hyperledger/fabric/fabric-tools@2.1.0"
 
+## Network
+
 cask "postman"
 cask "ngrok"
 brew "dnsmasq"
+brew "dnsviz"
 brew "doggo"
 brew "ettercap"
 brew "ncdu"
 brew "nmap"
 cask "nzbvortex"
 cask "wireshark"
+
+## auth
 
 brew "oath-toolkit"
 brew "pinentry-mac"
@@ -160,11 +198,15 @@ brew "git-secret"
 cask "tunnelbear"
 cask "openvpn-connect"
 
+## Git
+
 brew "reattach-to-user-namespace"
 brew "popt"
 brew "hub"
 brew "git-lfs"
 brew "legit"
+brew "git-delta"
+
 
 #brew "fasd"
 brew "aspell"
@@ -172,7 +214,6 @@ brew "pcre2"
 brew "poppler"
 brew "potrace"
 brew "intltool"
-brew "ipfs", args: ["--build-from-source"]
 brew "p7zip"
 #brew "unrar"
 brew "aview"
@@ -187,6 +228,9 @@ brew "awk"
 brew "parallel"
 brew "progress"
 brew "markdown"
+mas "RegEx Lab", id: 1252988123
+mas "Gemini 2", id: 1090488118
+
 
 brew "pow"
 brew "automake"
@@ -218,6 +262,7 @@ brew "avro-c"
 brew "kafka"
 brew "rabbitmq"
 brew "redis", restart_service: true
+# brew "temporal"
 
 cask "r"
 cask "racket"
@@ -238,15 +283,24 @@ cask "omnigraffle6"
 cask "sketch"
 cask "drawio"
 
+cask "rive"
+mas "GIPHY CAPTURE", id: 668208984
+mas "Skitch", id: 425955336
+
 brew "tesseract"
 brew "imagemagick"
 brew "djvu2pdf"
 brew "djvulibre"
+brew "pdf-diff"
+brew "d2"
+
 
 cask "vlc"
 brew "ffmpeg"
 brew "youtube-dl"
 brew "yt-dlp/taps/yt-dlp"
+brew "gallery-dl"
+
 brew "gsl"
 brew "usbmuxd", args: ["HEAD"]
 brew "libimobiledevice", args: ["HEAD"]
@@ -275,11 +329,6 @@ cask "qlstephen"
 cask "quicklookase"
 cask "webpquicklook"
 
-##mas "Autodesk Pixlr", id: 880663569
-##mas "Instapaper", id: 1481302432
-##mas "Keynote", id: 409183694
-#mas "Magnet", id: 441258766
-brew "rectangle"
 ##mas "Numbers", id: 409203825
 ##mas "Pages", id: 409201541
 #mas "Skitch", id: 425955336
@@ -299,9 +348,9 @@ brew "rectangle"
 #mas "SiteSucker", id: 442168834
 #mas "Tot", id: 1491071483
 
-cask "dash"
+# cask "dash"
 cask "mactex"
 cask "latexit"
 cask "macdown"
-cask "gitkraken"
+# cask "gitkraken"
 #
