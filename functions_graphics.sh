@@ -16,6 +16,9 @@ function ratio() {
 
 ### ==== Converters =======================================
 
+# scale video
+# ffmpeg -i input.avi -filter:v scale=720:-1 -c:a copy output.mkv
+
 function video2agif() {
   INPUT  = $1
   OUTPUT = $1.gif
@@ -66,13 +69,36 @@ function video4aac() {
    ffmpeg -i "$1" -acodec aac -vcodec copy "$2"
 }
 
+function hdr2sdr() {
+  video=$1
+  format=".SDR.mkv"
+
+  echo "$video"
+  echo "${video//.mkv/$format}"
+
+  if [[ -f "$video" ]]; then
+      ffmpeg -i "$video" -vf \
+          "zscale=t=linear:npl=100,format=gbrpf32le,zscale=p=bt709,tonemap=tonemap=hable:desat=0,zscale=t=bt709:m=bt709:r=tv,format=yuv420p" \
+          -c:v libx265 -crf 18 -preset ultrafast -map 0 -c:s copy "${video//.mkv/$format}"
+  else
+      echo "File not found"
+  fi
+}
+
+alias drawio="/Applications/draw.io.app/Contents/MacOS/draw.io"
+function drawio2png() {
+  /Applications/draw.io.app/Contents/MacOS/draw.io -x -f png --scale 2.5 $1
+}
+
+### ==== Audio =======================================
+
 function ytmp3() {
   if [ $# -eq 0 ]
     then
       echo "usage: media-url [audio-format]"
     else
       FORMAT=${2:-'mp3'}
-      youtube-dl $1 -x --audio-format "$FORMAT"
+      yt-dlp $1 -x --audio-format "$FORMAT"
   fi
 }
 
