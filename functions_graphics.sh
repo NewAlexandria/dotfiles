@@ -121,6 +121,8 @@ function mp32ringtone() {
 function rumble-dl() {
  [ -n "$1" ] && for s in $*
   do url=`wget -O- $s | sed -n -E 's/^.*embedUrl...([^"]+).*$/\1/p'`
-  [ -n "$url" ] && youtube-dl $url
+  [ -n "$url" ] && yt-dlp $url
  done
 }
+
+# /Users/zak/.dotfiles/utils/soundcloud-artist-getter.rb
