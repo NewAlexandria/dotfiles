@@ -38,7 +38,7 @@ unset MAILCHECK
 
 # Building
 # --------
-export PATH=~/.rbenv/shims:$PATH
+#export PATH=~/.rbenv/shims:$PATH
 export CC=gcc-4.2
 
 # use .profile.local for setting machine-specific options
