@@ -104,3 +104,5 @@
   status = auto
   branch = auto
   interactive = auto
+[init]
+	defaultBranch = main
