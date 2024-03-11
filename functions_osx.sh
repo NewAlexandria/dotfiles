@@ -36,6 +36,10 @@ function diffbrewfile() {
   [ ! -x $2 ] || oldfile='HEAD'
   ruby -e "puts File.readlines('$newfile').sort - File.readlines('$oldfile').sort" > Brewfile.removed
   ruby -e "puts File.readlines('$oldfile').sort - File.readlines('$newfile').sort" > Brewfile.added
+  echo "---- output to Brewfile.removed and Brewfile.added ----"
+  echo "bat Brewfile.added; bat Brewfile.removed"
+  echo "code Brewfile.removed Brewfile.added"
+  echo "vim Brewfile.removed Brewfile.added"
 }
 
 
