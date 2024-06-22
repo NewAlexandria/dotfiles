@@ -40,7 +40,7 @@ alias dif='colordiff'
 #alias ls='lsd'
 
 alias ll='lsd -Alh'
-alias lll='exa -lh'
+alias lll='eza -lh'
 #alias ll='ls -alGh'
 alias les='less -FRSXQ'
 
