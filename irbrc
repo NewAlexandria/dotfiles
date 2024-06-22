@@ -83,7 +83,7 @@ begin
     histogram = Hash.new(0)
 
     all_nums = array.map{|x| x.is_a?(Integer) || x.is_a?(Float) }.uniq
-    if all_nums.size > 1 || all_nums.first == false
+    if all_nums.size > 1 || (all_nums.size == 1 && all_nums.first == false)
       # Group the values and count the occurrences
       histogram = array.group_by { |value| value }.transform_values(&:count)
       tbl = histogram
