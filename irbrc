@@ -28,7 +28,7 @@ begin
   #   Wirble.colorize
   # rescue LoadError
   # end
-  
+
   ARGV.concat [ "--readline", "--prompt-mode", "simple" ]
 
   alias :q :exit
@@ -45,7 +45,7 @@ begin
     def local_methods(obj = self)
       (obj.methods - obj.class.superclass.instance_methods).sort
     end
-    
+
     # print documentation
     #
     #   ri 'Array#pop'
@@ -75,6 +75,37 @@ begin
 
   def paste
     `pbpaste`
+  end
+
+  # TODO: alt: ascii_charts, daru, numo
+  def print_histogram(array, interval: 10, return_tbl: false)
+    # Group the numbers into ranges of [interval].. 10
+    histogram = Hash.new(0)
+
+    all_nums = array.map{|x| x.is_a?(Integer) || x.is_a?(Float) }.uniq
+    if all_nums.size > 1 || all_nums.first == false
+      # Group the values and count the occurrences
+      histogram = array.group_by { |value| value }.transform_values(&:count)
+      tbl = histogram
+    else
+      array.each do |number|
+        range = (number / interval) * interval
+        histogram[range] += 1
+      end
+
+      interval_cap = interval - 1
+      keysort = histogram.keys.sort
+      padmax = (keysort.last + interval_cap).to_s.size
+      rangemax = keysort.map {|k| histogram[k] }.max + 1
+
+      # Print the histogram
+      tbl = histogram.keys.sort.map do |range|
+        min = range.to_s.rjust(padmax,'0')
+        max = (range + interval_cap).to_s.rjust(padmax,'0')
+        "#{min} - #{max}: " + ("#" * histogram[range]).ljust(rangemax,' ') + "(#{histogram[range]})"
+      end.join("\n")
+    end
+    return_tbl ? tbl : puts tbl
   end
 
   # Load Rails specific settings

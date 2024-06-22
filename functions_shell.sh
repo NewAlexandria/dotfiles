@@ -138,6 +138,12 @@ function mvnospace() {
   mv "$1" "${1// /-}"
 }
 
+function cp_dir_structure() {
+  excl=$3
+  [ ! -z $3 ] || excl='xattr'
+  rsync -av --exclude '$excl' -f"+ */" -f"- *" "$1" "$2"
+}
+
 #   extract:  Extract most know archives with one command
 #   ---------------------------------------------------------
 extract() {
