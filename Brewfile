@@ -27,11 +27,15 @@ mas "One Thing", id: 1604176982
 mas "Shareful", id: 1522267256
 mas "Tot", id: 1491071483
 
+## ??
+
 cask "rectangle"
 cask "karabiner-elements"
 cask "homebrew/cask-drivers/kiibohd-configurator"
 cask "kiibohd-configurator"
 cask "mos" # scroll control
+
+## ??
 
 brew "asdf"
 brew "deno"
@@ -52,8 +56,10 @@ brew "elixir-build"
 brew "awscli"
 brew "aws-sam-cli"
 
-# hardware
+## hardware
 cask "balenaetcher"
+
+## ??
 
 #brew "circleci"
 brew "devspace"
@@ -61,11 +67,15 @@ brew "dosbox"
 brew "gh"
 brew "vault"
 
+## ??
+
 cask "adoptopenjdk"
 cask "xquartz"
 cask "suspicious-package"
 cask "visualvm"
 cask "platypus"
+
+## ??
 
 brew "vim"
 cask "visual-studio-code"
@@ -78,44 +88,51 @@ cask "datagrip"
 cask "db-browser-for-sqlite"
 cask "timeular"
 
+## Font
+
 cask "font-fira-code-nerd-font"
 cask "font-hack-nerd-font"
 cask "font-inconsolata-lgc"
 cask "font-photonico-code"
 
+## Terminal Utils
 
-brew "exa"
-brew "lsd"
-brew "tmux"
-brew "zsh"
-brew "zsh-completions"
-brew "zsh-git-prompt"
-brew "fzf"
 brew "bash-completion"
 brew "bash-git-prompt"
-brew "mosh"
-brew "bundler-completion"
-brew "curl"
-brew "curl-openssl"
-brew "wget"
-
-cask "transmission"
-brew "i2p"
-brew "ipfs", args: ["--build-from-source"]
-
-brew "jq"
-brew "ijq"
 brew "bat"
-brew "renameutils", args: ["--build-from-source"]
+brew "bundler-completion"
+brew "curl-openssl"
+brew "curl"
+brew "exa"
+brew "fzf"
+brew "ijq"
+brew "jq"
+brew "lsd"
+brew "mosh"
 brew "python-yq"
+brew "renameutils", args: ["--build-from-source"]
 brew "socat"
 brew "tree"
+brew "wget"
+brew "zsh-completions"
+brew "zsh-git-prompt"
 
 mas "GrandPerspective", id: 1111570163
 mas "HEIC Converter", id: 1294126402
 mas "Control Center", id: 1515453657
 mas "SiteSucker", id: 442168834
 mas "Spectrum Analyzer", id: 1049212349
+
+## Terminal Layout
+
+brew "tmux"
+brew "zsh"
+
+## Transfer
+
+cask "transmission"
+brew "i2p"
+brew "ipfs", args: ["--build-from-source"]
 
 ## Browsers
 
@@ -133,7 +150,6 @@ cask "brave-browser-nightly"
 cask "finicky"
 mas "Cascadea", id: 1432182561
 mas "Refined GitHub", id: 1519867270
-
 
 ## Chat
 
@@ -210,6 +226,7 @@ brew "git-lfs"
 brew "legit"
 brew "git-delta"
 
+## ??
 
 #brew "fasd"
 brew "aspell"
@@ -235,6 +252,8 @@ mas "RegEx Lab", id: 1252988123
 mas "Gemini 2", id: 1090488118
 
 
+## ??
+
 brew "pow"
 brew "automake"
 brew "cmake"
@@ -246,6 +265,8 @@ brew "llvm"
 brew "readline"
 brew "xz"
 cask "adoptopenjdk8"
+
+## database
 
 tap "mongodb/brew"
 
@@ -263,12 +284,16 @@ cask "valentina-studio"
 brew "ollama"
 cask "ollamac"
 
+## ??
+
 brew "avro-tools"
 brew "avro-c"
 brew "kafka"
 brew "rabbitmq"
 brew "redis", restart_service: true
 # brew "temporal"
+
+## ??
 
 cask "r"
 cask "racket"
@@ -277,6 +302,8 @@ brew "sphinx-doc"
 brew "stanford-corenlp"
 cask "julia"
 brew "vowpal-wabbit", args: ["--build-from-source"]
+
+## ??
 
 cask "blender"
 brew "graphviz"
@@ -289,9 +316,13 @@ cask "omnigraffle6"
 cask "sketch"
 cask "drawio"
 
+## ??
+
 cask "rive"
 mas "GIPHY CAPTURE", id: 668208984
 mas "Skitch", id: 425955336
+
+## ??
 
 brew "tesseract"
 brew "imagemagick"
@@ -301,11 +332,15 @@ brew "pdf-diff"
 brew "d2"
 
 
+## ??
+
 cask "vlc"
 brew "ffmpeg"
 brew "youtube-dl"
 brew "yt-dlp/taps/yt-dlp"
 brew "gallery-dl"
+
+## ??
 
 brew "gsl"
 brew "usbmuxd", args: ["HEAD"]
@@ -335,31 +370,35 @@ cask "qlstephen"
 cask "quicklookase"
 cask "webpquicklook"
 
-##mas "Numbers", id: 409203825
-##mas "Pages", id: 409201541
+#mas "Numbers", id: 409203825
+#mas "Pages", id: 409201541
 #mas "Skitch", id: 425955336
 #mas "The Unarchiver", id: 425424353
 #mas "Time Out", id: 402592703
 #mas "Transmit", id: 1436522307
 #mas "TweetDeck", id: 485812721
-##mas "Xcode", id: 497799835
-##mas "iPhoto", id: 408981381
+#mas "Xcode", id: 497799835
+#mas "iPhoto", id: 408981381
 #
 #mas "ChmPages", id: 1164062917
-##mas "Duplicate Cleaner For iPhoto", id: 586862299
-##mas "Duplicate Photos Finder", id: 984929789
+#mas "Duplicate Cleaner For iPhoto", id: 586862299
+#mas "Duplicate Photos Finder", id: 984929789
 #mas "Gemini 2", id: 1090488118
 #mas "GrandPerspective", id: 1111570163
 #mas "FreeDiskSpace", id: 838744420
 #mas "SiteSucker", id: 442168834
 #mas "Tot", id: 1491071483
 
+## ??
+
 # cask "dash"
 cask "mactex"
 cask "latexit"
 cask "macdown"
 # cask "gitkraken"
-#
+
+
+## ??
 
 vscode "4ops.terraform"
 vscode "adamrybak.graycat-sql-formatter"
