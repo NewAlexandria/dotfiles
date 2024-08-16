@@ -290,6 +290,11 @@ alias gls='git log --pickaxe-regex -p --color-words -S '
 # alias gcwtc="git commit -m \"`curl http://whatthecommit.com 2>/dev/null | grep '<p>' | sed 's/<p>//'`\""
 # alias wtc="echo \"merge-wtc: `curl http://whatthecommit.com 2>/dev/null | grep '<p>' | sed 's/<p>//'`\""
 
+# kill auto rubocop -A
+function kautocop() {
+  ruby -e 'require "open3"; x,y = Open3.capture2("ps aux | grep rubo"); xx = x.split("\n").select{|l| l.to_s.match(/rubocop \-A/) }.reject{|l| l.to_s.match(/Open3/) }.first.split[1] ; system("kill -9 #{xx}")'
+}
+
 ## Repos
 echo "🎫  Repo helpers"
 
