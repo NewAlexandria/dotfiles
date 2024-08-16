@@ -105,7 +105,7 @@ begin
         "#{min} - #{max}: " + ("#" * histogram[range]).ljust(rangemax,' ') + "(#{histogram[range]})"
       end.join("\n")
     end
-    return_tbl ? tbl : puts tbl
+    return_tbl ? tbl : (puts tbl)
   end
 
   # Load Rails specific settings

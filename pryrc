@@ -52,7 +52,7 @@ def print_histogram(array, interval: 10, return_tbl: false)
       "#{min} - #{max}: " + ("#" * histogram[range]).ljust(rangemax,' ') + "(#{histogram[range]})"
     end.join("\n")
   end
-  return_tbl ? tbl : puts tbl
+  return_tbl ? tbl : (puts tbl)
 end
 
 # heroku run 'bundle exec rails c -- --nomultiline' -a suvie-cloud
