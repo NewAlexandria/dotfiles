@@ -12,7 +12,7 @@ source ~/.functions_graphics.sh
 # Vim IDE settings
 source ~/.bash_vim_append
 
-test -e "${HOME}/.dotfiles/mac/iterm2_shell_integration.sh" && source "${HOME}/.dotfiles/mac/iterm2_shell_integration.sh"
+#test -e "${HOME}/.dotfiles/mac/iterm2_shell_integration.sh" && source "${HOME}/.dotfiles/mac/iterm2_shell_integration.sh"
 
 alias mkdir=/bin/mkdir
 alias ll='ls -alGh'

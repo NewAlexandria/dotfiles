@@ -2,7 +2,7 @@
 echo "OSX config"
 
 ## iTerm config
-test -e "${HOME}/.dotfiles/mac/iterm2_shell_integration.bash" && source "${HOME}/.dotfiles/mac/iterm2_shell_integration.bash"
+#test -e "${HOME}/.dotfiles/mac/iterm2_shell_integration.bash" && source "${HOME}/.dotfiles/mac/iterm2_shell_integration.bash"
 
 
 ## Brew

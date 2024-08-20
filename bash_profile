@@ -27,14 +27,14 @@ GPG_TTY=$(tty)
 export GPG_TTY
 
 # iTerm config
-echo "iTerm config"
+#echo "iTerm config"
 
-test -e "${HOME}/.dotfiles/mac/iterm2_shell_integration.bash" && source "${HOME}/.dotfiles/mac/iterm2_shell_integration.bash"
+#test -e "${HOME}/.dotfiles/mac/iterm2_shell_integration.bash" && source "${HOME}/.dotfiles/mac/iterm2_shell_integration.bash"
 
-# requires that iTerm have accessibility permissions
-if [ $TERM_PROGRAM = "iTerm.app" ]; then
-  osascript -e 'tell application "System Events" to keystroke "e" using {command down, shift down}'
-fi
+ #requires that iTerm have accessibility permissions
+#if [ $TERM_PROGRAM = "iTerm.app" ]; then
+  #osascript -e 'tell application "System Events" to keystroke "e" using {command down, shift down}'
+#fi
 
 
 # Aliases
