@@ -292,7 +292,7 @@ alias gls='git log --pickaxe-regex -p --color-words -S '
 
 # kill auto rubocop -A
 function kautocop() {
-  ruby -e 'require "open3"; x,y = Open3.capture2("ps aux | grep rubo"); xx = x.split("\n").select{|l| l.to_s.match(/rubocop \-A/) }.reject{|l| l.to_s.match(/Open3/) }.first.split[1] ; system("kill -9 #{xx}")'
+  ruby -e 'require "open3"; x,y = Open3.capture2("ps aux | grep rubo"); xx = x.split("\n").select{|l| l.to_s.match(/rubocop \-A/) }.reject{|l| l.to_s.match(/Open3/) }.first; puts "id: #{xx.split}";  system("kill -9 #{xx.split[1]}") if xx.split[1];'
 }
 
 ## Repos
