@@ -103,8 +103,8 @@ function ytmp3() {
 }
 
 function audiospeed() {
-  splitrate=( echo $1 | ruby -e 'puts 1 / readline.strip.to_f' )
-  namebase=(echo $2 | ruby -e 'puts readline.split(".")[0..-2].join(".")')
+  splitrate=$(echo $1 | ruby -e 'puts 1 / readline.strip.to_f')
+  namebase=$(echo $2 | ruby -e 'puts readline.split(".")[0..-2].join(".")')
   ffmpeg -i "$splitrate" -filter_complex "[0:v]setpts=0.5*PTS[v];[0:a]atempo=2[a]" -map "[v]" -map "[a]" "$namebase-$1x.mp3"
 }
 

@@ -147,3 +147,4 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 eval "$(rbenv init - zsh)"
 # fzf tab completion
 source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab/fzf-tab.plugin.zsh
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
