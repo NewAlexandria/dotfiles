@@ -123,6 +123,10 @@ function ffrm() {
   find . -name ${1} -depth -exec rm {} \;
 }
 
+function ffcount() {
+  for f in *; do [ -d ./"$f" ] && find ./"$f" -maxdepth 100 -exec echo \; | wc -l && echo $f; done
+}
+
 function rm_icon() {
   find . -name 'Icon?' -delete
 }
