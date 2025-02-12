@@ -84,6 +84,7 @@ function gem_remove_all() {
 echo "🎫  rails Support"
 
 alias be='bundle exec'
+alias bert='PARALLEL_WORKERS=1 DISABLE_SPRING=true bundle exec rails test'
 alias bes='RAILS_ENV=test bundle exec rspec -f d -c'
 alias bec='bundle exec cucumber'
 alias berdbm='echo "=============="; echo "= running DEVELOPMENT env migrations"; echo "=============="; bundle exec rake db:migrate; echo "=============="; echo "= running Test env. migrations"; echo "=============="; RAILS_ENV=test dotenv -f .env bundle exec rake db:migrate'
