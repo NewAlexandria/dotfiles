@@ -359,12 +359,14 @@ function _perimiter_array() {
 ## Search
 echo "🎫  search helpers"
 
+func_arr=('cursor' 'nvim' 'mvim' 'vim')
+
 # takes the files returned by an ag search, and opens them in vim
 function agcode() {
-  code $(ag "$1" $2 -l --nocolor | xargs)
+  cursor $(ag "$1" $2 -l --nocolor | xargs)
   return 0
-  func_arr=('nvim' 'mvim' 'vim')
-  for func in "${func_arr[@]}"; do
+  #func_arr=('nvim' 'mvim' 'vim')
+  for func in "${$func_arr[@]}"; do
     if [ -n "$(which $func)" ] && [ "$(which $func)" = file ] || 'vim'; then
       echo "Using $func"
       $func $(ag "$1" $2 -l --nocolor | xargs)
@@ -386,6 +388,8 @@ function ackcode() {
     fi
   done
 }
+
+alias cr='cursor'
 
 function kubesh() {
   kubectl run -i --tty --rm --privileged debug --image=amazonlinux --restart=Never --overrides='{ "apiVersion": "v1", "metadata": {"annotations": { "eks.amazonaws.com/compute-type":"ec2" } } }' -- sh
