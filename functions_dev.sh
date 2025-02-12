@@ -9,6 +9,18 @@ echo "🎫  bin PATH config"
 #export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:/opt/swt/bin:$PATH"
 #export PATH=~/.rbenv/shims:$PATH
 
+# repo branches.  should be read from a dotfile per repo
+export DEV_BRANCH="development"
+export PROD_BRANCH="main"
+#
+export MAIN_BR=$PROD_BRANCH
+# export MAIN_BR=${$(MAIN_BRANCH):-'main'};
+export DEVL_BR=$DEV_BRANCH
+# export DEVL_BR=${$(DEV_BRANCH):-'development'};
+export RELEASE_BR="main-release-2nd-pipe"
+# export RELEASE_BR=${$(RELEASE_BRANCH):-'main-release'};
+export STAGING_BR="staging"
+
 # AWS autocomplete not working, from the source, rn
 #complete -C aws_completer aws
 #complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | sed -e s/,.*//g | uniq | grep -v "\["`;)" ssh
@@ -167,9 +179,9 @@ alias gcpa='git cherry-pick --abort'
 
 # refresh the release branch from main
 function gmr() {
-  MAIN_BR="main"
+  MAIN_BR=$PROD_BRANCH
   # MAIN=${$(MAIN_BRANCH):-'main'};
-  DEVL_BR="development"
+  DEVL_BR=$DEV_BRANCH
   # DEVL=${$(DEV_BRANCH):-'development'};
   RELEASE_BR="main-release"
   # RELEASE=${$(RELEASE_BRANCH):-'main-release'};
@@ -181,14 +193,6 @@ function gmr() {
   git reset --hard $MAIN_BR
   git merge $DEVL_BR
 }
-
-export MAIN_BR="main"
-# export MAIN_BR=${$(MAIN_BRANCH):-'main'};
-export DEVL_BR="development"
-# export DEVL_BR=${$(DEV_BRANCH):-'development'};
-export RELEASE_BR="main-release-2nd-pipe"
-# export RELEASE_BR=${$(RELEASE_BRANCH):-'main-release'};
-export STAGING_BR="staging"
 
 function gmra() {
   gcml
@@ -248,17 +252,15 @@ function default_branch() {
   # git remote show origin | sed -n '/HEAD branch/s/.*: //p'
 }
 
-# should be read from a dotfile per repo
-DEV_BRANCH="development"
-
-alias gpom='git push origin master --tags'
+alias gpom='git push origin $PROD_BRANCH --tags'
 alias gpod='git push origin $DEV_BRANCH'
 alias gpo='git push origin $(git rev-parse --abbrev-ref HEAD) --set-upstream'
 
 alias guo='git pull origin $(git rev-parse --abbrev-ref HEAD) && git fetch &'
 
 alias grd='git rebase $DEV_BRANCH'
-alias grm='git rebase master'
+alias grr='git rebase $PROD_BRANCH'
+alias grm='git rebase $PROD_BRANCH'
 alias grc='git rebase --continue'
 alias gra='git rebase --abort'
 alias grod='git fetch; git rebase origin/$DEV_BRANCH'
@@ -268,7 +270,7 @@ alias gsp='git submodule update --init'
 
 alias gd='git diff --color'
 alias gdod='git diff --color origin/$DEV_BRANCH'
-alias gdom='git diff --color origin/master'
+alias gdom='git diff --color origin/$PROD_BRANCH'
 
 alias fix='$EDITOR `git diff --name-only | uniq`'
 
