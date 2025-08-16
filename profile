@@ -44,3 +44,4 @@ export CC=gcc-4.2
 # use .profile.local for setting machine-specific options
 [[ -f ~/.profile.local ]] && .  ~/.profile.local
 
+. "$HOME/.cargo/env"

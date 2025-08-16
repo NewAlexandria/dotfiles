@@ -16,7 +16,8 @@ source ~/.bash_vim_append
 echo "bin PATH config"
 export PATH="$HOME/.sem/bin:$PATH"
 eval "$(rbenv init -)"
-export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:/opt/swt/bin:$PATH"
+export PATH="/$HOME/.asdf/shims:$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:/opt/swt/bin:$PATH"
+# export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:/opt/swt/bin:$PATH"
 export PATH="/$HOME/.cargo/bin:$PATH"
 
 # aliases and variables that should be available in any sub-shell or certain processes

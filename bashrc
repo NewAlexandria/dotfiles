@@ -46,3 +46,5 @@ man() {
 			man "$@"
 }
 alias ic="ibmcloud"
+. "$HOME/.cargo/env"
+export PATH="$HOME/.local/bin:$PATH"
