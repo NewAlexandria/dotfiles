@@ -46,6 +46,15 @@ function gif2webm() {
   fi
 }
 
+function sliceWebm() {
+  # $1 example: input.webm
+  # $2 example: output.mpg
+  # $3 example: 00:00:06
+  # $4 example: 00:00:06
+  ffmpeg -ss $3 -i $1 -t $4 -c:v mpeg2video -c:a mp2 $2
+}
+
+
 function gifcomposite() {
   HT=${4:-'200'}
   HT=${5:-'200'}
