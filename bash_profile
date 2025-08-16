@@ -64,3 +64,8 @@ echo ".profile config"
 
 PATH=$PATH:/opt/metasploit-framework/bin
 export PATH=$PATH:/opt/metasploit-framework/bin
+
+# Disable Homebrew auto-update messages
+export HOMEBREW_NO_AUTO_UPDATE=1
+
+. "$HOME/.cargo/env"
