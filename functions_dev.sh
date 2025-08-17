@@ -38,6 +38,51 @@ function awsact() {
   aws sts get-caller-identity | jq .Account -r | pbcopy
 }
 
+
+function cp_aws_cred_with_sso() {
+  # Enable extended globbing and associative arrays in zsh
+  setopt extended_glob
+  typeset -A data
+
+  aws_username=$1
+  secret_id=$2
+  secret_jq_path=$3
+	verbose=$4
+
+  # Populate the associative array with key-value pairs
+  data[acting-with]="$aws_username"
+  data[requesting]="$secret_id"
+  data[sub-path]="$secret_jq_path"
+
+  if ! aws sts get-caller-identity --profile "$aws_username" >/dev/null 2>&1; then
+    aws sso login --sso-session sso-cli-update --use-device-code
+  fi
+
+  secret_value=$(aws secretsmanager get-secret-value --secret-id "$secret_id" --profile "$aws_username")
+  password=$(echo "$secret_value" | jq -r ".SecretString | fromjson | $secret_jq_path")
+  echo -n "$password" | tr -d '\n' | pbcopy
+
+  data[result]="🔐 secret available in clipboard"
+
+  export SUVIE_STAGING_RDS_PWD=$(pbpaste)
+
+  # Output JSON object only if verbose flag is passed
+  if [ "$verbose" = "-v" ]; then
+    echo "{"
+    first=true
+    for key in "${(@k)data}"; do
+      if [ "$first" = true ]; then
+        first=false
+      else
+        echo ","
+      fi
+      printf '  "%s": "%s"' "$key" "${data[$key]//\"/\\\"}"
+    done
+    echo ""
+    echo "}"
+  fi
+}
+
 # Compiler things
 echo "🎫  Compiler things"
 alias gcc=cc
