@@ -147,6 +147,18 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 eval "$(rbenv init - zsh)"
 # fzf tab completion
 source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/fzf-tab/fzf-tab.plugin.zsh
+
+# Configure fzf-tab to show directories first
+zstyle ':fzf-tab:complete:*:*' fzf-preview 'ls -la $realpath'
+zstyle ':fzf-tab:complete:*' fzf-flags --height=50% --reverse
+# Sort directories first in file completion
+zstyle ':completion:*' file-sort modification
+zstyle ':completion:*:*:*:*:descriptions' format '%F{green}-- %d --%f'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*:*:-command-:*:*' group-order alias builtins functions commands
+# Directories first, then files
+zstyle ':completion:*' list-dirs-first true
+
 export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 # pnpm
