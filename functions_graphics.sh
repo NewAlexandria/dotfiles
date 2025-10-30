@@ -18,16 +18,50 @@ function ratio() {
 
 # scale video
 # ffmpeg -i input.avi -filter:v scale=720:-1 -c:a copy output.mkv
-
 function video2agif() {
-  INPUT  = $1
-  OUTPUT = $1.gif
-  SCALE  = ${2?"240"}
-  FPS    = ${3?"10"}
-
-  ffmpeg -i $INPUT -vf scale=$SCALE:-1 -r $FPS -f image2pipe -vcodec ppm - | \
-  convert -delay 0 -loop 0 - gif:- | \
-  convert -layers Optimize - $OUTPUT
+    INPUT="$1"
+    OUTPUT="$1.gif"
+    
+    # Get video dimensions using a more reliable method
+    read WIDTH HEIGHT < <(ffprobe -v error -select_streams v:0 -show_entries stream=width,height \
+        -of csv=p=0:s=, "$INPUT" | tr ',' ' ')
+    
+    # Get original FPS
+    FPS_ORIG=$(ffprobe -v error -select_streams v:0 -show_entries stream=r_frame_rate \
+        -of default=noprint_wrappers=1:nokey=1 "$INPUT" | awk -F/ '{if ($2) printf "%.2f", $1/$2; else print $1}')
+    
+    # Set FPS - use parameter 3 if provided, otherwise use original FPS, otherwise default to 10
+    if [ -n "$2" ]; then
+        FPS="$2"
+    elif [ -n "$FPS_ORIG" ]; then
+        FPS=$(printf "%.0f" "$FPS_ORIG")
+    else
+        FPS="10"
+    fi
+    
+    # Set scale - use parameter 2 if provided, otherwise use original width
+    if [ -n "$3" ]; then
+        SCALE="$3"
+    else
+        SCALE="$WIDTH"
+    fi
+    
+    echo "video2agif: INPUT=$INPUT OUTPUT=$OUTPUT SCALE=$SCALE FPS=$FPS WIDTH=$WIDTH HEIGHT=$HEIGHT"
+    
+    # Use a temporary directory for frames
+    TEMP_DIR=$(mktemp -d)
+    trap "rm -rf $TEMP_DIR" EXIT
+    
+    # Extract frames and convert to GIF using modern ImageMagick syntax
+    ffmpeg -i "$INPUT" -vf "scale=$SCALE:-1" -r "$FPS" "$TEMP_DIR/frame_%04d.png" && \
+    magick "$TEMP_DIR/frame_*.png" -delay $(echo "100/$FPS" | bc) -loop 0 -layers Optimize "$OUTPUT"
+    
+    if [ $? -eq 0 ]; then
+        echo "Successfully created: $OUTPUT"
+    else
+        echo "Conversion failed!"
+        return 1
+    fi
 }
 
 # converts most sources, actually
