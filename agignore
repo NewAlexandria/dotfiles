@@ -1,6 +1,7 @@
 *.xml
 tags
 tags*
+TAGS
 *min.js
 *.temp
 

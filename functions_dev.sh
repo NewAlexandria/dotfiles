@@ -210,6 +210,36 @@ function ghpr() {
 function ghbo() {
   gh repo view --web -b $1
 }
+ghprc() {
+  local PR_NUM="$1"
+  if [[ -z "$PR_NUM" ]]; then
+    PR_NUM=$(gh pr list --head "$(git branch --show-current)" \
+      --json number --jq '.[0].number' --state all --limit 1) || return 1
+  fi
+
+  local pr_comments review_comments out
+
+  # gh api with --jq already emits plain text; no extra jq needed.
+  pr_comments=$(
+    gh api "repos/:owner/:repo/issues/$PR_NUM/comments" \
+      --jq '.[] | "\(.user.login) (\(.created_at)):\n\(.body)\n---"'
+  )
+
+  review_comments=$(
+    gh api "repos/:owner/:repo/pulls/$PR_NUM/comments" \
+      --jq '.[] | "\(.user.login) on \(.path):\(.position):\n\(.body)\n---"'
+  )
+
+  [[ -z "$pr_comments" ]] && pr_comments="(no issue comments)"
+  [[ -z "$review_comments" ]] && review_comments="(no review comments)"
+
+  out=$'=== PR Comments ===\n'
+  out+="$pr_comments"$'\n\n=== Review Comments ===\n'
+  out+="$review_comments"
+
+  # Single print -> single "return" string.
+  printf '%s' "$out"
+}
 
 function gom() {
   $EDITOR $(gs | grep "both modified" | cut -d' ' -f5 | xargs)
