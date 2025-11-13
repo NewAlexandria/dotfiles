@@ -18,6 +18,7 @@ function ratio() {
 
 # scale video
 # ffmpeg -i input.avi -filter:v scale=720:-1 -c:a copy output.mkv
+# installed to .local/bin/
 function video2agif() {
     INPUT="$1"
     OUTPUT="$1.gif"

@@ -241,6 +241,11 @@ ghprc() {
   printf '%s' "$out"
 }
 
+# get repo LOC lines of code
+function gh_loc() {
+  git ls-files | xargs wc -l
+}
+
 function gom() {
   $EDITOR $(gs | grep "both modified" | cut -d' ' -f5 | xargs)
 }

@@ -132,6 +132,10 @@ function rm_icon() {
   find . -name 'Icon?' -delete
 }
 
+function pdf_shrink() {
+  /opt/homebrew/bin/gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile=sml.$1 $1
+}
+
 # Term Functions
 function wtitle() { echo -ne "\033]0;$1\007"; }
 
