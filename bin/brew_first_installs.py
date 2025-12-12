@@ -36,6 +36,7 @@ def main():
     parser.add_argument("X", type=int, help="Older bound (days ago)")
     parser.add_argument("Y", type=int, help="Newer bound (days ago)")
     parser.add_argument("--json", action="store_true", help="Output raw JSON array")
+    parser.add_argument("--info", action="store_true", help="Show brew info for each match")
     args = parser.parse_args()
 
     # Determine brew repository location (same logic as brew_index.py)
@@ -78,6 +79,21 @@ def main():
 
             # Align columns: Time, Formula, Version, Status, Path
             print(f"{first_time:<25}  {formula:<30}  {version:<15}  {status_str:<12} {install_path}")
+
+        if args.info:
+            print("\n" + "="*80 + "\n")
+            import subprocess
+            for r in matches:
+                formula = r.get("formula")
+                if formula:
+                    print(f"--- Info for {formula} ---")
+                    # Run brew info, let it stream to stdout/stderr
+                    # Use 'brew info <formula>'
+                    try:
+                        subprocess.run(["brew", "info", formula], check=False)
+                    except Exception as e:
+                       print(f"Error running info for {formula}: {e}", file=sys.stderr)
+                    print("\n")
 
 if __name__ == "__main__":
     main()
