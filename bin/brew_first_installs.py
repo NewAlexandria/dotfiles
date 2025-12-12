@@ -69,8 +69,15 @@ def main():
             formula = r.get("formula", "")
             version = r.get("version", "")
             install_path = r.get("install_path", "")
-            # Align columns similar to original awk formatting
-            print(f"{first_time:<25}  {formula:<30}  {version}  {install_path}")
+            status = r.get("status", "installed")
+
+            # Use (Available) label if status is available
+            status_str = ""
+            if status == "available":
+                status_str = "(Available)"
+
+            # Align columns: Time, Formula, Version, Status, Path
+            print(f"{first_time:<25}  {formula:<30}  {version:<15}  {status_str:<12} {install_path}")
 
 if __name__ == "__main__":
     main()

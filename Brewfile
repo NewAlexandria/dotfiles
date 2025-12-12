@@ -395,7 +395,6 @@ cask "webpquicklook"
 cask "mactex"
 cask "latexit"
 cask "macdown"
-# cask "gitkraken"
 
 
 ## ??
