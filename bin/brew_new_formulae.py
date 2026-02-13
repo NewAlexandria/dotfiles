@@ -29,6 +29,28 @@ import sys
 import time
 from pathlib import Path
 
+# ANSI styling (only when stdout is a TTY and NO_COLOR is not set)
+def _ansi_ok() -> bool:
+    if os.environ.get("NO_COLOR"):
+        return False
+    return sys.stdout.isatty()
+
+
+def _ansi() -> dict:
+    """Return ANSI codes dict; values are '' when color disabled."""
+    if not _ansi_ok():
+        return {k: "" for k in ("R", "B", "D", "G", "Y", "Bl", "C", "M")}
+    return {
+        "R": "\033[0m",
+        "B": "\033[1m",
+        "D": "\033[2m",
+        "G": "\033[32m",
+        "Y": "\033[33m",
+        "Bl": "\033[34m",
+        "C": "\033[36m",
+        "M": "\033[35m",
+    }
+
 
 def get_brew_repo() -> str:
     try:
@@ -185,30 +207,36 @@ def main():
             else:
                 r["description"] = fetch_description(r["formula"])
 
+    a = _ansi()
+    R, B, D, G, C, Bl, M = a["R"], a["B"], a["D"], a["G"], a["C"], a["Bl"], a["M"]
+
     if args.json:
         json.dump(records, sys.stdout, indent=2)
         sys.stdout.write("\n")
     elif args.brew_style:
         # Display similar to brew update "==> New Formulae" + brew info (desc, URL)
-        print("==> New Formulae and Casks")
+        print(f"{B}{G}==> New Formulae and Casks{R}")
         for r in records:
             desc = r.get("description") or ""
             if desc:
-                print(f"{r['formula']}: {desc}")
+                print(f"  {B}{r['formula']}{R}: {desc}")
             else:
-                print(r["formula"])
+                print(f"  {B}{r['formula']}{R}")
             if r.get("homepage"):
-                print(r["homepage"])
+                print(f"  {C}🔗 {r['homepage']}{R}")
             print()  # blank line between entries
         if not records:
-            print("(none in this range)")
+            print(f"{D}(none in this range){R}")
     else:
+        # Table: date (dim), formula (bold), tap (dim), kind (colored) + optional desc
         for r in records:
             desc = ""
             if args.desc and r.get("description"):
                 desc = f"  {r['description']}"
             kind = r.get("type", "Formula")
-            print(f"{r['tap_added_time']:<25}  {r['formula']:<30}  {r['tap']}  [{kind}]{desc}")
+            emoji = "📦" if kind == "Formula" else "🍺"
+            kind_color = Bl if kind == "Formula" else M
+            print(f"{D}{r['tap_added_time']:<25}{R}  {B}{r['formula']:<30}{R}  {D}{r['tap']}{R}  {kind_color}{emoji} {kind}{R}{desc}")
 
 
 if __name__ == "__main__":
