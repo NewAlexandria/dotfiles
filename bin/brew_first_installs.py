@@ -1,13 +1,23 @@
 #!/usr/bin/env python3
 """brew_first_installs.py
-Utility to find packages whose first-installed date falls between X and Y days ago.
+Find packages whose first-installed date falls within a range of "days ago".
+
+The range is expressed as two "days ago" values:
+  - older end: further in the past (larger number of days ago)
+  - newer end: closer to now (smaller number of days ago; 0 = today)
+
+Order of arguments does not matter. The script treats the larger value as the
+older end and the smaller as the newer end. E.g. "10 0" and "0 10" both mean
+"from 10 days ago through today".
+
 Usage:
-    python3 brew_first_installs.py <X-days-ago> <Y-days-ago> [--json]
+    python3 brew_first_installs.py <days_ago> <days_ago> [--json]
 
 Arguments:
-    X   Older bound (days ago)
-    Y   Newer bound (days ago)
-    --json   Output raw JSON array of matching records instead of formatted table.
+    days_ago (two values)  The two ends of the range in days ago. Larger value
+                           = older (further in past). Smaller value = newer
+                           (closer to now; use 0 for today).
+    --json                 Output raw JSON array of matching records.
 """
 
 import argparse
@@ -32,9 +42,18 @@ def load_index(brew_repo: str) -> list:
         return json.load(f)
 
 def main():
-    parser = argparse.ArgumentParser(description="Find packages installed for the first time between X and Y days ago.")
-    parser.add_argument("X", type=int, help="Older bound (days ago)")
-    parser.add_argument("Y", type=int, help="Newer bound (days ago)")
+    parser = argparse.ArgumentParser(
+        description="Find packages first installed within a date range (given as two 'days ago' values). "
+        "Larger days ago = older end (further in past); smaller = newer end (0 = today). Order of args does not matter."
+    )
+    parser.add_argument(
+        "days_ago_a", type=int, metavar="DAYS_AGO",
+        help="One end of range (days ago); larger value = older end, smaller = newer end"
+    )
+    parser.add_argument(
+        "days_ago_b", type=int, metavar="DAYS_AGO",
+        help="Other end of range (days ago); order does not matter"
+    )
     parser.add_argument("--json", action="store_true", help="Output raw JSON array")
     parser.add_argument("--info", action="store_true", help="Show brew info for each match")
     args = parser.parse_args()
@@ -44,10 +63,14 @@ def main():
     if not brew_repo:
         brew_repo = os.path.expanduser("~/.homebrew")
 
-    # Compute epoch boundaries based on current time
+    # Convert "days ago" range to epoch boundaries.
+    # older_days = further in the past (earlier installs); newer_days = closer to now (0 = today).
+    # We include first_installed_epoch when: start_epoch <= epoch <= end_epoch.
     now = int(time.time())
-    start_epoch = now - args.X * 86400  # older bound
-    end_epoch = now - args.Y * 86400    # newer bound
+    older_days = max(args.days_ago_a, args.days_ago_b)   # older end of range (further in past)
+    newer_days = min(args.days_ago_a, args.days_ago_b)  # newer end of range (closer to now; 0 = today)
+    start_epoch = now - older_days * 86400   # oldest time in range (older boundary)
+    end_epoch = now - newer_days * 86400     # newest time in range (newer boundary)
 
     records = load_index(brew_repo)
 
