@@ -174,6 +174,11 @@ export PATH="$HOME/.local/bin:$PATH"
 unset -f video2agif 2>/dev/null; export PATH="$HOME/.local/bin:$PATH"
 
 
+# Added by Antigravity
+export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
 
 
 # --- Gas Town Integration (managed by gt) ---
