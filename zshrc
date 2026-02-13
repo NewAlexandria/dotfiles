@@ -173,3 +173,9 @@ export PATH="$HOME/.local/bin:$PATH"
 
 unset -f video2agif 2>/dev/null; export PATH="$HOME/.local/bin:$PATH"
 
+
+
+
+# --- Gas Town Integration (managed by gt) ---
+[[ -f "/Users/zak/.config/gastown/shell-hook.sh" ]] && source "/Users/zak/.config/gastown/shell-hook.sh"
+# --- End Gas Town ---
