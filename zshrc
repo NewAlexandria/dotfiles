@@ -169,3 +169,7 @@ case ":$PATH:" in
 esac
 # pnpm end
 export PATH="$HOME/.local/bin:$PATH"
+
+
+unset -f video2agif 2>/dev/null; export PATH="$HOME/.local/bin:$PATH"
+
