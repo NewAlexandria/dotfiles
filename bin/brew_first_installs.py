@@ -23,10 +23,38 @@ Arguments:
 import argparse
 import json
 import os
+import subprocess
 import sys
 import time
 from pathlib import Path
 from datetime import datetime, timezone
+
+def rebuild_index(brew_repo: str) -> bool:
+    """Run brew_index.py to rebuild installs_index.json. Returns True on success."""
+    script_dir = Path(__file__).resolve().parent
+    index_script = script_dir / "brew_index.py"
+    if not index_script.is_file():
+        print(f"Index builder not found at {index_script}", file=sys.stderr)
+        return False
+    try:
+        result = subprocess.run(
+            [sys.executable, str(index_script)],
+            capture_output=True,
+            text=True,
+            timeout=300,
+            cwd=script_dir,
+        )
+        if result.returncode != 0:
+            if result.stderr:
+                print(result.stderr, file=sys.stderr)
+            return False
+        return True
+    except subprocess.TimeoutExpired:
+        print("brew_index.py timed out.", file=sys.stderr)
+        return False
+    except Exception as e:
+        print(f"Failed to run brew_index.py: {e}", file=sys.stderr)
+        return False
 
 # Helper to get ISO8601 string from epoch (used for display)
 def iso_from_epoch(epoch: int) -> str:
@@ -36,8 +64,7 @@ def iso_from_epoch(epoch: int) -> str:
 def load_index(brew_repo: str) -> list:
     index_path = Path(brew_repo) / "installs_index.json"
     if not index_path.is_file():
-        print(f"Index file not found at {index_path}", file=sys.stderr)
-        sys.exit(2)
+        raise FileNotFoundError(f"Index file not found at {index_path}")
     with open(index_path, "r", encoding="utf-8") as f:
         return json.load(f)
 
@@ -72,7 +99,14 @@ def main():
     start_epoch = now - older_days * 86400   # oldest time in range (older boundary)
     end_epoch = now - newer_days * 86400     # newest time in range (newer boundary)
 
-    records = load_index(brew_repo)
+    try:
+        records = load_index(brew_repo)
+    except FileNotFoundError as e:
+        print(str(e), file=sys.stderr)
+        print("Rebuilding index...", file=sys.stderr)
+        if not rebuild_index(brew_repo):
+            sys.exit(2)
+        records = load_index(brew_repo)
 
     # Filter records: first_installed == true and epoch within range (inclusive)
     matches = [
@@ -80,6 +114,19 @@ def main():
         if r.get("first_installed")
         and start_epoch <= r.get("first_installed_epoch", 0) <= end_epoch
     ]
+
+    # If no matches, rebuild the index once and retry (in case index was stale)
+    if not matches:
+        print("No matches in index; rebuilding index...", file=sys.stderr)
+        if rebuild_index(brew_repo):
+            records = load_index(brew_repo)
+            matches = [
+                r for r in records
+                if r.get("first_installed")
+                and start_epoch <= r.get("first_installed_epoch", 0) <= end_epoch
+            ]
+        else:
+            print("Index rebuild failed; showing empty results.", file=sys.stderr)
 
     if args.json:
         # Output raw JSON array
