@@ -71,15 +71,16 @@ def load_index(brew_repo: str) -> list:
 def main():
     parser = argparse.ArgumentParser(
         description="Find packages first installed within a date range (given as two 'days ago' values). "
-        "Larger days ago = older end (further in past); smaller = newer end (0 = today). Order of args does not matter."
+        "Larger days ago = older end (further in past); smaller = newer end (0 = today). Order of args does not matter.",
+        epilog="Example: 30 0  (or  0 30)  = from 30 days ago through today. Either number can come first.",
     )
     parser.add_argument(
-        "days_ago_a", type=int, metavar="DAYS_AGO",
-        help="One end of range (days ago); larger value = older end, smaller = newer end"
+        "days_ago_a", type=int, metavar="END1",
+        help="One end of range in days ago (e.g. 30 = 30 days ago, 0 = today)"
     )
     parser.add_argument(
-        "days_ago_b", type=int, metavar="DAYS_AGO",
-        help="Other end of range (days ago); order does not matter"
+        "days_ago_b", type=int, metavar="END2",
+        help="Other end of range in days ago; order does not matter"
     )
     parser.add_argument("--json", action="store_true", help="Output raw JSON array")
     parser.add_argument("--info", action="store_true", help="Show brew info for each match")
