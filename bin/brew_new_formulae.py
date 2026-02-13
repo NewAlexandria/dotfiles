@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """brew_new_formulae.py
-Query formulae added to Homebrew taps within a date range (days ago).
+Query formulae and casks added to Homebrew taps within a date range (days ago).
 
-Uses the same tap git history that powers `brew update`'s "New Formulae".
+Scans all tapped repos (e.g. homebrew-core, homebrew-cask, homebrew-cask-fonts)
+for new Formula/ and Casks/ files. Does not report "new taps" (recently tapped
+repos). Uses the same tap git history that powers `brew update`'s "New Formulae".
 Run `brew update` first for accurate results.
 
 The range is expressed as two "days ago" values (same as brew_first_installs.py):
@@ -12,9 +14,11 @@ The range is expressed as two "days ago" values (same as brew_first_installs.py)
 
 Usage:
     python3 brew_new_formulae.py <days_ago> <days_ago> [--json] [--desc]
+    python3 brew_new_formulae.py <days_ago> <days_ago> --brew-style   # like brew update + info
 
 Example:
     python3 brew_new_formulae.py 0 30   # formulae added in last 30 days
+    python3 brew_new_formulae.py 0 7 --brew-style   # new formulae with description and URL
 """
 
 import argparse
@@ -121,6 +125,25 @@ def fetch_description(formula: str) -> str:
         return ""
 
 
+def fetch_brew_info(formula: str) -> tuple[str, str]:
+    """Get (desc, homepage) from brew info --json=v2. Returns ('', '') on failure."""
+    try:
+        out = subprocess.check_output(
+            ["brew", "info", "--json=v2", formula],
+            text=True,
+            stderr=subprocess.DEVNULL,
+            timeout=10,
+        )
+        data = json.loads(out)
+        for item in data.get("formulae", []) + data.get("casks", []):
+            desc = (item.get("desc") or "").strip()
+            homepage = (item.get("homepage") or "").strip()
+            return (desc, homepage)
+    except Exception:
+        pass
+    return ("", "")
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="List formulae added to Homebrew taps within a date range.",
@@ -136,6 +159,11 @@ def main():
     )
     parser.add_argument("--json", action="store_true", help="Output JSON array")
     parser.add_argument("--desc", action="store_true", help="Fetch brew info description (slower)")
+    parser.add_argument(
+        "--brew-style",
+        action="store_true",
+        help="Display like 'brew update' New Formulae with description and URL from brew info",
+    )
     args = parser.parse_args()
 
     older_days = max(args.days_ago_a, args.days_ago_b)
@@ -148,19 +176,39 @@ def main():
     # Sort by date (newest first)
     records.sort(key=lambda r: r["tap_added_time"], reverse=True)
 
-    if args.desc:
+    if args.desc or args.brew_style:
         for r in records:
-            r["description"] = fetch_description(r["formula"])
+            if args.brew_style:
+                desc, homepage = fetch_brew_info(r["formula"])
+                r["description"] = desc
+                r["homepage"] = homepage
+            else:
+                r["description"] = fetch_description(r["formula"])
 
     if args.json:
         json.dump(records, sys.stdout, indent=2)
         sys.stdout.write("\n")
+    elif args.brew_style:
+        # Display similar to brew update "==> New Formulae" + brew info (desc, URL)
+        print("==> New Formulae and Casks")
+        for r in records:
+            desc = r.get("description") or ""
+            if desc:
+                print(f"{r['formula']}: {desc}")
+            else:
+                print(r["formula"])
+            if r.get("homepage"):
+                print(r["homepage"])
+            print()  # blank line between entries
+        if not records:
+            print("(none in this range)")
     else:
         for r in records:
             desc = ""
             if args.desc and r.get("description"):
                 desc = f"  {r['description']}"
-            print(f"{r['tap_added_time']:<25}  {r['formula']:<30}  {r['tap']}{desc}")
+            kind = r.get("type", "Formula")
+            print(f"{r['tap_added_time']:<25}  {r['formula']:<30}  {r['tap']}  [{kind}]{desc}")
 
 
 if __name__ == "__main__":
