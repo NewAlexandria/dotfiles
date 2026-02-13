@@ -5,6 +5,8 @@ brew "mas"
 brew "svn"
 
 tap "varenc/ffmpeg"
+tap "newalexandria/brew-new-formula"
+brew "newalexandria/brew-new-formula/brew-new-formulae"
 
 mas "ArtSaverApp", id: 1528854781
 #cask "wacom-tablet"

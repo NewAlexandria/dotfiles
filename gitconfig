@@ -2,7 +2,7 @@
 [user]
 	name = NewAlexandria
 	email = zak@newalexandria.org
-	signingkey = $HOME/.ssh/id_ed25519.bf.pub
+	signingkey = "/Users/zak/.ssh/id_rsa.na.pub"
 
 [credential]
 	helper = osxkeychain
@@ -17,7 +17,7 @@
 
 [core]
     pager = delta
-  	excludesfile = $HOME/.gitignore_global
+  	excludesfile = "$HOME/.gitignore_global"
   	autocrlf = input
 
 [interactive]
