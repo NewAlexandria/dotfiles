@@ -25,6 +25,7 @@ export NODE_PATH="/usr/local/lib/jsctags:${NODE_PATH}"
 export NODE_PATH=/usr/local/lib/jsctags/:$NODE_PATH
 export PATH="$PATH:/usr/local/opt/go/libexec/bin:"
 export PATH="/usr/local/opt/libxml2/bin:$PATH"
+export PATH="/Applications/HDF_Group/HDF5/1.14.6/bin/:$PATH"
 
 export LDFLAGS="-L/usr/local/opt/libxml2/lib"
 export CPPFLAGS="-I/usr/local/opt/libxml2/include"
@@ -49,3 +50,7 @@ alias ic="ibmcloud"
 . "$HOME/.cargo/env"
 export PATH="$HOME/.local/bin:$PATH"
 
+export PATH=~/.npm-global/bin:$PATH
+export PATH=~/.npm-global/bin:$PATH
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path bash)"

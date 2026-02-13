@@ -1,4 +1,9 @@
 #!/usr/bin/env python3
+"""Index Homebrew installs for brew_first_installs.py and related tools.
+
+'first_installed' = oldest receipt we still have per formula (across versions).
+Cannot distinguish 'brand new' vs 'upgrade' when old versions are removed.
+"""
 import argparse
 import concurrent.futures
 import json
@@ -246,16 +251,19 @@ def main():
             print(f"Error processing Casks in {caskroom}: {e}", file=sys.stderr)
 
     # 4. Process Data (Grouping and First Installed)
+    # Group by formula only: "first installed" = oldest receipt we still have
+    # for this formula (across all versions). Cannot distinguish "brand new"
+    # vs "upgrade" when old versions are removed; see brew_first_installs.py docstring.
     groups = {}
     for r in records:
-        key = f"{r['formula']}||{r['version']}"
+        key = r['formula']
         if key not in groups:
             groups[key] = []
         groups[key].append(r)
 
     final_records = []
 
-    for key, group in groups.items():
+    for formula, group in groups.items():
         min_epoch = min(item['install_epoch'] for item in group)
         min_iso = get_iso_time(min_epoch)
 

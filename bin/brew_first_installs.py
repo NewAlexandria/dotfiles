@@ -2,6 +2,12 @@
 """brew_first_installs.py
 Find packages whose first-installed date falls within a range of "days ago".
 
+"First installed" means the oldest receipt we still have for that formula
+(across all versions). It is NOT "brand new package" — we cannot distinguish
+first install vs upgrade when Homebrew removes old versions. For true "brand
+new" detection, use a persistent install log or brew_new_formulae.py (formulae
+new to the tap).
+
 The range is expressed as two "days ago" values:
   - older end: further in the past (larger number of days ago)
   - newer end: closer to now (smaller number of days ago; 0 = today)

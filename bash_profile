@@ -69,3 +69,8 @@ export PATH=$PATH:/opt/metasploit-framework/bin
 export HOMEBREW_NO_AUTO_UPDATE=1
 
 . "$HOME/.cargo/env"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/zak/.lmstudio/bin"
+# End of LM Studio CLI section
+
