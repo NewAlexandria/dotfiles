@@ -1,18 +1,9 @@
 # https://github.com/ptb/mac-setup/blob/develop/mac-setup.command
 
-cask "iterm2-nightly"
-brew "mas", args: ["--build-from-source"]
+cask "cmux"
+brew "mas"
 brew "svn"
 
-tap "heroku/brew"
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/core"
-tap "homebrew/services"
-
-tap "homebrew/cask-drivers"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
 tap "varenc/ffmpeg"
 
 mas "ArtSaverApp", id: 1528854781
@@ -31,15 +22,14 @@ mas "Tot", id: 1491071483
 
 cask "rectangle"
 cask "karabiner-elements"
-cask "homebrew/cask-drivers/kiibohd-configurator"
 cask "kiibohd-configurator"
-cask "mos" # scroll control
+# cask "mos" # scroll control
 
 ## ??
 
 brew "asdf"
-brew "deno"
-brew "crystal"
+# brew "deno"
+# brew "crystal"
 #brew "pyenv"
 brew "ruby-completion"
 brew "ruby-install"
@@ -48,11 +38,11 @@ brew "rbenv-gemset"
 brew "ruby-build"
 brew "rust"
 #brew "nvm"
-brew "sbt"
+# brew "sbt"  # install manually if needed (sbtn dependency issue)
 brew "scala"
 brew "yarn"
-brew "elixir"
-brew "elixir-build"
+# brew "elixir"
+# brew "elixir-build"
 brew "awscli"
 brew "aws-sam-cli"
 
@@ -63,30 +53,56 @@ cask "balenaetcher"
 
 #brew "circleci"
 brew "devspace"
-brew "dosbox"
+brew "dosbox-x"
 brew "gh"
-brew "vault"
+# brew "vault"
 
 ## ??
 
-cask "adoptopenjdk"
+brew "openjdk"
 cask "xquartz"
 cask "suspicious-package"
 cask "visualvm"
-cask "platypus"
+# cask "platypus"
 
 ## ??
 
+brew "claude-code"
+brew "claude"
+brew "claude-island"
+brew "claudebar"
+mas "Perplexity", id: 6714467650
+
+brew "cursor"
+brew "gemini"
+cask "chatgpt"
+brew "ollama"
+cask "ollama-app"
+
 brew "vim"
 cask "visual-studio-code"
-cask "intellij-idea-ce"
+# cask "intellij-idea-ce"
 #cask "android-studio-preview"
 brew "jupyterlab"
-brew "miniconda"
+cask "miniconda"  # install manually if needed: brew install --cask miniconda
 brew "conda-zsh-completion"
 cask "datagrip"
 cask "db-browser-for-sqlite"
-cask "timeular"
+# cask "timeular"
+
+# brew "temporal"
+
+## database
+
+tap "mongodb/brew"
+brew "neo4j", link: false
+brew "sqlite"
+brew "freetds"
+brew "mysql", restart_service: true
+brew "nginx", restart_service: true
+brew "postgresql", restart_service: true
+brew "mongodb/brew/mongocli"
+brew "sqlbench"
 
 ## Font
 
@@ -103,70 +119,72 @@ brew "bat"
 brew "bundler-completion"
 brew "curl-openssl"
 brew "curl"
-brew "exa"
+brew "eza"
 brew "fzf"
 brew "ijq"
 brew "jq"
 brew "lsd"
 brew "mosh"
 brew "python-yq"
-brew "renameutils", args: ["--build-from-source"]
+brew "renameutils"
 brew "socat"
 brew "tree"
 brew "wget"
-brew "zsh-completions"
-brew "zsh-git-prompt"
+# brew "zsh-completions"
+# brew "zsh-git-prompt"
 
 mas "GrandPerspective", id: 1111570163
 mas "HEIC Converter", id: 1294126402
-mas "Control Center", id: 1515453657
+# mas "Control Center", id: 1515453657
 mas "SiteSucker", id: 442168834
 mas "Spectrum Analyzer", id: 1049212349
 
 ## Terminal Layout
 
 brew "tmux"
-brew "zsh"
+# brew "zsh"
 
 ## Transfer
 
 cask "transmission"
 brew "i2p"
-brew "ipfs", args: ["--build-from-source"]
+brew "ipfs"
 
 ## Browsers
 
 cask "google-chrome"
-cask "google-chrome-canary"
 cask "chromedriver"
-cask "firefox-nightly"
+cask "firefox@nightly"
 cask "firefox"
 cask "safari-technology-preview"
-cask "tor-browser"
+brew "tor-browser"
 cask "opera"
-cask "brave-browser-nightly"
+cask "brave-browser@nightly"
 #cask "microsoft-edge"
 
-cask "finicky"
-mas "Cascadea", id: 1432182561
-mas "Refined GitHub", id: 1519867270
+mas "Velja", id: 1607635845
+# mas "Cascadea", id: 1432182561
+# mas "Refined GitHub", id: 1519867270
 
 ## Chat
 
 brew "irssi"
-cask "notion"
-cask "skype"
-cask "zoom"
+# cask "notion"
+# cask "skype"
+brew "zoom"
 cask "discord"
 # cask "keybase"
-#mas "Rocket.Chat", id: 1086818840
+mas "Rocket.Chat", id: 1086818840
 #mas "Jira", id: 1475897096
-#mas "Slack", id: 803453959
+mas "Slack", id: 803453959
+mas "Telegram", id: 747648890
+mas "OneDrive", id: 823766827
+
 
 brew "figlet"
 brew "brogue"
-cask "angband"
-cask "google-earth-pro"
+cask "angband-app"
+# cask "google-earth-pro"  # no longer available
 
 brew "cocoapods"
 brew "duti"
@@ -175,24 +193,25 @@ brew "ideviceinstaller"
 
 ## Virtualization
 
-brew "docker"
+# brew "docker"
 brew "docker-compose"
 brew "docker-machine"
-cask "captain"
+cask "orbstack"
 cask "virtualbox"
 
-brew "minikube", args: ["--build-from-source"]
+brew "minikube", args: ["build-from-source"]
 brew "kubernetes-cli"
 brew "kubectl"
-brew "minikube"
 brew "hidetatz/tap/kubecolor"
 brew "k9s"
 brew "kubeshark"
 
 brew "argo"
-tap "hyperledger/fabric"
-brew "hyperledger/fabric/fabric-tools@1.4.0"
-brew "hyperledger/fabric/fabric-tools@2.1.0"
+brew "avro-tools"
+brew "avro-c"
+brew "kafka"
+brew "rabbitmq"
+brew "redis", restart_service: true
 
 ## Network
 
@@ -204,8 +223,10 @@ brew "doggo"
 brew "ettercap"
 brew "ncdu"
 brew "nmap"
-cask "nzbvortex"
-cask "wireshark"
+brew "nzbvortex"
+cask "wireshark-app"
+brew "tailscale"
+brew "wireguard-tools"
 
 ## auth
 
@@ -213,7 +234,6 @@ brew "oath-toolkit"
 brew "pinentry-mac"
 cask "gpg-suite"
 brew "git-secret"
-cask "tunnelbear"
 cask "openvpn-connect"
 brew "gnupg"
 
@@ -225,6 +245,7 @@ brew "hub"
 brew "git-lfs"
 brew "legit"
 brew "git-delta"
+brew "git-tools"
 
 ## ??
 
@@ -234,12 +255,13 @@ brew "pcre2"
 brew "poppler"
 brew "potrace"
 brew "intltool"
-brew "p7zip"
 #brew "unrar"
 brew "aview"
 brew "colordiff"
 brew "diff-so-fancy"
 brew "cscope"
+
+brew "p7zip"
 brew "ctags"
 brew "the_silver_searcher"
 brew "ack"
@@ -249,59 +271,29 @@ brew "parallel"
 brew "progress"
 brew "markdown"
 mas "RegEx Lab", id: 1252988123
-mas "Gemini 2", id: 1090488118
 
 
 ## ??
 
-brew "pow"
 brew "automake"
 brew "cmake"
 brew "gradle"
 brew "maven"
-brew "mcrypt"
+brew "bcrypt"
 brew "stow"
 brew "llvm"
 brew "readline"
 brew "xz"
-cask "adoptopenjdk8"
-
-## database
-
-tap "mongodb/brew"
-
-brew "neo4j", link: false
-brew "sqlite"
-brew "freetds"
-brew "mysql", restart_service: true
-brew "nginx", restart_service: true
-brew "postgresql", restart_service: true
-brew "mongodb/brew/mongocli"
-cask "sequel-pro-nightly"
-cask "sqlworkbenchj"
-cask "valentina-studio"
-
-brew "ollama"
-cask "ollamac"
 
 ## ??
 
-brew "avro-tools"
-brew "avro-c"
-brew "kafka"
-brew "rabbitmq"
-brew "redis", restart_service: true
-# brew "temporal"
-
-## ??
-
-cask "r"
+cask "r-app"
 cask "racket"
 cask "protege"
-brew "sphinx-doc"
-brew "stanford-corenlp"
-cask "julia"
-brew "vowpal-wabbit", args: ["--build-from-source"]
+# brew "sphinx-doc"
+# brew "stanford-corenlp"
+cask "julia-app"
+# brew "vowpal-wabbit", args: ["--build-from-source"]
 
 ## ??
 
@@ -310,17 +302,17 @@ brew "graphviz"
 brew "plantuml"
 cask "inkscape"
 cask "gimp"
-cask "omnigraffle"
-cask "omnigraffle6"
+# cask "omnigraffle"
+# cask "omnigraffle6"
 #mas "skitch"
 cask "sketch"
 cask "drawio"
 
 ## ??
 
-cask "rive"
-mas "GIPHY CAPTURE", id: 668208984
-mas "Skitch", id: 425955336
+# cask "rive"
+# mas "GIPHY CAPTURE", id: 668208984  # requires Rosetta 2 on Apple Silicon
+# mas "Skitch", id: 425955336  # requires Rosetta 2 on Apple Silicon
 
 ## ??
 
@@ -336,8 +328,7 @@ brew "d2"
 
 cask "vlc"
 brew "ffmpeg"
-brew "youtube-dl"
-brew "yt-dlp/taps/yt-dlp"
+brew "yt-dlp"
 brew "gallery-dl"
 
 ## ??
@@ -353,7 +344,6 @@ brew "libsoup"
 brew "libvpx"
 brew "libxml++"
 brew "libxml++3"
-brew "little-cms"
 brew "zlib"
 brew "libxml2"
 brew "glib"
@@ -363,12 +353,12 @@ brew "tidy-html5"
 brew "xvid"
 brew "libheif"
 
-cask "qlimagesize"
-cask "qlstephen"
-cask "qlvideo"
-cask "qlstephen"
-cask "quicklookase"
-cask "webpquicklook"
+# cask "qlimagesize"
+# cask "qlstephen"
+# cask "qlvideo"
+# cask "qlstephen"
+# cask "quicklookase"
+# cask "webpquicklook"
 
 #mas "Numbers", id: 409203825
 #mas "Pages", id: 409201541
@@ -386,14 +376,14 @@ cask "webpquicklook"
 #mas "Gemini 2", id: 1090488118
 #mas "GrandPerspective", id: 1111570163
 #mas "FreeDiskSpace", id: 838744420
-#mas "SiteSucker", id: 442168834
+mas "SiteSucker", id: 442168834
 #mas "Tot", id: 1491071483
 
 ## ??
 
 # cask "dash"
-cask "mactex"
-cask "latexit"
+brew "mactex"
+brew "latexit"
 cask "macdown"
 
 

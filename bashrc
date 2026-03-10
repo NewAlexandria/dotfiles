@@ -46,6 +46,11 @@ man() {
 		LESS_TERMCAP_us=$(printf "\e[1;32m") \
 			man "$@"
 }
+
+alias ll='ls -al'
+alias ll='eza -al'
+alias l='eza '
+
 alias ic="ibmcloud"
 . "$HOME/.cargo/env"
 export PATH="$HOME/.local/bin:$PATH"
