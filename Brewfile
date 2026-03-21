@@ -68,13 +68,13 @@ cask "visualvm"
 ## ??
 
 brew "claude-code"
-brew "claude"
-brew "claude-island"
-brew "claudebar"
+cask "claude"
+cask "claude-island"
+cask "claudebar"
 mas "Perplexity", id: 6714467650
 
-brew "cursor"
-brew "gemini"
+cask "cursor"
+brew "gemini-cli"
 cask "chatgpt"
 brew "ollama"
 cask "ollama-app"
@@ -84,7 +84,7 @@ cask "visual-studio-code"
 # cask "intellij-idea-ce"
 #cask "android-studio-preview"
 brew "jupyterlab"
-cask "miniconda"  # install manually if needed: brew install --cask miniconda
+cask "miniconda"
 brew "conda-zsh-completion"
 cask "datagrip"
 cask "db-browser-for-sqlite"
@@ -171,7 +171,7 @@ mas "Velja", id: 1607635845
 brew "irssi"
 # cask "notion"
 # cask "skype"
-brew "zoom"
+cask "zoom"
 cask "discord"
 # cask "keybase"
 mas "Rocket.Chat", id: 1086818840
@@ -382,8 +382,8 @@ mas "SiteSucker", id: 442168834
 ## ??
 
 # cask "dash"
-brew "mactex"
-brew "latexit"
+cask "mactex"
+cask "latexit"
 cask "macdown"
 
 
