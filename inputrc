@@ -1,0 +1,10 @@
+# === Word Navigation ===
+set word-delimiters " /.-=:,;|"
+"\e[1;3D": backward-word
+"\e[1;3C": forward-word
+"\eb": backward-word
+"\ef": forward-word
+"\e[1;9D": backward-word
+"\e[1;9C": forward-word
+"\e[1;5D": backward-word
+"\e[1;5C": forward-word

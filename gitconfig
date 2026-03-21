@@ -53,6 +53,10 @@
   le   = log --oneline --decorate
   fl   = log -u
 
+  br = branch
+  st = status
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
   la = "!git config -l | grep alias | cut -c 7-"
 
   lasttag = describe --tags --abbrev=0
