@@ -189,3 +189,14 @@ export PATH="$HOME/.local/bin:$PATH"
 # --- Gas Town Integration (managed by gt) ---
 [[ -f "/Users/zak/.config/gastown/shell-hook.sh" ]] && source "/Users/zak/.config/gastown/shell-hook.sh"
 # --- End Gas Town ---
+
+# === Word Navigation — stop at . / - and spaces ===
+WORDCHARS='*?_[]~=&;!#$%^(){}<>'
+bindkey '\e[1;3D' backward-word
+bindkey '\e[1;3C' forward-word
+bindkey '\eb' backward-word
+bindkey '\ef' forward-word
+bindkey '\e[1;9D' backward-word
+bindkey '\e[1;9C' forward-word
+bindkey '\e[1;5D' backward-word
+bindkey '\e[1;5C' forward-word
