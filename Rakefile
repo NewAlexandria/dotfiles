@@ -7,6 +7,7 @@ DOTFILE_SKIPLIST = %w[
   mac
   bin
   home
+  hooks
   utils
   var
   _site
@@ -71,6 +72,8 @@ namespace :dotfiles do
       system "source ~/.zshrc"
     #end
 
+    Rake::Task["hooks:install"].invoke
+
     system "git submodule init"
     system "git submodule sync"
     system "git submodule update"
@@ -79,6 +82,20 @@ namespace :dotfiles do
     
     system "source ~/.zshrc"
     Rake::Task["utils:asdf"].invoke
+  end
+end
+
+namespace :hooks do
+  desc "Install git hooks from hooks/ into .git/hooks/"
+  task :install do
+    hooks_dir = File.expand_path('../hooks', __FILE__)
+    git_hooks_dir = File.expand_path('../.git/hooks', __FILE__)
+    Dir["#{hooks_dir}/*"].each do |hook|
+      dest = File.join(git_hooks_dir, File.basename(hook))
+      FileUtils.cp(hook, dest)
+      FileUtils.chmod(0755, dest)
+      puts "Installed hook: #{File.basename(hook)}"
+    end
   end
 end
 
@@ -116,6 +133,31 @@ namespace :mac do
   task :install_configs do
     system "mkdir -p ~/.config"
     system "rm -Rf ~/.config/karabiner ; ln -sf #{File.expand_path('../mac/karabiner', __FILE__).to_s} ~/.config/karabiner"
+
+    # Velja URL routing preferences
+    # Sandboxed apps require defaults import (symlinks and cp are blocked by container protection).
+    # Public rules live in mac/velja/; private rules (sensitive URLs) in ~/.config/velja/private-rules.json
+    velja_source = File.expand_path('../mac/velja/com.sindresorhus.Velja.plist', __FILE__)
+    velja_private = File.expand_path('~/.config/velja/private-rules.json')
+    system "osascript -e 'tell application \"Velja\" to quit' 2>/dev/null"
+    sleep 2
+    system "plutil -convert xml1 -o /tmp/velja_prefs.plist '#{velja_source}'"
+    if File.exist?(velja_private)
+      system "ruby '#{File.expand_path('../mac/velja/merge_rules.rb', __FILE__)}' /tmp/velja_prefs.plist '#{velja_private}'"
+    end
+    system "defaults import com.sindresorhus.Velja /tmp/velja_prefs.plist"
+    system "rm -f /tmp/velja_prefs.plist"
+  end
+
+  desc "export Velja preferences back to dotfiles repo (public rules only)"
+  task :velja_backup do
+    velja_dest = File.expand_path('../mac/velja/com.sindresorhus.Velja.plist', __FILE__)
+    velja_private = File.expand_path('~/.config/velja/private-rules.json')
+    system "defaults export com.sindresorhus.Velja '#{velja_dest}'"
+    # Strip private rules from the exported plist so they don't end up in the public repo
+    if File.exist?(velja_private)
+      system "ruby '#{File.expand_path('../mac/velja/strip_private_rules.rb', __FILE__)}' '#{velja_dest}' '#{velja_private}'"
+    end
   end
 
   desc "Set application handlers for OSX"

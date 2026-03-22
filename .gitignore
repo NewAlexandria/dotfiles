@@ -9,6 +9,8 @@ ssh_config
 
 leaf.txt
 
+com.sindresorhus.Velja/
+
 tags
 tags.log
 *.swp

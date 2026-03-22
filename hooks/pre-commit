@@ -1,0 +1,13 @@
+#!/bin/sh
+# Export current Velja preferences (stripping private rules) before committing.
+# Only runs if the velja plist is being committed or if Velja prefs may have changed.
+
+DOTFILES_DIR="$(git rev-parse --show-toplevel)"
+
+# Run the backup which exports and strips private rules
+cd "$DOTFILES_DIR" && rake mac:velja_backup 2>/dev/null
+
+# Stage the updated plist if it changed
+git add "$DOTFILES_DIR/mac/velja/com.sindresorhus.Velja.plist" 2>/dev/null
+
+exit 0
