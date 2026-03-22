@@ -382,10 +382,17 @@ function kautocop() {
 echo "🎫  Repo helpers"
 
 function update_repos() {
-  __batt_yellow=$(tput setaf 184)
-  __batt_green=$(tput setaf 120)
-  __batt_red=$(tput setaf 160)
-  __batt_reset="$(tput init)"
+  if tput setaf 184 &>/dev/null; then
+    __batt_yellow=$(tput setaf 184)
+    __batt_green=$(tput setaf 120)
+    __batt_red=$(tput setaf 160)
+    __batt_reset="$(tput init)"
+  else
+    __batt_yellow=''
+    __batt_green=''
+    __batt_red=''
+    __batt_reset=''
+  fi
   for f in $(ls -w); do
     echo ""
     echo "$__batt_green$f$__batt_reset"
