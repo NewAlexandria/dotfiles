@@ -78,6 +78,7 @@ brew "gemini-cli"
 cask "chatgpt"
 brew "ollama"
 cask "ollama-app"
+mas "Charmstone", id: 1563735522
 
 brew "vim"
 cask "visual-studio-code"

@@ -2,7 +2,7 @@
 [user]
 	name = NewAlexandria
 	email = zak@newalexandria.org
-	signingkey = 5FBC4EFA03B99124
+	signingkey = /Users/zak/.ssh/id_ed25519.bf.pub
 
 [credential]
 	helper = osxkeychain
@@ -10,6 +10,7 @@
 	gpgsign = true
 [gpg]
 	program = gpg
+	format = ssh
 
 [github]
 	user = NewAlexandria
@@ -110,3 +111,5 @@
   interactive = auto
 [init]
 	defaultBranch = main
+[tag]
+	gpgSign = true

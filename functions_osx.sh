@@ -1,5 +1,5 @@
 #!/usr/bin/sh
-echo "OSX config"
+# OSX config
 
 ## iTerm config
 #test -e "${HOME}/.dotfiles/mac/iterm2_shell_integration.bash" && source "${HOME}/.dotfiles/mac/iterm2_shell_integration.bash"
@@ -118,7 +118,7 @@ gitkraken() {
 }
 alias gk=gitkraken
 
-source "${DOTFILES_REPO}/lib/osx-shell-battery/functions_battery.sh"
+[[ -f "${DOTFILES_REPO}/lib/osx-shell-battery/functions_battery.sh" ]] && source "${DOTFILES_REPO}/lib/osx-shell-battery/functions_battery.sh"
 
 function killdock() {
   # Dock, Finder, SystemUIServer

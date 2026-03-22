@@ -1,7 +1,6 @@
 #!/usr/bin/sh
 
 # functions and load-onces stuff for the environment
-echo "function config"
 source ~/.functions_shell.sh
 source ~/.functions_colors.sh
 source ~/.functions_dev.sh
@@ -9,11 +8,10 @@ source ~/.functions_osx.sh
 source ~/.functions_graphics.sh
 
 # Vim IDE settings
-source ~/.bash_vim_append
+[[ -f ~/.bash_vim_append ]] && source ~/.bash_vim_append
 
 # Common bin paths
 # ----------------
-echo "bin PATH config"
 export PATH="$HOME/.sem/bin:$PATH"
 eval "$(rbenv init -)"
 export PATH="/$HOME/.asdf/shims:$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:/opt/swt/bin:$PATH"
@@ -21,7 +19,6 @@ export PATH="/$HOME/.asdf/shims:$HOME/.rbenv/bin:/usr/local/bin:/usr/local/sbin:
 export PATH="/$HOME/.cargo/bin:$PATH"
 
 # aliases and variables that should be available in any sub-shell or certain processes
-echo "local shell config"
 #source ~/.bashrc
 #source ~/.bashrc_local
 GPG_TTY=$(tty)
@@ -59,7 +56,6 @@ alias dif='colordiff'
 alias ack='ack --color-lineno=green --color-filename=white --color --follow'
 
 
-echo ".profile config"
 #source ~/.profile
 
 PATH=$PATH:/opt/metasploit-framework/bin

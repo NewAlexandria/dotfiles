@@ -16,7 +16,6 @@ complete -W "$(echo `cat ~/.ssh/known_hosts | cut -f 1 -d ' ' | \
 
 
 # Compiler things
-echo "Compiler things"
 alias gcc=cc
 alias gcc-4.2=gcc
 
@@ -51,11 +50,21 @@ alias ll='ls -al'
 alias ll='eza -al'
 alias l='eza '
 
+alias unmute='osascript -e "set volume output muted false" && osascript -e "set volume output volume 75"'
+function aftestbf() {
+       	cd ~/src/marine-acoustics
+	afplay apps/sd-modem/fsk/output_fsk/jan31/test97_2300hz_2-fsk_50baud.wav -v 20 -q 1 -d -t 6 
+}
+
 alias ic="ibmcloud"
 . "$HOME/.cargo/env"
 export PATH="$HOME/.local/bin:$PATH"
 
 export PATH=~/.npm-global/bin:$PATH
-export PATH=~/.npm-global/bin:$PATH
+
+function reset_ard() {
+  sudo killall screensharingd
+  sudo killall loginwindow
+}
 
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path bash)"
