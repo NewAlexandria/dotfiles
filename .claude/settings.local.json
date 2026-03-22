@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(history -1000)",
+      "Read(//Users/zak/**)",
+      "Bash(fzf --version)",
+      "Bash(fc -l 1)",
+      "Bash(ls:*)",
+      "Bash(find /Users/zak -maxdepth 3 -name *history* -o -name *hist*)",
+      "Bash(for f:*)",
+      "Bash(do cat:*)",
+      "Bash(done)",
+      "Bash(zsh -i -c 'echo \"Shell loaded OK\"' 2>&1)",
+      "Bash(brew info:*)",
+      "Bash(chmod:*)",
+      "Bash(.git/hooks/pre-commit)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(rake:*)"
+    ]
+  }
+}
