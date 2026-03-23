@@ -121,3 +121,6 @@ bindkey '\e[1;9D' backward-word
 bindkey '\e[1;9C' forward-word
 bindkey '\e[1;5D' backward-word
 bindkey '\e[1;5C' forward-word
+
+# === Forward Delete (fn+backspace) ===
+bindkey '\e[3~' delete-char
