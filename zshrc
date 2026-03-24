@@ -108,7 +108,7 @@ export PATH="$HOME/.local/bin:$PATH"
 
 
 # --- Gas Town Integration (managed by gt) ---
-[[ -f "/Users/zak/.config/gastown/shell-hook.sh" ]] && source "/Users/zak/.config/gastown/shell-hook.sh"
+[[ -f "$HOME/.config/gastown/shell-hook.sh" ]] && source "$HOME/.config/gastown/shell-hook.sh"
 # --- End Gas Town ---
 
 # === Word Navigation — stop at . / - and spaces ===

@@ -169,4 +169,4 @@ function rumble-dl() {
  done
 }
 
-# /Users/zak/.dotfiles/utils/soundcloud-artist-getter.rb
+# $HOME/.dotfiles/utils/soundcloud-artist-getter.rb

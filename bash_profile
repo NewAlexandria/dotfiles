@@ -67,6 +67,6 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 . "$HOME/.cargo/env"
 
 # Added by LM Studio CLI (lms)
-export PATH="$PATH:/Users/zak/.lmstudio/bin"
+export PATH="$PATH:$HOME/.lmstudio/bin"
 # End of LM Studio CLI section
 
