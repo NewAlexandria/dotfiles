@@ -124,3 +124,6 @@ bindkey '\e[1;5C' forward-word
 
 # === Forward Delete (fn+backspace) ===
 bindkey '\e[3~' delete-char
+
+# Added by Antigravity
+export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
