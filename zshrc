@@ -110,6 +110,7 @@ export PATH="$HOME/.local/bin:$PATH"
 # --- Gas Town Integration (managed by gt) ---
 [[ -f "$HOME/.config/gastown/shell-hook.sh" ]] && source "$HOME/.config/gastown/shell-hook.sh"
 # --- End Gas Town ---
+<<<<<<< HEAD
 
 # === Word Navigation — stop at . / - and spaces ===
 WORDCHARS='*?_[]~=&;!#$%^(){}<>'
@@ -127,3 +128,9 @@ bindkey '\e[3~' delete-char
 
 # Added by Antigravity
 export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
+||||||| parent of bf0a472 (agent teams, mimir, and git local perms)
+=======
+
+# mimir-conf: secrets management tools
+export PATH="$HOME/src/projects/newalexandria-archive/mimir-conf/bin:$PATH"
+>>>>>>> bf0a472 (agent teams, mimir, and git local perms)

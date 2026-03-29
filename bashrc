@@ -67,4 +67,6 @@ function reset_ard() {
   sudo killall loginwindow
 }
 
+export CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1
+
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path bash)"
