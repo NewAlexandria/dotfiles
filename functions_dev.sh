@@ -163,6 +163,7 @@ alias gc='git commit'
 alias ggc='lucky commit'
 alias gcaa='gc -a --amend'
 alias gcaae='gc -a --amend --no-edit'
+alias grv='git remote -v'
 
 function gpr() {
   hub pull-request -h $2 -b $1 -m | open
