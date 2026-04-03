@@ -15,6 +15,7 @@ DOTFILE_SKIPLIST = %w[
   LICENSE.md
   CODE_OF_CONDUCT.md
   CONTRIBUTING.md
+  starship.toml
 ]
 
 desc "Install the dotfiles as symlinks in $HOME directory"
@@ -77,6 +78,12 @@ namespace :dotfiles do
     system "git submodule init"
     system "git submodule sync"
     system "git submodule update"
+
+    # Install starship prompt if not present
+    unless system("command -v starship >/dev/null 2>&1")
+      puts "  → Installing starship..."
+      system "brew install starship"
+    end
 
     Rake::Task["mac:setup"].invoke if osname.match(/darwin/) 
     

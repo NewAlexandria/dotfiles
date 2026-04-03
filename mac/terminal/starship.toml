@@ -1,0 +1,91 @@
+# Starship prompt config
+# https://starship.rs/config/
+
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+$directory\
+$git_branch\
+$git_status\
+$git_state\
+$cmd_duration\
+$line_break\
+$jobs\
+$character"""
+
+right_format = """
+$nodejs\
+$ruby\
+$python\
+$golang\
+$kubernetes"""
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+
+[directory]
+style = "bold blue"
+truncation_length = 4
+truncate_to_repo = true
+
+[git_branch]
+symbol = " "
+style = "bold purple"
+format = "[$symbol$branch]($style) "
+
+[git_status]
+format = '([$all_status$ahead_behind]($style) )'
+style = "bold yellow"
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+modified = "!${count}"
+staged = "+${count}"
+untracked = "?${count}"
+deleted = "✘${count}"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "bold yellow"
+
+[cmd_duration]
+min_time = 2_000
+format = "[ $duration]($style) "
+style = "bold yellow"
+
+[nodejs]
+format = "[$symbol$version]($style) "
+symbol = " "
+style = "bold green"
+detect_files = ["package.json", ".nvmrc", ".node-version"]
+detect_folders = ["node_modules"]
+
+[ruby]
+format = "[$symbol$version]($style) "
+symbol = " "
+style = "bold red"
+
+[python]
+format = '[$symbol$version]($style) '
+symbol = " "
+style = "bold yellow"
+detect_files = ["pyproject.toml", "requirements.txt", ".python-version", "Pipfile"]
+
+[golang]
+format = "[$symbol$version]($style) "
+symbol = " "
+style = "bold cyan"
+
+[kubernetes]
+format = "[$symbol$context( \\($namespace\\))]($style) "
+symbol = "☸ "
+style = "bold blue"
+disabled = false
+detect_files = ["k8s", "Dockerfile", "docker-compose.yml", "helm"]
+
+[jobs]
+symbol = "✦"
+style = "bold blue"
+number_threshold = 1
+format = "[$symbol$number]($style) "

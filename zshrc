@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # --- Completion system (standalone, no oh-my-zsh) ---
 autoload -Uz compinit && compinit
 
@@ -30,9 +23,6 @@ source ~/.functions_colors_shell.zsh
 if [[ -e ~/.zshrc_local.sh ]]; then
   source ~/.zshrc_local.sh
 fi
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
 # >>> conda initialize >>>
@@ -60,10 +50,10 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 eval "$(rbenv init - zsh)"
 
-# PROMPT 
+# PROMPT
+export STARSHIP_CONFIG="$HOME/.dotfiles/starship.toml"
+export STARSHIP_CACHE="$HOME/.cache/starship"
 eval "$(starship init zsh)"
-export STARSHIP_CONFIG=~/example/non/default/path/starship.toml
-export STARSHIP_CACHE=~/.starship/cache
 
 # fzf tab completion
 source $HOME/.dotfiles/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh

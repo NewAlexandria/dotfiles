@@ -116,6 +116,7 @@ cask "font-photonico-code"
 
 ## Terminal Utils
 
+brew "starship"
 brew "bash-completion"
 brew "bash-git-prompt"
 brew "bat"
