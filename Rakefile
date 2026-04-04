@@ -10,12 +10,26 @@ DOTFILE_SKIPLIST = %w[
   hooks
   utils
   var
+  config
   _site
   README.markdown
   LICENSE.md
   CODE_OF_CONDUCT.md
   CONTRIBUTING.md
   starship.toml
+  functions_shell.sh
+  functions_colors.sh
+  functions_dev.sh
+  functions_osx.sh
+  functions_graphics.sh
+  functions_colors_shell.zsh
+  prompt.sh
+  osx.zsh
+  hgrc
+  screenrc
+  muttrc
+  rvmrc
+  powconfig
 ]
 
 desc "Install the dotfiles as symlinks in $HOME directory"
@@ -138,8 +152,41 @@ namespace :mac do
 
   desc "install mac util configs"
   task :install_configs do
-    system "mkdir -p ~/.config"
-    system "rm -Rf ~/.config/karabiner ; ln -sf #{File.expand_path('../mac/karabiner', __FILE__).to_s} ~/.config/karabiner"
+    # Symlink ~/.config → dotfiles config/ directory (XDG Base Directory)
+    config_source = File.expand_path('../config', __FILE__)
+    config_target = File.expand_path('~/.config')
+    unless File.symlink?(config_target) && File.readlink(config_target) == config_source
+      if File.directory?(config_target) && !File.symlink?(config_target)
+        # Migrate existing ~/.config/ contents into repo config/ before symlinking
+        puts "Migrating existing ~/.config/ into dotfiles repo..."
+        Dir.glob("#{config_target}/**/*", File::FNM_DOTMATCH).each do |src|
+          next if File.basename(src) == '.' || File.basename(src) == '..'
+          next if File.directory?(src)
+          rel = src.sub("#{config_target}/", '')
+          dest = File.join(config_source, rel)
+          unless File.exist?(dest)
+            FileUtils.mkdir_p(File.dirname(dest))
+            FileUtils.cp(src, dest, preserve: true)
+            puts "  migrated: #{rel}"
+          end
+        end
+        FileUtils.rm_rf(config_target)
+      elsif File.symlink?(config_target)
+        # Stale symlink pointing elsewhere — remove it
+        File.delete(config_target)
+      end
+      system "ln -sf '#{config_source}' '#{config_target}'"
+      puts "Linked ~/.config → #{config_source}"
+    end
+
+    # Set gh credential helper dynamically
+    gh_path = `command -v gh`.strip
+    unless gh_path.empty?
+      system "git config --file '#{config_source}/git/config' credential.\"https://github.com\".helper ''"
+      system "git config --file '#{config_source}/git/config' --add credential.\"https://github.com\".helper '!#{gh_path} auth git-credential'"
+      system "git config --file '#{config_source}/git/config' credential.\"https://gist.github.com\".helper ''"
+      system "git config --file '#{config_source}/git/config' --add credential.\"https://gist.github.com\".helper '!#{gh_path} auth git-credential'"
+    end
 
     # Velja URL routing preferences
     # Sandboxed apps require defaults import (symlinks and cp are blocked by container protection).

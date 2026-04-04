@@ -4,25 +4,36 @@ autoload -Uz compinit && compinit
 # History settings
 HISTSIZE=10000
 SAVEHIST=10000
-HISTFILE=~/.zsh_history
+HISTFILE="$HOME/.zsh_history"
 setopt HIST_IGNORE_DUPS SHARE_HISTORY APPEND_HISTORY
 
 export EDITOR='vim'
 
+# Dotfiles repo and Homebrew prefix
+DOTFILES_REPO="$HOME/.dotfiles"
+if command -v brew &>/dev/null; then
+  BREW_PREFIX="$(brew --prefix)"
+fi
+
 # Source function files
-source ~/.functions_shell.sh
-source ~/.functions_colors.sh
-source ~/.functions_dev.sh
-source ~/.functions_osx.sh
-source ~/.functions_graphics.sh
-source ~/.functions_colors_shell.zsh
+source "$DOTFILES_REPO/functions_shell.sh"
+source "$DOTFILES_REPO/functions_colors.sh"
+source "$DOTFILES_REPO/functions_dev.sh"
+source "$DOTFILES_REPO/functions_osx.sh"
+source "$DOTFILES_REPO/functions_graphics.sh"
+source "$DOTFILES_REPO/functions_colors_shell.zsh"
+source "$DOTFILES_REPO/prompt.sh"
+
+
+if [[ -e "$HOME/.zshrc_local.sh" ]]; then
+  source "$HOME/.zshrc_local.sh"
+fi
+
 
 #. $(brew --prefix asdf)/asdf.sh
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
+. "$BREW_PREFIX/opt/asdf/libexec/asdf.sh"
 
-if [[ -e ~/.zshrc_local.sh ]]; then
-  source ~/.zshrc_local.sh
-fi
+eval "$(rbenv init - zsh)"
 
 
 # >>> conda initialize >>>
@@ -48,15 +59,8 @@ export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 # make completion work with kubecolor
 #compdef kubecolor=kubectl
 
-eval "$(rbenv init - zsh)"
-
-# PROMPT
-export STARSHIP_CONFIG="$HOME/.dotfiles/starship.toml"
-export STARSHIP_CACHE="$HOME/.cache/starship"
-eval "$(starship init zsh)"
-
 # fzf tab completion
-source $HOME/.dotfiles/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
+source "$DOTFILES_REPO/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh"
 source <(fzf --zsh)
 
 # Configure fzf-tab to show directories first
@@ -70,7 +74,7 @@ zstyle ':completion:*:*:-command-:*:*' group-order alias builtins functions comm
 # Directories first, then files
 zstyle ':completion:*' list-dirs-first true
 
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export PATH="$BREW_PREFIX/opt/openjdk/bin:$PATH"
 
 # pnpm
 export PNPM_HOME="$HOME/Library/pnpm"
@@ -85,21 +89,6 @@ export PATH="$HOME/.local/bin:$PATH"
 unset -f video2agif 2>/dev/null; export PATH="$HOME/.local/bin:$PATH"
 
 
-# Added by LM Studio CLI (lms)
-export PATH="$PATH:$HOME/.lmstudio/bin"
-# End of LM Studio CLI section
-
-
-# Added by Antigravity
-export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
-
-[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
-
-
-# --- Gas Town Integration (managed by gt) ---
-[[ -f "$HOME/.config/gastown/shell-hook.sh" ]] && source "$HOME/.config/gastown/shell-hook.sh"
-# --- End Gas Town ---
 
 # === Word Navigation — stop at . / - and spaces ===
 WORDCHARS='*?_[]~=&;!#$%^(){}<>'
@@ -114,9 +103,3 @@ bindkey '\e[1;5C' forward-word
 
 # === Forward Delete (fn+backspace) ===
 bindkey '\e[3~' delete-char
-
-# Added by Antigravity
-export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
-
-# mimir-conf: secrets management tools
-export PATH="$HOME/src/projects/newalexandria-archive/mimir-conf/bin:$PATH"

@@ -9,7 +9,7 @@ while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symli
   [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
 done
 #DOTFILES_REPO="$( dirname "$SOURCE" )"
-DOTFILES_REPO="/Users/$(whoami)/.dotfiles"
+DOTFILES_REPO="${DOTFILES_REPO:-$HOME/.dotfiles}"
 
 function getuser() {
   if [ -z "$LOGNAME" ]; then
@@ -133,7 +133,7 @@ function rm_icon() {
 }
 
 function pdf_shrink() {
-  /opt/homebrew/bin/gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile=sml.$1 $1
+  gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/ebook -dNOPAUSE -dQUIET -dBATCH -sOutputFile=sml.$1 $1
 }
 
 # Term Functions

@@ -1,0 +1,7 @@
+.DS_Store
+.svn
+
+tags
+tags.log
+
+**/.claude/settings.local.json

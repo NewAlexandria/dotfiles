@@ -1,0 +1,12 @@
+# Ignore everything by default — opt in with !pattern
+*
+!.gitignore
+
+# Tracked configs
+!git/
+!git/**
+!starship.toml
+!ghostty/
+!ghostty/**
+!karabiner/
+!karabiner/**

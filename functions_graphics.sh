@@ -17,7 +17,7 @@ function ratio() {
 ### ==== Converters =======================================
 
 # remember this for editing!
-lazycut
+## lazycut
 
 # scale video
 # ffmpeg -i input.avi -filter:v scale=720:-1 -c:a copy output.mkv
