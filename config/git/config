@@ -113,3 +113,11 @@
 [tag]
 	gpgSign = true
 # gh credential helpers are set dynamically by rake mac:install_configs
+[credential "https://github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/opt/homebrew/bin/gh auth git-credential
+[gpg "ssh"]
+	allowedSignersFile = /Users/zak/.ssh/allowed_signers
