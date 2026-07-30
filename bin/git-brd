@@ -1,0 +1,235 @@
+#!/usr/bin/env bash
+# git brd — local branches with create / update / merge dates
+#
+# Usage: git brd [COLUMN] [--color|--no-color]
+#   Sort by COLUMN; prefix with - for descending (default: -created).
+#   Color is on by default when stdout is a TTY.
+#
+# Columns: branch, created, updated, merged, ahead, status
+# Note: `git brd --help` / `-h` are intercepted by git; use `git brd help`.
+
+set -euo pipefail
+
+usage() {
+  cat <<'EOF'
+Usage: git brd [COLUMN] [--color|--no-color]
+       git brd help
+
+List local branches with lifecycle dates.
+
+Columns (sort key; prefix with - for descending):
+  branch   Branch name
+  created  Creation date (reflog, else first unique commit)
+  updated  Tip committer date (last activity)
+  merged   Merge date into default branch, if ancestor (else -)
+  ahead    Commits ahead of default branch
+  status   base | merged | open
+
+Color (default: on when stdout is a TTY):
+  --color, --color=always   Force ANSI colors
+  --no-color, --color=never Disable colors
+  --color=auto              Color only when stdout is a TTY
+
+Also respects NO_COLOR. Default sort: -created
+
+Examples:
+  git brd
+  git brd updated
+  git brd -merged --no-color
+  git brd ahead
+EOF
+}
+
+sort_arg=
+color_mode=auto
+
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -h|--help|help)
+      usage
+      exit 0
+      ;;
+    --color|--color=always)
+      color_mode=always
+      ;;
+    --no-color|--color=never)
+      color_mode=never
+      ;;
+    --color=auto)
+      color_mode=auto
+      ;;
+    --color=*)
+      echo "Unknown color mode: $1 (use always|never|auto)" >&2
+      exit 1
+      ;;
+    -*)
+      # descending sort column (-created, -updated, …) or unknown flag
+      if [[ "$1" =~ ^-(branch|created|updated|merged|ahead|status)$ ]]; then
+        sort_arg=$1
+      else
+        echo "Unknown option: $1" >&2
+        echo "Try: git brd help" >&2
+        exit 1
+      fi
+      ;;
+    branch|created|updated|merged|ahead|status)
+      sort_arg=$1
+      ;;
+    *)
+      echo "Unknown argument: $1" >&2
+      echo "Valid columns: branch created updated merged ahead status" >&2
+      exit 1
+      ;;
+  esac
+  shift
+done
+
+[ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" = "true" ] || {
+  echo "fatal: not a git repository" >&2
+  exit 1
+}
+
+use_color=0
+case "$color_mode" in
+  always) use_color=1 ;;
+  never)  use_color=0 ;;
+  auto)
+    if [[ -z "${NO_COLOR:-}" && -t 1 ]]; then
+      use_color=1
+    fi
+    ;;
+esac
+
+if [[ "$use_color" -eq 1 ]]; then
+  C_RESET=$'\033[0m'
+  C_BOLD=$'\033[1m'
+  C_DIM=$'\033[2m'
+  C_RED=$'\033[31m'
+  C_GREEN=$'\033[32m'
+  C_YELLOW=$'\033[33m'
+  C_BLUE=$'\033[34m'
+  C_CYAN=$'\033[36m'
+else
+  C_RESET= C_BOLD= C_DIM= C_RED= C_GREEN= C_YELLOW= C_BLUE= C_CYAN=
+fi
+
+# Colorize already-padded text so ANSI codes don't skew column widths.
+paint() {
+  local code=$1 text=$2
+  if [[ "$use_color" -eq 1 && -n "$code" ]]; then
+    printf '%s%s%s' "$code" "$text" "$C_RESET"
+  else
+    printf '%s' "$text"
+  fi
+}
+
+base=$(git rev-parse --abbrev-ref origin/HEAD 2>/dev/null | sed 's|origin/||')
+base=${base:-master}
+current=$(git branch --show-current 2>/dev/null || true)
+
+sort_arg=${sort_arg:--created}
+desc=0
+if [[ "$sort_arg" == -* ]]; then
+  desc=1
+  sort_col=${sort_arg#-}
+else
+  sort_col=$sort_arg
+fi
+
+case "$sort_col" in
+  branch|created|updated|merged|ahead|status) ;;
+  *)
+    echo "Unknown column: $sort_col" >&2
+    echo "Valid: branch created updated merged ahead status" >&2
+    exit 1
+    ;;
+esac
+
+# Column index for sort (1-based)
+case "$sort_col" in
+  branch)  key=1; numeric=0 ;;
+  created) key=2; numeric=0 ;;
+  updated) key=3; numeric=0 ;;
+  merged)  key=4; numeric=0 ;;
+  ahead)   key=5; numeric=1 ;;
+  status)  key=6; numeric=0 ;;
+esac
+
+# Never emit empty fields (macOS sort collapses consecutive tab delimiters).
+rows=$(
+  git for-each-ref --format='%(refname:short)' refs/heads/ | while read -r b; do
+    created=$(git reflog show --date=short "$b" 2>/dev/null | awk -F'[{}]' 'END{print $2}')
+    if [ -z "$created" ]; then
+      mb=$(git merge-base "$base" "$b" 2>/dev/null) || mb=
+      if [ -n "$mb" ]; then
+        created=$(git log -1 --format=%cs --reverse "$mb".."$b" 2>/dev/null | head -1)
+      fi
+      [ -z "$created" ] && created=$(git log -1 --format=%cs "$b" 2>/dev/null)
+    fi
+    created=${created:--}
+
+    updated=$(git log -1 --format=%cs "$b" 2>/dev/null)
+    updated=${updated:--}
+
+    if [ "$b" = "$base" ]; then
+      merged=-
+      status=base
+      ahead=0
+    elif git merge-base --is-ancestor "$b" "$base" 2>/dev/null; then
+      merged=$(git log -1 --format=%cs --merges --ancestry-path "$b".."$base" 2>/dev/null)
+      [ -z "$merged" ] && merged=$(git log -1 --format=%cs "$b" 2>/dev/null)
+      merged=${merged:--}
+      status=merged
+      ahead=0
+    else
+      merged=-
+      status=open
+      ahead=$(git rev-list --count "$base".."$b" 2>/dev/null || echo 0)
+    fi
+
+    printf '%s\t%s\t%s\t%s\t%s\t%s\n' \
+      "$b" "$created" "$updated" "$merged" "$ahead" "$status"
+  done
+)
+
+sort_opts=(-t $'\t' -k "${key},${key}")
+[ "$numeric" -eq 1 ] && sort_opts+=(-n)
+[ "$desc" -eq 1 ] && sort_opts+=(-r)
+
+printf '%s\n' "$(paint "$C_BOLD" "$(printf '%-40s %-12s %-12s %-12s %6s  %s' BRANCH CREATED UPDATED MERGED AHEAD STATUS)")"
+printf '%s\n' "$(paint "$C_DIM" "$(printf '%-40s %-12s %-12s %-12s %6s  %s' ------ ------- ------- ------ ----- ------)")"
+
+printf '%s\n' "$rows" | sort "${sort_opts[@]}" | while IFS=$'\t' read -r b created updated merged ahead status; do
+  if [[ "$b" == "$current" ]]; then
+    b_color=$C_GREEN
+  else
+    b_color=$C_YELLOW
+  fi
+
+  case "$status" in
+    base)   s_color=$C_CYAN ;;
+    merged) s_color=$C_GREEN ;;
+    open)   s_color=$C_BLUE ;;
+    *)      s_color= ;;
+  esac
+
+  if [[ "$merged" == "-" ]]; then
+    m_color=$C_DIM
+  else
+    m_color=$C_GREEN
+  fi
+
+  if [[ "$ahead" -gt 0 ]]; then
+    a_color=$C_RED
+  else
+    a_color=$C_DIM
+  fi
+
+  printf '%s %s %s %s %s  %s\n' \
+    "$(paint "$b_color" "$(printf '%-40s' "$b")")" \
+    "$(paint "$C_DIM" "$(printf '%-12s' "$created")")" \
+    "$(paint "$C_CYAN" "$(printf '%-12s' "$updated")")" \
+    "$(paint "$m_color" "$(printf '%-12s' "$merged")")" \
+    "$(paint "$a_color" "$(printf '%6s' "$ahead")")" \
+    "$(paint "$s_color" "$status")"
+done

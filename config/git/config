@@ -54,6 +54,8 @@
   fl   = log -u
 
   br = branch
+  # Local branches w/ create/update/merge dates; sort: git brd [-[column]]  (see bin/git-brd)
+  brd = "!f() { \"$HOME/.dotfiles/bin/git-brd\" \"$@\"; }; f"
   st = status
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
