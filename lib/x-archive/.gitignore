@@ -1,0 +1,23 @@
+# Secrets and sessions
+accounts.db
+*.db
+.env
+storage_state.json
+
+# Archive output (keep data outside this repo)
+archive/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Local config (copy from example to ~/.config/x-archive/config.toml)
+config.toml
+
+# Playwright
+.playwright/
+.DS_Store

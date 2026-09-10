@@ -1,0 +1,31 @@
+# Copy to ~/.config/x-archive/config.toml (preferred) or to config.toml
+# next to this file, then set target_username.
+#
+# Keep archive data and accounts.db *outside* the dotfiles repo.
+# Paths expand ~. Relative paths are resolved against the config file's directory.
+
+target_username = "example_handle"
+
+# Existing local archive from ~/src/scrapers/x-archive (or any other data dir)
+archive_root = "~/src/scrapers/x-archive/archive"
+
+# twscrape session database (gitignored; do not put this in the repo)
+accounts_db = "~/src/scrapers/x-archive/accounts.db"
+
+# Throttling: seconds to sleep between timeline page fetches (jitter added)
+request_delay_min = 3.0
+request_delay_max = 8.0
+
+# Max tweets per user_tweets run (omit key for unlimited / until ~3200 API cap).
+# TOML does not support null; use an integer only if you need a cap, e.g. tweet_limit = 100
+
+# Download media during archive/sync
+download_media = true
+
+# Store raw GraphQL page JSON under archive/<handle>/raw/pages/
+save_raw_pages = true
+
+# Media download settings
+media_max_retries = 3
+media_timeout_seconds = 120
+yt_dlp_path = "yt-dlp"
