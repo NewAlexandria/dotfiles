@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "$0")/../lib/x-archive" && pwd)"
+cd "$ROOT"
+
+if ! command -v poetry >/dev/null 2>&1; then
+  echo "xarchive: poetry is required. Install poetry, then: cd $ROOT && poetry install" >&2
+  exit 1
+fi
+
+if ! poetry env info --path >/dev/null 2>&1; then
+  echo "xarchive: no poetry environment. Run: cd $ROOT && poetry install" >&2
+  exit 1
+fi
+
+exec poetry run xarchive "$@"

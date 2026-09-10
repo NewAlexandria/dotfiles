@@ -10,6 +10,7 @@ while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symli
 done
 #DOTFILES_REPO="$( dirname "$SOURCE" )"
 DOTFILES_REPO="${DOTFILES_REPO:-$HOME/.dotfiles}"
+export PATH="$DOTFILES_REPO/bin:$PATH"
 
 function getuser() {
   if [ -z "$LOGNAME" ]; then
