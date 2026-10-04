@@ -103,3 +103,5 @@ bindkey '\e[1;5C' forward-word
 
 # === Forward Delete (fn+backspace) ===
 bindkey '\e[3~' delete-char
+
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"

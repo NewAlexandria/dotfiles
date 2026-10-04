@@ -488,3 +488,4 @@ function kubelogs() {
 }
 
 alias kubectl=kubecolor
+alias gco='git checkout'

@@ -80,7 +80,7 @@
 	insteadOf = git://
 
 [push]
-  default = tracking
+	default = simple
 [pull]
 	rebase = true
 [stash]
