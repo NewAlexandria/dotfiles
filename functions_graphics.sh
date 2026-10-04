@@ -137,6 +137,11 @@ function drawio2png() {
   /Applications/draw.io.app/Contents/MacOS/draw.io -x -f png --scale 2.5 $1
 }
 
+# join images + videos into one mp4; each image is followed by its seconds
+# usage: vidreel [-o out.mp4] title.jpg 3 a.mp4 b.mp4
+# script lives in ~/.dotfiles/bin/vidreel; alias keeps it working without bin on PATH
+alias vidreel="$HOME/.dotfiles/bin/vidreel"
+
 ### ==== Audio =======================================
 
 function ytmp3() {
